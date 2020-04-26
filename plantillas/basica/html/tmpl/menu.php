@@ -1,0 +1,94 @@
+<?php
+
+  // MENU DEL ROL ADMINISTRADOR
+
+    if($_SESSION['rol'] == 1){
+?>
+        
+
+    <!-- MENU DE CONFIGURACIÓN --> 
+    <li class="nav-item has-treeview menu-open">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-cog"></i>
+        <p>
+          Configuraci&oacute;n
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+
+
+
+      
+        <li class="nav-item">
+          <a href="#" onclick="cargar_usuarios();" class="nav-link">
+            <i class="far fa-user nav-icon"></i>
+            <p>Usuarios</p>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_roles();" class="nav-link">
+            <i class="fas fa-users nav-icon"></i>
+            <p>Roles</p>
+          </a>
+        </li>
+
+        
+        <li class="nav-item">
+          <a  href="#" onclick="cargar_parametros();" class="nav-link">
+            <i class="far fa-file nav-icon"></i>
+            <p>Parametros</p>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_contratistas();" class="nav-link">
+            <i class="far fa-user nav-icon"></i>
+            <p>Contratistas</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_proveedores();" class="nav-link">
+              <i class="far fa-user nav-icon"></i>
+              <p>Proveedores</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_supervisores();" class="nav-link">
+              <i class="far fa-user nav-icon"></i>
+              <p>Supervisores</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_clientes();" class="nav-link">
+              <i class="far fa-user nav-icon"></i>
+              <p>Clientes</p>
+          </a>
+        </li>
+
+      </ul>
+    </li>
+    
+
+         
+
+      </ul>
+    </li>
+
+
+
+
+
+
+
+  <?php
+    }
+  ?>             
+
