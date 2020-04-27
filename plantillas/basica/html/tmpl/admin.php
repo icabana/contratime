@@ -4,7 +4,7 @@
   <meta charset="utf-8">  
   <link REL="Shortcut Icon" href="imagenes/iconos/favicon.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>..: FrameWork :..</title>
+  <title>..: ContraTime :..</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -36,9 +36,7 @@
   <!-- MODULOS DEL SISTEMA -->  
   <script language="JavaScript" type='text/javascript' src='js/modulos/configuracion.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/contratistas.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/modulos/actores/proveedores.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/supervisores.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/modulos/actores/clientes.js'></script> 
   
   <!-- ARCHIVOS DE LAS VISTAS -->  
   <script language="JavaScript" type='text/javascript' src='js/vistas/configuracion/usuarios/default.js'></script> 
@@ -48,22 +46,13 @@
 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/insertar.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/editar.js'></script> 
-  
-
-  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/proveedores/default.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/proveedores/insertar.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/proveedores/editar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/editar.js'></script>   
 
   
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/editar.js'></script> 
   
-
-  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/clientes/default.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/clientes/insertar.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/clientes/editar.js'></script> 
   
 
 

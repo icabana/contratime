@@ -1,16 +1,16 @@
 <?php
 
-class ContratistasControlador extends ControllerBase {
+class SupervisoresControlador extends ControllerBase {
 
 
     public function index() {        
 
-        $this->model->cargar("ContratistasModel.php", "actores");
-        $ContratistasModel = new ContratistasModel();
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
 
-        $contratistas = $ContratistasModel->getTodos();
+        $supervisores = $SupervisoresModel->getTodos();
 
-        include 'vistas/actores/contratistas/default.php';                        
+        include 'vistas/actores/supervisores/default.php';                        
 
     }        
 
@@ -49,7 +49,7 @@ class ContratistasControlador extends ControllerBase {
         $ProfesionesModel = new ProfesionesModel();
         $profesiones = $ProfesionesModel->getTodos();
 
-        include 'vistas/actores/contratistas/insertar.php';        
+        include 'vistas/actores/supervisores/insertar.php';        
 
     } 
 
@@ -84,56 +84,56 @@ class ContratistasControlador extends ControllerBase {
         $ProfesionesModel = new ProfesionesModel();
         $profesiones = $ProfesionesModel->getTodos();
 
-        $this->model->cargar("ContratistasModel.php", 'actores');
-        $ContratistasModel = new ContratistasModel();          
-        $datos = $ContratistasModel->getDatos($_POST['id_contratista']);       
+        $this->model->cargar("SupervisoresModel.php", 'actores');
+        $SupervisoresModel = new SupervisoresModel();          
+        $datos = $SupervisoresModel->getDatos($_POST['id_supervisor']);       
         
         $this->model->cargar("MunicipiosModel.php", "maestras");
         $MunicipiosModel = new MunicipiosModel();
-        $municipios = $MunicipiosModel->getTodos($datos['departamento_contratista']); //Departamento de Amazonas == 5
+        $municipios = $MunicipiosModel->getTodos($datos['departamento_supervisor']); //Departamento de Amazonas == 5
 
-        include 'vistas/actores/contratistas/editar.php';               
+        include 'vistas/actores/supervisores/editar.php';               
 
     }
     
 
     public function insertar() {
 
-        $this->model->cargar("ContratistasModel.php", 'actores');
-        $ContratistasModel = new ContratistasModel();                      
+        $this->model->cargar("SupervisoresModel.php", 'actores');
+        $SupervisoresModel = new SupervisoresModel();                      
 
-        $result = $ContratistasModel->getDatosPorCampo("documento_contratista", $_POST["documento_contratista"]);
+        $result = $SupervisoresModel->getDatosPorCampo("documento_supervisor", $_POST["documento_supervisor"]);
 
         if(count($result) > 0){
             echo "error_documento";
             return;
         }
 
-        $resp = $ContratistasModel->insertar(
+        $resp = $SupervisoresModel->insertar(
 
-            $_POST["tipo_contratista"],
-            $_POST["tipodocumento_contratista"], 
-            $_POST["documento_contratista"], 
-            $_POST["nombres_contratista"], 
-            $_POST["apellidos_contratista"], 
+            $_POST["tipo_supervisor"],
+            $_POST["tipodocumento_supervisor"], 
+            $_POST["documento_supervisor"], 
+            $_POST["nombres_supervisor"], 
+            $_POST["apellidos_supervisor"], 
 
-            $_POST["dirresidencia_contratista"], 
-            $_POST["dircorrespondencia_contratista"],
-            $_POST["telefono_contratista"], 
-            $_POST["celular_contratista"], 
-            $_POST["correo_contratista"], 
-            $_POST["paginaweb_contratista"],
+            $_POST["dirresidencia_supervisor"], 
+            $_POST["dircorrespondencia_supervisor"],
+            $_POST["telefono_supervisor"], 
+            $_POST["celular_supervisor"], 
+            $_POST["correo_supervisor"], 
+            $_POST["paginaweb_supervisor"],
 
-            $_POST["pais_contratista"],
-            $_POST["departamento_contratista"],
-            $_POST["municipio_contratista"], 
-            $_POST["fechanacimiento_contratista"],
+            $_POST["pais_supervisor"],
+            $_POST["departamento_supervisor"],
+            $_POST["municipio_supervisor"], 
+            $_POST["fechanacimiento_supervisor"],
 
-            $_POST["genero_contratista"],
-            $_POST["estadocivil_contratista"],
-            $_POST["hijos_contratista"],
+            $_POST["genero_supervisor"],
+            $_POST["estadocivil_supervisor"],
+            $_POST["hijos_supervisor"],
 
-            $_POST["profesion_contratista"]
+            $_POST["profesion_supervisor"]
 
         );        
 
@@ -148,37 +148,37 @@ class ContratistasControlador extends ControllerBase {
 
     public function guardar() {
 
-        $this->model->cargar("ContratistasModel.php", 'actores');
-        $contratistasModel = new ContratistasModel();                
+        $this->model->cargar("SupervisoresModel.php", 'actores');
+        $supervisoresModel = new SupervisoresModel();                
 
-        $resp = $contratistasModel->editar(
+        $resp = $supervisoresModel->editar(
 
-            $_POST["id_contratista"], 
+            $_POST["id_supervisor"], 
 
-            $_POST["tipo_contratista"],
-            $_POST["tipodocumento_contratista"], 
-            $_POST["documento_contratista"], 
-            $_POST["nombres_contratista"], 
-            $_POST["apellidos_contratista"], 
+            $_POST["tipo_supervisor"],
+            $_POST["tipodocumento_supervisor"], 
+            $_POST["documento_supervisor"], 
+            $_POST["nombres_supervisor"], 
+            $_POST["apellidos_supervisor"], 
 
-            $_POST["dirresidencia_contratista"], 
-            $_POST["dircorrespondencia_contratista"],
-            $_POST["telefono_contratista"], 
-            $_POST["celular_contratista"], 
-            $_POST["correo_contratista"], 
-            $_POST["paginaweb_contratista"],
+            $_POST["dirresidencia_supervisor"], 
+            $_POST["dircorrespondencia_supervisor"],
+            $_POST["telefono_supervisor"], 
+            $_POST["celular_supervisor"], 
+            $_POST["correo_supervisor"], 
+            $_POST["paginaweb_supervisor"],
 
-            $_POST["pais_contratista"],
-            $_POST["departamento_contratista"],
-            $_POST["municipio_contratista"], 
+            $_POST["pais_supervisor"],
+            $_POST["departamento_supervisor"],
+            $_POST["municipio_supervisor"], 
 
-            $_POST["fechanacimiento_contratista"],
+            $_POST["fechanacimiento_supervisor"],
 
-            $_POST["genero_contratista"],
-            $_POST["estadocivil_contratista"],
-            $_POST["hijos_contratista"],
+            $_POST["genero_supervisor"],
+            $_POST["estadocivil_supervisor"],
+            $_POST["hijos_supervisor"],
 
-            $_POST["profesion_contratista"]
+            $_POST["profesion_supervisor"]
         );     
 
          if( $resp != 0 ){			     
@@ -195,10 +195,10 @@ class ContratistasControlador extends ControllerBase {
 
     public function eliminar() {        
 
-        $this->model->cargar("ContratistasModel.php", "actores");
-        $contratistasModel = new ContratistasModel();        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $supervisoresModel = new SupervisoresModel();        
 
-        $contratistasModel->eliminar($_POST["id_contratista"]);        
+        $supervisoresModel->eliminar($_POST["id_supervisor"]);        
 
         echo "1";                
 
@@ -217,26 +217,24 @@ class ContratistasControlador extends ControllerBase {
             $municipios,
             'nombre_municipio',
             'id_municipio',
-            'municipio_contratista',
+            'municipio_supervisor',
             '',
             '',
             ''
           );
 
-    }           
-
-
+    }          
     
     public function generarPdf(){
          
-        $this->model->cargar("ContratistasModel.php", "actores");
-        $ContratistasModel = new ContratistasModel();
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
 
-        $contratistas = $ContratistasModel->getTodos();
+        $supervisores = $SupervisoresModel->getTodos();
           
-        include("vistas/actores/contratistas/reportes/pdf.php");   
+        include("vistas/actores/supervisores/reportes/pdf.php");   
        
-        $dirPdf = "archivos/reportes/contratistas/contratistas_".date("Y-m-d")."_.pdf";
+        $dirPdf = "archivos/reportes/supervisores/supervisores_".date("Y-m-d")."_.pdf";
 
         $this->pdf->Output(''.$dirPdf.'');
 
@@ -246,26 +244,22 @@ class ContratistasControlador extends ControllerBase {
     
     public function generarExcel(){
          
-        $this->model->cargar("ContratistasModel.php", "actores");
-        $ContratistasModel = new ContratistasModel();
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
 
-        $contratistas = $ContratistasModel->getTodos();
+        $supervisores = $SupervisoresModel->getTodos();
                         
-        $nombre_archivo = "contratistas_".date('Y-m-d_H-i-s').".xls";        
+        $nombre_archivo = "supervisores_".date('Y-m-d_H-i-s').".xls";        
 
-        $ruta = dirname(__FILE__, 3)."/archivos/reportes/contratistas/".$nombre_archivo;        
+        $ruta = dirname(__FILE__, 3)."/archivos/reportes/supervisores/".$nombre_archivo;        
 
-        include("vistas/actores/contratistas/reportes/excel.php");        
+        include("vistas/actores/supervisores/reportes/excel.php");        
            
-        echo "archivos/reportes/contratistas/".$nombre_archivo;
+        echo "archivos/reportes/supervisores/".$nombre_archivo;
 
     }
     
     
-
-
-    
  }
 
 ?>
-

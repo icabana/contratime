@@ -9,7 +9,7 @@
             $paises,
             'nombre_pais',
             'id_pais',
-            'pais_contratista',
+            'pais_supervisor',
             '',
             '',
             ''
@@ -28,10 +28,10 @@
             $departamentos,
             'nombre_departamento',
             'id_departamento',
-            'departamento_contratista',
+            'departamento_supervisor',
             '',
             '',
-            'cargar_municipios_contratista()'
+            'cargar_municipios_supervisor()'
           );
       ?>
         
@@ -42,13 +42,13 @@
 
       <label>Municipio</label>
 
-      <div id ="div_municipio_contratistas">
+      <div id ="div_municipio_supervisores">
         <?php
           echo $froms->Lista_Desplegable(
               $municipios,
               'nombre_municipio',
               'id_municipio',
-              'municipio_contratista',
+              'municipio_supervisor',
               '',
               '',
               ''
@@ -77,7 +77,7 @@
           $generos,
           'nombre_genero',
           'id_genero',
-          'genero_contratista',
+          'genero_supervisor',
           '',
           '',
           ''
@@ -94,7 +94,7 @@
           $estadoscivil,
           'nombre_estadocivil',
           'id_estadocivil',
-          'estadocivil_contratista',
+          'estadocivil_supervisor',
           '',
           '',
           ''
@@ -110,8 +110,8 @@
       <input 
         type="text" 
         class="form-control" 
-        id="hijos_contratista" 
-        name="hijos_contratista"
+        id="hijos_supervisor" 
+        name="hijos_supervisor"
         onkeypress="return no_numeros(event)" />
 
     </div>
@@ -136,7 +136,7 @@
           $profesiones,
           'nombre_profesion',
           'id_profesion',
-          'profesion_contratista',
+          'profesion_supervisor',
           '',
           '',
           ''
@@ -151,8 +151,8 @@
       <input 
         type="date" 
         class="form-control" 
-        id="fechanacimiento_contratista" 
-        name="fechanacimiento_contratista" />
+        id="fechanacimiento_supervisor" 
+        name="fechanacimiento_supervisor" />
 
     </div>
 

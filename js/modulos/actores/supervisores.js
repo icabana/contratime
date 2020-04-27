@@ -1,4 +1,4 @@
-function cargar_contratistas(){
+function cargar_supervisores(){
 
     $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
     $('.ui-widget').remove();
@@ -9,20 +9,20 @@ function cargar_contratistas(){
     limpiar_cuerpo();
     
     abrirVentanaContenedorTabla(
-        'tabla_contratistas',
-        'actores', 'Contratistas', 'index', '');    
+        'tabla_supervisores',
+        'actores', 'Supervisores', 'index', '');    
         
 }
 
 
-function cargar_municipios_contratista(){
+function cargar_municipios_supervisor(){
 
     ejecutarAccion(
         'actores',
-        'Contratistas',
+        'Supervisores',
         'cargarMunicipios',
-        'id_departamento='+$("#departamento_contratista").val(),
-        '$("#div_municipio_contratistas").html(data)'
+        'id_departamento='+$("#departamento_supervisor").val(),
+        '$("#div_municipio_supervisores").html(data)'
       );    
         
 }

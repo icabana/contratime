@@ -9,8 +9,8 @@
               $paises,
               'nombre_pais',
               'id_pais',
-              'pais_contratista',
-              $datos['pais_contratista'],
+              'pais_supervisor',
+              $datos['pais_supervisor'],
               '',
               ''
             );
@@ -28,10 +28,10 @@
               $departamentos,
               'nombre_departamento',
               'id_departamento',
-              'departamento_contratista',
-              $datos['departamento_contratista'],
+              'departamento_supervisor',
+              $datos['departamento_supervisor'],
               '',
-              'cargar_municipios_contratista()'
+              'cargar_municipios_supervisor()'
             );
         ?>
           
@@ -41,14 +41,14 @@
 
         <label>Ciudad</label>
 
-        <div id ="div_municipio_contratistas">
+        <div id ="div_municipio_supervisores">
         <?php
             echo $froms->Lista_Desplegable(
                 $municipios,
                 'nombre_municipio',
                 'id_municipio',
-                'municipio_contratista',
-                $datos['municipio_contratista'],
+                'municipio_supervisor',
+                $datos['municipio_supervisor'],
                 '',
                 ''
               );
@@ -77,8 +77,8 @@
               $generos,
               'nombre_genero',
               'id_genero',
-              'genero_contratista',
-              $datos['genero_contratista'],
+              'genero_supervisor',
+              $datos['genero_supervisor'],
               '',
               ''
             );
@@ -94,8 +94,8 @@
               $estadoscivil,
               'nombre_estadocivil',
               'id_estadocivil',
-              'estadocivil_contratista',
-              $datos['estadocivil_contratista'],
+              'estadocivil_supervisor',
+              $datos['estadocivil_supervisor'],
               '',
               ''
             );
@@ -110,9 +110,9 @@
           <input 
             type="text" 
             class="form-control" 
-            id="hijos_contratista" 
-            name="hijos_contratista" 
-            value="<?php echo $datos['hijos_contratista']; ?>">
+            id="hijos_supervisor" 
+            name="hijos_supervisor" 
+            value="<?php echo $datos['hijos_supervisor']; ?>">
 
       </div>
 
@@ -136,8 +136,8 @@
           $profesiones,
           'nombre_profesion',
           'id_profesion',
-          'profesion_contratista',
-          $datos['profesion_contratista'],
+          'profesion_supervisor',
+          $datos['profesion_supervisor'],
           '',
           ''
         );
@@ -151,11 +151,17 @@
       <input 
         type="date" 
         class="form-control" 
-        id="fechanacimiento_contratista" 
-        name="fechanacimiento_contratista" 
-        value="<?php echo $datos['fechanacimiento_contratista']; ?>">
+        id="fechanacimiento_supervisor" 
+        name="fechanacimiento_supervisor" 
+        value="<?php echo $datos['fechanacimiento_supervisor']; ?>">
 
     </div>
 
     
 </div>
+
+
+
+
+
+

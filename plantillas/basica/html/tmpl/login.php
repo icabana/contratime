@@ -6,7 +6,7 @@
   <meta charset="utf-8">  
   <LINK REL="Shortcut Icon" href="imagenes/iconos/favicon.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>...: LoginTime :...</title>
+  <title>...: ContraTime :...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="<?php echo $this->ruta(); ?>plugins/fontawesome-free/css/all.min.css">
