@@ -35,6 +35,7 @@
   
   <!-- MODULOS DEL SISTEMA -->  
   <script language="JavaScript" type='text/javascript' src='js/modulos/configuracion.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/modalidades.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/contratistas.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/supervisores.js'></script> 
   
@@ -43,7 +44,14 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/configuracion/usuarios/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/configuracion/usuarios/editar.js'></script> 
   
-
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/editar.js'></script> 
+  
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/tipos/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/tipos/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/tipos/editar.js'></script> 
+  
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/editar.js'></script>   

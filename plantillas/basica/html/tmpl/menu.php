@@ -50,6 +50,47 @@
 
 
 
+    <!-- MENU DE ADMINISTRACIÓN --> 
+    <li class="nav-item has-treeview menu">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-cog"></i>
+        <p>
+          Administraci&oacute;n
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        
+        
+        <li class="nav-item">
+          <a href="#" onclick="cargar_modalidades();" class="nav-link">
+            <i class="far fa-user nav-icon"></i>
+            <p>Modalidades</p>
+          </a>
+        </li>
+        
+
+      
+        <li class="nav-item">
+          <a href="#" onclick="cargar_tipos();" class="nav-link">
+            <i class="far fa-user nav-icon"></i>
+            <p>Tipos</p>
+          </a>
+        </li>
+
+
+      </ul>
+    </li>
+    
+
+         
+
+
+
+
+
+
     <!-- MENU DE CONFIGURACIÓN --> 
     <li class="nav-item has-treeview menu">
       <a href="#" class="nav-link">
@@ -94,6 +135,10 @@
     
 
          
+
+
+
+
 
       </ul>
     </li>

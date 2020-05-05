@@ -5,63 +5,62 @@ class ContratosModel extends ModelBase {
     function getTodos() {
         
         $query = "select 
+
                     contratos.id_contrato, 
-                    contratos.numero_contrato,
+                    contratos.tipo_contrato,
+                    contratos.modalidad_contrato,
+                    contratos.valor_contrato,
                     contratos.contratista_contrato,
-                    contratos.enviadopor_contrato,
-                    contratos.destinatario_contrato,
-                    contratos.fecharadicado_contrato,
-                    contratos.fechamaxima_contrato,
-                    contratos.prioridad_contrato,
-                    contratos.numerofolios_contrato,
-                    contratos.descripcionfolios_contrato,
-                    contratos.asunto_contrato,
-                    contratos.tiporadicado_contrato,
-                    contratos.responsable_contrato,
-                    contratos.carpeta_contrato,
-                    contratos.serie_contrato,
-                    contratos.subserie_contrato,
-                    contratos.tipodocumental_contrato,
-                    contratos.saliente_contrato,
-                    
+                    contratos.fechainicio_contrato,
+                    contratos.fechafinal_contrato,
+                    contratos.numero_contrato,
+                    contratos.objeto_contrato,
                     contratos.estado_contrato,
-                    contratos.tieneanexos_contrato,
+
 
                     contratistas.id_contratista, 
-                    contratistas.documento_contratista, 
-                    contratistas.tipodocumento_contratista, 
-                    contratistas.nombres_contratista, 
-                    contratistas.apellidos_contratista, 
-                    contratistas.telefono_contratista, 
-                    contratistas.celular_contratista, 
-                    contratistas.correo_contratista, 
-                    contratistas.direccion_contratista, 
-                    contratistas.ciudad_contratista,
 
-                    terceros.id_tercero, 
-                    terceros.documento_tercero, 
-                    terceros.tipodocumento_tercero, 
-                    terceros.nombre_tercero,  
-                    terceros.telefono_tercero, 
-                    terceros.celular_tercero, 
-                    terceros.correo_tercero, 
-                    terceros.direccion_tercero, 
-                    terceros.ciudad_tercero,
+                    contratistas.tipo_contratista,
+                    contratistas.tipodocumento_contratista,
+                    contratistas.documento_contratista,
+                    contratistas.nombres_contratista,
+                    contratistas.apellidos_contratista,
 
-                    estadosradicados.id_estado,
-                    estadosradicados.nombre_estado,
+                    concat( contratistas.nombres_contratista,' ',contratistas.apellidos_contratista) as nombre_contratista,
 
-                    estados2.id_estado as id_estado2,
-                    estados2.nombre_estado as nombre_estado2
+                    contratistas.dirresidencia_contratista,
+                    contratistas.dircorrespondencia_contratista,
+                    contratistas.telefono_contratista,
+                    contratistas.celular_contratista,
+                    contratistas.correo_contratista,
+                    contratistas.paginaweb_contratista,
+
+                    contratistas.pais_contratista,
+                    contratistas.departamento_contratista,
+                    contratistas.municipio_contratista,
+
+                    contratistas.fechanacimiento_contratista,
+
+                    contratistas.genero_contratista,
+                    contratistas.estadocivil_contratista,
+                    contratistas.hijos_contratista,
+
+                    contratistas.profesion_contratista,
+
+                    modalidades.id_modalidad, 
+                    modalidades.nombre_modalidad,
+
+                    tiposcontrato.id_tipo, 
+                    tiposcontrato.nombre_tipo,
+
+                    estadoscontrato.id_estado, 
+                    estadoscontrato.nombre_estado
                 
                     from contratos 
-                            left join terceros ON contratos.remitente_contrato = terceros.id_tercero
-                            left join contratistas ON contratos.destinatario_contrato = contratistas.id_contratista                            
-                            left join contratistas as contratistas2 ON contratos.responsable_contrato = contratistas2.id_contratista
-                            left join estadosradicados ON contratos.estado_contrato = estadosradicados.id_estado
-                            left join estados2 ON contratos.tieneanexos_contrato = estados2.id_estado
-                            
-                    where contratos.carpeta_contrato IS NULL or contratos.carpeta_contrato = 0
+                            left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipocontrato
+                            left join modalidades ON contratos.modalidad_contrato = modalidades.id_modalidad
+                            left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista
+                            left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
                     
                     order by contratos.numero_contrato";
         
