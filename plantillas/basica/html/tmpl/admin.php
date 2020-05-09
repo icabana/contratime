@@ -35,6 +35,7 @@
   
   <!-- MODULOS DEL SISTEMA -->  
   <script language="JavaScript" type='text/javascript' src='js/modulos/configuracion.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/modulos/contratos/contratos.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/modalidades.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/contratistas.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/supervisores.js'></script> 
@@ -56,7 +57,6 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/editar.js'></script>   
 
-  
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/editar.js'></script> 
@@ -162,6 +162,16 @@
           require_once("plantillas/basica/html/tmpl/menu.php");
 
       ?>
+
+
+
+
+
+
+
+
+
+      
       </ul>
       </nav>
     </div>
