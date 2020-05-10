@@ -144,62 +144,62 @@ class SupervisoresModel extends ModelBase {
     function getDatos($id_supervisor) {       
 
      $query = "
-     select 	
-     supervisores.id_supervisor, 
+                select 	
+                supervisores.id_supervisor, 
 
-     supervisores.tipo_supervisor,
-     supervisores.tipodocumento_supervisor,
-     supervisores.documento_supervisor,
-     supervisores.nombres_supervisor,
-     supervisores.apellidos_supervisor,
+                supervisores.tipo_supervisor,
+                supervisores.tipodocumento_supervisor,
+                supervisores.documento_supervisor,
+                supervisores.nombres_supervisor,
+                supervisores.apellidos_supervisor,
 
-     concat( supervisores.nombres_supervisor,' ',supervisores.apellidos_supervisor) as nombre_supervisor,
+                concat( supervisores.nombres_supervisor,' ',supervisores.apellidos_supervisor) as nombre_supervisor,
 
-     supervisores.dirresidencia_supervisor,
-     supervisores.dircorrespondencia_supervisor,
-     supervisores.telefono_supervisor,
-     supervisores.celular_supervisor,
-     supervisores.correo_supervisor,
-     supervisores.paginaweb_supervisor,
+                supervisores.dirresidencia_supervisor,
+                supervisores.dircorrespondencia_supervisor,
+                supervisores.telefono_supervisor,
+                supervisores.celular_supervisor,
+                supervisores.correo_supervisor,
+                supervisores.paginaweb_supervisor,
 
-     supervisores.pais_supervisor,
-     supervisores.departamento_supervisor,
-     supervisores.municipio_supervisor,
-     
-     supervisores.fechanacimiento_supervisor,
+                supervisores.pais_supervisor,
+                supervisores.departamento_supervisor,
+                supervisores.municipio_supervisor,
+                
+                supervisores.fechanacimiento_supervisor,
 
-     supervisores.genero_supervisor,
-     supervisores.estadocivil_supervisor,
-     supervisores.hijos_supervisor,
+                supervisores.genero_supervisor,
+                supervisores.estadocivil_supervisor,
+                supervisores.hijos_supervisor,
 
-     supervisores.profesion_supervisor,
- 
-     tiposdocumento.codigo_tipodocumento,
-     tiposdocumento.nombre_tipodocumento,
+                supervisores.profesion_supervisor,
+            
+                tiposdocumento.codigo_tipodocumento,
+                tiposdocumento.nombre_tipodocumento,
 
-     paises.nombre_pais,
+                paises.nombre_pais,
 
-     generos.nombre_genero,
+                generos.nombre_genero,
 
-     estadoscivil.nombre_estadocivil,
+                estadoscivil.nombre_estadocivil,
 
-     profesiones.nombre_profesion,
+                profesiones.nombre_profesion,
 
-     tipospersona.nombre_tipopersona,
+                tipospersona.nombre_tipopersona,
 
-     estados.nombre_estado
+                estados.nombre_estado
 
- from supervisores
-         
-     left join tipospersona on supervisores.tipo_supervisor = tipospersona.id_tipopersona
-     left join tiposdocumento on supervisores.tipodocumento_supervisor = tiposdocumento.id_tipodocumento
-     left join paises on supervisores.pais_supervisor = paises.id_pais       
-     left join departamentos on supervisores.departamento_supervisor = departamentos.id_departamento
-     left join municipios on supervisores.municipio_supervisor = municipios.id_municipio
-     left join generos on supervisores.genero_supervisor = generos.id_genero
-     left join estadoscivil on supervisores.estadocivil_supervisor = estadoscivil.id_estadocivil
-     left join profesiones on supervisores.profesion_supervisor = profesiones.id_profesion
-     left join estados on supervisores.estado_supervisor = estados.id_estado
+            from supervisores
+                    
+                left join tipospersona on supervisores.tipo_supervisor = tipospersona.id_tipopersona
+                left join tiposdocumento on supervisores.tipodocumento_supervisor = tiposdocumento.id_tipodocumento
+                left join paises on supervisores.pais_supervisor = paises.id_pais       
+                left join departamentos on supervisores.departamento_supervisor = departamentos.id_departamento
+                left join municipios on supervisores.municipio_supervisor = municipios.id_municipio
+                left join generos on supervisores.genero_supervisor = generos.id_genero
+                left join estadoscivil on supervisores.estadocivil_supervisor = estadoscivil.id_estadocivil
+                left join profesiones on supervisores.profesion_supervisor = profesiones.id_profesion
+                left join estados on supervisores.estado_supervisor = estados.id_estado
 
             where supervisores.id_supervisor='".$id_supervisor."'";        
 

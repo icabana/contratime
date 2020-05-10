@@ -13,15 +13,40 @@ class TrazabilidadControlador extends ControllerBase {
         foreach($array_contratos as $array){
     
             if($array[0] != 0){
-/*
+
                 $TrazabilidadModel->insertar(
-                    $_POST["supervisor_supervisor"],
+                    $_POST["accion_trazabilidad"],
                     $array[0],
+                    $_SESSION['id_usuario']
                 ); 
-                */
+                
             }
 
-        }   
+        }
+        
+    }
+
+    
+    public function insertarExterno($contratos, $accion) {
+        
+        $this->model->cargar("TrazabilidadModel.php", "contratos");
+        $TrazabilidadModel = new TrazabilidadModel();  
+
+        $array_contratos = explode(",", $contratos);
+
+        foreach($array_contratos as $array){
+    
+            if($array[0] != 0){
+
+                $TrazabilidadModel->insertar(
+                    $accion,
+                    $array[0],
+                    $_SESSION['id_usuario']
+                ); 
+                
+            }
+
+        }
         
     }
     

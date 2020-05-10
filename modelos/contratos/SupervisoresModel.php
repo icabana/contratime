@@ -1,6 +1,6 @@
 <?php
 
-class SupervisoresModel extends ModelBase {
+class SupervisoresContratosModel extends ModelBase {
 
   
     function getTodos() {

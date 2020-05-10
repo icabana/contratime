@@ -26,13 +26,19 @@ $froms = new Formularios();
 
             <li class="nav-item">
               <a class="nav-link active" href="#tab_1" data-toggle="tab">
-                Datos del Proceso
+                Proceso
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_2_supervisores" data-toggle="tab">
                 Supervisores
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_4_cdps" data-toggle="tab">
+                Cdps
               </a>
             </li>
 
@@ -112,7 +118,7 @@ $froms = new Formularios();
 
 
                 <div class="col-md-6">
-                  <label>Tipo de Contrataci&oacute;n---<?php echo count($trazabilidad); ?> <span style="color:red">*</span></label>
+                  <label>Tipo de Contrataci&oacute;n <span style="color:red">*</span></label>
 
                   <?php
                   echo $froms->Lista_Desplegable(
@@ -154,6 +160,13 @@ $froms = new Formularios();
               ?>
             </div>
 
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_4_cdps">
+
+              <?php
+              include("vistas/contratos/cdps/lista_cdps.php");
+              ?>
+            </div>
+
 
             <div style="padding: 20px; height:350px" class="tab-pane" id="tab_3_trazabilidad">
 
@@ -173,7 +186,7 @@ $froms = new Formularios();
                 <button onclick="cargar_contratos();" class="btn btn-danger">Cancelar</button>
               </div>
               <div class="col-md-3">
-                <button onclick="insertar_contrato(); return false;" class="btn btn-success">Guardar</button>
+                <button onclick="editar_contrato(); return false;" class="btn btn-success">Guardar</button>
               </div>
             </div>
           </div>

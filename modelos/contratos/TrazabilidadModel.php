@@ -118,22 +118,21 @@ class TrazabilidadModel extends ModelBase {
     
 
     function insertar(      
-        $contrato_trazabilidad,
-        $fecha_trazabilidad,
         $accion_trazabilidad,
+        $contrato_trazabilidad,
         $usuario_trazabilidad
     ){
                 
-        $query = "INSERT INTO contratos_supervisores (
+        $query = "INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
                         contrato_trazabilidad,
                         fecha_trazabilidad,
-                        accion_trazabilidad,
                         usuario_trazabilidad
-                            )
+                    )
                     VALUES(
-                        '".$contrato_trazabilidad."',
-                        '".$fecha_trazabilidad."',
                         '".$accion_trazabilidad."',
+                        '".$contrato_trazabilidad."',
+                        '".date("Y-m-d H:i:s")."',
                         '".$usuario_trazabilidad."'
                     );";
        

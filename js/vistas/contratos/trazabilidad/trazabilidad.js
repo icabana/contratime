@@ -19,7 +19,7 @@ function agregar_trazabilidad() {
 
 function agregar_trazabilidad2() {
 
-    $('#modal_trazabilidades').modal('hide');
+    $('#modal_trazabilidad').modal('hide');
     
 
     var contratos = "";
@@ -36,15 +36,15 @@ function agregar_trazabilidad2() {
       'contratos',
       'Trazabilidad',
       'insertar',
-      "trazabilidad_trazabilidad="+$("#trazabilidad_trazabilidad").val()+'&contratos='+contratos,
-      'mensaje_alertas("success", "Trazabilidad Agregado Correctamente", "center"); seleccionar_check();'
+      "accion_trazabilidad="+$("#accion_trazabilidad").val()+'&contratos='+contratos,
+      'mensaje_alertas("success", "Trazabilidad Agregado Correctamente", "center"); seleccionar_check(); $("#accion_trazabilidad").val("")'
     );
 
 }
 
 function eliminar_trazabilidad_contrato(id_trazabilidad, id_contrato) {
 
-    mensaje_confirmar("¿Está seguro de eliminar la trazabilidad asociado a este contrato?", "eliminar_trazabilidad_contrato2(" + id_trazabilidad + ", " + id_contrato + "); ");
+    mensaje_confirmar("¿Está seguro de eliminar la trazabilidad asociada a este contrato?", "eliminar_trazabilidad_contrato2(" + id_trazabilidad + ", " + id_contrato + "); ");
   
   }
   

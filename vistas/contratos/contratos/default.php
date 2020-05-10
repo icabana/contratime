@@ -48,8 +48,8 @@ $froms = new Formularios();
             }
             ?>
             <button title="Agregar Supervisor" data-toggle="modal" data-target="#modal_supervisores" type="button" class="btn btn-default btn-sm"><i class="fas fa-user"></i></button>
-            <button title="Agregar Bitacora" data-toggle="modal" data-target="#exampleModal3" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
-            <button title="Cambiar Estado" data-toggle="modal" data-target="#exampleModal7" type="button" class="btn btn-default btn-sm"><i class="fas fa-tags"></i></button>
+            <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
+            <button title="Agregar CDP" data-toggle="modal" data-target="#modal_cdps" type="button" class="btn btn-default btn-sm"><i class="fas fa-money-bill"></i></button>
           </div>
 
           <button title="Actualizar Lista de Radicados" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
@@ -176,4 +176,14 @@ $froms = new Formularios();
 <!-- Modal Supervisores-->
 <?php
   include("vistas/contratos/supervisores/modal_supervisores.php");
+?>
+
+<!-- Modal Trazabilidad-->
+<?php
+  include("vistas/contratos/trazabilidad/modal_trazabilidad.php");
+?>
+
+<!-- Modal Cdps-->
+<?php
+  include("vistas/contratos/cdps/modal_cdps.php");
 ?>

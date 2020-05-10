@@ -48,11 +48,7 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/editar.js'></script> 
-  
-  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/tipos/default.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/tipos/insertar.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/tipos/editar.js'></script> 
-  
+    
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/editar.js'></script>   
@@ -69,6 +65,7 @@
 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/supervisores/supervisores.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/trazabilidad/trazabilidad.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/cdps/cdps.js'></script> 
   
   
 
@@ -184,7 +181,7 @@
 
 <br>
          <!-- MENU DE CONTRATOS --> 
-    <li class="nav-item has-treeview menu">
+    <li class="nav-item has-treeview menu-open">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-folder-open"></i>
         <p>

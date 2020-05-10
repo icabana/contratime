@@ -11,6 +11,7 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("SupervisoresModel.php", "actores");
         $SupervisoresModel = new SupervisoresModel();
         $supervisores = $SupervisoresModel->getTodos();
+        
           
         include 'vistas/contratos/contratos/default.php';
                         
@@ -43,8 +44,12 @@ class ContratosControlador extends ControllerBase {
         $tiposcontrato = $Tiposcontrato->getTodos();
         
         $this->model->cargar("SupervisoresModel.php", "contratos");
-        $SupervisoresModel = new SupervisoresModel();
+        $SupervisoresModel = new SupervisoresContratosModel();
         $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("CdpsModel.php", "contratos");
+        $CdpsModel = new CdpsContratosModel();
+        $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
         
         $this->model->cargar("TrazabilidadModel.php", "contratos");
         $TrazabilidadModel = new TrazabilidadModel();
@@ -65,8 +70,12 @@ class ContratosControlador extends ControllerBase {
         $tiposcontrato = $Tiposcontrato->getTodos();
         
         $this->model->cargar("SupervisoresModel.php", "contratos");
-        $SupervisoresModel = new SupervisoresModel();
+        $SupervisoresModel = new SupervisoresContratosModel();
         $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("CdpsModel.php", "contratos");
+        $CdpsModel = new CdpsContratosModel();
+        $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
         
         $this->model->cargar("TrazabilidadModel.php", "contratos");
         $TrazabilidadModel = new TrazabilidadModel();
@@ -98,6 +107,12 @@ class ContratosControlador extends ControllerBase {
         );        
         
         if( $resp != 0 ){
+
+            require_once("controladores/contratos/TrazabilidadControlador.php");
+            $TrazabilidadControlador = new TrazabilidadControlador();      
+
+            $TrazabilidadControlador->insertarExterno($resp, "Registró un nuevo contrato");
+
             /*
             mkdir('archivos/uploads/contratos/'.$resp);
 

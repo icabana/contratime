@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal_supervisores" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal_trazabilidad" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,12 +9,12 @@
       </div>
       <div class="modal-body">
       <div class="col-md-12">
-          <label>Seleccionar Supervisor: </label>
-          <textarea cols="50" rows="5" id="bitacora_contrato" name="bitacora_contrato"></textarea>
+          <label>Registrar Nueva Bitacora: </label>
+          <textarea cols="60" rows="5" id="accion_trazabilidad" name="accion_trazabilidad"></textarea>
         </div>
       </div>
       <div class="modal-footer">        
-        <button onclick="agregar_supervisor();" type="button" class="btn btn-primary">Agregar</button>
+        <button onclick="agregar_trazabilidad();" type="button" class="btn btn-primary">Agregar</button>
       </div>
     </div>
   </div>

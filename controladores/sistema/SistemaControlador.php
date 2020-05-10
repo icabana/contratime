@@ -51,6 +51,7 @@ class SistemaControlador extends ControllerBase {
         $_SESSION['perfiles'] = $perfiles;
         $_SESSION['id_usuario'] = $datos_usuario['id_usuario'];
         $_SESSION['documento_usuario'] = $datos_usuario['documento_usuario'];
+        $_SESSION['correo_usuario'] = $datos_usuario['correo_usuario'];
 
         $Logs = new Logs();
         $Logs->insertarLog("SUCCESS", "Inicio de Sesión correcto.");        

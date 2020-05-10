@@ -37,7 +37,7 @@ function agregar_supervisor2() {
       'Supervisores',
       'insertar',
       "supervisor_supervisor="+$("#supervisor_supervisor").val()+'&contratos='+contratos,
-      'mensaje_alertas("success", "Supervisor Agregado Correctamente", "center"); seleccionar_check();'
+      'mensaje_alertas("success", "Supervisor Agregado Correctamente777", "center"); seleccionar_check();'
     );
 
 }

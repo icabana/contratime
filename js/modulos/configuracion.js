@@ -9,7 +9,6 @@ function cargar_usuarios(){
     limpiar_cuerpo();
     
     abrirVentanaContenedor(
-        'tabla_usuarios',
         'configuracion', 'Usuarios', 'index', '');    
         
 }
@@ -25,7 +24,6 @@ function cargar_roles(){
     limpiar_cuerpo();
     
     abrirVentanaContenedor(
-        'tabla_roles',
         'configuracion', 'Roles', 'index', '');    
         
 }
@@ -42,7 +40,6 @@ function cargar_parametros(){
     limpiar_cuerpo();
     
     abrirVentanaContenedor(
-        'tabla_parametros',
         'configuracion', 'Parametros', 'index', '');    
         
 }
