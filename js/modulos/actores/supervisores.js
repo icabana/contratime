@@ -8,9 +8,12 @@ function cargar_supervisores(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedorTabla(
-        'tabla_supervisores',
-        'actores', 'Supervisores', 'index', '');    
+    abrirVentanaContenedor(
+        'actores', 
+        'Supervisores', 
+        'index', 
+        ''
+    );    
         
 }
 

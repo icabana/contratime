@@ -8,8 +8,11 @@ function cargar_modalidades(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedorTabla(
-        'tabla_modalidades',
-        'administracion', 'Modalidades', 'index', '');    
+    abrirVentanaContenedor(
+        'administracion', 
+        'Modalidades', 
+        'index', 
+        ''
+    );    
         
 }

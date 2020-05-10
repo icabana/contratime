@@ -61,6 +61,14 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/editar.js'></script> 
   
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/editar.js'></script> 
+
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/editar_convocado.js'></script> 
+
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/supervisores/supervisores.js'></script> 
+  
   
 
 
@@ -157,11 +165,215 @@
       <!-- MENU LATERAL IZQUIERDO -->
       <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    
+    
+
+
+
+
+
+
       <?php
 
-          require_once("plantillas/basica/html/tmpl/menu.php");
+  // MENU DEL ROL ADMINISTRADOR
 
-      ?>
+    if($_SESSION['rol'] == 1){
+?>
+        
+
+<br>
+         <!-- MENU DE CONTRATOS --> 
+    <li class="nav-item has-treeview menu">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-folder-open"></i>
+        <p>
+          Contrataciones
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+
+
+
+      
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_contratos();" class="nav-link">
+            <i class="fas fa-archive nav-icon"></i>
+            <p>Contratos</p>
+          </a>
+        </li>
+
+
+
+  
+
+      </ul>
+    </li>
+
+
+
+
+
+
+    <br>
+         <!-- MENU DE ACTORES --> 
+    <li class="nav-item has-treeview menu">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-address-book"></i>
+        <p>
+          Actores
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+
+
+
+      
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_contratistas();" class="nav-link">
+            <i class="far fa-user nav-icon"></i>
+            <p>Contratistas</p>
+          </a>
+        </li>
+
+
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_supervisores();" class="nav-link">
+            <i class="nav-icon fas fa-user-secret"></i>
+            <p>Supervisores</p>
+          </a>
+        </li>
+
+  
+
+      </ul>
+    </li>
+
+
+
+
+
+
+
+    <br>
+    <!-- MENU DE ADMINISTRACIÓN --> 
+    <li class="nav-item has-treeview menu">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-warehouse"></i>
+        <p>
+          Administraci&oacute;n
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        
+        
+        <li class="nav-item">
+          <a href="#" onclick="cargar_modalidades();" class="nav-link">
+            <i class="far fa-file nav-icon"></i>
+            <p>Modalidades </p>
+          </a>
+        </li>
+        
+
+      
+        <li class="nav-item">
+          <a href="#" onclick="cargar_tipos();" class="nav-link">
+            <i class="far fa-file-alt nav-icon"></i>
+            <p>Tipos de Contrato</p>
+          </a>
+        </li>
+
+
+      </ul>
+    </li>
+    
+
+         
+
+
+
+
+
+    <br>
+    <!-- MENU DE CONFIGURACIÓN --> 
+    <li class="nav-item has-treeview menu">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-cog"></i>
+        <p>
+          Configuraci&oacute;n
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+
+
+
+      
+        <li class="nav-item">
+          <a href="#" onclick="cargar_usuarios();" class="nav-link">
+            <i class="far fa-user nav-icon"></i>
+            <p>Usuarios</p>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_roles();" class="nav-link">
+            <i class="fas fa-users nav-icon"></i>
+            <p>Roles</p>
+          </a>
+        </li>
+
+        
+        <li class="nav-item">
+          <a  href="#" onclick="cargar_parametros();" class="nav-link">
+            <i class="far fa-file nav-icon"></i>
+            <p>Parametros</p>
+            
+          </a>
+
+
+
+
+
+
+          
+        </li>
+
+
+      </ul>
+    </li>
+    
+
+         
+<br><br><br><br><br><br><br>
+
+
+
+
+      </ul>
+    </li>
+
+
+
+<
+
+
+
+  <?php
+    }
+  ?>             
+
+
 
 
 

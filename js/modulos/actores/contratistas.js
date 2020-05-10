@@ -8,9 +8,12 @@ function cargar_contratistas(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedorTabla(
-        'tabla_contratistas',
-        'actores', 'Contratistas', 'index', '');    
+    abrirVentanaContenedor(
+        'actores', 
+        'Contratistas', 
+        'index', 
+        ''
+    );    
         
 }
 

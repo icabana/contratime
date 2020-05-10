@@ -8,8 +8,11 @@ function cargar_contratos(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedorTabla(
-        'tabla_contratos',
-        'contratos', 'Contratos', 'index', '');    
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'index', 
+        ''
+    );    
         
 }

@@ -1,6 +1,7 @@
 <?php
 
 class ContratosModel extends ModelBase {
+
   
     function getTodos() {
         
@@ -10,10 +11,14 @@ class ContratosModel extends ModelBase {
                     contratos.tipo_contrato,
                     contratos.modalidad_contrato,
                     contratos.valor_contrato,
+                    contratos.valproceso_contrato,
                     contratos.contratista_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fcierreproceso_contrato,
+                    contratos.fadjudicacionproceso_contrato,
                     contratos.numero_contrato,
+                    contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
 
@@ -68,14 +73,14 @@ class ContratosModel extends ModelBase {
                     modalidades.id_modalidad, 
                     modalidades.nombre_modalidad,
 
-                    tiposcontrato.id_tipo, 
-                    tiposcontrato.nombre_tipo,
+                    tiposcontrato.id_tipocontrato, 
+                    tiposcontrato.nombre_tipocontrato,
 
                     estadoscontrato.id_estado, 
                     estadoscontrato.nombre_estado
                 
                     from contratos 
-                            left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipo
+                            left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipocontrato
                             left join modalidades ON contratos.modalidad_contrato = modalidades.id_modalidad
                             left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista  left join tipospersona on contratistas.tipo_contratista = tipospersona.id_tipopersona
                             left join tiposdocumento on contratistas.tipodocumento_contratista = tiposdocumento.id_tipodocumento
@@ -95,6 +100,7 @@ class ContratosModel extends ModelBase {
                
     }  
 
+
     function getDatos($id_contrato) {
        
         $query = "select 
@@ -103,10 +109,14 @@ class ContratosModel extends ModelBase {
         contratos.tipo_contrato,
         contratos.modalidad_contrato,
         contratos.valor_contrato,
+        contratos.valproceso_contrato,
         contratos.contratista_contrato,
         contratos.fechainicio_contrato,
         contratos.fechafinal_contrato,
+        contratos.fcierreproceso_contrato,
+        contratos.fadjudicacionproceso_contrato,
         contratos.numero_contrato,
+        contratos.numproceso_contrato,
         contratos.objeto_contrato,
         contratos.estado_contrato,
 
@@ -161,14 +171,14 @@ class ContratosModel extends ModelBase {
         modalidades.id_modalidad, 
         modalidades.nombre_modalidad,
 
-        tiposcontrato.id_tipo, 
-        tiposcontrato.nombre_tipo,
+        tiposcontrato.id_tipocontrato, 
+        tiposcontrato.nombre_tipocontrato,
 
         estadoscontrato.id_estado, 
         estadoscontrato.nombre_estado
     
         from contratos 
-                left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipo
+                left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipocontrato
                 left join modalidades ON contratos.modalidad_contrato = modalidades.id_modalidad
                 left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista  left join tipospersona on contratistas.tipo_contratista = tipospersona.id_tipopersona
                 left join tiposdocumento on contratistas.tipodocumento_contratista = tiposdocumento.id_tipodocumento
@@ -179,9 +189,9 @@ class ContratosModel extends ModelBase {
                 left join estadoscivil on contratistas.estadocivil_contratista = estadoscivil.id_estadocivil
                 left join profesiones on contratistas.profesion_contratista = profesiones.id_profesion
                 left join estados on contratistas.estado_contratista = estados.id_estado
-                left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado                    
-
-                    where contratos.id_contrato='".$id_contrato."'";
+                left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
+                
+                where contratos.id_contrato='".$id_contrato."'";
         
          $consulta = $this->consulta($query);
         return $consulta[0];    
@@ -190,47 +200,41 @@ class ContratosModel extends ModelBase {
     
 
     function insertar(      
-                    $id_contrato, 
-                    $tipo_contrato,
-                    $modalidad_contrato,
-                    $valor_contrato,
-                    $contratista_contrato,
-                    $fechainicio_contrato,
-                    $fechafinal_contrato,
-                    $numero_contrato,
-                    $objeto_contrato,
-                    $estado_contrato
-                    ){
+        $numproceso_contrato,
+        $valproceso_contrato,
+        $fadjudicacionproceso_contrato,
+        $fcierreproceso_contrato,
+        $modalidad_contrato,
+        $tipo_contrato,
+        $objeto_contrato
+    ){
                 
         $query = "INSERT INTO contratos (
-                        id_contrato, 
-                        tipo_contrato,
+                        numproceso_contrato,
+                        valproceso_contrato,
+                        fadjudicacionproceso_contrato,
+                        fcierreproceso_contrato,
                         modalidad_contrato,
-                        valor_contrato,
-                        contratista_contrato,
-                        fechainicio_contrato,
-                        fechafinal_contrato,
-                        numero_contrato,
+                        tipo_contrato,
                         objeto_contrato,
                         estado_contrato
                             )
-                            VALUES(
-                                '".$id_contrato."',
-                                '".$tipo_contrato."',
-                                '".$modalidad_contrato."',
-                                '".$valor_contrato."',
-                                '".$contratista_contrato."',
-                                '".$fechainicio_contrato."',
-                                '".$fechafinal_contrato."',
-                                '".$numero_contrato."',
-                                '".$objeto_contrato."',
-                                '".$estado_contrato."'
-                            );";
+                    VALUES(
+                        '".$numproceso_contrato."',
+                        '".$valproceso_contrato."',
+                        '".$fadjudicacionproceso_contrato."',
+                        '".$fcierreproceso_contrato."',
+                        '".$modalidad_contrato."',
+                        '".$tipo_contrato."',
+                        '".$objeto_contrato."',
+                        '1'
+                    );";
        
-       return $this->crear_ultimo_id($query);
+        return $this->crear_ultimo_id($query);
         
     }
     
+
     function editar(
                     $id_contrato, 
                     $tipo_contrato,
@@ -260,6 +264,16 @@ class ContratosModel extends ModelBase {
        
         return $this->modificarRegistros($query);
        
+    }
+
+    
+    
+    function eliminar($id_contrato) {
+        
+        $query = "DELETE FROM contratos WHERE id_contrato = '". $id_contrato ."'";    
+
+        $this->modificarRegistros($query);
+        
     }
 
 
