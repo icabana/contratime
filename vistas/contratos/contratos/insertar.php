@@ -28,7 +28,8 @@ $froms = new Formularios();
             <div class="col-md-3">
 
               <label>Valor del Proceso<span style="color:red">*</span></label>
-              <input type="text" class="form-control requerido" id="valproceso_contrato" name="valproceso_contrato" onkeypress="return no_numeros(event)" value="<?php echo $numproceso_contrato; ?>">
+              <input type="text" class="form-control requerido" id="valproceso_contrato" name="valproceso_contrato" 
+              onkeypress="return no_numeros(event)" value="<?php echo $numproceso_contrato; ?>">
 
             </div>
 

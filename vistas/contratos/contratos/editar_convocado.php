@@ -36,6 +36,12 @@ $froms = new Formularios();
               </a>
             </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
+                Trazabilidad
+              </a>
+            </li>
+
           </ul>
 
           <!--INICIO DE LAS TABS-->
@@ -106,7 +112,7 @@ $froms = new Formularios();
 
 
                 <div class="col-md-6">
-                  <label>Tipo de Contrataci&oacute;n <span style="color:red">*</span></label>
+                  <label>Tipo de Contrataci&oacute;n---<?php echo count($trazabilidad); ?> <span style="color:red">*</span></label>
 
                   <?php
                   echo $froms->Lista_Desplegable(
@@ -145,6 +151,14 @@ $froms = new Formularios();
 
               <?php
               include("vistas/contratos/supervisores/lista_supervisores.php");
+              ?>
+            </div>
+
+
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_3_trazabilidad">
+
+              <?php
+              include("vistas/contratos/trazabilidad/lista_trazabilidad.php");
               ?>
             </div>
 

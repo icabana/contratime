@@ -68,6 +68,7 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/editar_convocado.js'></script> 
 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/supervisores/supervisores.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/trazabilidad/trazabilidad.js'></script> 
   
   
 

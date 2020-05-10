@@ -45,6 +45,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("SupervisoresModel.php", "contratos");
         $SupervisoresModel = new SupervisoresModel();
         $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("TrazabilidadModel.php", "contratos");
+        $TrazabilidadModel = new TrazabilidadModel();
+        $trazabilidad = $TrazabilidadModel->getTodosxContrato($_POST['id_contrato']);
 
         include 'vistas/contratos/contratos/editar_convocado.php';
                
@@ -63,10 +67,14 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("SupervisoresModel.php", "contratos");
         $SupervisoresModel = new SupervisoresModel();
         $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("TrazabilidadModel.php", "contratos");
+        $TrazabilidadModel = new TrazabilidadModel();
+        $trazabilidad = $TrazabilidadModel->getTodosxContrato($_POST['id_contrato']);
 
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
-        $contrato = $ContratosModel->getDatos($_POST['id_contrato']);
+        $contrato = $ContratosModel->getDatos($_POST['id_contrato']);        
 
         include 'vistas/contratos/contratos/editar_convocado.php';
                
