@@ -1,3 +1,24 @@
+<div class="card-header">
+    <div class="box">
+        <div class="row">
+
+
+            <div class="col-md-10">
+            </div>
+            <div class="col-md-2">
+            <button title="Agregar Supervisor" 
+            data-toggle="modal" 
+            data-target="#modal_trazabilidad_editar" 
+            type="button" 
+            class="btn btn-success btn-sm">Nueva Bitacora</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
 <table id="tabla_trazabilidad" class="table table-bordered table-hover">
     <thead>
         <tr>

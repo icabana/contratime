@@ -237,28 +237,25 @@ class ContratosModel extends ModelBase {
 
     function editar(
                     $id_contrato, 
-                    $tipo_contrato,
+                    $numproceso_contrato,
+                    $valproceso_contrato,
+                    $fadjudicacionproceso_contrato,
+                    $fcierreproceso_contrato,
                     $modalidad_contrato,
-                    $valor_contrato,
-                    $contratista_contrato,
-                    $fechainicio_contrato,
-                    $fechafinal_contrato,
-                    $numero_contrato,
-                    $objeto_contrato,
-                    $estado_contrato
+                    $tipo_contrato,
+                    $objeto_contrato
                 ) {
         
         $query = "  UPDATE contratos 
 
-                    SET tipo_contrato = '". $tipo_contrato ."',
+                    SET numproceso_contrato = '". $numproceso_contrato ."',
+                        valproceso_contrato = '". $valproceso_contrato ."',
+                        fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
+                        fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
                         modalidad_contrato = '". $modalidad_contrato ."',
-                        valor_contrato = '". $valor_contrato ."',
-                        contratista_contrato = '". $contratista_contrato ."',
-                        fechainicio_contrato = '". $fechainicio_contrato ."',
-                        fechafinal_contrato = '". $fechafinal_contrato ."',
-                        numero_contrato = '". $numero_contrato ."',
+                        tipo_contrato = '". $tipo_contrato ."',
                         objeto_contrato = '". $objeto_contrato ."',
-                        estado_contrato = '". $estado_contrato ."'
+                        objeto_contrato = '". $objeto_contrato ."'
 
                     WHERE id_contrato = '" . $id_contrato . "'";
        

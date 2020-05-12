@@ -45,6 +45,24 @@ function agregar_cdp2() {
 
 }
 
+
+function agregar_cdp_editar() {
+
+    $('#modal_cdps').modal('hide');
+  
+    ejecutarAccion(
+      'contratos',
+      'Cdps',
+      'insertarEditar',
+      "numero_cdp="+$("#numero_cdp").val()+
+      "&fecha_cdp="+$("#fecha_cdp").val()+
+      "&valor_cdp="+$("#valor_cdp").val()+
+      '&id_contrato='+$("#id_contrato").val(),
+      '$("#tab_4_cdps").html(data);  mensaje_alertas("success", "CDP Agregado Correctamente", "center");'
+    );
+
+}
+
 function eliminar_cdp_contrato(id_cdp, id_contrato) {
 
     mensaje_confirmar("¿Está seguro de eliminar el CDP asociado a este contrato?", "eliminar_cdp_contrato2(" + id_cdp + ", " + id_contrato + "); ");

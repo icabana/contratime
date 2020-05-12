@@ -27,6 +27,24 @@ class TrazabilidadControlador extends ControllerBase {
     }
 
     
+    public function insertarEditar() {
+        
+        $this->model->cargar("TrazabilidadModel.php", "contratos");
+        $TrazabilidadModel = new TrazabilidadModel();  
+
+        $TrazabilidadModel->insertar(
+            $_POST["accion_trazabilidad"],
+            $_POST['id_contrato'],
+            $_SESSION['id_usuario']
+        ); 
+
+        $trazabilidad = $TrazabilidadModel->getTodosxContrato($_POST['id_contrato']);
+
+        include("vistas/contratos/trazabilidad/lista_trazabilidad.php");
+           
+    }
+
+    
     public function insertarExterno($contratos, $accion) {
         
         $this->model->cargar("TrazabilidadModel.php", "contratos");
@@ -60,8 +78,7 @@ class TrazabilidadControlador extends ControllerBase {
         
         $trazabilidad = $TrazabilidadModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/trazabilidad/lista_trazabilidad.php");
-             
+        include("vistas/contratos/trazabilidad/lista_trazabilidad.php");             
         
     }
 

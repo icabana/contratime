@@ -43,6 +43,30 @@ $froms = new Formularios();
             </li>
 
             <li class="nav-item">
+              <a class="nav-link" href="#tab_5_rps" data-toggle="tab">
+                Rps
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_6_pagos" data-toggle="tab">
+                Pagos
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_7_ajustes" data-toggle="tab">
+                Ajustes 
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_8_prorrogas" data-toggle="tab">
+                Prorrogas
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
                 Trazabilidad
               </a>
@@ -167,6 +191,40 @@ $froms = new Formularios();
               ?>
             </div>
 
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_5_rps">
+
+              <?php
+              include("vistas/contratos/rps/lista_rps.php");
+              ?>
+            </div>
+
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_6_pagos">
+
+              <?php
+              include("vistas/contratos/pagos/lista_pagos.php");
+              ?>
+
+            </div>
+
+            
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_7_ajustes">
+
+              <?php
+              include("vistas/contratos/ajustes/lista_ajustes.php");
+              ?>
+
+            </div>
+
+            
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_8_prorrogas">
+
+              <?php
+              include("vistas/contratos/prorrogas/lista_prorrogas.php");
+              ?>
+
+            </div>
+
+
 
             <div style="padding: 20px; height:350px" class="tab-pane" id="tab_3_trazabilidad">
 
@@ -198,3 +256,41 @@ $froms = new Formularios();
     </div>
 
 </form>
+
+
+
+
+<!-- Modal Supervisores-->
+<?php
+  include("vistas/contratos/supervisores/modal_supervisores_editar.php");
+?>
+
+<!-- Modal Trazabilidad-->
+<?php
+  include("vistas/contratos/trazabilidad/modal_trazabilidad_editar.php");
+?>
+
+<!-- Modal Cdps-->
+<?php
+  include("vistas/contratos/cdps/modal_cdps_editar.php");
+?>
+
+<!-- Modal Rps-->
+<?php
+  include("vistas/contratos/rps/modal_rps_editar.php");
+?>
+
+<!-- Modal Pagos-->
+<?php
+  include("vistas/contratos/pagos/modal_pagos_editar.php");
+?>
+
+<!-- Modal Ajustes de Presupuesto-->
+<?php
+  include("vistas/contratos/ajustes/modal_ajustes_editar.php");
+?>
+
+<!-- Modal Prorrogas-->
+<?php
+  include("vistas/contratos/prorrogas/modal_prorrogas_editar.php");
+?>

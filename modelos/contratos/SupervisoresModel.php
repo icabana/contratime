@@ -56,9 +56,9 @@ class SupervisoresContratosModel extends ModelBase {
                     paises.nombre_pais
                 
                     from contratos_supervisores 
-                            inner join contratos ON contratos_supervisores.contrato_supervisor = contratos.id_contrato
-                            inner join supervisores ON contratos_supervisores.supervisor_supervisor = supervisores.id_supervisor
-                            inner join paises on supervisores.pais_supervisor = paises.id_pais";
+                            left join contratos ON contratos_supervisores.contrato_supervisor = contratos.id_contrato
+                            left join supervisores ON contratos_supervisores.supervisor_supervisor = supervisores.id_supervisor
+                            left join paises on supervisores.pais_supervisor = paises.id_pais";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -118,9 +118,9 @@ class SupervisoresContratosModel extends ModelBase {
                     paises.nombre_pais
                 
                     from contratos_supervisores 
-                            inner join contratos ON contratos_supervisores.contrato_supervisor = contratos.id_contrato
-                            inner join supervisores ON contratos_supervisores.supervisor_supervisor = supervisores.id_supervisor
-                            inner join paises on supervisores.pais_supervisor = paises.id_pais       
+                            left join contratos ON contratos_supervisores.contrato_supervisor = contratos.id_contrato
+                            left join supervisores ON contratos_supervisores.supervisor_supervisor = supervisores.id_supervisor
+                            left join paises on supervisores.pais_supervisor = paises.id_pais       
 
                     
                     where contratos_supervisores.contrato_supervisor='".$contrato_supervisor."'";
@@ -181,8 +181,8 @@ class SupervisoresContratosModel extends ModelBase {
                     supervisores.profesion_supervisor
                 
                     from contratos_supervisores 
-                            inner join contratos ON contratos_supervisores.contrato_supervisor = contratos.id_contrato
-                            inner join supervisores ON contratos_supervisores.supervisor_supervisor = supervisores.id_supervisor
+                            left join contratos ON contratos_supervisores.contrato_supervisor = contratos.id_contrato
+                            left join supervisores ON contratos_supervisores.supervisor_supervisor = supervisores.id_supervisor
                     
                     where contratos_supervisores.id_supervisor='".$id_supervisor."'";
         

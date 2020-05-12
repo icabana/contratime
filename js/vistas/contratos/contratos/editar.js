@@ -1,33 +1,26 @@
-function editar_info_contratista() {
+function editar_contrato() {
 
   if(!validar_requeridos()){
       return 0;
   }
   
-  var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
-
-  if (!regex.test($('#correo_contratista').val().trim()) && $('#correo_contratista').val() != "") {    
-      mensaje_alertas("error", "El correo registrado no tiene un formato correcto.", "center");
-      return false;
-  }
-
-  var datos = $('#formContratistas').serialize();
+  var datos = $('#formContratos').serialize();
 
   ejecutarAccion(
-    'actores',
-    'Contratistas',
+    'contratos',
+    'Contratos',
     'guardar',
     datos,
-    'editar_contratista2(data)'
+    'editar_contrato2(data)'
   );
 
 }
 
-function editar_contratista2(data) {
+function editar_contrato2(data) {
 
   if (data == 1) {
-    mensaje_alertas("success", "Contratista Editado Exitosamente", "center");
-    cargar_contratistas();
+    mensaje_alertas("success", "Contrato Editado Exitosamente", "center");
+    cargar_contratos();
   } else {
     mensaje_alertas("error", "El Documento o Correo ya se encuentra registrado", "center");
   }

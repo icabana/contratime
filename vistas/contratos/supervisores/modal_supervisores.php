@@ -12,7 +12,7 @@
           <label>Seleccionar Supervisor: </label>
           <?php
             echo $froms->Lista_Desplegable(
-              $supervisores,
+              $supervisores_select,
               'nombre_supervisor',
               'id_supervisor',
               'supervisor_supervisor',

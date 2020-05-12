@@ -68,7 +68,7 @@
 }
 
 .small-box p {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .small-box p > small {
@@ -298,13 +298,13 @@
   .col-xl-2 .info-box .progress-description,
   .col-lg-2 .info-box .progress-description,
   .col-md-2 .info-box .progress-description {
-    font-size: 1rem;
+    font-size: 0.8rem;
     display: block;
   }
   .col-xl-3 .info-box .progress-description,
   .col-lg-3 .info-box .progress-description,
   .col-md-3 .info-box .progress-description {
-    font-size: 1rem;
+    font-size: 0.8rem;
     display: block;
   }
 }

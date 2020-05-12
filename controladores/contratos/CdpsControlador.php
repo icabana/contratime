@@ -31,7 +31,25 @@ class CdpsControlador extends ControllerBase {
         }   
         
     }
-    
+      
+    public function insertarEditar() {
+        
+        $this->model->cargar("CdpsModel.php", "contratos");
+        $CdpsModel = new CdpsContratosModel();  
+                        
+        $CdpsModel->insertar(
+            $_POST['id_contrato'],
+            $_POST["numero_cdp"],
+            $_POST["fecha_cdp"],
+            $_POST["valor_cdp"]
+        );               
+        
+        $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
+
+        include("vistas/contratos/cdps/lista_cdps.php");
+
+        
+    }
    
     public function eliminar() {
         

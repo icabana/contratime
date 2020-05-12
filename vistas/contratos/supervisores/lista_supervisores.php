@@ -1,3 +1,23 @@
+<div class="card-header">
+    <div class="box">
+        <div class="row">
+
+
+            <div class="col-md-10">
+            </div>
+            <div class="col-md-2">
+            <button title="Agregar Supervisor" 
+            data-toggle="modal" 
+            data-target="#modal_supervisores_editar" 
+            type="button" 
+            class="btn btn-success btn-sm">Nuevo Supervisor</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
 <table id="tabla_supervisores" class="table table-bordered table-hover">
     <thead>
         <tr>

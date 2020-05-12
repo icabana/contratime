@@ -37,10 +37,25 @@ function agregar_supervisor2() {
       'Supervisores',
       'insertar',
       "supervisor_supervisor="+$("#supervisor_supervisor").val()+'&contratos='+contratos,
-      'mensaje_alertas("success", "Supervisor Agregado Correctamente777", "center"); seleccionar_check();'
+      'mensaje_alertas("success", "Supervisor Agregado Correctamente", "center"); seleccionar_check();'
     );
 
 }
+
+function agregar_supervisor_editar() {
+
+    $('#modal_supervisores').modal('hide');
+    
+    ejecutarAccion(
+      'contratos',
+      'Supervisores',
+      'insertarEditar',
+      "supervisor_supervisor="+$("#supervisor_supervisor").val()+'&id_contrato='+$("#id_contrato").val(),
+      '$("#tab_2_supervisores").html(data);  mensaje_alertas("success", "Supervisor Agregado Correctamente", "center"); '
+    );
+
+}
+
 
 function eliminar_supervisor_contrato(id_supervisor, id_contrato) {
 

@@ -66,6 +66,10 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/supervisores/supervisores.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/trazabilidad/trazabilidad.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/cdps/cdps.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/rps/rps.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/pagos/pagos.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/ajustes/ajustes.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/prorrogas/prorrogas.js'></script> 
   
   
 

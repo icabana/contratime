@@ -44,7 +44,7 @@ $bootstrap-alert-padding-x: 1.25rem !default;
 $bootstrap-alert-margin-bottom: 1rem !default;
 $bootstrap-alert-border-radius: .25rem !default;
 $bootstrap-alert-border-width: 1px !default;
-$bootstrap-alert-font-size: 1rem !default;
+$bootstrap-alert-font-size: 0.8rem !default;
 
 // Input
 $bootstrap-input-color: $bootstrap-gray-700 !default;
@@ -156,7 +156,7 @@ $swal2-input-border: $bootstrap-input-border-width solid $bootstrap-input-border
 $swal2-input-border-radius: $bootstrap-input-border-radius;
 $swal2-input-border-focus: none;
 $swal2-input-box-shadow-focus: none;
-$swal2-input-font-size: 1rem;
+$swal2-input-font-size: 0.8rem;
 $swal2-input-padding: $bootstrap-input-padding-y $bootstrap-input-padding-x;
 
 // CLOSE BUTTON
@@ -285,7 +285,7 @@ $swal2-toast-buttons-font-size: $bootstrap-toast-font-size;
   &.swal2-confirm {
     padding: $swal2-input-padding;
     border: 1px solid $bootstrap-primary;
-    font-size: 1rem;
+    font-size: 0.8rem;
 
     &:hover {
       border-color: darken($bootstrap-primary, 10%);
@@ -310,7 +310,7 @@ $swal2-toast-buttons-font-size: $bootstrap-toast-font-size;
   &.swal2-cancel {
     padding: $swal2-input-padding;
     border: 1px solid $bootstrap-secondary;
-    font-size: 1rem;
+    font-size: 0.8rem;
 
     &:hover {
       border-color: darken($bootstrap-secondary, 10%);

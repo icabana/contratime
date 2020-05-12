@@ -50,6 +50,10 @@ $froms = new Formularios();
             <button title="Agregar Supervisor" data-toggle="modal" data-target="#modal_supervisores" type="button" class="btn btn-default btn-sm"><i class="fas fa-user"></i></button>
             <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
             <button title="Agregar CDP" data-toggle="modal" data-target="#modal_cdps" type="button" class="btn btn-default btn-sm"><i class="fas fa-money-bill"></i></button>
+            <button title="Agregar RP" data-toggle="modal" data-target="#modal_rps" type="button" class="btn btn-default btn-sm"><i class="fas fa-cash-register"></i></button>
+            <button title="Agregar Pago" data-toggle="modal" data-target="#modal_pagos" type="button" class="btn btn-default btn-sm"><i class="fas fa-comment-dollar"></i></button>
+            <button title="Ajustar Presupuesto" data-toggle="modal" data-target="#modal_ajustes" type="button" class="btn btn-default btn-sm"><i class="fas fa-coins"></i></button>
+            <button title="Agregar Prorroga" data-toggle="modal" data-target="#modal_prorrogas" type="button" class="btn btn-default btn-sm"><i class="fas fa-calendar-plus"></i></button>
           </div>
 
           <button title="Actualizar Lista de Radicados" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
@@ -135,7 +139,7 @@ $froms = new Formularios();
                   </td>
 
                   <td class="mailbox-subject">
-                    <?php echo substr($contrato['objeto_contrato'], 0, 35) . "..."; ?>
+                    <?php echo substr($contrato['objeto_contrato'], 0, 90) . "..."; ?>
                   </td>
 
                   <td class="mailbox-subject">
@@ -186,4 +190,24 @@ $froms = new Formularios();
 <!-- Modal Cdps-->
 <?php
   include("vistas/contratos/cdps/modal_cdps.php");
+?>
+
+<!-- Modal Rps-->
+<?php
+  include("vistas/contratos/rps/modal_rps.php");
+?>
+
+<!-- Modal Pagos-->
+<?php
+  include("vistas/contratos/pagos/modal_pagos.php");
+?>
+
+<!-- Modal Ajustes de Presupuesto-->
+<?php
+  include("vistas/contratos/ajustes/modal_ajustes.php");
+?>
+
+<!-- Modal Prorrogas-->
+<?php
+  include("vistas/contratos/prorrogas/modal_prorrogas.php");
 ?>
