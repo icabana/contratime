@@ -1,3 +1,63 @@
+<script>
+
+function ismael(id_cdp){
+   $("#id_cdp").val(id_cdp);
+}
+
+function upload_cdps(){//Funcion encargada de enviar el archivo via AJAX
+
+$(".upload-msg").text('Cargando...');
+    var inputFileImage = document.getElementById("fileToUploadCdps");
+    var file = inputFileImage.files[0];
+    var data = new FormData();
+    data.append('fileToUploadCdps',file);
+    
+    data.append('id_cdp', $("#id_cdp").val());
+    
+    console.log(data);
+          
+    $.ajax({
+      url: "libs/uploads/upload_cdps.php",        // Url to which the request is send
+      type: "POST",             // Type of request to be send, called as method
+      data: data, 			  // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+      contentType: false,       // The content type used when sending data to the server.
+      cache: false,             // To unable request pages to be cached
+      processData:false,        // To send DOMDocument or non processed data file it is set to false
+      success: function(data)   // A function to be called if request succeeds
+      {
+        $(".upload-msg").html(data);
+        actualizar_documentos_entrante();
+        $('#exampleModal4_editar_entrante').modal('hide');
+      $('#fileToUploadCdps').val('');
+        window.setTimeout(function() {
+        $(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+        });	}, 2000);
+      }
+    });
+    
+  }
+
+  
+
+  function eliminar_documento_cdp(archivo_cdp) {
+
+    var opcion = confirm("¿Está seguro de eliminar este archivo?");
+    if (opcion != true) return 0;
+
+    ejecutarAccion(
+      'contratos',
+      'Cdps',
+      'eliminarDocumento',
+      'archivo_cdp=' + archivo_cdp+'&id_contrato=' + $("#id_contrato").val(),
+      '$("#tab_4_cdps").html(data);  mensaje_alertas("success", "Documento Eliminado Correctamente", "center");'
+
+);
+  }
+
+
+</script>
+
 <?php
 $froms = new Formularios();
 ?>
@@ -273,6 +333,11 @@ $froms = new Formularios();
 <!-- Modal Cdps-->
 <?php
   include("vistas/contratos/cdps/modal_cdps_editar.php");
+?>
+
+<!-- Modal Documentos Cdps-->
+<?php
+  include("vistas/contratos/cdps/modal_documentos.php");
 ?>
 
 <!-- Modal Rps-->
