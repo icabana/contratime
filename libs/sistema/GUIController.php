@@ -10,7 +10,6 @@ class GUIController
     {
 
         session_start();
-        session_name("SINAP");
 
         //SE CARGAN LIBRERIAS DE UTILIDADES        
         require 'libs/utilidades/SistemaArchivos.php';

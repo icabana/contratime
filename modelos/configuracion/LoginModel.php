@@ -27,7 +27,7 @@ class LoginModel extends ModelBase {
                     from usuarios
         
                     WHERE   documento_usuario = '". $documento_usuario . "' AND 
-                            usuarios.password_usuario = '" . md5 ($password_usuario) . "'";
+                            usuarios.password_usuario = '" . $password_usuario . "'";
 
         $consulta = $this->consulta($query);
            
@@ -46,7 +46,7 @@ class LoginModel extends ModelBase {
                     from usuarios
         
                     WHERE   documento_usuario = '". $documento_usuario . "' AND 
-                            usuarios.estado_usuario = 'A'";
+                            usuarios.estado_usuario = '1'";
 
         $consulta = $this->consulta($query);
            
