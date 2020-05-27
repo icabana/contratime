@@ -48,12 +48,12 @@ function agregar_rp2() {
 
 function agregar_rp_editar() {
 
-    $('#modal_rps').modal('hide');
+    $('#modal_rps_editar').modal('hide');
     
     ejecutarAccion(
       'contratos',
       'Rps',
-      'insertar',
+      'insertarEditar',
       "numero_rp="+$("#numero_rp").val()+
       "&fecha_rp="+$("#fecha_rp").val()+
       "&valor_rp="+$("#valor_rp").val()+

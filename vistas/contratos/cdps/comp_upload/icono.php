@@ -33,15 +33,15 @@ if ($num_archivos >  0) {
             $nombre_archivo = $archivo;
             $ruta_archivo = $path . $nombre_archivo;
 
-            $icono_archivo = '<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/pdf.png">';
+            $icono_archivo = '<img width="30px" height="30px" src="vistas/contratos/cdps/comp_upload/imagenes/pdf.png">';
             if ($extension == "pdf") {
-                $icono_archivo = '<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/pdf.png">';
+                $icono_archivo = '<img width="30px" height="30px" src="vistas/contratos/cdps/comp_upload/imagenes/pdf.png">';
             }
             if ($extension == "doc" || $extension == "docx") {
-                $icono_archivo = '<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/word.png">';
+                $icono_archivo = '<img width="30px" height="30px" src="vistas/contratos/cdps/comp_upload/imagenes/word.png">';
             }
             if ($extension == "xls" || $extension == "xlsx") {
-                $icono_archivo = '<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/excel.png"';
+                $icono_archivo = '<img width="30px" height="30px" src="vistas/contratos/cdps/comp_upload/imagenes/excel.png"';
             }
 
             $documento_cdp .= '  
@@ -58,7 +58,7 @@ if ($num_archivos >  0) {
     $id_cdp = $cdp['id_cdp'];
     $contrato_cdp = $cdp['contrato_cdp'];
 
-    $icono_archivo ='<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/nuevo.png">';
+    $icono_archivo ='<img width="30px" height="30px" src="vistas/contratos/cdps/comp_upload/imagenes/nuevo.png">';
 
     $documento_cdp .= '<a href="#" onclick="cdp_seleccionado('.$id_cdp.', '.$contrato_cdp.');"  data-toggle="modal" data-target="#modal_documentos_cdp" >' . $icono_archivo . '</a>';
 

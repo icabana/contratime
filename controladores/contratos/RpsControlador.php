@@ -64,5 +64,33 @@ class RpsControlador extends ControllerBase {
         
     }
 
+    
+    public function eliminarDocumento() {
+        
+        unlink($_POST['archivo']);
+
+        $this->model->cargar("RpsModel.php", "contratos");
+        $RpsModel = new RpsContratosModel();  
+        
+        $rps = $RpsModel->getTodosxContrato($_POST['id_contrato']);
+
+        include("vistas/contratos/rps/lista_rps.php");             
+        
+    }
+
+    public function actualizarDocumento() {
+        
+        $this->model->cargar("RpsModel.php", "contratos");
+        $RpsModel = new RpsContratosModel();  
+        
+        $rps = $RpsModel->getTodosxContrato($_POST['id_contrato']);
+
+        include("vistas/contratos/rps/lista_rps.php");             
+        
+    }
+
+           
+    
+
              
  }

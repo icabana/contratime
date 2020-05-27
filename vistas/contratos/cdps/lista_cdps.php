@@ -20,7 +20,7 @@
 <table id="tabla_supervisores" class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th style='background-color:lavender'>Documento</th>
+            <th style='background-color:lavender; width:15px'>Documento</th>
             <th width='30%' style='background-color:lavender'>No. de CDP</th>
             <th width='30%' style='background-color:lavender'>Fecha del CDP</th>
             <th width='30%' style='background-color:lavender'>Valor del Cdp</th>

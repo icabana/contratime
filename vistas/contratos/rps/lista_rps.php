@@ -1,3 +1,7 @@
+<?php
+    include("vistas/contratos/rps/comp_upload/modal.php");
+?>
+
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -22,6 +26,7 @@
 <table id="tabla_supervisores" class="table table-bordered table-hover">
     <thead>
         <tr>
+            <th style='background-color:lavender; width:15px'>Documento</th>
             <th style='background-color:lavender'>No. de RP</th>
             <th style='background-color:lavender'>Fecha del RP</th>
             <th style='background-color:lavender'>Valor del RP</th>
@@ -33,6 +38,10 @@
     foreach ($rps as $rp) {
 
         echo "<tr>";
+        
+        include("vistas/contratos/rps/comp_upload/icono.php");
+
+        echo "<td><center> " . $documento_rp . "</center></td>";
 
         echo "<td>".$rp['numero_rp'] . "</td>";
 
@@ -49,3 +58,6 @@
     </tbody>
 
 </table>
+
+
+<script language="JavaScript" type='text/javascript' src='vistas/contratos/rps/comp_upload/upload.js'></script> 

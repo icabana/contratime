@@ -46,7 +46,7 @@ function agregar_pago2() {
 
 function agregar_pago_editar() {
 
-    $('#modal_pagos').modal('hide');    
+    $('#modal_pagos_editar').modal('hide');    
 
     ejecutarAccion(
       'contratos',

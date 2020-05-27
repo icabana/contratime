@@ -46,16 +46,16 @@ function agregar_prorroga2() {
 
 function agregar_prorroga_editar() {
 
-    $('#modal_prorrogas').modal('hide');    
+    $('#modal_prorrogas_editar').modal('hide');    
 
     ejecutarAccion(
-    'contratos',
-    'Prorrogas',
-    'insertarEditar',
-    "meses_prorroga="+$("#meses_prorroga").val()+
-    "&dias_prorroga="+$("#dias_prorroga").val()+
-    '&id_contrato='+$("#id_contrato").val(),
-    '$("#tab_8_prorrogas").html(data);  mensaje_alertas("success", "Prorroga Agregada Correctamente", "center");'
+        'contratos',
+        'Prorrogas',
+        'insertarEditar',
+        "meses_prorroga="+$("#meses_prorroga").val()+
+        "&dias_prorroga="+$("#dias_prorroga").val()+
+        '&id_contrato='+$("#id_contrato").val(),
+        '$("#tab_8_prorrogas").html(data);  mensaje_alertas("success", "Prorroga Agregada Correctamente", "center");'
     );
 
 }

@@ -44,7 +44,7 @@ function agregar_supervisor2() {
 
 function agregar_supervisor_editar() {
 
-    $('#modal_supervisores').modal('hide');
+    $('#modal_supervisores_editar').modal('hide');
     
     ejecutarAccion(
       'contratos',

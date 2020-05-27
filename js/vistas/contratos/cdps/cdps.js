@@ -48,7 +48,7 @@ function agregar_cdp2() {
 
 function agregar_cdp_editar() {
 
-    $('#modal_cdps').modal('hide');
+    $('#modal_cdps_editar').modal('hide');
   
     ejecutarAccion(
       'contratos',

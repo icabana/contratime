@@ -1,19 +1,19 @@
 <?php
 
-if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUploadCdps"]["type"])){
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUploadRps"]["type"])){
 
-	$target_dir = "../../../../archivos/uploads/cdps/".$_POST['id_cdp_upload']."/";
+	$target_dir = "../../../../archivos/uploads/rps/".$_POST['id_rp_upload']."/";
 	$carpeta=$target_dir;
 	if (!file_exists($carpeta)) {
 		mkdir($carpeta, 0777, true);
 	}
 
-	$target_file = $carpeta . basename($_FILES["fileToUploadCdps"]["name"]);
+	$target_file = $carpeta . basename($_FILES["fileToUploadRps"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 	if(isset($_POST["submit"])) {
-		$check = getimagesize($_FILES["fileToUploadCdps"]["tmp_name"]);
+		$check = getimagesize($_FILES["fileToUploadRps"]["tmp_name"]);
 		if($check !== false) {
 			$errors[]= "El archivo es una imagen - " . $check["mime"] . ".";
 			$uploadOk = 1;
@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUploadCdps"]["ty
 		$uploadOk = 0;
 	}
 	// Check file size
-	if ($_FILES["fileToUploadCdps"]["size"] > 50000000) {
+	if ($_FILES["fileToUploadRps"]["size"] > 50000000) {
 		$errors[]= "Lo sentimos, el archivo es demasiado grande.  Tamaño máximo admitido: 30 MB";
 		$uploadOk = 0;
 	}
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUploadCdps"]["ty
 		$errors[]= "Lo sentimos, tu archivo no fue subido.";
 	// if everything is ok, try to upload file
 	} else {
-		if (move_uploaded_file($_FILES["fileToUploadCdps"]["tmp_name"], $target_file)) {
+		if (move_uploaded_file($_FILES["fileToUploadRps"]["tmp_name"], $target_file)) {
 		
 		$messages[]= "El Archivo ha sido subido correctamente.";
 			

@@ -46,7 +46,7 @@ function agregar_ajuste2() {
 
 function agregar_ajuste_editar() {
 
-    $('#modal_ajustes').modal('hide');    
+    $('#modal_ajustes_editar').modal('hide');    
 
     ejecutarAccion(
       'contratos',

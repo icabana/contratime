@@ -44,7 +44,7 @@ function agregar_trazabilidad2() {
 
 function agregar_trazabilidad_editar() {
 
-    $('#modal_trazabilidad').modal('hide');
+    $('#modal_trazabilidad_editar').modal('hide');
     
     ejecutarAccion(
       'contratos',
