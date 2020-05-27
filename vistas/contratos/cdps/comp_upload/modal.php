@@ -1,3 +1,5 @@
+<script src="upload.js"></script>
+
 <div class="modal fade" id="modal_documentos_cdp" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -17,8 +19,8 @@
               <div class="form-group">
               <label for="exampleInputFile">Subir archivo</label>
                 <input type="file"  id="fileToUploadCdps" onchange="upload_cdps();">
-                <input type="text"  id="id_cdp_upload" name="id_cdp_upload">
-                <input type="text"  id="contrato_cdp_upload" name="contrato_cdp_upload">
+                <input type="hidden"  id="id_cdp_upload" name="id_cdp_upload">
+                <input type="hidden"  id="contrato_cdp_upload" name="contrato_cdp_upload">
               </div>
               <div class="upload-msg"></div>
         

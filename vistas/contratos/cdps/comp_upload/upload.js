@@ -1,6 +1,8 @@
 function upload_cdps(){
-
-    $(".upload-msg").text('Cargando...');
+ 
+    $('#modal_documentos_cdp').modal('hide');
+    $('.modal-backdrop ').hide();
+  
     var inputFileImage = document.getElementById("fileToUploadCdps");
     var file = inputFileImage.files[0];
     var data = new FormData();
@@ -19,17 +21,12 @@ function upload_cdps(){
         processData:false,        
         success: function(data)   
         {
-            $(".upload-msg").html(data);
-            $('#modal_documentos_cdp').modal('hide');
-            $('#fileToUploadCdps').val('');
+           
             actualizar_lista_cdps(contrato_cdp);
-            window.setTimeout(function() {
-            $(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
-            $(this).remove();
-            });	}, 2000);
+          
         }
     });
-            
+          
 }
 
 function cdp_seleccionado (id_cdp, contrato_cdp){
@@ -39,11 +36,13 @@ function cdp_seleccionado (id_cdp, contrato_cdp){
             
 }
 
-
 function eliminar_documento_cdp(archivo, id_contrato) {
 
-    var opcion = confirm("¿Está seguro de eliminar este archivo?");
-    if (opcion != true) return 0;
+    mensaje_confirmar("¿Está seguro de eliminar este archivo?", "eliminar_documento_cdp2('" + archivo + "', " + id_contrato + "); ");
+  
+}
+
+function eliminar_documento_cdp2(archivo, id_contrato) {
 
     ejecutarAccion(
       'contratos',
@@ -56,11 +55,9 @@ function eliminar_documento_cdp(archivo, id_contrato) {
 
 }
 
-
-
 function actualizar_lista_cdps(contrato_cdp) {
 
-    ejecutarAccion(
+    ejecutarAccionSinAlert(
       'contratos',
       'Cdps',
       'actualizarDocumento',
