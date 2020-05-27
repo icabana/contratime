@@ -1,4 +1,4 @@
-function cargar_modalidades(){
+function cargar_tiposcontrato(){
 
     $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
     $('.ui-widget').remove();
@@ -9,9 +9,9 @@ function cargar_modalidades(){
     limpiar_cuerpo();
     
     abrirVentanaContenedorTabla(
-        'tabla_modalidades', 
+        'tabla_tiposcontrato', 
         'administracion', 
-        'Modalidades', 
+        'tiposcontrato', 
         'index', 
         ''
     );    

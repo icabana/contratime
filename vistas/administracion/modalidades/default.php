@@ -38,11 +38,12 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
+                <table id="tabla_modalidades" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th style='background-color:lavender'>Modalidad de Contrataci&oacute;n</th>
-                            <th style='background-color:lavender' colspan="2"></th>
+                            <th style='background-color:lavender'></th>
+                            <th style='background-color:lavender'></th>
                         </tr>
                     </thead>
                     <tbody>

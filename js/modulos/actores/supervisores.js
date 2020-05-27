@@ -8,7 +8,8 @@ function cargar_supervisores(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedor(
+    abrirVentanaContenedorTabla(
+        'tabla_supervisores', 
         'actores', 
         'Supervisores', 
         'index', 

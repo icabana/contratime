@@ -31,6 +31,47 @@ class TiposcontratoModel extends ModelBase {
     }
 
     
+    function insertar(                               
+        $nombre_tipocontrato
+    ){
+
+        $query = "INSERT INTO tiposcontrato (
+                nombre_tipocontrato
+            )
+            VALUES(
+                '".$nombre_tipocontrato."'
+            );";
+
+        return $this->crear_ultimo_id($query);       
+
+        }
+
+        function editar(
+            $id_tipocontrato, 
+            $nombre_tipocontrato
+        ) {
+
+        $query = "  UPDATE tiposcontrato 
+
+            SET nombre_tipocontrato = '". $nombre_tipocontrato ."'
+
+            WHERE id_tipocontrato = '" . $id_tipocontrato . "'";       
+
+        return $this->modificarRegistros($query);
+
+        }
+
+        function eliminar($id_tipocontrato) {
+
+        $query = "DELETE 
+            FROM tiposcontrato 
+            WHERE id_tipocontrato = '". $id_tipocontrato ."'";
+
+        $this->modificarRegistros($query);
+
+        }
+
+    
 }
 
 ?>

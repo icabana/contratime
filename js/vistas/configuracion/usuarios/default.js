@@ -1,46 +1,46 @@
-function nuevo_modalidad() {
+function nuevo_usuario() {
 
     abrirVentanaContenedor(
-        'administracion', 'Modalidades', 'nuevo', '', ''
+        'administracion', 'Usuarios', 'nuevo', '', ''
     );
 
 }
 
-function editar_modalidad(id_modalidad) {
+function editar_usuario(id_usuario) {
 
     abrirVentanaContenedor(
         'administracion',
-        'Modalidades',
+        'Usuarios',
         'editar',
-        'id_modalidad=' + id_modalidad,
+        'id_usuario=' + id_usuario,
         ''
     );
 
 }
 
-function eliminar_modalidad(id_modalidad) {
+function eliminar_usuario(id_usuario) {
 
-    mensaje_confirmar("¿Está seguro de eliminar el modalidad?", "eliminar_modalidad2(" + id_modalidad + "); ");
+    mensaje_confirmar("¿Está seguro de eliminar el usuario?", "eliminar_usuario2(" + id_usuario + "); ");
 
 }
 
-function eliminar_modalidad2(id_modalidad) {
+function eliminar_usuario2(id_usuario) {
 
     ejecutarAccion(
         'administracion',
-        'Modalidades',
+        'Usuarios',
         'eliminar',
-        "id_modalidad=" + id_modalidad,
-        'mensaje_alertas("success", "Modalidad Eliminado con Éxito", "center"); cargar_modalidades();'
+        "id_usuario=" + id_usuario,
+        'mensaje_alertas("success", "Usuario Eliminado con Éxito", "center"); cargar_usuarios();'
     );
 
 }
 
-function generar_pdf_modalidades(){
+function generar_pdf_usuarios(){
       
     ejecutarAccion(
       'administracion', 
-      'Modalidades', 
+      'Usuarios', 
       'generarPdf',
       "",
       "cargarVisorPDF(data); "
@@ -48,11 +48,11 @@ function generar_pdf_modalidades(){
     
 }
 
-function generar_excel_modalidades(){
+function generar_excel_usuarios(){
       
     ejecutarAccion(
       'administracion', 
-      'Modalidades', 
+      'Usuarios', 
       'generarExcel', 
       "",
       "location.href = data"         

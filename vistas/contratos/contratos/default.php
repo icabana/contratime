@@ -79,7 +79,8 @@ $froms = new Formularios();
                 <th style='background-color:lavender'>Valor Contrato</th>
                 <th style='background-color:lavender'>Objeto</th>
                 <th style='background-color:lavender'>Estado</th>
-                <th colspan='2' style='background-color:lavender; width:15px'></th>
+                <th  style='background-color:lavender; width:15px'></th>
+                <th  style='background-color:lavender; width:15px'></th>
               </tr>
             </thead>
             <tbody>

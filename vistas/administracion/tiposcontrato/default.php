@@ -1,5 +1,5 @@
 
-<script type='text/javascript' src='js/vistas/configuracion/usuarios/default.js'></script> 
+<script type='text/javascript' src='js/vistas/configuracion/tiposcontrato/default.js'></script> 
 
 <div class="row">
 
@@ -15,17 +15,17 @@
 
 
                         <div class="col-md-5">
-                            <h4 style="color:grey">GESTIONAR USUARIOS</h4>
+                            <h4 style="color:grey">GESTIONAR TIPO DE CONTRATOS</h4>
                         </div>
                         <div class="col-md-5">
-                        <button onclick="generar_pdf_usuarios(); return false;" type="button" title="Descargar PDF"
+                        <button onclick="generar_pdf_tiposcontrato(); return false;" type="button" title="Descargar PDF"
                                 class="btn-lg btn-danger btn-sm"><i class="fas fa-file-pdf"></i></button>
-                        <button onclick="generar_excel_usuarios(); return false;" type="button" title="Descargar EXCEL"
+                        <button onclick="generar_excel_tiposcontrato(); return false;" type="button" title="Descargar EXCEL"
                                 class="btn-lg btn-success btn-sm"><i class="fas fa-file-excel"></i></button>
                         </div>
                         <div class="col-md-2">
-                            <button onclick="nuevo_usuario(); return false;" class="btn btn-success btn-sm">
-                                Nuevo Usuario
+                            <button onclick="nuevo_tipocontrato(); return false;" class="btn btn-success btn-sm">
+                                Nuevo Tipo de Contrato
                             </button>
                         </div>
 
@@ -38,35 +38,26 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tabla_usuarios" class="table table-bordered table-hover">
+                <table id="tabla_tiposcontrato" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th style='background-color:lavender'>Documento</th>
-                            <th style='background-color:lavender'>Correo</th>
-                            <th style='background-color:lavender'>Estado</th>
+                            <th style='background-color:lavender'>Tipo de Contrato</th>
                             <th style='background-color:lavender'></th>
                             <th style='background-color:lavender'></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($usuarios as $usuario) {
+                        foreach ($tiposcontrato as $tipocontrato) {
 
                             echo "<tr>";
 
-                            echo "<td>" . $usuario['documento_usuario'] . "</td>";
-                            echo "<td>" . $usuario['correo_usuario'] . "</td>";
+                            echo "<td>" . $tipocontrato['nombre_tipocontrato'] . "</td>";
 
-                            if ($usuario['estado_usuario'] == 'A') {
-                                echo "<td>Activo</td>";
-                            } else {
-                                echo "<td>Inactivo</td>";
-                            }
-
-                            echo "<td><a href='#'><i onclick='editar_usuario(" . $usuario['id_usuario'] . ");' 
+                            echo "<td><a href='#'><i onclick='editar_tipocontrato(" . $tipocontrato['id_tipocontrato'] . ");' 
                                     class='fas fa-edit'></i></a></td>";
 
-                            echo "<td><a href='#'><i onclick='eliminar_usuario(" . $usuario['id_usuario'] . ");' 
+                            echo "<td><a href='#'><i onclick='eliminar_tipocontrato(" . $tipocontrato['id_tipocontrato'] . ");' 
                                     class='fas fa-trash'></i></a></td>";
 
 

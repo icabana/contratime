@@ -37,6 +37,7 @@
   <script language="JavaScript" type='text/javascript' src='js/modulos/configuracion.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/contratos/contratos.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/modalidades.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/tiposcontrato.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/contratistas.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/supervisores.js'></script> 
   
@@ -47,7 +48,11 @@
   
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/insertar.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/editar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/editar.js'></script>
+  
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/tiposcontrato/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/tiposcontrato/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/tiposcontrato/editar.js'></script> 
     
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/contratistas/insertar.js'></script> 
@@ -287,7 +292,7 @@
 
       
         <li class="nav-item">
-          <a href="#" onclick="cargar_tipos();" class="nav-link">
+          <a href="#" onclick="cargar_tiposcontrato();" class="nav-link">
             <i class="far fa-file-alt nav-icon"></i>
             <p>Tipos de Contrato</p>
           </a>
@@ -493,8 +498,9 @@
 <script src="<?php echo $this->ruta(); ?>dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo $this->ruta(); ?>dist/js/demo.js"></script>
-<!-- DataTables -->
 
+
+<!-- DataTables -->
 <script src="<?php echo $this->ruta(); ?>plugins/noty/jquery.noty.js" ></script>
 <script src="<?php echo $this->ruta(); ?>plugins/noty/packaged/jquery.noty.packaged.min.js" ></script>
     

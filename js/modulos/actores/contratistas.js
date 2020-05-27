@@ -8,7 +8,8 @@ function cargar_contratistas(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedor(
+    abrirVentanaContenedorTabla(
+        'tabla_contratistas', 
         'actores', 
         'Contratistas', 
         'index', 

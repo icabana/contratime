@@ -8,7 +8,8 @@ function cargar_contratos(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedor(
+    abrirVentanaContenedorTabla(
+        'tabla_contratos', 
         'contratos', 
         'Contratos', 
         'index', 

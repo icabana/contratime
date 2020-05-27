@@ -8,8 +8,13 @@ function cargar_usuarios(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedor(
-        'configuracion', 'Usuarios', 'index', '');    
+    abrirVentanaContenedorTabla(
+        'tabla_usuarios', 
+        'configuracion', 
+        'Usuarios', 
+        'index', 
+        ''
+    );    
         
 }
 
@@ -23,8 +28,13 @@ function cargar_roles(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedor(
-        'configuracion', 'Roles', 'index', '');    
+    abrirVentanaContenedorTabla(
+        'tabla_roles', 
+        'configuracion', 
+        'Roles', 
+        'index', 
+        ''
+    );    
         
 }
 
@@ -39,8 +49,13 @@ function cargar_parametros(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedor(
-        'configuracion', 'Parametros', 'index', '');    
+    abrirVentanaContenedorTabla(
+        'tabla_parametros', 
+        'configuracion', 
+        'Parametros', 
+        'index', 
+        ''
+    );    
         
 }
 
