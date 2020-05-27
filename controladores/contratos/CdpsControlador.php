@@ -68,18 +68,28 @@ class CdpsControlador extends ControllerBase {
     
     public function eliminarDocumento() {
         
-
-        unlink($_POST['archivo_cdp']);
+        unlink($_POST['archivo']);
 
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();  
         
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/cdps/lista_cdps.php");
-             
+        include("vistas/contratos/cdps/lista_cdps.php");             
         
     }
 
+    public function actualizarDocumento() {
+        
+        $this->model->cargar("CdpsModel.php", "contratos");
+        $CdpsModel = new CdpsContratosModel();  
+        
+        $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
+
+        include("vistas/contratos/cdps/lista_cdps.php");             
+        
+    }
+
+           
              
  }

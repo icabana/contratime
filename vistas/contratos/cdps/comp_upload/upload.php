@@ -2,7 +2,7 @@
 
 //echo count($_FILES["file0"]["name"]);exit;
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUploadCdps"]["type"])){
-$target_dir = "../../../archivos/uploads/cdps/";
+$target_dir = "../../../../archivos/uploads/cdps/".$_POST['id_cdp_upload']."/";
 $carpeta=$target_dir;
 if (!file_exists($carpeta)) {
     mkdir($carpeta, 0777, true);
@@ -12,8 +12,6 @@ if (!file_exists($carpeta)) {
 $target_file = $carpeta . basename($_FILES["fileToUploadCdps"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-$target_file = $carpeta."CDP-".$_POST['id_cdp_upload'].".".$imageFileType ;
-
 
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUploadCdps"]["tmp_name"]);
@@ -50,9 +48,9 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUploadCdps"]["tmp_name"], $target_file)) {
+	
        $messages[]= "El Archivo ha sido subido correctamente.";
-	   
-	   
+	   	   
     } else {
        $errors[]= "Lo sentimos, hubo un error subiendo el archivo.";
     }

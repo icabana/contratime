@@ -3,7 +3,7 @@
 $icono_archivo = "";
 $documento_cdp = "";
 
-$path = 'archivos/uploads/cdp/' . $cdp['id_cdp'] . '/';
+$path = 'archivos/uploads/cdps/' . $cdp['id_cdp'] . '/';
 
 $directorio = dir($path);
 $num_archivos = 0;
@@ -22,50 +22,44 @@ if (file_exists($path)) {
 
 if ($num_archivos >  0) {
 
-    $nombre_archivo = "";
-    $extension = "";
+    $directorio = dir($path);
 
     while ($archivo = $directorio->read()) {
+
+        $id_cdp = $cdp['id_cdp'];
 
         if ($archivo != "." && $archivo != "..") {
             $extension = pathinfo($archivo, PATHINFO_EXTENSION);
             $nombre_archivo = $archivo;
             $ruta_archivo = $path . $nombre_archivo;
 
-            $icono_archivo = '<img width="70px" height="70px" src=""vistas/contratos/cdps/comp_upload/imagenes/iconos/pdf.png">';
+            $icono_archivo = '<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/pdf.png">';
             if ($extension == "pdf") {
-                $icono_archivo = '<img width="70px" height="70px" src=""vistas/contratos/cdps/comp_upload/imagenes/iconos/pdf.png">';
+                $icono_archivo = '<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/pdf.png">';
             }
             if ($extension == "doc" || $extension == "docx") {
-                $icono_archivo = '<img width="70px" height="70px" src=""vistas/contratos/cdps/comp_upload/imagenes/iconos/word.png">';
+                $icono_archivo = '<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/word.png">';
             }
             if ($extension == "xls" || $extension == "xlsx") {
-                $icono_archivo = '<img width="70px" height="70px" src=""vistas/contratos/cdps/comp_upload/imagenes/iconos/excel.png"';
+                $icono_archivo = '<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/excel.png"';
             }
 
-            $documento_cdp .= ' <div class="col-md-3">
-            <ul class="mailbox-attachments clearfix">
-              <li>
-            
-                <span class="mailbox-attachment-icon">  <a target="_blank"  href="' . $ruta_archivo . '">' . $icono_archivo . '</a></span>
-                
-                <div class="mailbox-attachment-info">                               
-                  <span class="mailbox-attachment-size">
-                      <a href="#"  title="Eliminar Documento" onclick="eliminar_documento_cdp(\'' . $ruta_archivo . '\'); return false;">Eliminar Documento</a>
-                  </span>
-                </div>
-              </li>
-
-            </ul> </div>';
+            $documento_cdp .= '  
+                <a target="_blank" title="Ver/Descargar Documento"  href="' . $ruta_archivo . '">' . $icono_archivo . '</a>                         
+                 
+                      <a href="#"  title="Eliminar Documento" onclick="eliminar_documento_cdp(\'' . $ruta_archivo . '\', '.$cdp['contrato_cdp'].'); return false;">Eliminar</a>
+                ';
         }
+        
     }
 
 } else {
 
     $id_cdp = $cdp['id_cdp'];
+    $contrato_cdp = $cdp['contrato_cdp'];
 
-    $icono_archivo = '<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/nuevo.png">';
+    $icono_archivo ='<img width="50px" height="50px" src="vistas/contratos/cdps/comp_upload/imagenes/nuevo.png">';
 
-    $documento_cdp .= '<a href="#" onclick="cdp_seleccionado('.$id_cdp.');"  data-toggle="modal" data-target="#modal_documentos_cdp" >' . $icono_archivo . '</a>';
+    $documento_cdp .= '<a href="#" onclick="cdp_seleccionado('.$id_cdp.', '.$contrato_cdp.');"  data-toggle="modal" data-target="#modal_documentos_cdp" >' . $icono_archivo . '</a>';
 
 }

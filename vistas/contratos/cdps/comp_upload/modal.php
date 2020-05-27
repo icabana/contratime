@@ -18,8 +18,9 @@
               <label for="exampleInputFile">Subir archivo</label>
                 <input type="file"  id="fileToUploadCdps" onchange="upload_cdps();">
                 <input type="text"  id="id_cdp_upload" name="id_cdp_upload">
+                <input type="text"  id="contrato_cdp_upload" name="contrato_cdp_upload">
               </div>
-              <div class="upload-msg"></div><!--Para mostrar la respuesta del archivo llamado via ajax -->
+              <div class="upload-msg"></div>
         
           </form>
 
