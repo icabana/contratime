@@ -37,6 +37,7 @@ function agregar_ajuste2() {
       'insertar',
       "tipo_ajuste="+$("#tipo_ajuste").val()+
       "&valor_ajuste="+$("#valor_ajuste").val()+
+      "&fecha_ajuste="+$("#fecha_ajuste").val()+
       '&contratos='+contratos,
       'mensaje_alertas("success", "CDP Agregado Correctamente", "center"); seleccionar_check();'
     );
@@ -54,6 +55,7 @@ function agregar_ajuste_editar() {
       'insertarEditar',
       "tipo_ajuste="+$("#tipo_ajuste").val()+
       "&valor_ajuste="+$("#valor_ajuste").val()+
+      "&fecha_ajuste="+$("#fecha_ajuste").val()+
       '&id_contrato='+$("#id_contrato").val(),
       '$("#tab_7_ajustes").html(data);  mensaje_alertas("success", "CDP Agregado Correctamente", "center"); '
     );

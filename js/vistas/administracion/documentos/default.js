@@ -6,18 +6,6 @@ function nuevo_modalidad() {
 
 }
 
-function documentos_modalidad(id_modalidad) {
-
-    abrirVentanaContenedor(
-        'administracion',
-        'Modalidades',
-        'documentos',
-        'id_modalidad=' + id_modalidad,
-        ''
-    );
-
-}
-
 function editar_modalidad(id_modalidad) {
 
     abrirVentanaContenedor(

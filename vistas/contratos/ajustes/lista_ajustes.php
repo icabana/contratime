@@ -1,3 +1,6 @@
+<?php
+    include("vistas/contratos/ajustes/comp_upload/modal.php");
+?>
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -23,6 +26,7 @@
 
     <thead>
         <tr>
+            <th style='background-color:lavender; width:15px'>Documento</th>
             <th style='background-color:lavender'>Tipo de Ajuste</th>
             <th style='background-color:lavender'>Fecha en que se realiz&oacute; Ajuste</th>
             <th style='background-color:lavender'>Valor del Ajuste</th>
@@ -35,6 +39,10 @@
         foreach ($ajustes as $ajuste) {
 
             echo "<tr>";
+
+            include("vistas/contratos/ajustes/comp_upload/icono.php");
+
+            echo "<td><center> " . $documento_ajuste . "</center></td>";
 
             echo "<td>".$ajuste['nombre_tipoajuste'] . "</td>";
 
@@ -51,3 +59,5 @@
     </tbody>
 
 </table>
+
+<script language="JavaScript" type='text/javascript' src='vistas/contratos/ajustes/comp_upload/upload.js'></script> 

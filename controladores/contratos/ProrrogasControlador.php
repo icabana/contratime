@@ -60,7 +60,31 @@ class ProrrogasControlador extends ControllerBase {
         include("vistas/contratos/prorrogas/lista_prorrogas.php");
              
         
+    }   
+    
+    public function eliminarDocumento() {
+        
+        unlink($_POST['archivo']);
+
+        $this->model->cargar("ProrrogasModel.php", "contratos");
+        $ProrrogasModel = new ProrrogasContratosModel();  
+        
+        $prorrogas = $ProrrogasModel->getTodosxContrato($_POST['id_contrato']);
+
+        include("vistas/contratos/prorrogas/lista_prorrogas.php");             
+        
     }
 
+    public function actualizarDocumento() {
+        
+        $this->model->cargar("ProrrogasModel.php", "contratos");
+        $ProrrogasModel = new ProrrogasContratosModel();  
+        
+        $prorrogas = $ProrrogasModel->getTodosxContrato($_POST['id_contrato']);
+
+        include("vistas/contratos/prorrogas/lista_prorrogas.php");             
+        
+    }
+            
              
  }

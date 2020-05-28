@@ -30,22 +30,6 @@ class ModalidadesControlador extends ControllerBase {
         include 'vistas/administracion/modalidades/editar.php';
                
     }
-    
-         
-    public function documentos(){
-    
-        $this->model->cargar("ModalidadesModel.php");
-        $ModalidadesModel = new ModalidadesModel();    
-        
-        $this->model->cargar("DocumentosModel.php");
-        $DocumentosModel = new DocumentosModel();    
-    
-        $datos = $ModalidadesModel->getDatos($_POST['id_modalidad']);
-        $documentos = $DocumentosModel->getTodosxModalidad($_POST['id_modalidad']);
-            
-        include 'vistas/administracion/documentos/default.php';
-               
-    }
         
     public function insertar() {
       

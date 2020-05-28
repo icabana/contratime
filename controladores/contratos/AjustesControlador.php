@@ -65,5 +65,30 @@ class AjustesControlador extends ControllerBase {
         
     }
 
+    
+    public function eliminarDocumento() {
+        
+        unlink($_POST['archivo']);
+
+        $this->model->cargar("AjustesModel.php", "contratos");
+        $AjustesModel = new AjustesContratosModel();  
+        
+        $ajustes = $AjustesModel->getTodosxContrato($_POST['id_contrato']);
+
+        include("vistas/contratos/ajustes/lista_ajustes.php");             
+        
+    }
+
+    public function actualizarDocumento() {
+        
+        $this->model->cargar("AjustesModel.php", "contratos");
+        $AjustesModel = new AjustesContratosModel();  
+        
+        $ajustes = $AjustesModel->getTodosxContrato($_POST['id_contrato']);
+
+        include("vistas/contratos/ajustes/lista_ajustes.php");             
+        
+    }
+
              
  }

@@ -36,6 +36,7 @@ function agregar_pago2() {
       'Pagos',
       'insertar',
       "tipo_pago="+$("#tipo_pago").val()+
+      "&fecha_pago="+$("#fecha_pago").val()+
       "&valor_pago="+$("#valor_pago").val()+
       '&contratos='+contratos,
       'mensaje_alertas("success", "CDP Agregado Correctamente", "center"); seleccionar_check();'
@@ -53,6 +54,7 @@ function agregar_pago_editar() {
       'Pagos',
       'insertarEditar',
       "tipo_pago="+$("#tipo_pago").val()+
+      "&fecha_pago="+$("#fecha_pago").val()+
       "&valor_pago="+$("#valor_pago").val()+
       '&id_contrato='+$("#id_contrato").val(),
       '$("#tab_6_pagos").html(data); mensaje_alertas("success", "CDP Agregado Correctamente", "center"); '

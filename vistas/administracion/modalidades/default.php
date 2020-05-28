@@ -42,8 +42,9 @@
                     <thead>
                         <tr>
                             <th style='background-color:lavender'>Modalidad de Contrataci&oacute;n</th>
-                            <th style='background-color:lavender'></th>
-                            <th style='background-color:lavender'></th>
+                            <th style='background-color:lavender; width:15px'></th>
+                            <th style='background-color:lavender; width:15px'></th>
+                            <th style='background-color:lavender; width:15px'></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,10 +55,13 @@
 
                             echo "<td>" . $modalidad['nombre_modalidad'] . "</td>";
 
-                            echo "<td><a href='#'><i onclick='editar_modalidad(" . $modalidad['id_modalidad'] . ");' 
+                            echo "<td><a href='#'><i title='Ver Documentos' onclick='documentos_modalidad(" . $modalidad['id_modalidad'] . ");' 
+                            class='fas fa-file'></i></a></td>";
+
+                            echo "<td><a href='#'><i title='Editar Modalidad' onclick='editar_modalidad(" . $modalidad['id_modalidad'] . ");' 
                                     class='fas fa-edit'></i></a></td>";
 
-                            echo "<td><a href='#'><i onclick='eliminar_modalidad(" . $modalidad['id_modalidad'] . ");' 
+                            echo "<td><a href='#'><i title='Eliminar Modalidad' onclick='eliminar_modalidad(" . $modalidad['id_modalidad'] . ");' 
                                     class='fas fa-trash'></i></a></td>";
 
 

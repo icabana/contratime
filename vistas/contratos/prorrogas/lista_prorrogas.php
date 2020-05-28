@@ -1,3 +1,6 @@
+<?php
+    include("vistas/contratos/prorrogas/comp_upload/modal.php");
+?>
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -22,7 +25,8 @@
 <table class="table table-bordered table-hover">
 
     <thead>
-        <tr>
+        <tr>            
+            <th style='background-color:lavender; width:15px'>Documento</th>
             <th style='background-color:lavender'>Meses de Prorroga</th>
             <th style='background-color:lavender'>D&iacute;as de Prorroga</th>
             <th style='background-color:lavender; width:15px'></th>
@@ -34,6 +38,10 @@
         foreach ($prorrogas as $prorroga) {
 
             echo "<tr>";
+            
+            include("vistas/contratos/prorrogas/comp_upload/icono.php");
+
+            echo "<td><center> " . $documento_prorroga . "</center></td>";
 
             echo "<td>".$prorroga['meses_prorroga'] . "</td>";
 
@@ -48,3 +56,5 @@
     </tbody>
 
 </table>
+
+<script language="JavaScript" type='text/javascript' src='vistas/contratos/prorrogas/comp_upload/upload.js'></script> 
