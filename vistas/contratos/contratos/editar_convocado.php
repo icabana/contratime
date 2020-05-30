@@ -72,13 +72,19 @@ $froms = new Formularios();
               </a>
             </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_10_documentos" data-toggle="tab">
+                Documentos
+              </a>
+            </li>
+
           </ul>
 
           <!--INICIO DE LAS TABS-->
           <div class="tab-content">
 
 
-            <div style="padding: 20px; height:350px" class="tab-pane active" id="tab_1">
+            <div style="padding: 20px; height:450px" class="tab-pane active" id="tab_1">
 
 
               <div class="row">
@@ -172,12 +178,24 @@ $froms = new Formularios();
                 </div>
 
               </div>
-
-
+            <br><br>
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-2">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button onclick="cargar_contratos();" class="btn btn-danger">Cancelar</button>
+              </div>
+              <div class="col-md-2">
+                <button onclick="editar_contrato(); return false;" class="btn btn-success">Guardar</button>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+        
+          
             </div>
 
 
-            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_2_supervisores">
+            <div style="padding: 20px" class="tab-pane" id="tab_2_supervisores">
 
               <?php
               include("vistas/contratos/supervisores/lista_supervisores.php");
@@ -216,7 +234,7 @@ $froms = new Formularios();
             </div>
 
             
-            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_8_prorrogas">
+            <div style="padding: 20px" class="tab-pane" id="tab_8_prorrogas">
 
               <?php
               include("vistas/contratos/prorrogas/lista_prorrogas.php");
@@ -233,21 +251,25 @@ $froms = new Formularios();
               ?>
             </div>
 
-          </div>
 
+                 
+            <div style="padding: 20px; " class="tab-pane" id="tab_10_documentos">
 
+              <?php
+              
+                  include("vistas/contratos/documentos/lista_documentos.php");
 
-          <div class="card-footer">
-            <div class="row">
-              <div class="col-md-9">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button onclick="cargar_contratos();" class="btn btn-danger">Cancelar</button>
-              </div>
-              <div class="col-md-3">
-                <button onclick="editar_contrato(); return false;" class="btn btn-success">Guardar</button>
-              </div>
+              ?>
+
             </div>
+
+
+
           </div>
+
+
+
+       
 
         </div>
 

@@ -1,6 +1,19 @@
 <?php
+    include("vistas/contratos/contratos/comp_upload/modal.php");
+?>
+
+
+<?php
 $froms = new Formularios();
 ?>
+
+<script>
+    $(document).ready(
+        function(){
+            CrearTabla("tabla_contratos");
+        }
+    );
+</script>
 
 <div class="row">
 
@@ -63,109 +76,13 @@ $froms = new Formularios();
 
 
 
-      <div class="card-body">
+      <div id="div_tabla_contratos" class="card-body">
 
-
-        <div class="table-responsive mailbox-messages">
-          <table id="tabla_contratos" class="table table-hover table-striped">
-            <thead>
-              <tr>
-                <th style='background-color:lavender'></th>
-                <th style='background-color:lavender'>No. del Proceso</th>
-                <th style='background-color:lavender'>No. de Contrato</th>
-                <th style='background-color:lavender'>Tipo de Contrato</th>
-                <th style='background-color:lavender'>Contratista</th>
-                <th style='background-color:lavender'>Valor Proceso</th>
-                <th style='background-color:lavender'>Valor Contrato</th>
-                <th style='background-color:lavender'>Objeto</th>
-                <th style='background-color:lavender'>Estado</th>
-                <th  style='background-color:lavender; width:15px'></th>
-                <th  style='background-color:lavender; width:15px'></th>
-              </tr>
-            </thead>
-            <tbody>
-
-              <?php
-
-              foreach ($contratos as $contrato) {
-
-
-                $id_check = "check" . $contrato['id_contrato'];
-
-              ?>
-                <tr>
-                  <td>
-                    <div class="icheck-primary">
-                      <input class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
-                      <label for="check<?php echo $id_check; ?>"></label>
-                    </div>
-                  </td>
-
-                  <td class="mailbox-star">
-
-                    <?php echo $contrato['numproceso_contrato'] ?>
-
-                  </td>
-
-                  <td class="mailbox-name">
-
-                    <?php echo $contrato['numero_contrato']; ?>
-
-                  </td>
-                  <td class="mailbox-name">
-
-                    <?php echo utf8_encode($contrato['nombre_tipocontrato']); ?>
-
-                  </td>
-                  <td class="mailbox-name">
-
-                    <?php echo $contrato['nombre_contratista'] .
-                      " <img title='" . $contrato['nombre_pais'] . "' src='imagenes/banderas/" .
-                      $contrato['codigo3_pais'] . ".png'>"; ?>
-
-                  </td>
-                  <td class="mailbox-name">
-
-                    <?php
-                    echo "$" . number_format($contrato['valproceso_contrato'], 0, ',', '.') . "";
-                    ?>
-
-                  </td>
-                  <td class="mailbox-name">
-
-                    <?php
-                    echo "$" . number_format($contrato['valor_contrato'], 0, ',', '.') . "";
-                    ?>
-
-                  </td>
-
-                  <td class="mailbox-subject">
-                    <?php echo substr($contrato['objeto_contrato'], 0, 90) . "..."; ?>
-                  </td>
-
-                  <td class="mailbox-subject">
-                    <?php echo $contrato['nombre_estado']; ?>
-
-                  </td>
-
-                  <?php
-                  echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato_convocado(" . $contrato['id_contrato'] . ");' 
-                                    class='fas fa-edit'></i></a></td>";
-
-                  echo "<td><a href='#' title='Editar Contrato'><i onclick='eliminar_contrato(" . $contrato['id_contrato'] . ");' 
-                                    class='fas fa-trash'></i></a></td>";
-
-
-
-                  ?>
-
-                </tr>
-              <?php
-              }
-              ?>
-
-            </tbody>
-          </table>
+            <?php
+              include("vistas/contratos/contratos/tabla_contratos.php");
+            ?>
+       
+           
         </div>
 
 
@@ -212,3 +129,6 @@ $froms = new Formularios();
 <?php
   include("vistas/contratos/prorrogas/modal_prorrogas.php");
 ?>
+
+
+<script language="JavaScript" type='text/javascript' src='vistas/contratos/contratos/comp_upload/upload.js'></script> 

@@ -1,6 +1,15 @@
 <?php
     include("vistas/contratos/ajustes/comp_upload/modal.php");
 ?>
+
+<script>
+    $(document).ready(
+        function(){
+            CrearTabla("tabla_ajustes");
+        }
+    );
+</script>
+
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -22,7 +31,7 @@
 </div>
 
 
-<table class="table table-bordered table-hover">
+<table id="tabla_ajustes" class="table table-bordered table-hover">
 
     <thead>
         <tr>

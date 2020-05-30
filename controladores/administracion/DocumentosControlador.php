@@ -1,43 +1,50 @@
 <?php
 
-class ModalidadesControlador extends ControllerBase {
+class DocumentosControlador extends ControllerBase {
 
     public function index() {
+
+        $this->model->cargar("ModalidadesModel.php");
+        $ModalidadesModel = new ModalidadesModel();    
         
-        $this->model->cargar("ModalidadesModel.php", "administracion");
-        $ModalidadesModel = new ModalidadesModel();
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
 
-        $modalidades = $ModalidadesModel->getTodos();
+        $datos = $ModalidadesModel->getDatos($_POST['id_modalidad']);
+        $documentos = $DocumentosModel->getTodosxModalidad($_POST['id_modalidad']);
 
-        include 'vistas/administracion/modalidades/default.php';
+        include 'vistas/administracion/documentos/default.php';
                         
     }    
     
     public function nuevo(){
         
-        include 'vistas/administracion/modalidades/insertar.php';
+        $modalidad_documento = $_POST['modalidad_documento'];
+
+        include 'vistas/administracion/documentos/insertar.php';
         
     }
 
          
     public function editar(){
     
-        $this->model->cargar("ModalidadesModel.php");
-        $ModalidadesModel = new ModalidadesModel();    
+        $this->model->cargar("DocumentosModel.php");
+        $DocumentosModel = new DocumentosModel();    
     
-        $datos = $ModalidadesModel->getDatos($_POST['id_modalidad']);
+        $datos = $DocumentosModel->getDatos($_POST['id_documento']);
             
-        include 'vistas/administracion/modalidades/editar.php';
+        include 'vistas/administracion/documentos/editar.php';
                
     }
         
     public function insertar() {
       
-        $this->model->cargar("ModalidadesModel.php", "administracion");
-        $ModalidadesModel = new ModalidadesModel();            
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();            
         
-        $resp = $ModalidadesModel->insertar(
-            $_POST["nombre_modalidad"]
+        $resp = $DocumentosModel->insertar(
+            $_POST["modalidad_documento_insertar"],
+            $_POST["nombre_documento"]
         );        
         
         if( $resp != 0 ){
@@ -54,12 +61,12 @@ class ModalidadesControlador extends ControllerBase {
     
     public function guardar() {
         
-        $this->model->cargar("ModalidadesModel.php", 'administracion');
-        $ModalidadesModel = new ModalidadesModel();
+        $this->model->cargar("DocumentosModel.php", 'administracion');
+        $DocumentosModel = new DocumentosModel();
                     
-        $ModalidadesModel->editar(
-            $_POST["id_modalidad"], 
-            $_POST["nombre_modalidad"]
+        $DocumentosModel->editar(
+            $_POST["id_documento"], 
+            $_POST["nombre_documento"]
         );              
             
         echo 1;
@@ -68,25 +75,25 @@ class ModalidadesControlador extends ControllerBase {
         
     public function eliminar() {
         
-        $this->model->cargar("ModalidadesModel.php", "administracion");
-        $ModalidadesModel = new ModalidadesModel();
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
         
-        $ModalidadesModel->eliminar($_POST["id_modalidad"]);
+        $DocumentosModel->eliminar($_POST["id_documento"]);
         
-        echo "1";        
+        echo $_POST["modalidad_documento"];        
         
     }    
     
     public function generarPdf(){
          
-        $this->model->cargar("ModalidadesModel.php", "administracion");
-        $ModalidadesModel = new ModalidadesModel();
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
 
-        $modalidades = $ModalidadesModel->getTodos();
+        $documentos = $DocumentosModel->getTodos();
                  
-        include("vistas/administracion/modalidades/reportes/pdf.php");   
+        include("vistas/administracion/documentos/reportes/pdf.php");   
        
-        $dirPdf = "archivos/reportes/modalidades/modalidades.pdf";
+        $dirPdf = "archivos/reportes/documentos/documentos.pdf";
 
         $this->pdf->Output(''.$dirPdf.'');
 
@@ -96,20 +103,58 @@ class ModalidadesControlador extends ControllerBase {
     
     public function generarExcel(){
          
-        $this->model->cargar("ModalidadesModel.php", "administracion");
-        $ModalidadesModel = new ModalidadesModel();
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
 
-        $modalidades = $ModalidadesModel->getTodos();
+        $documentos = $DocumentosModel->getTodos();
                         
-        $nombre_archivo = "modalidades_".date('Y-m-d_H-i-s').".xls";        
+        $nombre_archivo = "documentos_".date('Y-m-d_H-i-s').".xls";        
 
-        $ruta = dirname(__FILE__, 3).DIRECTORY_SEPARATOR."archivos".DIRECTORY_SEPARATOR."reportes".DIRECTORY_SEPARATOR."modalidades".DIRECTORY_SEPARATOR.$nombre_archivo;        
+        $ruta = dirname(__FILE__, 3).DIRECTORY_SEPARATOR."archivos".DIRECTORY_SEPARATOR."reportes".DIRECTORY_SEPARATOR."documentos".DIRECTORY_SEPARATOR.$nombre_archivo;        
 
-        include("vistas/administracion/modalidades/reportes/excel.php");        
+        include("vistas/administracion/documentos/reportes/excel.php");        
            
-        echo "archivos/reportes/modalidades/".$nombre_archivo;
+        echo "archivos/reportes/documentos/".$nombre_archivo;
 
     }
+
+    
+    
+    public function eliminarDocumento() {
+        
+        unlink($_POST['archivo']);
+
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contrato = $ContratosModel->getDatos($_POST['id_contrato_upload']);        
+
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
+
+        $documentos = $DocumentosModel->getTodosxModalidad($contrato['modalidad_contrato']); 
+
+        include("vistas/contratos/documentos/tabla_documentos.php");  
+        echo $tabla_documentos;               
+        
+    }
+
+    public function actualizarDocumento() {
+                          
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contrato = $ContratosModel->getDatos($_POST['id_contrato_upload']);        
+
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
+
+        $documentos = $DocumentosModel->getTodosxModalidad($contrato['modalidad_contrato']); 
+
+        include("vistas/contratos/documentos/tabla_documentos.php");    
+        echo $tabla_documentos;         
+        
+    }
+
+           
     
     
  }

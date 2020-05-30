@@ -1,46 +1,50 @@
-function nuevo_modalidad() {
+function nuevo_documento(modalidad_documento) {
 
     abrirVentanaContenedor(
-        'administracion', 'Modalidades', 'nuevo', '', ''
-    );
-
-}
-
-function editar_modalidad(id_modalidad) {
-
-    abrirVentanaContenedor(
-        'administracion',
-        'Modalidades',
-        'editar',
-        'id_modalidad=' + id_modalidad,
+        'administracion', 
+        'Documentos', 
+        'nuevo', 
+        'modalidad_documento='+modalidad_documento, 
         ''
     );
 
 }
 
-function eliminar_modalidad(id_modalidad) {
+function editar_documento(id_documento, modalidad_documento) {
 
-    mensaje_confirmar("¿Está seguro de eliminar el modalidad?", "eliminar_modalidad2(" + id_modalidad + "); ");
-
-}
-
-function eliminar_modalidad2(id_modalidad) {
-
-    ejecutarAccion(
+    abrirVentanaContenedor(
         'administracion',
-        'Modalidades',
-        'eliminar',
-        "id_modalidad=" + id_modalidad,
-        'mensaje_alertas("success", "Modalidad Eliminado con Éxito", "center"); cargar_modalidades();'
+        'Documentos',
+        'editar',
+        'id_documento=' + id_documento+'&modalidad_documento='+modalidad_documento,
+        ''
     );
 
 }
 
-function generar_pdf_modalidades(){
+function eliminar_documento(id_documento, modalidad_documento) {
+
+    mensaje_confirmar("¿Está seguro de eliminar el documento?", "eliminar_documento2(" + id_documento + ", " + modalidad_documento + "); ");
+
+}
+
+function eliminar_documento2(id_documento, modalidad_documento) {
+
+    ejecutarAccion(
+        'administracion',
+        'Documentos',
+        'eliminar',
+        "id_documento=" + id_documento+"&modalidad_documento=" + modalidad_documento,
+        'mensaje_alertas("success", "Modalidad Eliminado con Éxito", "center"); documentos_modalidad(data);'
+    );
+
+}
+
+function generar_pdf_documentos(){
       
     ejecutarAccion(
       'administracion', 
-      'Modalidades', 
+      'Documentos', 
       'generarPdf',
       "",
       "cargarVisorPDF(data); "
@@ -48,11 +52,11 @@ function generar_pdf_modalidades(){
     
 }
 
-function generar_excel_modalidades(){
+function generar_excel_documentos(){
       
     ejecutarAccion(
       'administracion', 
-      'Modalidades', 
+      'Documentos', 
       'generarExcel', 
       "",
       "location.href = data"         

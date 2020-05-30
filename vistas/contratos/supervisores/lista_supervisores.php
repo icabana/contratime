@@ -1,3 +1,11 @@
+<script>
+    $(document).ready(
+        function(){
+            CrearTabla("tabla_supervisores");
+        }
+    );
+</script>
+
 <div class="card-header">
     <div class="box">
         <div class="row">

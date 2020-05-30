@@ -2,6 +2,14 @@
     include("vistas/contratos/rps/comp_upload/modal.php");
 ?>
 
+<script>
+    $(document).ready(
+        function(){
+            CrearTabla("tabla_rps");
+        }
+    );
+</script>
+
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -23,7 +31,7 @@
 </div>
 
 
-<table id="tabla_supervisores" class="table table-bordered table-hover">
+<table id="tabla_rps" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th style='background-color:lavender; width:15px'>Documento</th>

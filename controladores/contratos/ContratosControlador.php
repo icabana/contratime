@@ -138,11 +138,15 @@ class ContratosControlador extends ControllerBase {
         
         $this->model->cargar("TiposajustesModel.php", "administracion");
         $TiposajustesModel = new TiposajustescontratoModel();
-        $tiposajustes_select = $TiposajustesModel->getTodos();    
-
+        $tiposajustes_select = $TiposajustesModel->getTodos();            
+       
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
         $contrato = $ContratosModel->getDatos($_POST['id_contrato']);        
+
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
+        $documentos = $DocumentosModel->getTodosxModalidad($contrato['modalidad_contrato']); 
 
         include 'vistas/contratos/contratos/editar_convocado.php';
                
@@ -370,6 +374,31 @@ class ContratosControlador extends ControllerBase {
     }
    
 
+
+    
+    public function eliminarDocumento() {
+        
+        unlink($_POST['archivo']);
+
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        
+        $contratos = $ContratosModel->getTodos($_POST['id_contrato']);
+
+        include("vistas/contratos/contratos/tabla_contratos.php");             
+        
+    }
+
+    public function actualizarDocumento() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();        
+        
+        $contratos = $ContratosModel->getTodos($_POST['id_contrato']);
+
+        include("vistas/contratos/contratos/tabla_contratos.php");                  
+        
+    }
 
 
              

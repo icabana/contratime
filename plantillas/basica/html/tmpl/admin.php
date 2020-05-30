@@ -37,7 +37,6 @@
   <script language="JavaScript" type='text/javascript' src='js/modulos/configuracion.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/contratos/contratos.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/modalidades.js'></script> 
-  <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/documentos.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/tiposcontrato.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/contratistas.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/supervisores.js'></script> 
@@ -94,7 +93,7 @@
 
 
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse">
   
   <div class="wrapper">
 

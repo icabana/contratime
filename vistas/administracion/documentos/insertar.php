@@ -7,18 +7,20 @@
     <div class="card card-primary">
 
         <div class="card-header">
-          <h3 class="card-title">Registrar Modalidad de Contrataci&oacute;n</h3>
+          <h3 class="card-title">Registrar Nuevo Documento</h3>
         </div>
 
         <div class="card-body">
-          <form autocomplete="on" id="form_modalidades" method="post">
+          <form autocomplete="on" id="form_documentos" method="post">
+
+            <input type="hidden" name="modalidad_documento_insertar" id="modalidad_documento_insertar" value="<?php echo $modalidad_documento; ?>">
 
             <div class="row">
 
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Nombre: <span style="color:red">*</span></label>
-                  <input type="text" class="form-control requerido" id="nombre_modalidad" name="nombre_modalidad">
+                  <input type="text" class="form-control requerido" id="nombre_documento" name="nombre_documento">
                 </div>
               </div>
 
@@ -31,10 +33,10 @@
           <div class="row">
             <div class="col-md-9">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button onclick="cargar_modalidades();" class="btn btn-danger"><b>Cancelar</b></button>
+              <button onclick="documentos_modalidad(<?php echo $modalidad_documento; ?>);" class="btn btn-danger"><b>Cancelar</b></button>
             </div>     
             <div class="col-md-3">
-              <button onclick="insertar_modalidad(); return false;" class="btn btn-success"><b>Guardar</b></button>
+              <button onclick="insertar_documento(); return false;" class="btn btn-success"><b>Guardar</b></button>
             </div>     
           </div>     
         </div>     

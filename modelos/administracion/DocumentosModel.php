@@ -69,13 +69,11 @@ class DocumentosModel extends ModelBase {
     
     function editar(
                     $id_documento, 
-                    $modalidad_documento,
                     $nombre_documento
                 ) {
         
         $query = "  UPDATE documentos 
                 
-                    SET modalidad_documento = '". $modalidad_documento ."',
                     SET nombre_documento = '". $nombre_documento ."'
         
                     WHERE id_documento = '" . $id_documento . "'";       

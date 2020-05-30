@@ -1,18 +1,10 @@
 function nuevo_modalidad() {
 
     abrirVentanaContenedor(
-        'administracion', 'Modalidades', 'nuevo', '', ''
-    );
-
-}
-
-function documentos_modalidad(id_modalidad) {
-
-    abrirVentanaContenedor(
-        'administracion',
-        'Modalidades',
-        'documentos',
-        'id_modalidad=' + id_modalidad,
+        'administracion', 
+        'Modalidades', 
+        'nuevo', 
+        '', 
         ''
     );
 
@@ -71,3 +63,17 @@ function generar_excel_modalidades(){
     );
     
 }
+
+function documentos_modalidad(id_modalidad) {
+
+    abrirVentanaContenedorTabla(
+        'tabla_documentos',
+        'administracion',
+        'Documentos',
+        'index',
+        'id_modalidad=' + id_modalidad,
+        ''
+    );
+
+}
+

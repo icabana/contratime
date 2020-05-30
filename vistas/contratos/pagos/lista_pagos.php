@@ -1,3 +1,11 @@
+<script>
+    $(document).ready(
+        function(){
+            CrearTabla("tabla_pagos");
+        }
+    );
+</script>
+
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -19,7 +27,7 @@
 </div>
 
 
-<table class="table table-bordered table-hover">
+<table id="tabla_pagos" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th style='background-color:lavender'>Tipo de Pago</th>

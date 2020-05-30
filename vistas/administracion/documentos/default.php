@@ -7,7 +7,7 @@
 
         <div class="card">
 
-            <input type="hidden" name="id_modalidad_documento" id="id_modalidad_documento" value="<?php echo $datos['id_modalidad'] ?>">
+            <input type="hidden" name="modalidad_documento" id="modalidad_documento" value="<?php echo $datos['id_modalidad'] ?>">
         
             <div class="card-header">
                 <div class="box">
@@ -19,7 +19,7 @@
                         </div>
                     
                         <div class="col-md-2">
-                            <button onclick="nuevo_documento(); return false;" class="btn btn-success btn-sm">
+                            <button onclick="nuevo_documento(<?php echo $datos['id_modalidad'] ?>); return false;" class="btn btn-success btn-sm">
                                 Nuevo Documento
                             </button>
                         </div>
@@ -49,10 +49,10 @@
 
                             echo "<td>" . $documento['nombre_documento'] . "</td>";
 
-                            echo "<td><a href='#'><i onclick='editar_documento(" . $documento['id_documento'] . ");' 
+                            echo "<td><a href='#'><i onclick='editar_documento(" . $documento['id_documento'] . ", " . $documento['modalidad_documento'] . ");' 
                                     class='fas fa-edit'></i></a></td>";
 
-                            echo "<td><a href='#'><i onclick='eliminar_documento(" . $documento['id_documento'] . ");' 
+                            echo "<td><a href='#'><i onclick='eliminar_documento(" . $documento['id_documento'] . ", " . $documento['modalidad_documento'] . ");' 
                                     class='fas fa-trash'></i></a></td>";
 
 

@@ -163,6 +163,15 @@
               
               </div>
 
+              
+              <div style="padding: 20px;" class="tab-pane" id="tab_10">
+
+                <?php
+                  include("vistas/actores/contratos/insertar_tab10.php");
+                ?>
+              
+              </div>
+
             
             </div>
           
