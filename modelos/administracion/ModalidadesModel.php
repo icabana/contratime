@@ -4,11 +4,13 @@ class ModalidadesModel extends ModelBase {
   
     function getTodos() {
         
-        $query = "select 
-                    modalidades.id_modalidad, 
-                    modalidades.nombre_modalidad
+        $query = "  SELECT 
+                        id_modalidad, 
+                        nombre_modalidad
                 
-                    from modalidades";
+                    FROM modalidades
+
+                    ORDER BY nombre_modalidad";
         
         $consulta = $this->consulta($query);
         return $consulta;       

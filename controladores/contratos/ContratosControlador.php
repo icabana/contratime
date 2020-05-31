@@ -68,6 +68,57 @@ class ContratosControlador extends ControllerBase {
                         
     }    
 
+    
+    public function busquedaAvanzada(){
+        
+        $this->model->cargar("ModalidadesModel.php", "administracion");
+        $ModalidadesModel = new ModalidadesModel();
+        $modalidades = $ModalidadesModel->getTodos();
+
+        $this->model->cargar("TiposcontratoModel.php", "administracion");
+        $Tiposcontrato = new TiposcontratoModel();
+        $tiposcontrato = $Tiposcontrato->getTodos();
+        
+        include 'vistas/contratos/contratos/busqueda_avanzada.php';
+        
+    }  
+
+
+    
+    public function realizarBusquedaAvanzada() {
+        
+        $array_rango = explode(";", $_POST['range_1']);
+
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosAvanzada(
+                                            $_POST['modalidad_busqueda'], 
+                                            $_POST['tipocontrato_busqueda'],
+                                            $_POST['fechainicio_busqueda'],
+                                            $_POST['fechafinal_busqueda'],
+                                            $array_rango
+                                        );        
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel->getTodos();
+        
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();     
+                  
+        include 'vistas/contratos/contratos/default.php';
+                        
+    }    
+
 
     public function nuevo(){
 

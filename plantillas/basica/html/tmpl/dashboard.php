@@ -1,4 +1,4 @@
-<div class="row">
+
 
     <?php
 
@@ -13,8 +13,10 @@
     
     ?>
 
+<div class="row">
+
     <div class="col-12 col-sm-6 col-md-3">
-      <a href="#" onclick="cargar_contratos(1);">
+      <a href="#" onclick="cargar_contratos_x_estado(1);">
         <div class="info-box mb-3">
           <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
 
@@ -28,7 +30,7 @@
 
 
     <div class="col-12 col-sm-6 col-md-3">
-      <a href="#" onclick="cargar_contratos(2);">
+      <a href="#" onclick="cargar_contratos_x_estado(2);">
         <div class="info-box">
           <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
 
@@ -42,7 +44,7 @@
 
 
     <div class="col-12 col-sm-6 col-md-3">
-      <a href="#" onclick="cargar_contratos(3);">
+      <a href="#" onclick="cargar_contratos_x_estado(3);">
         <div class="info-box mb-3">
           <span class="info-box-icon bg-success elevation-1"><i class="fas fa-list-alt"></i></span>
 
@@ -56,7 +58,7 @@
 
 
     <div class="col-12 col-sm-6 col-md-3">
-      <a href="#" onclick="cargar_contratos(4);">
+      <a href="#" onclick="cargar_contratos_x_estado(4);">
         <div class="info-box mb-3">
           <span class="info-box-icon bg-success elevation-1"><i class="fas fa-list-alt"></i></span>
 
@@ -70,7 +72,7 @@
 
 
     <div class="col-12 col-sm-6 col-md-3">
-      <a href="#" onclick="cargar_contratos(5);">
+      <a href="#" onclick="cargar_contratos_x_estado(5);">
         <div class="info-box mb-3">
           <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-list-alt"></i></span>
 
@@ -81,8 +83,5 @@
         </div>
       </a>  
     </div>
-
-
-
 
 </div>

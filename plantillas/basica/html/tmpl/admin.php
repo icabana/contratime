@@ -10,6 +10,10 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo $this->ruta(); ?>plugins/fontawesome-free/css/all.min.css">
   
+  <!-- Ion Slider -->
+  <link rel="stylesheet" href="<?php echo $this->ruta(); ?>plugins/ion-rangeslider/css/ion.rangeSlider.min.css">
+ 
+
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="<?php echo $this->ruta(); ?>plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
@@ -69,6 +73,7 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/editar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/busqueda_avanzada.js'></script> 
 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/editar_convocado.js'></script> 
 
@@ -214,6 +219,12 @@
           </a>
         </li>
 
+        <li class="nav-item">
+          <a href="#" onclick="busqueda_avanzada();" class="nav-link">
+            <i class="fas fa-search nav-icon"></i>
+            <p>Busqueda Avanzada</p>
+          </a>
+        </li>
 
 
   
@@ -485,6 +496,14 @@
 
 <!-- jQuery Knob Chart -->
 <script src="<?php echo $this->ruta(); ?>plugins/jquery-knob/jquery.knob.min.js"></script>
+
+<!-- jQuery Knob Chart -->
+<script src="<?php echo $this->ruta(); ?>plugins/jquery-knob/jquery.knob.min.js"></script>
+ <!-- Ion Slider -->
+<script src="<?php echo $this->ruta(); ?>plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+
+
+
 <!-- daterangepicker -->
 <script src="<?php echo $this->ruta(); ?>plugins/moment/moment.min.js"></script>
 <script src="<?php echo $this->ruta(); ?>plugins/daterangepicker/daterangepicker.js"></script>
