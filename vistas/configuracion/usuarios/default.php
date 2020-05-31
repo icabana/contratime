@@ -57,7 +57,7 @@
                             echo "<td>" . $usuario['documento_usuario'] . "</td>";
                             echo "<td>" . $usuario['correo_usuario'] . "</td>";
 
-                            if ($usuario['estado_usuario'] == 'A') {
+                            if ($usuario['estado_usuario'] == '1') {
                                 echo "<td>Activo</td>";
                             } else {
                                 echo "<td>Inactivo</td>";

@@ -385,23 +385,62 @@
 
 
 
-<
-
-
-
-  <?php
+    <?php
     }
-  ?>             
+  ?>
+
+
+
+             
 
 
 
 
+<?php
+  if($_SESSION['rol'] == 2){
+?>
+
+
+<br>
+         <!-- MENU DE CONTRATOS --> 
+    <li class="nav-item has-treeview menu-open">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-folder-open"></i>
+        <p>
+          Contrataciones
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
 
 
 
+      
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_contratos_financiera();" class="nav-link">
+            <i class="fas fa-archive nav-icon"></i>
+            <p>Contratos</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" onclick="busqueda_avanzada_financiera();" class="nav-link">
+            <i class="fas fa-search nav-icon"></i>
+            <p>Busqueda Avanzada</p>
+          </a>
+        </li>
 
 
+  
 
+      </ul>
+    </li>
+
+<?php
+    }
+  ?>
 
       
       </ul>

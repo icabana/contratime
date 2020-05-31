@@ -1,7 +1,11 @@
 function nuevo_usuario() {
 
     abrirVentanaContenedor(
-        'administracion', 'Usuarios', 'nuevo', '', ''
+        'configuracion', 
+        'Usuarios', 
+        'nuevo', 
+        '', 
+        ''
     );
 
 }
@@ -9,7 +13,7 @@ function nuevo_usuario() {
 function editar_usuario(id_usuario) {
 
     abrirVentanaContenedor(
-        'administracion',
+        'configuracion',
         'Usuarios',
         'editar',
         'id_usuario=' + id_usuario,
@@ -27,7 +31,7 @@ function eliminar_usuario(id_usuario) {
 function eliminar_usuario2(id_usuario) {
 
     ejecutarAccion(
-        'administracion',
+        'configuracion',
         'Usuarios',
         'eliminar',
         "id_usuario=" + id_usuario,
@@ -39,7 +43,7 @@ function eliminar_usuario2(id_usuario) {
 function generar_pdf_usuarios(){
       
     ejecutarAccion(
-      'administracion', 
+      'configuracion', 
       'Usuarios', 
       'generarPdf',
       "",
@@ -51,7 +55,7 @@ function generar_pdf_usuarios(){
 function generar_excel_usuarios(){
       
     ejecutarAccion(
-      'administracion', 
+      'configuracion', 
       'Usuarios', 
       'generarExcel', 
       "",

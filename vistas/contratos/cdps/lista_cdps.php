@@ -24,7 +24,7 @@
     </div>
 </div>
 
-
+<br>
 <table id="tabla_cdps" class="table table-bordered table-hover">
     <thead>
         <tr>

@@ -43,6 +43,21 @@ class SistemaControlador extends ControllerBase {
 
         }
 
+        $params = new Parametros();
+        
+        $fecha_ultima_alerta = $params->valor("fecha_ultima_alerta");
+        
+        if($fecha_ultima_alerta != date("Y-m-d")){
+
+            include("controladores/alertas/AlertasControlador.php");
+            $AlertasControlador = new AlertasControlador();
+
+            $AlertasControlador->contratosxFinalizar();
+
+            $params->set("fecha_ultima_alerta", date("Y-m-d"));
+
+        }
+
         $datos_usuario = $UsuariosModel->getDatosxDocumento($documento);
 
         $perfiles = $PerfilesModel->getTodos($datos_usuario['id_usuario']);

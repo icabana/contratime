@@ -14,7 +14,7 @@ $froms = new Formularios();
 
 
         <div class="card-header">
-          <h3 class="card-title">Editar Contrato (Estado: Convocado)</h3>
+          <h3 class="card-title">Editar Contrato (Estado: <?php echo $contrato['nombre_estado']; ?>)</h3>
         </div>
 
 
@@ -27,12 +27,6 @@ $froms = new Formularios();
             <li class="nav-item">
               <a class="nav-link active" href="#tab_1" data-toggle="tab">
                 Datos Contrato
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#tab_2_supervisores" data-toggle="tab">
-                Supervisores
               </a>
             </li>
 
@@ -52,19 +46,7 @@ $froms = new Formularios();
               <a class="nav-link" href="#tab_6_pagos" data-toggle="tab">
                 Pagos
               </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#tab_7_ajustes" data-toggle="tab">
-                Ajustes 
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="#tab_8_prorrogas" data-toggle="tab">
-                Prorrogas
-              </a>
-            </li>
+            </li>         
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
@@ -86,19 +68,15 @@ $froms = new Formularios();
 
             <div style="padding: 20px; " class="tab-pane active" id="tab_1">
 
-              <?php
-                include("vistas/contratos/contratos/form.php");
-              ?>            
+            <?php
+              include("vistas/contratos/contratos/form_financiera.php");
+              ?>
+            
           
             </div>
 
 
-            <div style="padding: 20px" class="tab-pane" id="tab_2_supervisores">
-
-              <?php
-              include("vistas/contratos/supervisores/lista_supervisores.php");
-              ?>
-            </div>
+         
 
             <div style="padding: 20px; height:350px" class="tab-pane" id="tab_4_cdps">
 
@@ -118,24 +96,6 @@ $froms = new Formularios();
 
               <?php
               include("vistas/contratos/pagos/lista_pagos.php");
-              ?>
-
-            </div>
-
-            
-            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_7_ajustes">
-
-              <?php
-              include("vistas/contratos/ajustes/lista_ajustes.php");
-              ?>
-
-            </div>
-
-            
-            <div style="padding: 20px" class="tab-pane" id="tab_8_prorrogas">
-
-              <?php
-              include("vistas/contratos/prorrogas/lista_prorrogas.php");
               ?>
 
             </div>
@@ -178,13 +138,6 @@ $froms = new Formularios();
 </form>
 
 
-
-
-<!-- Modal Supervisores-->
-<?php
-  include("vistas/contratos/supervisores/modal_supervisores_editar.php");
-?>
-
 <!-- Modal Trazabilidad-->
 <?php
   include("vistas/contratos/trazabilidad/modal_trazabilidad_editar.php");
@@ -208,14 +161,4 @@ $froms = new Formularios();
 <!-- Modal Pagos-->
 <?php
   include("vistas/contratos/pagos/modal_pagos_editar.php");
-?>
-
-<!-- Modal Ajustes de Presupuesto-->
-<?php
-  include("vistas/contratos/ajustes/modal_ajustes_editar.php");
-?>
-
-<!-- Modal Prorrogas-->
-<?php
-  include("vistas/contratos/prorrogas/modal_prorrogas_editar.php");
 ?>

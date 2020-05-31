@@ -130,6 +130,26 @@ class SupervisoresContratosModel extends ModelBase {
                
     }  
 
+    
+    function getTodosCorreosxContrato($contrato_supervisor) {
+        
+        $query = "select 
+
+                    supervisores.correo_supervisor
+                
+                    from contratos_supervisores 
+                            left join contratos ON contratos_supervisores.contrato_supervisor = contratos.id_contrato
+                            left join supervisores ON contratos_supervisores.supervisor_supervisor = supervisores.id_supervisor     
+
+                    
+                    where contratos_supervisores.contrato_supervisor='".$contrato_supervisor."'";
+        
+        $consulta = $this->consulta($query);
+        return $consulta;       
+               
+    }  
+
+
 
     function getDatos($id_supervisor) {
        

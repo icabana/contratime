@@ -38,9 +38,7 @@
 
     }
 
-    $(document).ready(function() {
-        CrearTabla('tabla_parametros');
-    });
+   
 </script>
 
 <div class="row">
@@ -83,9 +81,9 @@
 
                             echo "<tr>";
 
-                            echo "<td>" . utf8_encode(strtolower($items['nombre_parametro'])) . "</td>";
+                            echo "<td>" . $items['nombre_parametro'] . "</td>";
 
-                            echo "<td>" . utf8_encode(strtolower($items['valor_parametro'])) . "</td>";
+                            echo "<td>" . $items['valor_parametro'] . "</td>";
 
                             echo "<td><a href='#'><i onclick='editar_parametro(" . $items['id_parametro'] . ");' 
                                     class='fas fa-edit'></i></a></td>";

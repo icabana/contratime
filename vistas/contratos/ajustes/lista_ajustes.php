@@ -30,7 +30,7 @@
     </div>
 </div>
 
-
+<br>
 <table id="tabla_ajustes" class="table table-bordered table-hover">
 
     <thead>

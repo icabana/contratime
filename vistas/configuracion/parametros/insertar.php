@@ -17,10 +17,10 @@
   function insertar_parametro2(data) {
 
       if (data == 1) {
-        mensaje_alertas("success", "Usuario Registrado Exitosamente", "center");
+        mensaje_alertas("success", "Parametro Registrado Exitosamente", "center");
         cargar_parametros();
       } else {
-        mensaje_alertas("error", "El Nick ya se encuentra registrado", "center");
+        mensaje_alertas("error", "Error al insertar el parametro", "center");
       }
 
   }

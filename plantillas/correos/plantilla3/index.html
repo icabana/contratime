@@ -1,403 +1,396 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>[SUBJECT]</title>
-  <style type="text/css">
-    body {
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      margin: 0 !important;
-      width: 100% !important;
-      -webkit-text-size-adjust: 100% !important;
-      -ms-text-size-adjust: 100% !important;
-      -webkit-font-smoothing: antialiased !important;
-    }
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>[SUBJECT]</title>
+	<style type="text/css">
+		@media screen and (max-width: 600px) {
+			table[class="container"] {
+				width: 95% !important;
+			}
+		}
 
-    .tableContent img {
-      border: 0 !important;
-      display: block !important;
-      outline: none !important;
-    }
+		#outlook a {
+			padding: 0;
+		}
 
-    a {
-      color: #382F2E;
-    }
+		body {
+			width: 100% !important;
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+			margin: 0;
+			padding: 0;
+		}
 
-    p,
-    h1 {
-      color: #382F2E;
-      margin: 0;
-    }
+		.ExternalClass {
+			width: 100%;
+		}
 
-    p {
-      text-align: left;
-      color: #999999;
-      font-size: 14px;
-      font-weight: normal;
-      line-height: 19px;
-    }
+		.ExternalClass,
+		.ExternalClass p,
+		.ExternalClass span,
+		.ExternalClass font,
+		.ExternalClass td,
+		.ExternalClass div {
+			line-height: 100%;
+		}
 
-    a.link1 {
-      color: #382F2E;
-    }
+		#backgroundTable {
+			margin: 0;
+			padding: 0;
+			width: 100% !important;
+			line-height: 100% !important;
+		}
 
-    a.link2 {
-      font-size: 16px;
-      text-decoration: none;
-      color: #ffffff;
-    }
+		img {
+			outline: none;
+			text-decoration: none;
+			-ms-interpolation-mode: bicubic;
+		}
 
-    h2 {
-      text-align: left;
-      color: #222222;
-      font-size: 19px;
-      font-weight: normal;
-    }
+		a img {
+			border: none;
+		}
 
-    div,
-    p,
-    ul,
-    h1 {
-      margin: 0;
-    }
+		.image_fix {
+			display: block;
+		}
 
-    .bgBody {
-      background: #ffffff;
-    }
+		p {
+			margin: 1em 0;
+		}
 
-    .bgItem {
-      background: #ffffff;
-    }
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: black !important;
+		}
 
-    @media only screen and (max-width:480px) {
+		h1 a,
+		h2 a,
+		h3 a,
+		h4 a,
+		h5 a,
+		h6 a {
+			color: blue !important;
+		}
 
-      table[class="MainContainer"],
-      td[class="cell"] {
-        width: 100% !important;
-        height: auto !important;
-      }
+		h1 a:active,
+		h2 a:active,
+		h3 a:active,
+		h4 a:active,
+		h5 a:active,
+		h6 a:active {
+			color: red !important;
+		}
 
-      td[class="specbundle"] {
-        width: 100% !important;
-        float: left !important;
-        font-size: 13px !important;
-        line-height: 17px !important;
-        display: block !important;
-        padding-bottom: 15px !important;
-      }
+		h1 a:visited,
+		h2 a:visited,
+		h3 a:visited,
+		h4 a:visited,
+		h5 a:visited,
+		h6 a:visited {
+			color: purple !important;
+		}
 
-      td[class="spechide"] {
-        display: none !important;
-      }
+		table td {
+			border-collapse: collapse;
+		}
 
-      img[class="banner"] {
-        width: 100% !important;
-        height: auto !important;
-      }
+		table {
+			border-collapse: collapse;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+		}
 
-      td[class="left_pad"] {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-      }
+		a {
+			color: #000;
+		}
 
-    }
+		@media only screen and (max-device-width: 480px) {
 
-    @media only screen and (max-width:540px) {
+			a[href^="tel"],
+			a[href^="sms"] {
+				text-decoration: none;
+				color: black;
+				/* or whatever your want */
+				pointer-events: none;
+				cursor: default;
+			}
 
-      table[class="MainContainer"],
-      td[class="cell"] {
-        width: 100% !important;
-        height: auto !important;
-      }
+			.mobile_link a[href^="tel"],
+			.mobile_link a[href^="sms"] {
+				text-decoration: default;
+				color: orange !important;
+				/* or whatever your want */
+				pointer-events: auto;
+				cursor: default;
+			}
+		}
 
-      td[class="specbundle"] {
-        width: 100% !important;
-        float: left !important;
-        font-size: 13px !important;
-        line-height: 17px !important;
-        display: block !important;
-        padding-bottom: 15px !important;
-      }
 
-      td[class="spechide"] {
-        display: none !important;
-      }
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 
-      img[class="banner"] {
-        width: 100% !important;
-        height: auto !important;
-      }
+			a[href^="tel"],
+			a[href^="sms"] {
+				text-decoration: none;
+				color: blue;
+				/* or whatever your want */
+				pointer-events: none;
+				cursor: default;
+			}
 
-      .font {
-        font-size: 18px !important;
-        line-height: 22px !important;
+			.mobile_link a[href^="tel"],
+			.mobile_link a[href^="sms"] {
+				text-decoration: default;
+				color: orange !important;
+				pointer-events: auto;
+				cursor: default;
+			}
+		}
 
-      }
+		@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+			/* Put your iPhone 4g styles in here */
+		}
 
-      .font1 {
-        font-size: 18px !important;
-        line-height: 22px !important;
+		@media only screen and (-webkit-device-pixel-ratio:.75) {
+			/* Put CSS for low density (ldpi) Android layouts in here */
+		}
 
-      }
-    }
-  </style>
-  <script type="colorScheme" class="swatch active">
-{
+		@media only screen and (-webkit-device-pixel-ratio:1) {
+			/* Put CSS for medium density (mdpi) Android layouts in here */
+		}
+
+		@media only screen and (-webkit-device-pixel-ratio:1.5) {
+			/* Put CSS for high density (hdpi) Android layouts in here */
+		}
+
+		/* end Android targeting */
+		h2 {
+			color: #181818;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 22px;
+			line-height: 22px;
+			font-weight: normal;
+		}
+
+		a.link1 {}
+
+		a.link2 {
+			color: #fff;
+			text-decoration: none;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 16px;
+			color: #fff;
+			border-radius: 4px;
+		}
+
+		p {
+			color: #555;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 16px;
+			line-height: 160%;
+		}
+	</style>
+
+	<script type="colorScheme" class="swatch active">
+  {
     "name":"Default",
     "bgBody":"ffffff",
-    "link":"382F2E",
-    "color":"999999",
+    "link":"fff",
+    "color":"555555",
     "bgItem":"ffffff",
-    "title":"222222"
-}
+    "title":"181818"
+  }
 </script>
+
 </head>
 
-<body paddingwidth="0" paddingheight="0">
+<body>
+	<!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
+	<table cellpadding="0" width="100%" cellspacing="0" border="0" id="backgroundTable" class='bgBody'>
+		<tr>
+			<td>
+				<table cellpadding="0" width="620" class="container" align="center" cellspacing="0" border="0">
+					<tr>
+						<td>
+							<!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
+
+
+							<table cellpadding="0" cellspacing="0" border="0" align="center" width="600"
+								class="container">
+								<tr>
+									<td class='movableContentContainer bgItem'>
+
+										<div class='movableContent'>
+											<table cellpadding="0" cellspacing="0" border="0" align="center" width="600"
+												class="container">
+												<tr height="40">
+													<td width="200">&nbsp;</td>
+													<td width="200">&nbsp;</td>
+													<td width="200">&nbsp;</td>
+												</tr>
+												<tr>
+													<td width="200" valign="top">&nbsp;</td>
+													<td width="200" valign="top" align="center">
+														<div class="contentEditableContainer contentImageEditable">
+															<div class="contentEditable" align='center'>
+																<img src="https://i.ibb.co/2S5L8s6/logo-mediano.png" alt="logo-mediano" border="0">
+															</div>
+														</div>
+													</td>
+													<td width="200" valign="top">&nbsp;</td>
+												</tr>
+												<tr height="25">
+													<td width="200">&nbsp;</td>
+													<td width="200">&nbsp;</td>
+													<td width="200">&nbsp;</td>
+												</tr>
+											</table>
+										</div>
+
+										<hr
+															style="height:1px;border:none;color:#333;background-color:#ddd;" />
+
+										<div class='movableContent'>
+											<table cellpadding="0" cellspacing="0" border="0" align="center" width="600"
+												class="container">
+												<tr>
+													<td width="100%" colspan="3" align="center"
+														style="padding-bottom:10px;padding-top:5px;">
+														<div class="contentEditableContainer contentTextEditable">
+															<div class="contentEditable" align='center'>
+																<h2>Informaci&oacute;n Importante: Este contrato finaliza en #dias# dias.</h2>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td width="100">&nbsp;</td>
+													<td width="500" align="center">
+														<div class="contentEditableContainer contentTextEditable">
+															<div class="contentEditable" align='left'>
+															
+																	<br />
+																	El siguiente correo es para notificarle que el siguiente contrato está por finalizar dentro de poco:
+																	<br /><br />
+																	<b>No. de Contrato:</b> #numero_contrato#
+																	<br />
+																	<b>Modalidad de Contratacion:</b> #nombre_modalidad#
+																	<br />
+																	<b>Tipo de Contrato:</b> #nombre_tipocontrato#
+																	<br />
+																	<b>Fecha de Inicio:</b> #fechainicio_contrato#
+																	<br />
+																	<b>Fecha Final:</b> #fechafinal_contrato#
+																	<br />
+																	<b>Valor:</b> #valor_contrato#
+																	<br />
+																	<b>Objeto del Contrato:</b> #objeto_contrato#
+
+																	<br />
+																	<br />
+
+
+
+																</p>
+															</div>
+														</div>
+													</td>
+													<td width="100">&nbsp;</td>
+												</tr>
+											</table>
+											
+										</div>
+
+
+										<div class='movableContent'>
+											<table cellpadding="0" cellspacing="0" border="0" align="center" width="600"
+												class="container">
+												<tr>
+													<td width="100%" colspan="2" style="padding-top:65px;">
+														<hr
+															style="height:1px;border:none;color:#333;background-color:#ddd;" />
+													</td>
+												</tr>
+												<tr>
+													<td width="60%" height="70" valign="middle"
+														style="padding-bottom:20px;">
+														<div class="contentEditableContainer contentTextEditable">
+															<div class="contentEditable" align='left'>
+																<span
+																	style="font-size:13px;color:#181818;font-family:Helvetica, Arial, sans-serif;line-height:200%;">
+																	Correo enviado por: #nombre_empresa#</span>
+																<br />
+																<span
+																	style="font-size:11px;color:#555;font-family:Helvetica, Arial, sans-serif;line-height:200%;">
+																	Direcci&oacute;n: #direccion# | Tel&eacute;fono: #telefono#</span>
+																<br />
+																
+																<span
+																style="font-size:11px;color:#555;font-family:Helvetica, Arial, sans-serif;line-height:200%;">
+																	Correo: #correo# | P&aacute;gina Web: #paginaweb#</span>
+															<br />
+
+															</div>
+														</div>
+													</td>
+													<td width="40%" height="70" align="right" valign="top" align='right'
+														style="padding-bottom:20px;">
+														<table width="100%" border="0" cellspacing="0" cellpadding="0"
+															align='right'>
+															<tr>
+																<td width='57%'></td>
+																<td valign="top" width='34'>
+																	<div class="contentEditableContainer contentFacebookEditable"
+																		style='display:inline;'>
+																		<div class="contentEditable">
+																			<a href="#facebook#">
+																			<img src="https://i.ibb.co/cbvcxMV/facebook.png" width="50px" alt="facebook" border="0">
+																			</a>
+																		</div>
+																	</div>
+																</td>
+																<td valign="top" width='34'>
+																	<div class="contentEditableContainer contentTwitterEditable"
+																		style='display:inline;'>
+																		<div class="contentEditable">
+																			<a href="#twitter#">
+																			<img src="https://i.ibb.co/8MzjW5M/twitter.png" width="50px" alt="twitter" border="0">
+																			</a>
+																		</div>
+																	</div>
+																</td>
+																
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</div>
+
+
+									</td>
+								</tr>
+							</table>
 
 
 
 
-  <table bgcolor="#ffffff" width="100%" border="0" cellspacing="0" cellpadding="0"
-    style='font-family:Helvetica, Arial,serif;'>
-    <tbody>
-      <tr>
-        <td>
-          <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff"
-            class="MainContainer">
-            <tbody>
-              <tr>
-                <td>
-                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                      <tr>
-                        <td valign="top" width="40">&nbsp;</td>
-                        <td>
-                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tbody>
-                              <!-- =============================== Header ====================================== -->
-                              <tr>
-                                <td height='75' class="spechide"></td>
+						</td>
+					</tr>
+				</table>
 
-                                <!-- =============================== Body ====================================== -->
-                              </tr>
-                              <tr>
-                                <td class='movableContentContainer ' valign='top'>
-                                  <a target="_blank" href="#paginaweb#">
-                                    <center>
-                                      <img src="https://lh3.googleusercontent.com/sXJITn-GyBd75q00jTLCyk0g1RanH7p6PPjNrZruYgDm1A1spmWcyEVzST0DC7Ozf0EdI8yEcbI=s1400" alt=''
-                                      data-default="placeholder" width="200px" data-max-width="560">                                  
-                                    </center>
-                                  </a>
-                                  <div class="movableContent"
-                                    style="border: 0px; padding-top: 0px; position: relative;">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                      <tbody>
-                                        <tr>
-                                          <td height="35"></td>
-                                        </tr>
-                                        <tr>
-                                          <td>
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                              <tbody>
-                                                <tr>
-                                                  <td valign="top" align="center" class="specbundle">
-                                                    <div class="contentEditableContainer contentTextEditable">
-                                                      <div class="contentEditable">
-                                                        <p
-                                                          style='text-align:center;font-family:Georgia,Time,sans-serif;
-                                                          font-size:26px;color:#222222;'>
-                                                          <span class="specbundle2"><span class="font1">Bienvenido a
-                                                              </span></span></p>
-                                                      </div>
-                                                    </div>
-                                                  </td>
-                                                  <td valign="top" class="specbundle">
-                                                    <div class="contentEditableContainer contentTextEditable">
-                                                      <div class="contentEditable">
-                                                        <p
-                                                          style='text-align:center;margin:0;font-family:Georgia,Time,sans-serif;
-                                                          font-size:26px;color:#289CDC;'>
-                                                          <span class="font">#empresa#</span> </p>
-                                                      </div>
-                                                    </div>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </div>
-
-
-                                  <div class="movableContent"
-                                    style="border: 0px; padding-top: 0px; position: relative;">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-                                      <tr>
-                                        <td valign='top' align='center'>
-                                          <div class="contentEditableContainer contentImageEditable">
-                                            <div class="contentEditable">
-                                              <img src="https://lh3.googleusercontent.com/jMuILUfHaD7yrU8gjDwcTNzWs0HvmTWZoCL5M4cm3N2d4wuzr77We8LXcEs5ypfnUa0ATv_uF00=s1400" width='251' height='43' alt=''
-                                                data-default="placeholder" data-max-width="560">
-                                            </div>
-                                          </div>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                  </div>
-                                  <div class="movableContent"
-                                    style="border: 0px; padding-top: 0px; position: relative;">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-                                      <tr>
-                                        <td height='55'></td>
-                                      </tr>
-                                      <tr>
-                                        <td align='left'>
-                                          <div class="contentEditableContainer contentTextEditable">
-                                            <div class="contentEditable" align='center'>
-                                              <h2 style="text-align: justify;">Este mensaje contiene informaci&oacute;n de seguridad de su cuenta de acceso: </h2>
-                                            </div>
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td height='15'> </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td align='left'>
-                                          <div class="contentEditableContainer contentTextEditable">
-                                            <div class="contentEditable" align='center'>
-                                              <p>
-                                               Se modificó su Contraseña a traves de la aplicación.
-                                                <br>
-                                                <br>
-                                             
-                                              
-                                              </p>
-                                            </div>
-                                          </div>
-                                        </td>
-                                      </tr>
-
-                                      <tr>
-                                        <td height='55'></td>
-                                      </tr>
-
-                                      <tr>
-                                        <td align='center'>
-                                          <table>
-                                            <tr>
-                                              <td align='center' bgcolor='#289CDC'
-                                                style='background:#1A54BA; padding:15px 18px;-webkit-border-radius: 4px; 
-                                                -moz-border-radius: 4px; border-radius: 4px;'>
-                                                <a target='_blank' href='#software#' class='link2'
-                                                      style='color:#ffffff;'>
-                                                <div class="contentEditableContainer contentTextEditable">
-                                                  <div class="contentEditable" align='center'>
-                                                    Iniciar Sesi&oacute;n</a>
-                                                  </div>
-                                                </div>
-                                              </td>
-                                            </tr>
-                                          </table>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td height='20'></td>
-                                      </tr>
-                                    </table>
-                                  </div>
-                                  <div class="movableContent"
-                                    style="border: 0px; padding-top: 0px; position: relative;">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                      <tbody>
-                                        <tr>
-                                          <td height='65'>
-                                        </tr>
-                                        <tr>
-                                          <td style='border-bottom:1px solid #DDDDDD;'></td>
-                                        </tr>
-                                        <tr>
-                                          <td height='25'></td>
-                                        </tr>
-                                        <tr>
-                                          <td>
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                              <tbody>
-                                                <tr>
-                                                
-                                                 
-                                                        
-                                                          <td  width='25'></td>
-                                                          <td  width='25'>
-                                                            <div
-                                                              class="contentEditableContainer contentFacebookEditable">
-                                                              <div class="contentEditable">
-                                                                <a target='_blank' 
-                                                                  href="#urlfacebook#">
-                                                                  <img
-                                                                    src="https://lh3.googleusercontent.com/qgHBAcqUsry99Lo4jjSxxjd3yXC5m8ntEq_1g5yyGZfcEkLIG4Ny8qZAp4dlfmKP9eZgWna3Hdo=s1400" width='52' height='53'
-                                                                    alt='facebook icon' data-default="placeholder"
-                                                                    data-max-width="52" data-customIcon="true"></a>
-                                                              </div>
-                                                            </div>
-                                                          </td>
-                                                         
-                                                          <td align='right'  width='25'>
-                                                            <div
-                                                              class="contentEditableContainer contentTwitterEditable">
-                                                              <div class="contentEditable">
-                                                                <a target='_blank' href="#urltwitter#"><img
-                                                                    src="https://lh3.googleusercontent.com/RG9KqJO77cb6EsteboDqfO-PqJDSSqdlwdFh0AUpLMmr0LoMoKs1KGqyBEd5zuZ45-YkUWeVOD0=s1400" width='52' height='53'
-                                                                    alt='twitter icon' data-default="placeholder"
-                                                                    data-max-width="52" data-customIcon="true"></a>
-                                                              </div>
-                                                            </div>
-                                                          </td>
-                                                          <td  width='25'></td>
-                                                        
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td height='88'></td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-
-                                  </div>
-
-                                  <!-- =============================== footer ====================================== -->
-
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                        <td valign="top" width="40">&nbsp;</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+			</td>
+		</tr>
+	</table>
+	
 
 </body>
 

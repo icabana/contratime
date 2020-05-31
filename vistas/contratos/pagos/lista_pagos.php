@@ -26,7 +26,7 @@
     </div>
 </div>
 
-
+<br>
 <table id="tabla_pagos" class="table table-bordered table-hover">
     <thead>
         <tr>

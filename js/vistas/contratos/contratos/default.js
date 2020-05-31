@@ -22,6 +22,18 @@ function editar_contrato(id_contrato) {
 
 }
 
+function editar_contrato_financiera(id_contrato) {
+
+    abrirVentanaContenedor(
+        'contratos',
+        'Contratos',
+        'editarFinanciera',
+        'id_contrato=' + id_contrato,
+        ''
+    );
+
+}
+
 
 function eliminar_contrato(id_contrato) {
 

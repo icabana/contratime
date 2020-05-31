@@ -39,9 +39,9 @@ class ParametrosControlador extends ControllerBase {
         $ParametrosModel = new ParametrosModel();            
         
         $resp = $ParametrosModel->insertar(
-                                        $_POST["nombre_parametro"],  
-                                        $_POST["valor_parametro"]
-                                    );        
+            $_POST["nombre_parametro"],  
+            $_POST["valor_parametro"]
+        );        
         
         if( $resp != 0 ){
             echo 1;

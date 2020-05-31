@@ -451,7 +451,7 @@ class PHPMailer {
    */
   private function AddAnAddress($kind, $address, $name = '') {
     if (!preg_match('/^(to|cc|bcc|ReplyTo)$/', $kind)) {
-      echo 'Invalid recipient array: ' . kind;
+      //echo 'Invalid recipient array: ' . kind;
       return false;
     }
     $address = trim($address);
@@ -461,7 +461,7 @@ class PHPMailer {
       if ($this->exceptions) {
         throw new phpmailerException($this->Lang('invalid_address').': '.$address);
       }
-      echo $this->Lang('invalid_address').': '.$address;
+      //echo $this->Lang('invalid_address').': '.$address;
       return false;
     }
     if ($kind != 'ReplyTo') {
@@ -493,7 +493,7 @@ class PHPMailer {
       if ($this->exceptions) {
         throw new phpmailerException($this->Lang('invalid_address').': '.$address);
       }
-      echo $this->Lang('invalid_address').': '.$address;
+      //echo $this->Lang('invalid_address').': '.$address;
       return false;
     }
     $this->From = $address;
@@ -545,7 +545,7 @@ class PHPMailer {
   public function Send() {
     try {
       if ((count($this->to) + count($this->cc) + count($this->bcc)) < 1) {
-        throw new phpmailerException($this->Lang('provide_address'), self::STOP_CRITICAL);
+        //throw new phpmailerException($this->Lang('provide_address'), self::STOP_CRITICAL);
       }
 
       // Set whether the message is multipart/alternative
@@ -559,7 +559,7 @@ class PHPMailer {
       $body = $this->CreateBody();
 
       if (empty($this->Body)) {
-        throw new phpmailerException($this->Lang('empty_message'), self::STOP_CRITICAL);
+        //throw new phpmailerException($this->Lang('empty_message'), self::STOP_CRITICAL);
       }
 
       // digitally sign with DKIM if enabled
@@ -581,7 +581,7 @@ class PHPMailer {
     } catch (phpmailerException $e) {
       $this->SetError($e->getMessage());
       if ($this->exceptions) {
-        throw $e;
+        //throw $e;
       }
       
       return false;
@@ -703,11 +703,11 @@ class PHPMailer {
     $bad_rcpt = array();
 
     if(!$this->SmtpConnect()) {
-      throw new phpmailerException($this->Lang('smtp_connect_failed'), self::STOP_CRITICAL);
+      //throw new phpmailerException($this->Lang('smtp_connect_failed'), self::STOP_CRITICAL);
     }
     $smtp_from = ($this->Sender == '') ? $this->From : $this->Sender;
     if(!$this->smtp->Mail($smtp_from)) {
-      throw new phpmailerException($this->Lang('from_failed') . $smtp_from, self::STOP_CRITICAL);
+      //throw new phpmailerException($this->Lang('from_failed') . $smtp_from, self::STOP_CRITICAL);
     }
 
     // Attempt to send attach all recipients
@@ -751,10 +751,10 @@ class PHPMailer {
 
     if (count($bad_rcpt) > 0 ) { //Create error message for any bad addresses
       $badaddresses = implode(', ', $bad_rcpt);
-      throw new phpmailerException($this->Lang('recipients_failed') . $badaddresses);
+      //throw new phpmailerException($this->Lang('recipients_failed') . $badaddresses);
     }
     if(!$this->smtp->Data($header . $body)) {
-      throw new phpmailerException($this->Lang('data_not_accepted'), self::STOP_CRITICAL);
+      //throw new phpmailerException($this->Lang('data_not_accepted'), self::STOP_CRITICAL);
     }
     if($this->SMTPKeepAlive == true) {
       $this->smtp->Reset();
@@ -865,7 +865,7 @@ class PHPMailer {
       'signing' => 'Signing Error: ',
       'smtp_error' => 'SMTP server error: ',
       'empty_message' => 'Message body empty',
-      'invalid_address' => 'Invalid address',
+      'invalid_address' => '',
       'variable_set' => 'Cannot set or reset variable: '
     );
     //Overwrite language-specific strings. This way we'll never have missing translations - no more "language string failed to load"!
@@ -1367,7 +1367,7 @@ class PHPMailer {
       if ($this->exceptions) {
         throw $e;
       }
-      echo $e->getMessage()."\n";
+      //echo $e->getMessage()."\n";
       if ( $e->getCode() == self::STOP_CRITICAL ) {
         return false;
       }
@@ -2314,7 +2314,7 @@ class PHPMailer {
 class phpmailerException extends Exception {
   public function errorMessage() {
     $errorMsg = '<strong>' . $this->getMessage() . "</strong><br />\n";
-    return $errorMsg;
+    return "";
   }
 }
 ?>
