@@ -2,57 +2,84 @@
 
     <?php
 
-      include("../../modelos/configuracion/UsuariosModel.php");
-      $UsuariosModel = new UsuariosModel();
-      $num_usuarios = count($UsuariosModel->getTodos());
-
+      include("modelos/contratos/ContratosModel.php");
+      $ContratosModel = new ContratosModel();
+      
+      $num_convocados = $ContratosModel->getNumConvocados();
+      $num_adjudicados = $ContratosModel->getNumAdjudicados();
+      $num_celebrados = $ContratosModel->getNumCelebrados();
+      $num_liquidados = $ContratosModel->getNumLiquidados();
+      $num_descartados = $ContratosModel->getNumDescartados();
+    
     ?>
 
     <div class="col-12 col-sm-6 col-md-3">
-      <div class="info-box mb-3">
-        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+      <a href="#" onclick="cargar_contratos(1);">
+        <div class="info-box mb-3">
+          <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
 
-        <div class="info-box-content">
-          <span class="info-box-text">N&uacute;mero de Usuarios</span>
-          <span class="info-box-number"><?php echo $num_usuarios; ?></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Contratos Convocados</span>
+            <span class="info-box-number"><?php echo $num_convocados; ?></span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
 
 
     <div class="col-12 col-sm-6 col-md-3">
-      <div class="info-box">
-        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+      <a href="#" onclick="cargar_contratos(2);">
+        <div class="info-box">
+          <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
 
-        <div class="info-box-content">
-          <span class="info-box-text">N&uacute;mero de Usuarios</span>
-          <span class="info-box-number"><?php echo $num_usuarios; ?></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Contratos Adjudicados</span>
+            <span class="info-box-number"><?php echo $num_adjudicados; ?></span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
 
 
     <div class="col-12 col-sm-6 col-md-3">
-      <div class="info-box mb-3">
-        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+      <a href="#" onclick="cargar_contratos(3);">
+        <div class="info-box mb-3">
+          <span class="info-box-icon bg-success elevation-1"><i class="fas fa-list-alt"></i></span>
 
-        <div class="info-box-content">
-          <span class="info-box-text">N&uacute;mero de Usuarios</span>
-          <span class="info-box-number"><?php echo $num_usuarios; ?></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Contratos Celebrados</span>
+            <span class="info-box-number"><?php echo $num_celebrados; ?></span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
 
 
     <div class="col-12 col-sm-6 col-md-3">
-      <div class="info-box mb-3">
-        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+      <a href="#" onclick="cargar_contratos(4);">
+        <div class="info-box mb-3">
+          <span class="info-box-icon bg-success elevation-1"><i class="fas fa-list-alt"></i></span>
 
-        <div class="info-box-content">
-          <span class="info-box-text">N&uacute;mero de Usuarios</span>
-          <span class="info-box-number"><?php echo $num_usuarios; ?></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Contratos Liquidados</span>
+            <span class="info-box-number"><?php echo $num_liquidados; ?></span>
+          </div>
         </div>
-      </div>
+      </a>
+    </div>
+
+
+    <div class="col-12 col-sm-6 col-md-3">
+      <a href="#" onclick="cargar_contratos(5);">
+        <div class="info-box mb-3">
+          <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-list-alt"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Contratos Descartados</span>
+            <span class="info-box-number"><?php echo $num_descartados; ?></span>
+          </div>
+        </div>
+      </a>  
     </div>
 
 

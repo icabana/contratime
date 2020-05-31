@@ -7,13 +7,6 @@
 $froms = new Formularios();
 ?>
 
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_contratos");
-        }
-    );
-</script>
 
 <div class="row">
 
@@ -93,6 +86,16 @@ $froms = new Formularios();
 </div>
 
 
+<!-- Modal Celebrar-->
+<?php
+  include("vistas/contratos/contratos/modales/modal_celebrar.php");
+?>
+
+
+<!-- Modal Adjudicar-->
+<?php
+  include("vistas/contratos/contratos/modales/modal_adjudicar.php");
+?>
 
 
 <!-- Modal Supervisores-->
@@ -127,6 +130,7 @@ $froms = new Formularios();
 
 <!-- Modal Prorrogas-->
 <?php
+  include("vistas/contratos/prorrogas/modal_prorrogas.php");
   include("vistas/contratos/prorrogas/modal_prorrogas.php");
 ?>
 

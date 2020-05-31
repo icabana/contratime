@@ -22,17 +22,6 @@ function editar_contrato(id_contrato) {
 
 }
 
-function editar_contrato_convocado(id_contrato) {
-
-    abrirVentanaContenedor(
-        'contratos',
-        'Contratos',
-        'editarConvocado',
-        'id_contrato=' + id_contrato,
-        ''
-    );
-
-}
 
 function eliminar_contrato(id_contrato) {
 
@@ -48,6 +37,109 @@ function eliminar_contrato2(id_contrato) {
         'eliminar',
         "id_contrato=" + id_contrato,
         ' mensaje_alertas("success", "Contrato Eliminado con Éxito", "center"); cargar_contratos();'
+    );
+
+}
+
+
+function descartar_contrato(id_contrato) {
+
+    mensaje_confirmar("¿Está seguro de Descartar el Contrato?", "descartar_contrato2(" + id_contrato + "); ");
+
+}
+
+function descartar_contrato2(id_contrato) {
+
+    ejecutarAccion(
+        'contratos',
+        'Contratos',
+        'descartar',
+        "id_contrato=" + id_contrato,
+        ' mensaje_alertas("success", "Contrato Descartado con Éxito", "center"); cargar_contratos();'
+    );
+
+}
+
+function sel_adjudicar_contrato(id_contrato) {
+
+    $("#id_contrato_sel").val(id_contrato);
+
+}
+
+function adjudicar_contrato() {
+
+    var id_contrato = $("#id_contrato_sel").val();
+    var contratista_adjudicar = $("#contratista_adjudicar").val();
+
+    mensaje_confirmar("¿Está seguro de adjudicar el Contrato? No podrá regresar al estado actual: Convocado", 
+                        "adjudicar_contrato2(" + id_contrato + ", '"+contratista_adjudicar+"'); ");
+
+}
+
+function adjudicar_contrato2(id_contrato, contratista_adjudicar) {
+
+    ejecutarAccion(
+        'contratos',
+        'Contratos',
+        'adjudicar',
+        "id_contrato=" + id_contrato+"&contratista_adjudicar=" + contratista_adjudicar,
+        '$("#modal_adjudicar").modal("hide"); $(".modal-backdrop").hide(); mensaje_alertas("success", "Contrato Adjudicado con Éxito", "center"); cargar_fila_contratos('+id_contrato+');'
+    );
+
+}
+
+
+function sel_celebrar_contrato(id_contrato) {
+
+    $("#id_contrato_sel").val(id_contrato);
+
+}
+
+function celebrar_contrato() {
+
+    var id_contrato = $("#id_contrato_sel").val();
+    var numero_contra = $("#numero_contra").val();
+    var fechainicio_contra = $("#fechainicio_contra").val();
+    var fechafinal_contra = $("#fechafinal_contra").val();
+    var valor_contra = $("#valor_contra").val();
+
+    mensaje_confirmar(
+        "¿Está seguro de Celebrar el Contrato? No podrá regresar al estado actual: Adjudicado", 
+        "celebrar_contrato2(" + id_contrato + ", '"+numero_contra+"', '"+fechainicio_contra+"', '"+fechafinal_contra+"', '"+valor_contra+"'); ");
+
+}
+
+function celebrar_contrato2(id_contrato, numero_contra, fechainicio_contra, fechafinal_contra, valor_contra ) {
+
+    ejecutarAccionSinAlert(
+        'contratos',
+        'Contratos',
+        'celebrar',
+        "id_contrato=" + id_contrato+
+        "&numero_contra=" + numero_contra+
+        "&fechainicio_contra=" + fechainicio_contra+
+        "&fechafinal_contra=" + fechafinal_contra+
+        "&valor_contra=" + valor_contra,
+        '$("#modal_celebrar").modal("hide"); $(".modal-backdrop").hide(); mensaje_alertas("success", "Contrato Celebrado con Éxito", "center");  cargar_fila_contratos('+id_contrato+');'
+    );
+
+}
+
+
+function liquidar_contrato(id_contrato) {
+
+    mensaje_confirmar("¿Está seguro de Liquidar el Contrato?", "liquidar_contrato2(" + id_contrato + "); ");
+
+}
+
+function liquidar_contrato2(id_contrato) {
+
+    ejecutarAccion(
+        'contratos',
+        'Contratos',
+        'liquidar',
+        "id_contrato=" + id_contrato,
+        'mensaje_alertas("success", "Contrato Descartado con Éxito", "center"); cargar_contratos();'
     );
 
 }

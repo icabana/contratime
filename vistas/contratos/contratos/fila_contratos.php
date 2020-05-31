@@ -1,40 +1,10 @@
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_contratos");
-        }
-    );
-</script>
-
-<input type="hidden" name="id_contrato_sel" id="id_contrato_sel">
-
-<div class="table-responsive mailbox-messages">
-          <table id="tabla_contratos" style="width:100%" width='100%' class="table table-hover table-striped">
-            <thead>
-              <tr>
-                <th style='background-color:lavender'></th>
-                <th style='background-color:lavender'>Contrato</th>              
-                <th style='background-color:lavender'>N&uacute;mero</th>
-                <th style='background-color:lavender'>Tipo de Contrato</th>
-                <th style='background-color:lavender'>Contratista</th>
-                <th style='background-color:lavender'>Valor </th>
-                <th style='background-color:lavender; width:15px'>Objeto</th>
-                <th style='background-color:lavender'>Estado</th>
-                <th  style='background-color:lavender; width:15px'></th>
-                <th  style='background-color:lavender; width:15px'></th>
-              </tr>
-            </thead>
-            <tbody>
 
               <?php
-
-              foreach ($contratos as $contrato) {
-
 
                 $id_check = "check" . $contrato['id_contrato'];
 
               ?>
-                <tr id="fila_contrato_<?php echo $contrato['id_contrato']?>" >
+             
                   <td>
                     <div class="icheck-primary">
                       <input class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
@@ -181,9 +151,14 @@
                
 
                   <?php
-               
-                    echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato(" . $contrato['id_contrato'] . ");' 
-                    class='fas fa-edit'></i></a></td>";                                 
+
+                  if($contrato['estado_contrato'] != 4){
+                    echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_info_contrato(" . $contrato['id_contrato'] . ");' 
+                    class='fas fa-edit'></i></a></td>";
+                  }else{
+                    echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato_convocado(" . $contrato['id_contrato'] . ");' 
+                    class='fas fa-edit'></i></a></td>";
+                  }                  
 
                   echo "<td><a href='#' title='Editar Contrato'><i onclick='eliminar_contrato(" . $contrato['id_contrato'] . ");' 
                                     class='fas fa-trash'></i></a></td>";
@@ -192,9 +167,5 @@
 
                   ?>
 
-                </tr>
-              <?php
-              }
-              ?>
- </tbody>
-          </table>
+                
+             

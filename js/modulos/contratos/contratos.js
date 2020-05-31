@@ -8,8 +8,7 @@ function cargar_contratos(){
 
     limpiar_cuerpo();
     
-    abrirVentanaContenedorTabla(
-        'tabla_contratos', 
+    abrirVentanaContenedor(
         'contratos', 
         'Contratos', 
         'index', 
@@ -17,3 +16,16 @@ function cargar_contratos(){
     );    
         
 }
+
+function cargar_fila_contratos(id_contrato){
+
+    ejecutarAccion(
+        'contratos', 
+        'Contratos', 
+        'index_fila', 
+        'id_contrato='+id_contrato,
+        '$("#fila_contrato_'+id_contrato+'").html(data);'
+    );    
+        
+}
+

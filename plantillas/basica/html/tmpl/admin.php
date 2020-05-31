@@ -110,11 +110,9 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Inicio</a>
+        <a  href="javascript:location.reload()" class="nav-link">Inicio</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contactos</a>
-      </li>
+     
     </ul>
 
     
@@ -154,7 +152,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
     <!-- ICONO SUPERIOR IZQUIERDO -->
-    <a href="index3.html" class="brand-link">
+    <a  href="javascript:location.reload()"  class="brand-link">
       <span class="brand-text font-weight-light">
         <center><img src="imagenes/logos/logo_mediano.png"  style="opacity: .8"></center>
       </span>

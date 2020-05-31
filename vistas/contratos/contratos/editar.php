@@ -1,200 +1,222 @@
 <?php
-  $froms = new Formularios();
+$froms = new Formularios();
 ?>
 
-<div class="box box-default" style="padding: 25px">
+<form autocomplete="on" id="formContratos" method="post">
 
-  <form autocomplete="on" id="formContratos" method="post">
+  <input type="hidden" id="id_contrato" name="id_contrato" value="<?php echo $contrato['id_contrato']; ?>">
 
-    <div class="card card-primary">
+  <div class="box box-default">
 
+    <div style="padding: 25px" class="box-body">
 
-      <div class="card-header">
-        <h3 class="card-title">Agregar Nuevo Contrato</h3>
-      </div>
-
-
-      <div class="card-body" style="height: 400px">
+      <div class="card card-primary">
 
 
-            <input 
-              type="hidden" 
-              name="id_contrato" 
-              id="id_contrato" 
-              value="<?php echo $datos['id_contrato']; ?>"> 
-
-              
-
-            <!--TITULOS DE LOS TAB-->
-            <ul class="nav nav-pills ml-auto p-2">
-
-              <li class="nav-item">
-                <a class="nav-link active" href="#tab_1" data-toggle="tab">
-                  Informaci&oacute;n Principal
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#tab_2" data-toggle="tab">
-                  Pagos
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#tab_3" data-toggle="tab">
-                  Ajustar Presupuesto
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#tab_4" data-toggle="tab">
-                  Prorrogas
-                </a>
-              </li>      
-              
-              <li class="nav-item">
-                <a class="nav-link" href="#tab_5" data-toggle="tab">
-                  Fechas importantes
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#tab_6" data-toggle="tab">
-                  Polizas
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#tab_7" data-toggle="tab">
-                  CDPS
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#tab_8" data-toggle="tab">
-                  RPS
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#tab_9" data-toggle="tab">
-                  Documentos
-                </a>
-              </li>
-
-            </ul>
+        <div class="card-header">
+          <h3 class="card-title">Editar Contrato (Estado: Convocado)</h3>
+        </div>
 
 
-            <!--INICIO DE LAS TABS-->
-            <div class="tab-content">
 
-              
-              <div style="padding: 20px;" class="tab-pane active" id="tab_1">
+        <div class="card-body">
+
+          <!--TITULOS DE LOS TAB-->
+          <ul class="nav nav-pills ml-auto p-2">
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#tab_1" data-toggle="tab">
+                Datos Proceso
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_2_supervisores" data-toggle="tab">
+                Supervisores
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_4_cdps" data-toggle="tab">
+                Cdps
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_5_rps" data-toggle="tab">
+                Rps
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_6_pagos" data-toggle="tab">
+                Pagos
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_7_ajustes" data-toggle="tab">
+                Ajustes 
+              </a>
+            </li>
             
-                <?php
-                  include("vistas/actores/contratos/insertar_tab1.php");
-                ?>
-              
-              </div>
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_8_prorrogas" data-toggle="tab">
+                Prorrogas
+              </a>
+            </li>
 
-              
-              <div style="padding: 20px;" class="tab-pane" id="tab_2">
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
+                Trazabilidad
+              </a>
+            </li>
 
-                <?php
-                  include("vistas/actores/contratos/insertar_tab2.php");
-                ?>
-                
-              </div>
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_10_documentos" data-toggle="tab">
+                Documentos
+              </a>
+            </li>
+
+          </ul>
+
+          <!--INICIO DE LAS TABS-->
+          <div class="tab-content">
 
 
-              <div style="padding: 20px;" class="tab-pane" id="tab_3">
+            <div style="padding: 20px; height:450px" class="tab-pane active" id="tab_1">
 
-                <?php
-                  include("vistas/actores/contratos/insertar_tab3.php");
-                ?>
-              
-              </div>
-
-              <div style="padding: 20px;" class="tab-pane" id="tab_4">
-
-                <?php
-                  include("vistas/actores/contratos/insertar_tab4.php");
-                ?>
-              
-              </div>
-
-              <div style="padding: 20px;" class="tab-pane" id="tab_5">
-
-                <?php
-                  include("vistas/actores/contratos/insertar_tab5.php");
-                ?>
-              
-              </div>
-
-              <div style="padding: 20px;" class="tab-pane" id="tab_6">
-
-                <?php
-                  include("vistas/actores/contratos/insertar_tab6.php");
-                ?>
-              
-              </div>
-
-              <div style="padding: 20px;" class="tab-pane" id="tab_7">
-
-                <?php
-                  include("vistas/actores/contratos/insertar_tab7.php");
-                ?>
-              
-              </div>
-
-              <div style="padding: 20px;" class="tab-pane" id="tab_8">
-
-                <?php
-                  include("vistas/actores/contratos/insertar_tab8.php");
-                ?>
-              
-              </div>
-
-              <div style="padding: 20px;" class="tab-pane" id="tab_9">
-
-                <?php
-                  include("vistas/actores/contratos/insertar_tab9.php");
-                ?>
-              
-              </div>
-
-              
-              <div style="padding: 20px;" class="tab-pane" id="tab_10">
-
-                <?php
-                  include("vistas/actores/contratos/insertar_tab10.php");
-                ?>
-              
-              </div>
-
+            <?php
+              include("vistas/contratos/contratos/form.php");
+              ?>
             
-            </div>
           
+            </div>
+
+
+            <div style="padding: 20px" class="tab-pane" id="tab_2_supervisores">
+
+              <?php
+              include("vistas/contratos/supervisores/lista_supervisores.php");
+              ?>
+            </div>
+
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_4_cdps">
+
+              <?php
+              include("vistas/contratos/cdps/lista_cdps.php");
+              ?>
+            </div>
+
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_5_rps">
+
+              <?php
+              include("vistas/contratos/rps/lista_rps.php");
+              ?>
+            </div>
+
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_6_pagos">
+
+              <?php
+              include("vistas/contratos/pagos/lista_pagos.php");
+              ?>
+
+            </div>
+
+            
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_7_ajustes">
+
+              <?php
+              include("vistas/contratos/ajustes/lista_ajustes.php");
+              ?>
+
+            </div>
+
+            
+            <div style="padding: 20px" class="tab-pane" id="tab_8_prorrogas">
+
+              <?php
+              include("vistas/contratos/prorrogas/lista_prorrogas.php");
+              ?>
+
+            </div>
+
+
+
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_3_trazabilidad">
+
+              <?php
+              include("vistas/contratos/trazabilidad/lista_trazabilidad.php");
+              ?>
+            </div>
+
+
+                 
+            <div style="padding: 20px; " class="tab-pane" id="tab_10_documentos">
+
+              <?php
+              
+                  include("vistas/contratos/documentos/lista_documentos.php");
+
+              ?>
+
+            </div>
+
+
+
+          </div>
+
+
+
+       
 
         </div>
 
 
-        
-        <div class="card-footer">
-          <div class="row">
-            <div class="col-md-9">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button onclick="cargar_contratos();" class="btn btn-danger">Cancelar</button>
-            </div>     
-            <div class="col-md-3">
-              <button onclick="insertar_contrato(); return false;" class="btn btn-success">Guardar</button>
-            </div>     
-          </div>     
-        </div>     
-
-
-
+      </div>
     </div>
 
-  </form>
-</div>
+</form>
+
+
+
+
+<!-- Modal Supervisores-->
+<?php
+  include("vistas/contratos/supervisores/modal_supervisores_editar.php");
+?>
+
+<!-- Modal Trazabilidad-->
+<?php
+  include("vistas/contratos/trazabilidad/modal_trazabilidad_editar.php");
+?>
+
+<!-- Modal Cdps-->
+<?php
+  include("vistas/contratos/cdps/modal_cdps_editar.php");
+?>
+
+<!-- Modal Documentos Cdps-->
+<?php
+  include("vistas/contratos/cdps/modal_documentos.php");
+?>
+
+<!-- Modal Rps-->
+<?php
+  include("vistas/contratos/rps/modal_rps_editar.php");
+?>
+
+<!-- Modal Pagos-->
+<?php
+  include("vistas/contratos/pagos/modal_pagos_editar.php");
+?>
+
+<!-- Modal Ajustes de Presupuesto-->
+<?php
+  include("vistas/contratos/ajustes/modal_ajustes_editar.php");
+?>
+
+<!-- Modal Prorrogas-->
+<?php
+  include("vistas/contratos/prorrogas/modal_prorrogas_editar.php");
+?>

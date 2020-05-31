@@ -1,4 +1,4 @@
-function editar_contrato() {
+function editar_info_contrato() {
 
   if(!validar_requeridos()){
       return 0;
