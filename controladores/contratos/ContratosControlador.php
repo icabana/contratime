@@ -234,6 +234,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("PagosModel.php", "contratos");
         $PagosModel = new pagosContratosModel();
         $pagos = $PagosModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("PolizasModel.php", "contratos");
+        $PolizasModel = new PolizasContratosModel();
+        $polizas = $PolizasModel->getTodosxContrato($_POST['id_contrato']);
         
         $this->model->cargar("AjustesModel.php", "contratos");
         $AjustesModel = new AjustesContratosModel();
@@ -343,6 +347,7 @@ class ContratosControlador extends ControllerBase {
         $resp = $ContratosModel->insertar(
             $_POST["numproceso_contrato"],
             $_POST["valproceso_contrato"],
+            $_POST["fevaluacionproceso_contrato"],
             $_POST["fadjudicacionproceso_contrato"],
             $_POST["fcierreproceso_contrato"],
             $_POST["modalidad_contrato"],
@@ -357,49 +362,6 @@ class ContratosControlador extends ControllerBase {
 
             $TrazabilidadControlador->insertarExterno($resp, "Registró un nuevo contrato");
 
-            /*
-            mkdir('archivos/uploads/contratos/'.$resp);
-
-            $ContratosModel->insertar_trazabilidad(
-                $resp,
-                "Registró el Radicado No. ".$numero_contrato
-            );    
-
-            $radicado = $ContratosModel->getDatos($resp);
-
-            
-            $mensaje = "Se le ha asignado un nuevo radicado, el cual se detalla a continuación: <br><br>";             
-
-
-
-            $mensaje .= "Radicado No.: ". $radicado['numero_radicado']."<br>";
-            $mensaje .= "Remitente: ".$radicado['nombre_tercero']."<br>";
-            $mensaje .= "Destinatario: ". $radicado['nombres_contratista']." ".$radicado['apellidos_contratista']."<br>";
-         
-            
-            $mensaje .= "<br><br><br><br>"; 
-
-          
-
-            
-            $mensaje .= "<center>Sistema Estratégico de Transporte Público de Santa Marta S.A.S.</center><br>";      
-            $mensaje .= "<center>PBX. (57-5) 4317777 </center><br>";      
-            $mensaje .= "<center>Cl. 24 No. 3-99, Edificio Banco de Bogotá – Oficina 1202</center><br>";      
-            $mensaje .= "<center>www.setpsantamarta.gov.co</center><br>";    
-
-
-
-            $correo1 = "icabana@solati.com.co";
-            $nombre1 = "Ismael";
-
-
-
-            //echo $this->EnviarCorreo($mensaje, $asunto, $correo1, $nombre1);
-            
-  
-
-            echo $resp;
-*/
         }else{
 
             echo 0;			
@@ -417,6 +379,7 @@ class ContratosControlador extends ControllerBase {
                 $_POST["id_contrato"], 
                 $_POST["numproceso_contrato"],
                 $_POST["valproceso_contrato"],
+                $_POST["fevaluacionproceso_contrato"],
                 $_POST["fadjudicacionproceso_contrato"],
                 $_POST["fcierreproceso_contrato"],
                 $_POST["modalidad_contrato"],

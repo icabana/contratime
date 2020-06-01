@@ -49,6 +49,12 @@ $froms = new Formularios();
             </li>         
 
             <li class="nav-item">
+              <a class="nav-link" href="#tab_34_polizas" data-toggle="tab">
+                Polizas
+              </a>
+            </li>         
+
+            <li class="nav-item">
               <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
                 Trazabilidad
               </a>
@@ -100,6 +106,15 @@ $froms = new Formularios();
 
             </div>
 
+            
+
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_34_polizas">
+
+              <?php
+              include("vistas/contratos/polizas/lista_polizas.php");
+              ?>
+
+            </div>
 
 
             <div style="padding: 20px; height:350px" class="tab-pane" id="tab_3_trazabilidad">
@@ -161,4 +176,9 @@ $froms = new Formularios();
 <!-- Modal Pagos-->
 <?php
   include("vistas/contratos/pagos/modal_pagos_editar.php");
+?>
+
+<!-- Modal Polizas-->
+<?php
+  include("vistas/contratos/polizas/modal_polizas_editar.php");
 ?>

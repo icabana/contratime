@@ -50,7 +50,7 @@ class SupervisoresControlador extends ControllerBase {
                 $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
                 $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
         
-                echo $correo->EnviarCorreo($mensaje, "asunto", array($datos_supervisor['correo_supervisor']));
+                echo $correo->EnviarCorreo($mensaje, "Usted ha sido asignado como Supervisor", array($datos_supervisor['correo_supervisor']));
               
             }  
 

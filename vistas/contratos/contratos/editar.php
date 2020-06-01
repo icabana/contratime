@@ -55,6 +55,12 @@ $froms = new Formularios();
             </li>
 
             <li class="nav-item">
+              <a class="nav-link" href="#tab_34_polizas" data-toggle="tab">
+                Polizas
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a class="nav-link" href="#tab_7_ajustes" data-toggle="tab">
                 Ajustes 
               </a>
@@ -121,6 +127,15 @@ $froms = new Formularios();
               ?>
 
             </div>
+
+            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_34_polizas">
+
+              <?php
+              include("vistas/contratos/polizas/lista_polizas.php");
+              ?>
+
+              </div>
+
 
             
             <div style="padding: 20px; height:350px" class="tab-pane" id="tab_7_ajustes">
@@ -208,6 +223,12 @@ $froms = new Formularios();
 <!-- Modal Pagos-->
 <?php
   include("vistas/contratos/pagos/modal_pagos_editar.php");
+?>
+
+
+<!-- Modal Pagos-->
+<?php
+  include("vistas/contratos/polizas/modal_polizas_editar.php");
 ?>
 
 <!-- Modal Ajustes de Presupuesto-->

@@ -82,6 +82,7 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/cdps/cdps.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/rps/rps.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/pagos/pagos.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/polizas/polizas.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/ajustes/ajustes.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/prorrogas/prorrogas.js'></script> 
   

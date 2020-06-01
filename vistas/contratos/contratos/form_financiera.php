@@ -21,7 +21,16 @@ $froms = new Formularios();
 
     </div>
 
-    <div class="col-md-3">
+      <div class="col-md-2">
+
+                  <label>Fecha Evaluaci&oacute;n<span style="color:red">*</span></label>
+                  <input type="date" class="form-control requerido" id="fevaluacionproceso_contrato" 
+                        name="fevaluacionproceso_contrato" 
+                        value="<?php echo $contrato['fevaluacionproceso_contrato']; ?>">
+
+                </div>
+
+    <div class="col-md-2">
 
       <label>Fecha de Adjudicaci&oacute;n<span style="color:red">*</span></label>
       <input type="date" class="form-control requerido" id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato" value="<?php echo $contrato['fadjudicacionproceso_contrato']; ?>">
@@ -29,7 +38,7 @@ $froms = new Formularios();
     </div>
 
 
-    <div class="col-md-3">
+    <div class="col-md-2">
 
       <label>Fecha de Cierre<span style="color:red">*</span></label>
       <input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato" value="<?php echo $contrato['fcierreproceso_contrato']; ?>">
