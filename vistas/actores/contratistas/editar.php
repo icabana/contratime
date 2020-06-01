@@ -16,7 +16,7 @@
       </div>
 
 
-      <div class="card-body"  style="height: 400px">
+      <div class="card-body">
 
 
             <input 
@@ -45,6 +45,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="#tab_3" data-toggle="tab">
                   Informaci&oacute;n Secundaria
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#tab_4" data-toggle="tab">
+                  Documentos Soportes
                 </a>
               </li>
 
@@ -78,6 +84,17 @@
                 <?php
                   include("vistas/actores/contratistas/editar_tab3.php");
                 ?>
+              
+              </div>
+            
+
+              <div style="padding: 20px;" class="tab-pane" id="tab_4">
+               
+              <?php
+              
+                  include("vistas/actores/contratistas/soportes/lista_soportes.php");
+
+              ?>
               
               </div>
 

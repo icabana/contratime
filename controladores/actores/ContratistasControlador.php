@@ -83,10 +83,14 @@ class ContratistasControlador extends ControllerBase {
         $this->model->cargar("ProfesionesModel.php", "maestras");
         $ProfesionesModel = new ProfesionesModel();
         $profesiones = $ProfesionesModel->getTodos();
-
+        
         $this->model->cargar("ContratistasModel.php", 'actores');
         $ContratistasModel = new ContratistasModel();          
         $datos = $ContratistasModel->getDatos($_POST['id_contratista']);       
+        
+        $this->model->cargar("SoportesModel.php", "actores");
+        $SoportesModel = new SoportesModel();
+        $soportes = $SoportesModel->getTodosxTipo($datos['tipo_contratista']);
         
         $this->model->cargar("MunicipiosModel.php", "maestras");
         $MunicipiosModel = new MunicipiosModel();

@@ -43,6 +43,7 @@
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/modalidades.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/tiposcontrato.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/contratistas.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/modulos/actores/soportes.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/supervisores.js'></script> 
   
   <!-- ARCHIVOS DE LAS VISTAS -->  
@@ -53,6 +54,10 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/editar.js'></script>
+  
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/soportes/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/soportes/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/soportes/editar.js'></script>
 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/documentos/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/documentos/insertar.js'></script> 
@@ -270,7 +275,14 @@
             <p>Supervisores</p>
           </a>
         </li>
+        
 
+        <li class="nav-item">
+          <a href="#" onclick="cargar_soportes();" class="nav-link">
+            <i class="nav-icon fas fa-file"></i>
+            <p>Soportes</p>
+          </a>
+        </li>
   
 
       </ul>
