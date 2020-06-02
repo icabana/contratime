@@ -49,7 +49,7 @@ function eliminar_documento_rp2(archivo, id_contrato) {
       'Rps',
       'eliminarDocumento',
       'archivo=' + archivo+'&id_contrato=' +id_contrato,
-      "$('#tab_5_rps').html(data); mensaje_alertas('success', 'Archivo Eliminado correctamente', 'center'); "
+      "$('#div_tabla_rps').html(data); mensaje_alertas('success', 'Archivo Eliminado correctamente', 'center'); "
 
     );
 
@@ -62,7 +62,7 @@ function actualizar_lista_rps(contrato_rp) {
       'Rps',
       'actualizarDocumento',
       'id_contrato=' +contrato_rp,
-      "$('#tab_5_rps').html(data); "
+      "$('#div_tabla_rps').html(data); "
 
     );
 

@@ -97,7 +97,7 @@ class RpsControlador extends ControllerBase {
         
         $rps = $RpsModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/rps/lista_rps.php");             
+        include("vistas/contratos/rps/tabla_rps.php");             
         
     }
 
@@ -108,7 +108,7 @@ class RpsControlador extends ControllerBase {
         
         $rps = $RpsModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/rps/lista_rps.php");             
+        include("vistas/contratos/rps/tabla_rps.php");             
         
     }
 

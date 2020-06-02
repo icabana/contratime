@@ -43,26 +43,47 @@ function eliminar_documento_cdp(archivo, id_contrato) {
 }
 
 function eliminar_documento_cdp2(archivo, id_contrato) {
-
+  
+    var id_cdp = $("#id_cdp_upload").val();
+  
     ejecutarAccion(
       'contratos',
       'Cdps',
       'eliminarDocumento',
-      'archivo=' + archivo+'&id_contrato=' +id_contrato,
-      "$('#tab_4_cdps').html(data); mensaje_alertas('success', 'Archivo Eliminado correctamente', 'center'); "
+      'archivo=' + archivo+'&id_contrato=' +id_contrato+'&id_cdp='+id_cdp,
+      " eliminar_documento_cdp3('" + archivo + "', " + id_contrato + "); "
+
+    );
+
+    
+}
+
+function eliminar_documento_cdp3(archivo, id_contrato) {
+  
+    var id_cdp = $("#id_cdp_upload").val();
+  
+    ejecutarAccion(
+      'contratos',
+      'Cdps',
+      'eliminarDocumento2',
+      'archivo=' + archivo+'&id_contrato=' +id_contrato+'&id_cdp='+id_cdp,
+      "$('#div_tabla_cdps').html(data); mensaje_alertas('success', 'Archivo Eliminado correctamente', 'center'); "
 
     );
 
 }
 
+
 function actualizar_lista_cdps(contrato_cdp) {
 
+    var id_cdp = $("#id_cdp_upload").val();
+  
     ejecutarAccionSinAlert(
       'contratos',
       'Cdps',
       'actualizarDocumento',
-      'id_contrato=' +contrato_cdp,
-      "$('#tab_4_cdps').html(data); "
+      'id_contrato=' +contrato_cdp+'&id_cdp='+id_cdp,
+      "$('#div_tabla_cdps').html(data);"
 
     );
 

@@ -31,7 +31,6 @@
 </div>
 
 <br>
-<div id="div_tabla_rps">
 <table id="tabla_rps" class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -67,6 +66,6 @@
     </tbody>
 
 </table>
-</div>
+
 
 <script language="JavaScript" type='text/javascript' src='vistas/contratos/rps/comp_upload/upload.js'></script> 

@@ -58,6 +58,7 @@ $froms = new Formularios();
             <button title="Agregar CDP" data-toggle="modal" data-target="#modal_cdps" type="button" class="btn btn-default btn-sm"><i class="fas fa-money-bill"></i></button>
             <button title="Agregar RP" data-toggle="modal" data-target="#modal_rps" type="button" class="btn btn-default btn-sm"><i class="fas fa-cash-register"></i></button>
             <button title="Agregar Pago" data-toggle="modal" data-target="#modal_pagos" type="button" class="btn btn-default btn-sm"><i class="fas fa-comment-dollar"></i></button>
+            <button title="Agregar Poliza" data-toggle="modal" data-target="#modal_polizas" type="button" class="btn btn-default btn-sm"><i class="fas fa-file"></i></button>
             <button title="Ajustar Presupuesto" data-toggle="modal" data-target="#modal_ajustes" type="button" class="btn btn-default btn-sm"><i class="fas fa-coins"></i></button>
             <button title="Agregar Prorroga" data-toggle="modal" data-target="#modal_prorrogas" type="button" class="btn btn-default btn-sm"><i class="fas fa-calendar-plus"></i></button>
           </div>
@@ -121,6 +122,11 @@ $froms = new Formularios();
 <!-- Modal Pagos-->
 <?php
   include("vistas/contratos/pagos/modal_pagos.php");
+?>
+
+<!-- Modal Polizas-->
+<?php
+  include("vistas/contratos/polizas/modal_polizas.php");
 ?>
 
 <!-- Modal Ajustes de Presupuesto-->

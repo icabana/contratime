@@ -1,31 +1,3 @@
-<?php
-    include("vistas/contratos/cdps/comp_upload/modal.php");
-?>
-
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_cdps");
-        }
-    );
-</script>
-
-<div class="card-header">
-    <div class="box">
-        <div class="row">
-
-            <div class="col-md-10"></div>
-
-            <div class="col-md-2">
-                <button title="Agregar Supervisor" data-toggle="modal" data-target="#modal_cdps_editar" type="button" class="btn btn-success btn-sm">Nuevo CDP</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<br>
-<div id="div_tabla_cdps">
 <table id="tabla_cdps" class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -64,6 +36,3 @@
     </tbody>
 
 </table>
-</div>
-
-<script language="JavaScript" type='text/javascript' src='vistas/contratos/cdps/comp_upload/upload.js'></script> 

@@ -83,8 +83,7 @@ class CdpsControlador extends ControllerBase {
         
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/cdps/lista_cdps.php");
-             
+        include("vistas/contratos/cdps/lista_cdps.php");             
         
     }
 
@@ -93,14 +92,20 @@ class CdpsControlador extends ControllerBase {
         
         unlink($_POST['archivo']);
 
+    }
+
+    
+    public function eliminarDocumento2() {
+        
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();  
         
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/cdps/lista_cdps.php");             
+        include("vistas/contratos/cdps/tabla_cdps.php");             
         
     }
+
 
     public function actualizarDocumento() {
         
@@ -109,7 +114,7 @@ class CdpsControlador extends ControllerBase {
         
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/cdps/lista_cdps.php");             
+        include("vistas/contratos/cdps/tabla_cdps.php");          
         
     }
 
