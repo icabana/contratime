@@ -33,3 +33,5 @@ SUCCESS ---------->  (2020-06-01 01:05:02) Se cerró la Sesión de forma correct
 SUCCESS ---------->  (2020-06-01 01:05:05) Inicio de Sesión correcto.
 SUCCESS ---------->  (2020-06-01 01:05:08) Inicio de Sesión correcto.
 SUCCESS ---------->  (2020-06-01 01:05:12) Inicio de Sesión correcto.
+SUCCESS ---------->  (2020-06-01 08:09:49) Inicio de Sesión correcto.
+SUCCESS ---------->  (2020-06-01 14:51:46) Inicio de Sesión correcto.

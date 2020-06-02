@@ -4,11 +4,13 @@ class TiposcontratoModel extends ModelBase {
   
     function getTodos() {
         
-        $query = "select 
-                    tiposcontrato.id_tipocontrato, 
-                    tiposcontrato.nombre_tipocontrato
+        $query = "SELECT  
+                    id_tipocontrato, 
+                    nombre_tipocontrato
                 
-                    from tiposcontrato";
+                    FROM tiposcontrato
+                    
+                    ORDER BY nombre_tipocontrato";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -17,11 +19,11 @@ class TiposcontratoModel extends ModelBase {
 
     function getDatos($id_tipocontrato) {
        
-        $query = "select 	
-                    tiposcontrato.id_tipocontrato, 
-                    tiposcontrato.nombre_tipocontrato
+        $query = "SELECT  
+                    id_tipocontrato, 
+                    nombre_tipocontrato
                 
-                    from tiposcontrato 
+                    FROM tiposcontrato
 
                     where tiposcontrato.id_tipocontrato='".$id_tipocontrato."'";
         

@@ -360,7 +360,7 @@ class ContratosControlador extends ControllerBase {
             require_once("controladores/contratos/TrazabilidadControlador.php");
             $TrazabilidadControlador = new TrazabilidadControlador();      
 
-            $TrazabilidadControlador->insertarExterno($resp, "Registró un nuevo contrato");
+            $TrazabilidadControlador->insertarExterno($resp, "Se Registró el contrato por primera vez, con estado Convocado");
 
         }else{
 
@@ -401,110 +401,7 @@ class ContratosControlador extends ControllerBase {
         }
         
     }    
-        /*
-    public function guardarDatosArchivo() {
-        
-        $this->model->cargar("ContratosModel.php", 'contratos');
-        $ContratosModel = new ContratosModel();
-            
-        $resp = $ContratosModel->guardarDatosArchivo(
-                                    $_POST["contrato_archivo"], 
-                                    $_POST["archivador_archivo"],
-                                    $_POST["fechainicio_archivo"],
-                                    $_POST["fechafinal_archivo"],
-                                    $_POST["unidad_archivo"],
-                                    $_POST["codigo_archivo"],
-                                    $_POST["folios_archivo"],
-                                    $_POST["anexos_archivo"]
-                                );        
-      
-        if( $resp != 0 ){
-
-            $ContratosModel->insertar_trazabilidad(
-                $_POST["id_contrato"],
-                "Se Modificó la información de Archivo"
-            );  
-
-             echo 1;             
-        }else{
-            echo 0;		
-        }
-        
-    }    
-        
-
-    public function mover() {
-        
-        $this->model->cargar("ContratosModel.php", 'contratos');
-        $ContratosModel = new ContratosModel();
-            
-        $resp = $ContratosModel->mover(
-                                    $_POST["id_contrato"], 
-                                    $_POST["carpeta_contrato"]
-                                );        
-      
-        if( $resp != 0 ){
-
-            $ContratosModel->insertar_trazabilidad(
-                $_POST["id_contrato"],
-                "Movió el radicado de carpeta"
-            ); 
-
-             echo 1;             
-        }else{
-            echo 0;		
-        }
-        
-    }    
-
-
-    public function nuevoDocumento() {
-        
-        $this->model->cargar("ContratosModel.php", 'contratos');
-        $ContratosModel = new ContratosModel();
-            
-        $resp = $ContratosModel->nuevoDocumento(
-                                    $_POST["id_contrato"], 
-                                    $_POST["documento"]
-                                );        
-      
-        if( $resp != 0 ){
-
-            $ContratosModel->insertar_trazabilidad(
-                $_POST["id_contrato"],
-                "Agregó un nuevo documento"
-            ); 
-
-             echo 1; 
-
-        }else{
-            echo 0;		
-        }
-        
-    }    
-
-
-    public function cambiar() {
-        
-        $this->model->cargar("ContratosModel.php", 'contratos');
-        $ContratosModel = new ContratosModel();
-            
-        $resp = $ContratosModel->cambiar(
-                                    $_POST["id_contrato"], 
-                                    $_POST["responsable_contrato"]
-                                );        
-      
-       
-
-            $ContratosModel->insertar_trazabilidad(
-                $_POST["id_contrato"],
-                "Cambió el responsable del radicado"
-            ); 
-
-        
-    }    
-
-*/
+   
 
     public function eliminar() {
         
@@ -522,8 +419,16 @@ class ContratosControlador extends ControllerBase {
         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
+
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();           
+        
         
         $ContratosModel->descartar($_POST["id_contrato"]);
+
+        $accion = "Se ha descartado este contrato";
+
+       $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
         
         echo "1";        
         
@@ -535,11 +440,24 @@ class ContratosControlador extends ControllerBase {
         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
+         
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+
+        $contratista = $ContratistasModel->getDatos($_POST["contratista_adjudicar"]);
+        
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
         
         $ContratosModel->adjudicar(
             $_POST["id_contrato"], 
             $_POST["contratista_adjudicar"]
         );
+
+        $accion = "Se ha realizado la Adjudicación de este contrato al Contratista: ".$contratista["nombres_contratista"]." 
+         ".$contratista["apellidos_contratista"].".";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
         
         echo "1";        
         
@@ -551,6 +469,9 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
         
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();           
+        
         $ContratosModel->celebrar(
             $_POST["id_contrato"], 
             $_POST["numero_contra"],
@@ -559,6 +480,10 @@ class ContratosControlador extends ControllerBase {
             $_POST["valor_contra"]
         );
         
+        $accion = "Se ha Celebrado este contrato, y se le ha asignado el No.: ".$_POST["numero_contra"].", cuya vigencia es desde el ".$_POST["fechainicio_contra"]." hasta el ".$_POST["fechafinal_contra"];
+
+       $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);
+
         echo "1";        
         
     }
@@ -569,7 +494,14 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
         
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();           
+
         $ContratosModel->liquidar($_POST["id_contrato"]);
+        
+        $accion = "Se ha Liquidado este contrato con No. de contrato: ".$_POST["numero_contra"].".";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);
         
         echo "1";        
         

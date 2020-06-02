@@ -9,7 +9,7 @@ $froms = new Formularios();
 
     <div class="card card-primary">
       <div class="card-header">
-        <h3 class="card-title">Crear Nuevo Contrato (Estado: Convocado)</h3>
+        <h3 class="card-title">Crear Nuevo Contrato (Estado Actual: Borrador)</h3>
       </div>
 
       <form autocomplete="on" id="formContratos" method="post">
@@ -33,17 +33,24 @@ $froms = new Formularios();
 
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
 
-              <label>Fecha de Adjudicaci&oacute;n<span style="color:red">*</span></label>
+              <label>Fecha Evaluaci&oacute;n<span style="color:red">*</span></label>
+              <input type="date" class="form-control requerido" id="fevaluacionproceso_contrato" name="fevaluacionproceso_contrato">
+
+            </div>
+            
+            <div class="col-md-2">
+
+              <label>Fecha Adjudicaci&oacute;n<span style="color:red">*</span></label>
               <input type="date" class="form-control requerido" id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato">
 
             </div>
 
 
-            <div class="col-md-3">
+            <div class="col-md-2">
 
-              <label>Fecha de Cierre<span style="color:red">*</span></label>
+              <label>Fecha Cierre<span style="color:red">*</span></label>
               <input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato">
 
             </div>

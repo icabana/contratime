@@ -10,6 +10,9 @@ class CdpsControlador extends ControllerBase {
                         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();    
+        
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
 
         $array_contratos = explode(",", $_POST['contratos']);
 
@@ -25,7 +28,11 @@ class CdpsControlador extends ControllerBase {
                     $_POST["fecha_cdp"],
                     $_POST["valor_cdp"]
                 );        
-              
+                
+                $accion = "Se ha asociado el CDP No. ".$_POST["numero_cdp"]." a éste contrato";
+
+                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+                    
             }  
 
         }   
@@ -37,12 +44,19 @@ class CdpsControlador extends ControllerBase {
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();  
                         
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
+
         $CdpsModel->insertar(
             $_POST['id_contrato'],
             $_POST["numero_cdp"],
             $_POST["fecha_cdp"],
             $_POST["valor_cdp"]
         );               
+
+        $accion = "Se ha asociado el CDP No. ".$_POST["numero_cdp"]." a éste contrato";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
         
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
 
@@ -54,9 +68,18 @@ class CdpsControlador extends ControllerBase {
     public function eliminar() {
         
         $this->model->cargar("CdpsModel.php", "contratos");
-        $CdpsModel = new CdpsContratosModel();  
+        $CdpsModel = new CdpsContratosModel();      
+        
+        $datos_cdp = $CdpsModel->getDatos($_POST["id_cdp"]);
+
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
 
         $CdpsModel->eliminar($_POST["id_cdp"], $_POST['id_contrato']);
+
+        $accion = "Se ha eliminado la asociación del CDP No. ".$datos_cdp["numero_cdp"]." en éste contrato";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
         
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
 

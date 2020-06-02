@@ -14,7 +14,7 @@ $froms = new Formularios();
 
 
         <div class="card-header">
-          <h3 class="card-title">Editar Contrato (Estado: Convocado)</h3>
+          <h3 class="card-title">Editar Contrato (Estado Actual: Convocado)</h3>
         </div>
 
 
@@ -106,21 +106,21 @@ $froms = new Formularios();
               ?>
             </div>
 
-            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_4_cdps">
+            <div style="padding: 20px; " class="tab-pane" id="tab_4_cdps">
 
               <?php
               include("vistas/contratos/cdps/lista_cdps.php");
               ?>
             </div>
 
-            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_5_rps">
+            <div style="padding: 20px; " class="tab-pane" id="tab_5_rps">
 
               <?php
               include("vistas/contratos/rps/lista_rps.php");
               ?>
             </div>
 
-            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_6_pagos">
+            <div style="padding: 20px; " class="tab-pane" id="tab_6_pagos">
 
               <?php
               include("vistas/contratos/pagos/lista_pagos.php");
@@ -128,7 +128,7 @@ $froms = new Formularios();
 
             </div>
 
-            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_34_polizas">
+            <div style="padding: 20px; " class="tab-pane" id="tab_34_polizas">
 
               <?php
               include("vistas/contratos/polizas/lista_polizas.php");
@@ -138,7 +138,7 @@ $froms = new Formularios();
 
 
             
-            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_7_ajustes">
+            <div style="padding: 20px; " class="tab-pane" id="tab_7_ajustes">
 
               <?php
               include("vistas/contratos/ajustes/lista_ajustes.php");
@@ -157,7 +157,7 @@ $froms = new Formularios();
 
 
 
-            <div style="padding: 20px; height:350px" class="tab-pane" id="tab_3_trazabilidad">
+            <div style="padding: 20px; " class="tab-pane" id="tab_3_trazabilidad">
 
               <?php
               include("vistas/contratos/trazabilidad/lista_trazabilidad.php");

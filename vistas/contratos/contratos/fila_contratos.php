@@ -12,12 +12,6 @@
                     </div>
                   </td>
 
-                    <?php 
-                       
-                        include("vistas/contratos/contratos/comp_upload/icono.php");
-
-                        echo "<td><center> " . $documento_contrato . "</center></td>";
-                    ?>
 
                   <?php 
                       if( $contrato['estado_contrato'] == '1' || 
@@ -151,12 +145,20 @@
                
 
                   <?php
+                       
+                       if($contrato['estado_contrato'] >= 3){                                      
+                        include("vistas/contratos/contratos/comp_upload/icono_financiera.php");
+                        echo "<td><center> " . $documento_contrato . "</center></td>";
+                      }else{
+                        echo "<td></td>";
+                      }
+                  
 
                   if($contrato['estado_contrato'] != 4){
                     echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_info_contrato(" . $contrato['id_contrato'] . ");' 
                     class='fas fa-edit'></i></a></td>";
                   }else{
-                    echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato_convocado(" . $contrato['id_contrato'] . ");' 
+                    echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato(" . $contrato['id_contrato'] . ");' 
                     class='fas fa-edit'></i></a></td>";
                   }                  
 

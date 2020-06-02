@@ -12,14 +12,14 @@
           <table id="tabla_contratos" style="width:100%" width='100%' class="table table-hover table-striped">
             <thead>
               <tr>
-                <th style='background-color:lavender'></th>
-                <th style='background-color:lavender'>Contrato</th>              
+                <th style='background-color:lavender'></th>   
                 <th style='background-color:lavender'>N&uacute;mero</th>
                 <th style='background-color:lavender'>Tipo de Contrato</th>
                 <th style='background-color:lavender'>Contratista</th>
                 <th style='background-color:lavender'>Valor </th>
                 <th style='background-color:lavender; width:15px'>Objeto</th>
-                <th style='background-color:lavender'>Estado</th>
+                <th style='background-color:lavender'>Estado</th>                           
+                <th style='background-color:lavender'>Adjuntar</th>  
                 <th  style='background-color:lavender; width:15px'></th>
                 <th  style='background-color:lavender; width:15px'></th>
               </tr>
@@ -42,12 +42,7 @@
                     </div>
                   </td>
 
-                    <?php 
-                       
-                        include("vistas/contratos/contratos/comp_upload/icono.php");
-
-                        echo "<td><center> " . $documento_contrato . "</center></td>";
-                    ?>
+                   
 
                   <?php 
                       if( $contrato['estado_contrato'] == '1' || 
@@ -121,7 +116,7 @@
 
                             $id_contrato = $contrato['id_contrato'];
                             
-                            echo '<td style="background-color: #FF8D8D" class="mailbox-subject">';
+                            echo '<td style="background-color: #F0E438" class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombre_estado']."</center></b>";
                             echo '<center><button onclick="sel_adjudicar_contrato(' . $id_contrato . ');"  title="Adjudicar Contrato" data-toggle="modal" data-target="#modal_adjudicar" type="button" class="btn btn-success ">¿Adjudicar?</button></center>';
                             echo '<center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger ">¿Descartar?</button></center>';
@@ -168,7 +163,7 @@
                         }
                     ?>
 
-<?php 
+                    <?php 
                         if($contrato['estado_contrato'] == 4){
 
                             $id_contrato = $contrato['id_contrato'];
@@ -176,19 +171,25 @@
                             echo '<td style="background-color: #14FF00" class="mailbox-subject">';
                             echo "<b><center>LIQUIDADO</center></b>";                          
                             echo '</td>';
+
                         }
                     ?>
                
 
-                  <?php
-               
-                    echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato(" . $contrato['id_contrato'] . ");' 
-                    class='fas fa-edit'></i></a></td>";                                 
+                  <?php               
+                       
+                       if($contrato['estado_contrato'] >= 3){                                      
+                        include("vistas/contratos/contratos/comp_upload/icono_financiera.php");
+                        echo "<td><center> " . $documento_contrato . "</center></td>";
+                      }else{
+                        echo "<td></td>";
+                      }
+            
+                      echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato(" . $contrato['id_contrato'] . ");' 
+                      class='fas fa-edit'></i></a></td>";                                 
 
-                  echo "<td><a href='#' title='Editar Contrato'><i onclick='eliminar_contrato(" . $contrato['id_contrato'] . ");' 
+                      echo "<td><a href='#' title='Editar Contrato'><i onclick='eliminar_contrato(" . $contrato['id_contrato'] . ");' 
                                     class='fas fa-trash'></i></a></td>";
-
-
 
                   ?>
 

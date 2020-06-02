@@ -11,6 +11,9 @@ class PolizasControlador extends ControllerBase {
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();    
 
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();  
+
         $array_contratos = explode(",", $_POST['contratos']);
 
         foreach($array_contratos as $array){
@@ -23,7 +26,11 @@ class PolizasControlador extends ControllerBase {
                     $_POST["fechaexp_poliza"],
                     $_POST["fechainicio_poliza"],
                     $_POST["fechafinal_poliza"]
-                );        
+                );    
+                
+                $accion = "Se ha asociado la Poliza de Garantía No. ".$_POST["numero_poliza"]." a éste contrato";
+
+                $TrazabilidadControlador->insertarExterno($array[0], $accion);     
               
             }
 
@@ -39,6 +46,9 @@ class PolizasControlador extends ControllerBase {
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();    
 
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();  
+        
         $PolizasModel->insertar(
             $_POST['id_contrato'],
             $_POST["numero_poliza"],
@@ -46,6 +56,10 @@ class PolizasControlador extends ControllerBase {
             $_POST["fechainicio_poliza"],
             $_POST["fechafinal_poliza"]
         );   
+        
+        $accion = "Se ha asociado la Poliza de Garantía No. ".$_POST["numero_poliza"]." a éste contrato";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);     
 
         $polizas = $PolizasModel->getTodosxContrato($_POST['id_contrato']);
 
@@ -58,8 +72,17 @@ class PolizasControlador extends ControllerBase {
         $this->model->cargar("PolizasModel.php", "contratos");
         $PolizasModel = new PolizasContratosModel();  
 
+        $datos = $PolizasModel->getDatos($_POST["id_poliza"]);
+
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();  
+        
         $PolizasModel->eliminar($_POST["id_poliza"], $_POST['id_contrato']);
         
+        $accion = "Se ha eliminado la asociacion de la Poliza de Garantía No. ".$datos["numero_poliza"]." en éste contrato";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);    
+
         $polizas = $PolizasModel->getTodosxContrato($_POST['id_contrato']);
 
         include("vistas/contratos/polizas/lista_polizas.php");

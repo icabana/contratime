@@ -22,7 +22,7 @@ class TrazabilidadControlador extends ControllerBase {
                 
             }
 
-        }
+        }                
         
     }
 
@@ -40,7 +40,7 @@ class TrazabilidadControlador extends ControllerBase {
 
         $trazabilidad = $TrazabilidadModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/trazabilidad/lista_trazabilidad.php");
+        include("vistas/contratos/trazabilidad/lista_trazabilidad.php");     
            
     }
 

@@ -148,7 +148,21 @@ class SupervisoresContratosModel extends ModelBase {
         return $consulta;       
                
     }  
+ 
+    function existeSupervisorenContrato($contrato_supervisor, $supervisor_supervisor) {
+        
+        $query = "SELECT  
 
+                    count(id_supervisor) as numero
+                
+                    FROM contratos_supervisores 
+                    
+                    WHERE contrato_supervisor='".$contrato_supervisor."' and supervisor_supervisor='".$supervisor_supervisor."'";
+        
+        $consulta = $this->consulta($query);
+        return $consulta[0]['numero'];       
+               
+    }  
 
 
     function getDatos($id_supervisor) {

@@ -45,13 +45,13 @@ function agregar_trazabilidad2() {
 function agregar_trazabilidad_editar() {
 
     $('#modal_trazabilidad_editar').modal('hide');
-    
+  
     ejecutarAccion(
       'contratos',
       'Trazabilidad',
-      'insertar',
+      'insertarEditar',
       "accion_trazabilidad="+$("#accion_trazabilidad").val()+
-      '&id_contrato='+$("#id_contrato").val(),
+      "&id_contrato="+$('#id_contrato').val(),
       '$("#tab_3_trazabilidad").html(data);  mensaje_alertas("success", "Trazabilidad Agregado Correctamente", "center"); seleccionar_check(); $("#accion_trazabilidad").val("")'
     );
 

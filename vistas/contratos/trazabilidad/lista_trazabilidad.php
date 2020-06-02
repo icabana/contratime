@@ -33,7 +33,6 @@
             <th style='background-color:lavender'>Fecha Trazabilidad</th>
             <th style='background-color:lavender'>Documento Usuario</th>
             <th style='background-color:lavender'>Acci&oacute;n realizada</th>
-            <th style='background-color:lavender; width:15px'></th>
         </tr>
     </thead>
     <tbody>
@@ -48,9 +47,6 @@
         echo "<td>".$traza['documento_usuario']."</td>";
 
         echo "<td>".$traza['accion_trazabilidad'] . "</td>";
-        
-        echo "<td><a href='#'><i onclick='eliminar_trazabilidad_contrato(" . $traza['id_trazabilidad'] . ", " . $traza['contrato_trazabilidad'] . ");' 
-                class='fas fa-trash'></i></a></td>";
 
         echo "</tr>";
     }
