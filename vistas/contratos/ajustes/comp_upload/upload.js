@@ -21,7 +21,8 @@ function upload_ajustes(){
         processData:false,        
         success: function(data)   
         {
-           
+            
+            $("#fileToUploadAjustes").val("");
             actualizar_lista_ajustes(contrato_ajuste);
           
         }

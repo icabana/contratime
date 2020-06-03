@@ -37,7 +37,7 @@
                 <tr id="fila_contrato_<?php echo $contrato['id_contrato']?>" >
                   <td>
                     <div class="icheck-primary">
-                      <input class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
+                      <input onchange="opcion_checkeada(<?php echo $contrato['estado_contrato']; ?>); return false;" class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
                       <label for="check<?php echo $id_check; ?>"></label>
                     </div>
                   </td>
@@ -179,7 +179,7 @@
                   <?php               
                        
                        if($contrato['estado_contrato'] >= 3){                                      
-                        include("vistas/contratos/contratos/comp_upload/icono_financiera.php");
+                        include("vistas/contratos/contratos/comp_upload/icono.php");
                         echo "<td><center> " . $documento_contrato . "</center></td>";
                       }else{
                         echo "<td></td>";

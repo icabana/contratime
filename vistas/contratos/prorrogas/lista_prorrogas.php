@@ -30,7 +30,8 @@
     </div>
 </div>
 
-
+<br>
+<div id="div_tabla_prorrogas">
 <table id="tabla_prorrogas" class="table table-bordered table-hover">
 
     <thead>
@@ -65,5 +66,6 @@
     </tbody>
 
 </table>
+</div>
 
 <script language="JavaScript" type='text/javascript' src='vistas/contratos/prorrogas/comp_upload/upload.js'></script> 

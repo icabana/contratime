@@ -53,14 +53,22 @@ $froms = new Formularios();
             <?php
             }
             ?>
-            <button title="Agregar Supervisor" data-toggle="modal" data-target="#modal_supervisores" type="button" class="btn btn-default btn-sm"><i class="fas fa-user"></i></button>
-            <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
-            <button title="Agregar CDP" data-toggle="modal" data-target="#modal_cdps" type="button" class="btn btn-default btn-sm"><i class="fas fa-money-bill"></i></button>
-            <button title="Agregar RP" data-toggle="modal" data-target="#modal_rps" type="button" class="btn btn-default btn-sm"><i class="fas fa-cash-register"></i></button>
-            <button title="Agregar Pago" data-toggle="modal" data-target="#modal_pagos" type="button" class="btn btn-default btn-sm"><i class="fas fa-comment-dollar"></i></button>
-            <button title="Agregar Poliza" data-toggle="modal" data-target="#modal_polizas" type="button" class="btn btn-default btn-sm"><i class="fas fa-file"></i></button>
-            <button title="Ajustar Presupuesto" data-toggle="modal" data-target="#modal_ajustes" type="button" class="btn btn-default btn-sm"><i class="fas fa-coins"></i></button>
-            <button title="Agregar Prorroga" data-toggle="modal" data-target="#modal_prorrogas" type="button" class="btn btn-default btn-sm"><i class="fas fa-calendar-plus"></i></button>
+
+            <div id="acciones_contratos">
+              <button title="Agregar Supervisor" data-toggle="modal" data-target="#modal_supervisores" type="button" class="btn btn-default btn-sm"><i class="fas fa-user"></i></button>
+              <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
+              <button title="Agregar CDP" data-toggle="modal" data-target="#modal_cdps" type="button" class="btn btn-default btn-sm"><i class="fas fa-money-bill"></i></button>
+              <button title="Agregar RP" data-toggle="modal" data-target="#modal_rps" type="button" class="btn btn-default btn-sm"><i class="fas fa-cash-register"></i></button>
+              <button title="Agregar Pago" data-toggle="modal" data-target="#modal_pagos" type="button" class="btn btn-default btn-sm"><i class="fas fa-comment-dollar"></i></button>
+              <button title="Agregar Poliza" data-toggle="modal" data-target="#modal_polizas" type="button" class="btn btn-default btn-sm"><i class="fas fa-file"></i></button>
+              <button title="Ajustar Presupuesto" data-toggle="modal" data-target="#modal_ajustes" type="button" class="btn btn-default btn-sm"><i class="fas fa-coins"></i></button>
+              <button title="Agregar Prorroga" data-toggle="modal" data-target="#modal_prorrogas" type="button" class="btn btn-default btn-sm"><i class="fas fa-calendar-plus"></i></button>
+            </div>
+            <div id="acciones_procesos" style="display: none;">
+              <button title="Agregar Encargado" data-toggle="modal" data-target="#modal_encargados" type="button" class="btn btn-default btn-sm"><i class="fas fa-user"></i></button>
+              <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>           
+            </div>
+
           </div>
 
           <button title="Actualizar Lista de Radicados" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
@@ -102,6 +110,12 @@ $froms = new Formularios();
 <!-- Modal Supervisores-->
 <?php
   include("vistas/contratos/supervisores/modal_supervisores.php");
+?>
+
+
+<!-- Modal Supervisores-->
+<?php
+  include("vistas/contratos/encargados/modal_encargados.php");
 ?>
 
 <!-- Modal Trazabilidad-->

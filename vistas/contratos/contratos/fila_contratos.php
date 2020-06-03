@@ -147,7 +147,7 @@
                   <?php
                        
                        if($contrato['estado_contrato'] >= 3){                                      
-                        include("vistas/contratos/contratos/comp_upload/icono_financiera.php");
+                        include("vistas/contratos/contratos/comp_upload/icono.php");
                         echo "<td><center> " . $documento_contrato . "</center></td>";
                       }else{
                         echo "<td></td>";

@@ -71,7 +71,7 @@ class ProrrogasControlador extends ControllerBase {
         
         $prorrogas = $ProrrogasModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/prorrogas/lista_prorrogas.php");             
+        include("vistas/contratos/prorrogas/tabla_prorrogas.php");             
         
     }
 
@@ -82,7 +82,7 @@ class ProrrogasControlador extends ControllerBase {
         
         $prorrogas = $ProrrogasModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/prorrogas/lista_prorrogas.php");             
+        include("vistas/contratos/prorrogas/tabla_prorrogas.php");             
         
     }
             

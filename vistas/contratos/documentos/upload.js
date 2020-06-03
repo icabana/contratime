@@ -21,8 +21,8 @@ function upload_documentos(){
         cache: false,             
         processData:false,        
         success: function(data)   
-        {
-           
+        {           
+            $("#fileToUploadDocumentos").val("");
             actualizar_lista_documentos(id_contrato_upload);
           
         }
@@ -60,7 +60,7 @@ function eliminar_documento_contrato2(archivo, id_contrato, id_documento) {
 }
 
 function actualizar_lista_documentos(id_contrato_upload) {
-    
+   
     ejecutarAccionSinAlert(
       'administracion',
       'Documentos',

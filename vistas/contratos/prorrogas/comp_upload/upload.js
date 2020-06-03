@@ -21,7 +21,8 @@ function upload_prorrogas(){
         processData:false,        
         success: function(data)   
         {
-           
+
+            $("#fileToUploadProrrogas").val("");
             actualizar_lista_prorrogas(contrato_prorroga);
           
         }
@@ -49,7 +50,7 @@ function eliminar_documento_prorroga2(archivo, id_contrato) {
       'Prorrogas',
       'eliminarDocumento',
       'archivo=' + archivo+'&id_contrato=' +id_contrato,
-      "$('#tab_8_prorrogas').html(data); mensaje_alertas('success', 'Archivo Eliminado correctamente', 'center'); "
+      "$('#div_tabla_prorrogas').html(data); mensaje_alertas('success', 'Archivo Eliminado correctamente', 'center'); "
 
     );
 
@@ -62,7 +63,7 @@ function actualizar_lista_prorrogas(contrato_prorroga) {
       'Prorrogas',
       'actualizarDocumento',
       'id_contrato=' +contrato_prorroga,
-      "$('#tab_8_prorrogas').html(data); "
+      "$('#div_tabla_prorrogas').html(data);  "
 
     );
 

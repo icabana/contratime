@@ -25,7 +25,7 @@
         </div>
     </div>
 </div>
-
+<br>
 <table id="tabla_supervisores" class="table table-bordered table-hover">
     <thead>
         <tr>

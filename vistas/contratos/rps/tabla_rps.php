@@ -1,7 +1,3 @@
-<?php
-    include("vistas/contratos/rps/comp_upload/modal.php");
-?>
-
 <script>
     $(document).ready(
         function(){
@@ -10,27 +6,6 @@
     );
 </script>
 
-<div class="card-header">
-    <div class="box">
-        <div class="row">
-
-
-            <div class="col-md-10">
-            </div>
-            <div class="col-md-2">
-            <button title="Agregar Supervisor" 
-            data-toggle="modal" 
-            data-target="#modal_rps_editar" 
-            type="button" 
-            class="btn btn-success btn-sm">Nuevo RP</button>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-
-<br>
 <table id="tabla_rps" class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -66,6 +41,3 @@
     </tbody>
 
 </table>
-
-
-<script language="JavaScript" type='text/javascript' src='vistas/contratos/rps/comp_upload/upload.js'></script> 

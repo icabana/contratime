@@ -30,47 +30,69 @@ $froms = new Formularios();
               </a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#tab_2_supervisores" data-toggle="tab">
-                Supervisores
-              </a>
-            </li>
+            <?php if($contrato['estado_contrato'] >= 3){ ?>
+              <li class="nav-item">
+                <a class="nav-link" href="#tab_2_supervisores" data-toggle="tab">
+                  Supervisores
+                </a>
+              </li>
+            <?php } ?>
 
+         
+              <li class="nav-item">
+                <a class="nav-link" href="#tab_77_encargados" data-toggle="tab">
+                  Encargados
+                </a>
+              </li>
+           
+
+            <?php if($contrato['estado_contrato'] >= 3){ ?>
             <li class="nav-item">
               <a class="nav-link" href="#tab_4_cdps" data-toggle="tab">
                 Cdps
               </a>
             </li>
+            <?php } ?>
 
+            <?php if($contrato['estado_contrato'] >= 3){ ?>
             <li class="nav-item">
               <a class="nav-link" href="#tab_5_rps" data-toggle="tab">
                 Rps
               </a>
             </li>
+             <?php } ?>
 
+            <?php if($contrato['estado_contrato'] >= 3){ ?>
             <li class="nav-item">
               <a class="nav-link" href="#tab_6_pagos" data-toggle="tab">
                 Pagos
               </a>
             </li>
+            <?php } ?>
 
+            <?php if($contrato['estado_contrato'] >= 3){ ?>
             <li class="nav-item">
               <a class="nav-link" href="#tab_34_polizas" data-toggle="tab">
                 Polizas
               </a>
             </li>
+             <?php } ?>
 
+            <?php if($contrato['estado_contrato'] >= 3){ ?>
             <li class="nav-item">
               <a class="nav-link" href="#tab_7_ajustes" data-toggle="tab">
                 Ajustes 
               </a>
             </li>
+            <?php } ?>
             
+            <?php if($contrato['estado_contrato'] >= 3){ ?>
             <li class="nav-item">
               <a class="nav-link" href="#tab_8_prorrogas" data-toggle="tab">
                 Prorrogas
               </a>
             </li>
+             <?php } ?>
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
@@ -98,11 +120,17 @@ $froms = new Formularios();
           
             </div>
 
-
             <div style="padding: 20px" class="tab-pane" id="tab_2_supervisores">
 
               <?php
               include("vistas/contratos/supervisores/lista_supervisores.php");
+              ?>
+            </div>
+
+            <div style="padding: 20px" class="tab-pane" id="tab_77_encargados">
+
+              <?php
+              include("vistas/contratos/encargados/lista_encargados.php");
               ?>
             </div>
 
@@ -198,6 +226,12 @@ $froms = new Formularios();
 <!-- Modal Supervisores-->
 <?php
   include("vistas/contratos/supervisores/modal_supervisores_editar.php");
+?>
+
+
+<!-- Modal Encargados-->
+<?php
+  include("vistas/contratos/encargados/modal_encargados_editar.php");
 ?>
 
 <!-- Modal Trazabilidad-->

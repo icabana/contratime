@@ -21,7 +21,8 @@ function upload_polizas(){
         processData:false,        
         success: function(data)   
         {
-           
+            
+            $("#fileToUploadPolizas").val("");
             actualizar_lista_polizas(contrato_poliza);
           
         }
@@ -49,7 +50,7 @@ function eliminar_documento_poliza2(archivo, id_contrato) {
       'Polizas',
       'eliminarDocumento',
       'archivo=' + archivo+'&id_contrato=' +id_contrato,
-      "$('#tab_34_polizas').html(data); mensaje_alertas('success', 'Archivo Eliminado correctamente', 'center'); "
+      "$('#div_tabla_polizas').html(data); mensaje_alertas('success', 'Archivo Eliminado correctamente', 'center'); "
 
     );
 
@@ -62,7 +63,7 @@ function actualizar_lista_polizas(contrato_poliza) {
       'Polizas',
       'actualizarDocumento',
       'id_contrato=' +contrato_poliza,
-      "$('#tab_34_polizas').html(data); "
+      "$('#div_tabla_polizas').html(data); "
 
     );
 

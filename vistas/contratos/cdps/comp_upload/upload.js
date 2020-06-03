@@ -22,6 +22,7 @@ function upload_cdps(){
         success: function(data)   
         {
            
+            $("#fileToUploadCdps").val("");
             actualizar_lista_cdps(contrato_cdp);
           
         }

@@ -89,7 +89,6 @@ class PolizasControlador extends ControllerBase {
              
         
     }
-
     
     
     public function eliminarDocumento() {
@@ -101,7 +100,7 @@ class PolizasControlador extends ControllerBase {
         
         $polizas = $PolizasModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/polizas/lista_polizas.php");             
+        include("vistas/contratos/polizas/tabla_polizas.php");             
         
     }
 
@@ -112,11 +111,9 @@ class PolizasControlador extends ControllerBase {
         
         $polizas = $PolizasModel->getTodosxContrato($_POST['id_contrato']);
 
-        include("vistas/contratos/polizas/lista_polizas.php");             
+        include("vistas/contratos/polizas/tabla_polizas.php");             
         
-    }
-
-           
+    }           
 
              
  }

@@ -22,6 +22,7 @@ function upload_rps(){
         success: function(data)   
         {
            
+            $("#fileToUploadRps").val("");
             actualizar_lista_rps(contrato_rp);
           
         }

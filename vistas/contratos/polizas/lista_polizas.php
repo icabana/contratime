@@ -31,6 +31,7 @@
 </div>
 
 <br>
+<div id="div_tabla_polizas">
 <table id="tabla_polizas" class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -69,6 +70,6 @@
     </tbody>
 
 </table>
-
+</div>
 
 <script language="JavaScript" type='text/javascript' src='vistas/contratos/polizas/comp_upload/upload.js'></script> 

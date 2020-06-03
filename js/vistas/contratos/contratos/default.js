@@ -200,3 +200,23 @@ function seleccionar_check() {
      
 
   }
+  
+function opcion_checkeada(estado_contrato) {
+  /* 
+    var cont = 0;
+
+    $("input[name=check_contratos]:checked").each(
+        function(){
+            cont++;
+        }
+    );
+
+    if(estado_contrato < 3){
+        $("#acciones_contratos").css("display","none");
+        $("#acciones_procesos").css("display","inline");
+    }else{
+        $("#acciones_contratos").css("display","inline");
+        $("#acciones_procesos").css("display","none");
+    }     
+*/
+}

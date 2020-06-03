@@ -45,6 +45,7 @@
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/contratistas.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/soportes.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/supervisores.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/modulos/actores/encargados.js'></script> 
   
   <!-- ARCHIVOS DE LAS VISTAS -->  
   <script language="JavaScript" type='text/javascript' src='js/vistas/configuracion/usuarios/default.js'></script> 
@@ -74,6 +75,10 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/supervisores/editar.js'></script> 
+
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/encargados/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/encargados/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/encargados/editar.js'></script> 
   
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/insertar.js'></script> 
@@ -82,6 +87,7 @@
 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/editar_convocado.js'></script> 
 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/encargados/encargados.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/supervisores/supervisores.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/trazabilidad/trazabilidad.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/cdps/cdps.js'></script> 
@@ -276,6 +282,13 @@
           </a>
         </li>
         
+        
+        <li class="nav-item">
+          <a href="#" onclick="cargar_encargados();" class="nav-link">
+            <i class="nav-icon fas fa-user-secret"></i>
+            <p>Encargados</p>
+          </a>
+        </li>
 
         <li class="nav-item">
           <a href="#" onclick="cargar_soportes();" class="nav-link">
