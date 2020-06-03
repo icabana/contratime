@@ -33,14 +33,39 @@ $froms = new Formularios();
 
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
+
+              <label>Fecha Aviso Convocatoria<span style="color:red">*</span></label>
+              <input type="date" class="form-control requerido" id="favisoproceso_contrato" name="favisoproceso_contrato">
+
+            </div>
+            
+            <div class="col-md-3">
+
+              <label>Limite Presentaci&oacute;n Propuestas<span style="color:red">*</span></label>
+              <input type="date" class="form-control requerido" id="fpresentacionproceso_contrato" name="fpresentacionproceso_contrato">
+
+            </div>
+
+
+
+          </div>
+
+          <br>
+
+
+          <div class="row">
+
+          
+
+            <div class="col-md-4">
 
               <label>Fecha Evaluaci&oacute;n<span style="color:red">*</span></label>
               <input type="date" class="form-control requerido" id="fevaluacionproceso_contrato" name="fevaluacionproceso_contrato">
 
             </div>
             
-            <div class="col-md-2">
+            <div class="col-md-4">
 
               <label>Fecha Adjudicaci&oacute;n<span style="color:red">*</span></label>
               <input type="date" class="form-control requerido" id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato">
@@ -48,7 +73,7 @@ $froms = new Formularios();
             </div>
 
 
-            <div class="col-md-2">
+            <div class="col-md-4">
 
               <label>Fecha Cierre<span style="color:red">*</span></label>
               <input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato">

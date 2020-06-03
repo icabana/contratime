@@ -21,41 +21,63 @@ $froms = new Formularios();
 
     </div>
 
-      <div class="col-md-2">
+        
+  <div class="col-md-3">
 
-                  <label>Fecha Evaluaci&oacute;n<span style="color:red">*</span></label>
-                  <input type="date" class="form-control requerido" id="fevaluacionproceso_contrato" 
-                        name="fevaluacionproceso_contrato" 
-                        value="<?php echo $contrato['fevaluacionproceso_contrato']; ?>">
-
-                </div>
-
-    <div class="col-md-2">
-
-      <label>Fecha de Adjudicaci&oacute;n<span style="color:red">*</span></label>
-      <input type="date" class="form-control requerido" id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato" value="<?php echo $contrato['fadjudicacionproceso_contrato']; ?>">
+    <label>Fecha Aviso Convocatoria<span style="color:red">*</span></label>
+    <input type="date" class="form-control requerido" id="favisoproceso_contrato" 
+          name="favisoproceso_contrato" 
+          value="<?php echo $contrato['favisoproceso_contrato']; ?>">
 
     </div>
 
+    <div class="col-md-3">
 
-    <div class="col-md-2">
-
-      <label>Fecha de Cierre<span style="color:red">*</span></label>
-      <input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato" value="<?php echo $contrato['fcierreproceso_contrato']; ?>">
+    <label>Limite Presentaci&oacute;n Propuestas<span style="color:red">*</span></label>
+    <input type="date" class="form-control requerido" id="fpresentacionproceso_contrato" name="fpresentacionproceso_contrato" 
+    value="<?php echo $contrato['fpresentacionproceso_contrato']; ?>">
 
     </div>
-
-
-
 
   </div>
+
+  
+  <div class="row">
+
+    
+  <div class="col-md-4">
+
+<label>Fecha Evaluaci&oacute;n<span style="color:red">*</span></label>
+<input type="date" class="form-control requerido" id="fevaluacionproceso_contrato" 
+      name="fevaluacionproceso_contrato" 
+      value="<?php echo $contrato['fevaluacionproceso_contrato']; ?>">
+
+</div>
+
+<div class="col-md-4">
+
+<label>Fecha de Adjudicaci&oacute;n<span style="color:red">*</span></label>
+<input type="date" class="form-control requerido" id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato" value="<?php echo $contrato['fadjudicacionproceso_contrato']; ?>">
+
+</div>
+
+
+<div class="col-md-4">
+
+<label>Fecha de Cierre<span style="color:red">*</span></label>
+<input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato" value="<?php echo $contrato['fcierreproceso_contrato']; ?>">
+
+</div>
+
+  </div>
+  
 
               
               <br>
 
               <?php
 
-if($contrato['estado_contrato'] > 1){
+if($contrato['estado_contrato'] > 2){
 
 ?>
 <div class="row">

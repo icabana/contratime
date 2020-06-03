@@ -13,9 +13,9 @@
           <?php
             echo $froms->Lista_Desplegable(
               $encargados_select,
-              'nombre_supervisor',
-              'id_supervisor',
-              'supervisor_supervisor',
+              'nombre_encargado',
+              'id_encargado',
+              'encargado_encargado',
               '',
               '',
               ''
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="modal-footer">        
-        <button onclick="agregar_supervisor();" type="button" class="btn btn-primary">Agregar</button>
+        <button onclick="agregar_encargado();" type="button" class="btn btn-primary">Agregar</button>
       </div>
     </div>
   </div>

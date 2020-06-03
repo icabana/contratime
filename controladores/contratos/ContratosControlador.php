@@ -374,6 +374,8 @@ class ContratosControlador extends ControllerBase {
         $resp = $ContratosModel->insertar(
             $_POST["numproceso_contrato"],
             $_POST["valproceso_contrato"],
+            $_POST["favisoproceso_contrato"],
+            $_POST["fpresentacionproceso_contrato"],
             $_POST["fevaluacionproceso_contrato"],
             $_POST["fadjudicacionproceso_contrato"],
             $_POST["fcierreproceso_contrato"],
@@ -406,6 +408,8 @@ class ContratosControlador extends ControllerBase {
                 $_POST["id_contrato"], 
                 $_POST["numproceso_contrato"],
                 $_POST["valproceso_contrato"],
+                $_POST["favisoproceso_contrato"],
+                $_POST["fpresentacionproceso_contrato"],
                 $_POST["fevaluacionproceso_contrato"],
                 $_POST["fadjudicacionproceso_contrato"],
                 $_POST["fcierreproceso_contrato"],

@@ -37,7 +37,7 @@
                 <tr id="fila_contrato_<?php echo $contrato['id_contrato']?>" >
                   <td>
                     <div class="icheck-primary">
-                      <input onchange="opcion_checkeada(<?php echo $contrato['estado_contrato']; ?>); return false;" class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
+                      <input estado="<?php echo $contrato['estado_contrato']?>" onchange="opcion_checkeada(); return false;" class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
                       <label for="check<?php echo $id_check; ?>"></label>
                     </div>
                   </td>
@@ -68,7 +68,7 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo utf8_encode($contrato['nombre_tipocontrato']); ?>
+                    <?php echo $contrato['nombre_tipocontrato']; ?>
 
                   </td>
 

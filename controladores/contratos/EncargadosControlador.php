@@ -40,7 +40,7 @@ class EncargadosControlador extends ControllerBase {
                 );                    
 
 
-                $accion = "Se ha Asignado cómo encargado de éste contrato a ".$nombre_encargado;
+                $accion = "Se ha Asignado cómo encargado de éste proceso a ".$nombre_encargado;
 
                 $TrazabilidadControlador->insertarExterno($array[0], $accion);   
 
@@ -65,7 +65,8 @@ class EncargadosControlador extends ControllerBase {
         
                // echo $correo->EnviarCorreo($mensaje, "Usted ha sido asignado como Encargado", array($datos_encargado['correo_encargado']));
 
-                $accion = "Se ha enviado un correo de Notificación a ".$nombre_encargado." Informando que ha sido Asignado cómo encargado de éste contrato";
+                $accion = "Se ha enviado un correo de Notificación a ".$nombre_encargado." Informando que ha 
+                            sido Asignado cómo encargado de éste Proceso";
 
                 $TrazabilidadControlador->insertarExterno($array[0], $accion);   
               
@@ -107,11 +108,12 @@ class EncargadosControlador extends ControllerBase {
             $_POST['id_contrato']
         );                    
 
-        $accion = "Se ha Asignado cómo encargado de éste contrato a ".$nombre_encargado;
+        $accion = "Se ha Asignado cómo encargado de éste proceso a ".$nombre_encargado;
 
         $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
 
-        $accion = "Se ha enviado un correo de Notificación a ".$nombre_encargado." Informando que ha sido Asignado cómo encargado de éste contrato";
+        $accion = "Se ha enviado un correo de Notificación a ".$nombre_encargado." 
+                    Informando que ha sido Asignado cómo encargado de éste Proceso";
 
         $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
 
