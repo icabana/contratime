@@ -155,7 +155,7 @@
                   
 
                   if($contrato['estado_contrato'] != 4){
-                    echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_info_contrato(" . $contrato['id_contrato'] . ");' 
+                    echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato(" . $contrato['id_contrato'] . ");' 
                     class='fas fa-edit'></i></a></td>";
                   }else{
                     echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato(" . $contrato['id_contrato'] . ");' 

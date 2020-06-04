@@ -51,8 +51,20 @@ function agregar_encargado_editar() {
       'Encargados',
       'insertarEditar',
       "encargado_encargado="+$("#encargado_encargado").val()+'&id_contrato='+$("#id_contrato").val(),
-      '$("#tab_77_encargados").html(data);  mensaje_alertas("success", "Encargado Agregado Correctamente", "center"); '
+      'agregar_encargado_editar2(data);'
     );
+
+}
+
+
+function agregar_encargado_editar2(data) {
+    
+    if(data != "error"){
+        $("#tab_77_encargados").html(data);  
+        mensaje_alertas("success", "Encargado Agregado Correctamente", "center");   
+    }else{
+        mensaje_alertas("error", "Este encargado ya fue asociado a este proceso", "center");   
+    } 
 
 }
 

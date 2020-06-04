@@ -18,6 +18,16 @@ function agregar_poliza() {
 }
 
 function agregar_poliza2() {
+    
+    var numero_poliza = $("#numero_poliza").val();
+    var fechaexp_poliza = $("#fechaexp_poliza").val();
+    var fechainicio_poliza = $("#fechainicio_poliza").val();
+    var fechafinal_poliza = $("#fechafinal_poliza").val();
+
+    if(numero_poliza == "" || fechaexp_poliza == "" || fechainicio_poliza == "" || fechafinal_poliza == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
 
     $('#modal_polizas').modal('hide');    
 
@@ -42,11 +52,26 @@ function agregar_poliza2() {
       '&contratos='+contratos,
       'mensaje_alertas("success", "Poliza Agregada Correctamente", "center"); seleccionar_check();'
     );
+    
+    $("#numero_poliza").val("");
+    $("#fechaexp_poliza").val("");
+    $("#fechainicio_poliza").val("");
+    $("#fechafinal_poliza").val("");
 
 }
 
 
 function agregar_poliza_editar() {
+     
+    var numero_poliza = $("#numero_poliza").val();
+    var fechaexp_poliza = $("#fechaexp_poliza").val();
+    var fechainicio_poliza = $("#fechainicio_poliza").val();
+    var fechafinal_poliza = $("#fechafinal_poliza").val();
+
+    if(numero_poliza == "" || fechaexp_poliza == "" || fechainicio_poliza == "" || fechafinal_poliza == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
 
     $('#modal_polizas_editar').modal('hide');    
 
@@ -61,6 +86,11 @@ function agregar_poliza_editar() {
       '&id_contrato='+$("#id_contrato").val(),
       '$("#tab_34_polizas").html(data); mensaje_alertas("success", "Poliza Agregada Correctamente", "center"); '
     );
+
+    $("#numero_poliza").val("");
+    $("#fechaexp_poliza").val("");
+    $("#fechainicio_poliza").val("");
+    $("#fechafinal_poliza").val("");
 
 }
 

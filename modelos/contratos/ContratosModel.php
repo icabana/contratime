@@ -207,10 +207,13 @@ class ContratosModel extends ModelBase {
 
 
     
-    function getTodosAvanzada($modalidad, $tipocontrato, $fechainicio, $fechafinal, $array_rango) {
+    function getTodosAvanzada($modalidad, $tipocontrato, $estado, $fechainicio, $fechafinal, $array_rango) {
 
         $where = "WHERE valor_contrato between '".$array_rango[0]."' and '".$array_rango[1]."' ";
 
+        if($estado != 0){
+            $where .= " and estado_contrato = '".$estado."' ";
+        }
         if($modalidad != 0){
             $where .= " and modalidad_contrato = '".$modalidad."' ";
         }
@@ -324,10 +327,13 @@ class ContratosModel extends ModelBase {
     
 
     
-    function getTodosAvanzadaFinanciera($modalidad, $tipocontrato, $fechainicio, $fechafinal, $array_rango) {
+    function getTodosAvanzadaFinanciera($modalidad, $tipocontrato, $estado, $fechainicio, $fechafinal, $array_rango) {
 
         $where = "WHERE valor_contrato between '".$array_rango[0]."' and '".$array_rango[1]."' and estado_contrato = '3' ";
 
+        if($estado != 0){
+            $where .= " and estado_contrato = '".$estado."' ";
+        }
         if($modalidad != 0){
             $where .= " and modalidad_contrato = '".$modalidad."' ";
         }

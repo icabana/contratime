@@ -52,11 +52,11 @@ class SistemaControlador extends ControllerBase {
             include("controladores/alertas/AlertasControlador.php");
             $AlertasControlador = new AlertasControlador();
 
-            //$AlertasControlador->contratosxFinalizar();
-            //$AlertasControlador->contratosMitadEjecucion();
-            //$AlertasControlador->procesosxAdjudicar();
-            //$AlertasControlador->procesosxCerrar();
-            //$AlertasControlador->procesosxEvaluar();
+            $AlertasControlador->contratosxFinalizar();
+            $AlertasControlador->contratosMitadEjecucion();
+            $AlertasControlador->procesosxAdjudicar();
+            $AlertasControlador->procesosxCerrar();
+            $AlertasControlador->procesosxEvaluar();
 
             $params->set("fecha_ultima_alerta", date("Y-m-d"));
 

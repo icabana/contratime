@@ -18,9 +18,17 @@ function agregar_rp() {
 }
 
 function agregar_rp2() {
+    
+    var numero_rp = $("#numero_rp").val();
+    var fecha_rp = $("#fecha_rp").val();
+    var valor_rp = $("#valor_rp").val();
+
+    if ( numero_rp == "" || fecha_rp == "" || valor_rp == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
 
     $('#modal_rps').modal('hide');
-    
 
     var contratos = "";
 
@@ -47,6 +55,16 @@ function agregar_rp2() {
 
 
 function agregar_rp_editar() {
+    
+    var numero_rp = $("#numero_rp").val();
+    var fecha_rp = $("#fecha_rp").val();
+    var valor_rp = $("#valor_rp").val();
+
+    if ( numero_rp == "" || fecha_rp == "" || valor_rp == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
+
 
     $('#modal_rps_editar').modal('hide');
     

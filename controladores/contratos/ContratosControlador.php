@@ -116,6 +116,10 @@ class ContratosControlador extends ControllerBase {
         $Tiposcontrato = new TiposcontratoModel();
         $tiposcontrato = $Tiposcontrato->getTodos();
         
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadosContratosModel = new EstadosContratosModel();
+        $estados = $EstadosContratosModel->getTodos();
+        
         include 'vistas/contratos/contratos/busqueda_avanzada.php';
         
     }  
@@ -131,6 +135,10 @@ class ContratosControlador extends ControllerBase {
         $Tiposcontrato = new TiposcontratoModel();
         $tiposcontrato = $Tiposcontrato->getTodos();
         
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadosContratosModel = new EstadosContratosModel();
+        $estados = $EstadosContratosModel->getTodos();
+
         include 'vistas/contratos/contratos/busqueda_avanzada_financiera.php';
         
     }  
@@ -145,6 +153,7 @@ class ContratosControlador extends ControllerBase {
         $contratos = $ContratosModel->getTodosAvanzada(
                                             $_POST['modalidad_busqueda'], 
                                             $_POST['tipocontrato_busqueda'],
+                                            $_POST['estado_busqueda'],
                                             $_POST['fechainicio_busqueda'],
                                             $_POST['fechafinal_busqueda'],
                                             $array_rango
@@ -184,6 +193,7 @@ class ContratosControlador extends ControllerBase {
         $contratos = $ContratosModel->getTodosAvanzadaFinanciera(
                                             $_POST['modalidad_busqueda'], 
                                             $_POST['tipocontrato_busqueda'],
+                                            $_POST['estado_busqueda'],
                                             $_POST['fechainicio_busqueda'],
                                             $_POST['fechafinal_busqueda'],
                                             $array_rango
@@ -542,6 +552,9 @@ class ContratosControlador extends ControllerBase {
     
     public function eliminarDocumento() {
         
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
+
         unlink($_POST['archivo']);
 
         $this->model->cargar("ContratosModel.php", "contratos");
@@ -549,16 +562,27 @@ class ContratosControlador extends ControllerBase {
         
         $contratos = $ContratosModel->getTodos($_POST['id_contrato']);
 
+        $accion = "Se eliminó el documento (Contrato).";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
+
         include("vistas/contratos/contratos/tabla_contratos.php");             
         
     }
 
     public function actualizarDocumento() {
         
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
+
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();        
         
         $contratos = $ContratosModel->getTodos($_POST['id_contrato']);
+
+        $accion = "Se adjuntó el contrato (Documento)";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
 
         include("vistas/contratos/contratos/tabla_contratos.php");                  
         

@@ -19,8 +19,16 @@ function agregar_cdp() {
 
 function agregar_cdp2() {
 
+    var numero_cdp = $("#numero_cdp").val();
+    var fecha_cdp = $("#fecha_cdp").val();
+    var valor_cdp = $("#valor_cdp").val();
+
+    if(numero_cdp == "" || fecha_cdp == "" || valor_cdp == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
+
     $('#modal_cdps').modal('hide');
-    
 
     var contratos = "";
 
@@ -43,11 +51,24 @@ function agregar_cdp2() {
       'mensaje_alertas("success", "CDP Agregado Correctamente", "center"); seleccionar_check();'
     );
 
+    $("#numero_cdp").val("");
+    $("#fecha_cdp").val("");
+    $("#valor_cdp").val("");
+
 }
 
 
 function agregar_cdp_editar() {
 
+    var numero_cdp = $("#numero_cdp").val();
+    var fecha_cdp = $("#fecha_cdp").val();
+    var valor_cdp = $("#valor_cdp").val();
+
+    if(numero_cdp == "" || fecha_cdp == "" || valor_cdp == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
+    
     $('#modal_cdps_editar').modal('hide');
   
     ejecutarAccion(
@@ -60,6 +81,10 @@ function agregar_cdp_editar() {
       '&id_contrato='+$("#id_contrato").val(),
       '$("#tab_4_cdps").html(data);  mensaje_alertas("success", "CDP Agregado Correctamente", "center");'
     );
+
+    $("#numero_cdp").val("");
+    $("#fecha_cdp").val("");
+    $("#valor_cdp").val("");
 
 }
 

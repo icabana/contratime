@@ -115,6 +115,11 @@ function celebrar_contrato() {
     var fechafinal_contra = $("#fechafinal_contra").val();
     var valor_contra = $("#valor_contra").val();
 
+    if(numero_contra == "" || fechainicio_contra == "" || fechafinal_contra == "" || valor_contra == ""){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
+
     mensaje_confirmar(
         "¿Está seguro de Celebrar el Contrato? No podrá regresar al estado actual: Adjudicado", 
         "celebrar_contrato2(" + id_contrato + ", '"+numero_contra+"', '"+fechainicio_contra+"', '"+fechafinal_contra+"', '"+valor_contra+"'); ");

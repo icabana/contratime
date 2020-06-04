@@ -18,6 +18,14 @@ function agregar_prorroga() {
 }
 
 function agregar_prorroga2() {
+ 
+    var meses_prorroga = $("#meses_prorroga").val();
+    var dias_prorroga = $("#dias_prorroga").val();
+
+    if ( meses_prorroga == "" || dias_prorroga == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
 
     $('#modal_prorrogas').modal('hide');    
 
@@ -32,19 +40,30 @@ function agregar_prorroga2() {
     contratos += '0';
 
     ejecutarAccion(
-    'contratos',
-    'Prorrogas',
-    'insertar',
-    "meses_prorroga="+$("#meses_prorroga").val()+
-    "&dias_prorroga="+$("#dias_prorroga").val()+
-    '&contratos='+contratos,
-    'mensaje_alertas("success", "Prorroga Agregada Correctamente", "center"); seleccionar_check();'
+        'contratos',
+        'Prorrogas',
+        'insertar',
+        "meses_prorroga="+$("#meses_prorroga").val()+
+        "&dias_prorroga="+$("#dias_prorroga").val()+
+        '&contratos='+contratos,
+        'mensaje_alertas("success", "Prorroga Agregada Correctamente", "center"); seleccionar_check();'
     );
+
+    $("#meses_prorroga").val("");
+    $("#dias_prorroga").val("");
 
 }
 
 
 function agregar_prorroga_editar() {
+    
+    var meses_prorroga = $("#meses_prorroga").val();
+    var dias_prorroga = $("#dias_prorroga").val();
+
+    if ( meses_prorroga == "" || dias_prorroga == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
 
     $('#modal_prorrogas_editar').modal('hide');    
 
@@ -57,6 +76,9 @@ function agregar_prorroga_editar() {
         '&id_contrato='+$("#id_contrato").val(),
         '$("#tab_8_prorrogas").html(data);  mensaje_alertas("success", "Prorroga Agregada Correctamente", "center");'
     );
+
+    $("#meses_prorroga").val("");
+    $("#dias_prorroga").val("");
 
 }
 

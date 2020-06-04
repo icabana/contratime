@@ -15,7 +15,7 @@
             <form role="form">
 
             <input type="hidden" class="form-control" id="id_modalidad" name="id_modalidad" 
-                        value="<?php echo $datos['id_modalidad']; ?>">
+                        value="<?php echo utf8_encode($datos['id_modalidad']); ?>">
 
               <div class="card-body">
 

@@ -122,6 +122,9 @@ class DocumentosControlador extends ControllerBase {
     
     public function eliminarDocumento() {
         
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
+
         unlink($_POST['archivo']);
 
         $this->model->cargar("ContratosModel.php", "contratos");
@@ -133,6 +136,10 @@ class DocumentosControlador extends ControllerBase {
 
         $documentos = $DocumentosModel->getTodosxModalidad($contrato['modalidad_contrato']); 
 
+        $accion = "Se ha eliminado un documento de éste contrato";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato_upload'], $accion);   
+
         include("vistas/contratos/documentos/tabla_documentos.php");  
         echo $tabla_documentos;               
         
@@ -140,12 +147,19 @@ class DocumentosControlador extends ControllerBase {
 
     public function actualizarDocumento() {
                           
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
+
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
         $contrato = $ContratosModel->getDatos($_POST['id_contrato_upload']);        
 
         $this->model->cargar("DocumentosModel.php", "administracion");
         $DocumentosModel = new DocumentosModel();
+
+        $accion = "Se ha Adjuntado un documento a éste contrato";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato_upload'], $accion);   
 
         $documentos = $DocumentosModel->getTodosxModalidad($contrato['modalidad_contrato']); 
 

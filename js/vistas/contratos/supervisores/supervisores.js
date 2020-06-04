@@ -51,8 +51,25 @@ function agregar_supervisor_editar() {
       'Supervisores',
       'insertarEditar',
       "supervisor_supervisor="+$("#supervisor_supervisor").val()+'&id_contrato='+$("#id_contrato").val(),
-      '$("#tab_2_supervisores").html(data);  mensaje_alertas("success", "Supervisor Agregado Correctamente", "center"); '
+      'agregar_supervisor_editar2(data)'
     );
+
+}
+
+
+function agregar_supervisor_editar2(data) {
+
+    if(data == "error"){
+
+        mensaje_alertas("error", "Este supervisor ya fue asociado a este proceso", "center"); 
+        return false;
+
+    }else{
+
+        $("#tab_2_supervisores").html(data);  
+        mensaje_alertas("success", "Supervisor Agregado Correctamente", "center"); 
+    }
+    
 
 }
 

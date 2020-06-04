@@ -5,6 +5,7 @@
     $( document ).ready(function() {
       $('#modalidad_busqueda').prepend("<option value='0' selected >NO SELECCIONAR</option>");
       $('#tipocontrato_busqueda').prepend("<option value='0' selected >NO SELECCIONAR</option>");
+      $('#estado_busqueda').prepend("<option value='0' selected >NO SELECCIONAR</option>");
     });
 
 </script>
@@ -29,7 +30,7 @@
          
       <div class="row">  
   
-        <div class="col-md-6">
+        <div class="col-md-4">
 
             <label>Modalidad<span style="color:red">*</span></label>
 
@@ -46,7 +47,7 @@
         </div>
 
 
-        <div class="col-md-6">
+        <div class="col-md-4">
           
             <label>Tipo de Contrato<span style="color:red">*</span></label>
 
@@ -56,6 +57,22 @@
                   'nombre_tipocontrato',
                   'id_tipocontrato',
                   'tipocontrato_busqueda'
+              );
+            ?>
+
+        </div>
+
+        
+        <div class="col-md-4">
+          
+            <label>Estado<span style="color:red">*</span></label>
+
+            <?php
+              echo $froms->Lista_Desplegable(
+                  $estados,
+                  'nombre_estado',
+                  'id_estado',
+                  'estado_busqueda'
               );
             ?>
 

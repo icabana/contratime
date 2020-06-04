@@ -49,7 +49,7 @@ $froms = new Formularios();
             <?php
             if ($_SESSION['rol'] == '1') {
             ?>
-              <button title="Eliminar Radicado" onclick="eliminar_contrato();" type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+              <button title="Eliminar Contratos" onclick="eliminar_contrato();" type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
             <?php
             }
             ?>
@@ -71,7 +71,7 @@ $froms = new Formularios();
 
           </div>
 
-          <button title="Actualizar Lista de Radicados" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+          <button title="Actualizar Lista de Contratos" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
 
         </div>
       </div>

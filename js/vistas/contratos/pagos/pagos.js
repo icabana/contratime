@@ -18,6 +18,14 @@ function agregar_pago() {
 }
 
 function agregar_pago2() {
+    
+    var fecha_pago = $("#fecha_pago").val();
+    var valor_pago = $("#valor_pago").val();
+
+    if(fecha_pago == "" || valor_pago == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
 
     $('#modal_pagos').modal('hide');    
 
@@ -42,10 +50,22 @@ function agregar_pago2() {
       'mensaje_alertas("success", "CDP Agregado Correctamente", "center"); seleccionar_check();'
     );
 
+    $("#fecha_pago").val("");
+    $("#valor_pago").val("");
+
 }
 
 
 function agregar_pago_editar() {
+    
+    var fecha_pago = $("#fecha_pago").val();
+    var valor_pago = $("#valor_pago").val();
+
+    if(fecha_pago == "" || valor_pago == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
+
 
     $('#modal_pagos_editar').modal('hide');    
 
@@ -59,6 +79,9 @@ function agregar_pago_editar() {
       '&id_contrato='+$("#id_contrato").val(),
       '$("#tab_6_pagos").html(data); mensaje_alertas("success", "CDP Agregado Correctamente", "center"); '
     );
+
+    $("#fecha_pago").val("");
+    $("#valor_pago").val("");
 
 }
 

@@ -36,7 +36,7 @@ class SupervisoresControlador extends ControllerBase {
 
                 $SupervisoresModel->insertar(
                     $_POST["supervisor_supervisor"],
-                    $array[0],
+                    $array[0]
                 );                    
 
 
@@ -93,51 +93,61 @@ class SupervisoresControlador extends ControllerBase {
         require_once("controladores/contratos/TrazabilidadControlador.php");
         $TrazabilidadControlador = new TrazabilidadControlador();   
 
-        $correo = new Correos();
-        $param = new Parametros();
+        $numero = $SupervisoresModel->existeSupervisorenContrato($_POST['id_contrato'], $_POST["supervisor_supervisor"]);
 
-        $datos_supervisor = $SupervisoresModel2->getDatos($_POST["supervisor_supervisor"]);
-    
-        $nombre_supervisor = $datos_supervisor['nombres_supervisor']." ".$datos_supervisor['apellidos_supervisor'];
+        if($numero <= 0 ){
 
-        $datos_contrato = $ContratosModel->getDatos($_POST['id_contrato']);
+            $correo = new Correos();
+            $param = new Parametros();
 
-        $SupervisoresModel->insertar(
-            $_POST["supervisor_supervisor"],
-            $_POST['id_contrato']
-        );                    
-
-        $accion = "Se ha Asignado cómo supervisor de éste contrato a ".$nombre_supervisor;
-
-        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
-
-        $accion = "Se ha enviado un correo de Notificación a ".$nombre_supervisor." Informando que ha sido Asignado cómo supervisor de éste contrato";
-
-        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
-
-        $mensaje = file_get_contents("plantillas/correos/plantilla2/index.html");
-
-        $mensaje = str_replace("#nombre#", $datos_supervisor['nombre_supervisor'], $mensaje);
-        $mensaje = str_replace("#numproceso#", $datos_contrato['numproceso_contrato'], $mensaje);
-        $mensaje = str_replace("#modalidad#", $datos_contrato['nombre_modalidad'], $mensaje);
-        $mensaje = str_replace("#tipocontrato#", $datos_contrato['nombre_tipocontrato'], $mensaje);
-        $mensaje = str_replace("#fecha_adjudicacion#", $datos_contrato['fadjudicacionproceso_contrato'], $mensaje);
-        $mensaje = str_replace("#fecha_cierre#", $datos_contrato['fcierreproceso_contrato'], $mensaje);
-        $mensaje = str_replace("#valor#", "$".number_format($datos_contrato['valproceso_contrato'],0,',','.'), $mensaje);
-
-        $mensaje = str_replace("#nombre_empresa#",  $param->valor('empresa'), $mensaje);
-        $mensaje = str_replace("#direccion#", $param->valor('direccion'), $mensaje);
-        $mensaje = str_replace("#telefono#", $param->valor('telefono'), $mensaje);
-        $mensaje = str_replace("#correo#", $param->valor('correo'), $mensaje);
-        $mensaje = str_replace("#paginaweb#", $param->valor('paginaweb'), $mensaje);
-        $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
-        $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
+            $datos_supervisor = $SupervisoresModel2->getDatos($_POST["supervisor_supervisor"]);
         
-        //$correo->EnviarCorreo($mensaje, "asunto", array($datos_supervisor['correo_supervisor']));
-            
-        $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+            $nombre_supervisor = $datos_supervisor['nombres_supervisor']." ".$datos_supervisor['apellidos_supervisor'];
 
-        include("vistas/contratos/supervisores/lista_supervisores.php");
+            $datos_contrato = $ContratosModel->getDatos($_POST['id_contrato']);
+
+            $SupervisoresModel->insertar(
+                $_POST["supervisor_supervisor"],
+                $_POST['id_contrato']
+            );                    
+
+            $accion = "Se ha Asignado cómo supervisor de éste contrato a ".$nombre_supervisor;
+
+            $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
+
+            $accion = "Se ha enviado un correo de Notificación a ".$nombre_supervisor." Informando que ha sido Asignado cómo supervisor de éste contrato";
+
+            $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
+
+            $mensaje = file_get_contents("plantillas/correos/plantilla2/index.html");
+
+            $mensaje = str_replace("#nombre#", $datos_supervisor['nombre_supervisor'], $mensaje);
+            $mensaje = str_replace("#numproceso#", $datos_contrato['numproceso_contrato'], $mensaje);
+            $mensaje = str_replace("#modalidad#", $datos_contrato['nombre_modalidad'], $mensaje);
+            $mensaje = str_replace("#tipocontrato#", $datos_contrato['nombre_tipocontrato'], $mensaje);
+            $mensaje = str_replace("#fecha_adjudicacion#", $datos_contrato['fadjudicacionproceso_contrato'], $mensaje);
+            $mensaje = str_replace("#fecha_cierre#", $datos_contrato['fcierreproceso_contrato'], $mensaje);
+            $mensaje = str_replace("#valor#", "$".number_format($datos_contrato['valproceso_contrato'],0,',','.'), $mensaje);
+
+            $mensaje = str_replace("#nombre_empresa#",  $param->valor('empresa'), $mensaje);
+            $mensaje = str_replace("#direccion#", $param->valor('direccion'), $mensaje);
+            $mensaje = str_replace("#telefono#", $param->valor('telefono'), $mensaje);
+            $mensaje = str_replace("#correo#", $param->valor('correo'), $mensaje);
+            $mensaje = str_replace("#paginaweb#", $param->valor('paginaweb'), $mensaje);
+            $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
+            $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
+            
+            $correo->EnviarCorreo($mensaje, "asunto", array($datos_supervisor['correo_supervisor']));
+                
+            $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+
+            include("vistas/contratos/supervisores/lista_supervisores.php");
+
+        }else{
+
+            echo "error";
+
+        }
         
     }
 

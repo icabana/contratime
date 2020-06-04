@@ -19,6 +19,14 @@ function agregar_ajuste() {
 
 function agregar_ajuste2() {
 
+    var valor_ajuste = $("#valor_ajuste").val();
+    var fecha_ajuste = $("#fecha_ajuste").val();
+
+    if(valor_ajuste == "" || fecha_ajuste == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
+
     $('#modal_ajustes').modal('hide');    
 
     var contratos = "";
@@ -42,10 +50,22 @@ function agregar_ajuste2() {
       'mensaje_alertas("success", "CDP Agregado Correctamente", "center"); seleccionar_check();'
     );
 
+    $("#valor_ajuste").val("");
+    $("#fecha_ajuste").val("");
+
 }
 
 
 function agregar_ajuste_editar() {
+    
+    var valor_ajuste = $("#valor_ajuste").val();
+    var fecha_ajuste = $("#fecha_ajuste").val();
+
+    if(valor_ajuste == "" || fecha_ajuste == "" ){
+        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
+        return false;
+    }
+
 
     $('#modal_ajustes_editar').modal('hide');    
 
@@ -60,6 +80,9 @@ function agregar_ajuste_editar() {
       '$("#tab_7_ajustes").html(data);  mensaje_alertas("success", "CDP Agregado Correctamente", "center"); '
     );
 
+    $("#valor_ajuste").val("");
+    $("#fecha_ajuste").val("");
+    
 }
 
 function eliminar_ajuste_contrato(id_ajuste, id_contrato) {

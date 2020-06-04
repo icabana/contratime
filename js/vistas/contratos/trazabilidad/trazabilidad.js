@@ -9,7 +9,7 @@ function agregar_trazabilidad() {
     );
 
     if(cont == 0){
-      mensaje_alertas("error", "Debe seleccionar algún registro");
+      mensaje_alertas("error", "Debe seleccionar algún registro", "center");
       return 0;
     }
 
@@ -18,10 +18,14 @@ function agregar_trazabilidad() {
 }
 
 function agregar_trazabilidad2() {
+    
+    if($("#accion_trazabilidad").val() == ""){
+        mensaje_alertas("error", "Debe digitar alguna información para guardar en la Bitacora.", "center");
+        return false;
+    }
 
     $('#modal_trazabilidad').modal('hide');
     
-
     var contratos = "";
 
     $("input[name=check_contratos]:checked").each(
@@ -40,9 +44,16 @@ function agregar_trazabilidad2() {
       'mensaje_alertas("success", "Trazabilidad Agregado Correctamente", "center"); seleccionar_check(); $("#accion_trazabilidad").val("")'
     );
 
+    $("#accion_trazabilidad").val("");
+
 }
 
 function agregar_trazabilidad_editar() {
+
+    if($("#accion_trazabilidad").val() == ""){
+        mensaje_alertas("error", "Debe digitar alguna información para guardar en la Bitacora.", "center");
+        return false;
+    }    
 
     $('#modal_trazabilidad_editar').modal('hide');
   
@@ -54,6 +65,8 @@ function agregar_trazabilidad_editar() {
       "&id_contrato="+$('#id_contrato').val(),
       '$("#tab_3_trazabilidad").html(data);  mensaje_alertas("success", "Trazabilidad Agregado Correctamente", "center"); seleccionar_check(); $("#accion_trazabilidad").val("")'
     );
+
+    $("#accion_trazabilidad").val("");
 
 }
 
