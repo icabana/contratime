@@ -1,5 +1,5 @@
 function upload_soportes(){
- 
+
     $('#modal_soportes_contratista').modal('hide');
     $('.modal-backdrop ').hide();
   
@@ -9,6 +9,8 @@ function upload_soportes(){
     data.append('fileToUploadSoportes',file);
 
     var id_contratista_upload = $("#id_contratista_upload").val();
+    alert($("#id_contratista_upload").val());
+    alert($("#id_soporte_upload").val());
     
     data.append('id_contratista_upload', $("#id_contratista_upload").val());
     data.append('id_soporte_upload', $("#id_soporte_upload").val());
@@ -22,7 +24,7 @@ function upload_soportes(){
         processData:false,        
         success: function(data)   
         {
-           
+          
             actualizar_lista_soportes(id_contratista_upload);
           
         }

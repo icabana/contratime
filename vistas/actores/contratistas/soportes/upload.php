@@ -1,8 +1,7 @@
 <?php
-
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUploadSoportes"]["type"])){
-
-	$target_dir = "../../../archivos/uploads/soportes/".$_POST['id_contrato_upload']."/".$_POST['id_soporte_upload']."/";
+	
+	$target_dir = "../../../../archivos/uploads/soportes/".$_POST['id_contratista_upload']."/".$_POST['id_soporte_upload']."/";
 	$carpeta=$target_dir;
 	if (!file_exists($carpeta)) {
 		mkdir($carpeta, 0777, true);

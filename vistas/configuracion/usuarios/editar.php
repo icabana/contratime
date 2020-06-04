@@ -49,8 +49,8 @@
                     <div class="form-group">
                       <label>Estado<span style="color:red">*</span></label>
                       <select  class="form-control" id="estado_usuario" name="estado_usuario">
-                          <option <?php if($datos['estado_usuario'] == 'A'){ echo "selected"; } ?> value="A" >ACTIVO</option>
-                          <option <?php if($datos['estado_usuario'] == 'I'){ echo "selected"; } ?> value="I" >INACTIVO</option>
+                          <option <?php if($datos['estado_usuario'] == '1'){ echo "selected"; } ?> value="1" >ACTIVO</option>
+                          <option <?php if($datos['estado_usuario'] == '2'){ echo "selected"; } ?> value="2" >INACTIVO</option>
                       </select>
                     </div>
                   </div>

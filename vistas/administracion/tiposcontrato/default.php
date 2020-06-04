@@ -1,5 +1,5 @@
 
-<script type='text/javascript' src='js/vistas/configuracion/tiposcontrato/default.js'></script> 
+<script type='text/javascript' src='js/vistas/administracion/tiposcontrato/default.js'></script> 
 
 <div class="row">
 

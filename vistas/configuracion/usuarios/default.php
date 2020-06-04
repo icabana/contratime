@@ -45,7 +45,6 @@
                             <th style='background-color:lavender'>Correo</th>
                             <th style='background-color:lavender'>Estado</th>
                             <th style='background-color:lavender'></th>
-                            <th style='background-color:lavender'></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -65,9 +64,6 @@
 
                             echo "<td><a href='#'><i onclick='editar_usuario(" . $usuario['id_usuario'] . ");' 
                                     class='fas fa-edit'></i></a></td>";
-
-                            echo "<td><a href='#'><i onclick='eliminar_usuario(" . $usuario['id_usuario'] . ");' 
-                                    class='fas fa-trash'></i></a></td>";
 
 
                             echo "</tr>";

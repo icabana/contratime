@@ -70,7 +70,7 @@ class UsuariosModel extends ModelBase {
                         '".$documento_usuario."', 
                         '".md5($password_usuario)."',
                         '".$correo_usuario."',
-                        'A'
+                        '1'
                     );";
        
         return $this->crear_ultimo_id($query);       

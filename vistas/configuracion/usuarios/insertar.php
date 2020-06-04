@@ -18,7 +18,8 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Documento<span style="color:red">*</span></label>
-                <input type="text" class="form-control requerido" id="documento_usuario" name="documento_usuario"
+                <input type="text" class="form-control requerido" id="documento_usuario" 
+                      name="documento_usuario"
                         onkeypress="return no_numeros(event)">
               </div>
             </div>

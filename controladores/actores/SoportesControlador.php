@@ -125,7 +125,7 @@ class SoportesControlador extends ControllerBase {
     }
 
     
-    public function eliminarDocumento() {
+    public function eliminarSoporte() {
         
         unlink($_POST['archivo']);
 
@@ -138,14 +138,20 @@ class SoportesControlador extends ControllerBase {
         
     }
 
-    public function actualizarDocumento() {
+    public function actualizarSoporte() {
         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();        
         
-        $contratos = $ContratosModel->getTodos($_POST['id_contrato']);
+        $contratista = $ContratosModel->getDatos($_POST['id_contratista_upload']);
+        
+        $this->model->cargar("SoportesModel.php", "actores");
+        $SoportesModel = new SoportesModel();
+        $soportes = $SoportesModel->getTodosxTipo($contratista['tipo_contratista']);
+        
+        include("vistas/actores/contratistas/soportes/tabla_soportes.php");                  
 
-        include("vistas/actores/contratistas/soportes/tabla_contratos.php");                  
+        echo $tabla_soportes;
         
     }
 

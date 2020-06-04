@@ -71,7 +71,6 @@
                         <tr>
                             <th style='background-color:lavender'>NOMBRE</th>
                             <th style='background-color:lavender; width:15px'></th>
-                            <th style='background-color:lavender; width:15px'></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,9 +84,6 @@
 
                             echo "<td><a href='#'><i onclick='editar_rol(" . $items['id_rol'] . ");' 
                                     class='fas fa-edit'></i></a></td>";
-
-                            echo "<td><a href='#'><i onclick='eliminar_rol(" . $items['id_rol'] . ");' 
-                                    class='fas fa-trash'></i></a></td>";
 
 
                             echo "</tr>";

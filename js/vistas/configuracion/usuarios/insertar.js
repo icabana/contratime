@@ -19,7 +19,7 @@ function insertar_usuario() {
     roles += "0";
 
     var datos = $('#form_usuarios').serialize()+"&"+roles;
-
+alert(datos);
     ejecutarAccion(
       'configuracion',
       'Usuarios',
