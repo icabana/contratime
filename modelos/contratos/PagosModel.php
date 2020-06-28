@@ -79,6 +79,21 @@ class PagosContratosModel extends ModelBase {
     }  
 
 
+    
+    function getTotalPagos($contrato_pago) {
+        
+        $query = "select sum(contratos_pagos.valor_pago) as total
+                
+                    from contratos_pagos 
+                    
+                    where contratos_pagos.contrato_pago='".$contrato_pago."'";
+        
+        $consulta = $this->consulta($query);
+        return $consulta[0]['total'];       
+               
+    }  
+
+
     function getDatos($id_pago) {
        
         $query = "select 

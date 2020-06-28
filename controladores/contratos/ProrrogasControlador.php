@@ -5,6 +5,8 @@ class ProrrogasControlador extends ControllerBase {
     
     public function insertar() {
         
+        $fechas = new Fechas();
+        
         $this->model->cargar("ProrrogasModel.php", "contratos");
         $ProrrogasModel = new ProrrogasContratosModel();  
                         
@@ -19,7 +21,6 @@ class ProrrogasControlador extends ControllerBase {
 
                 $ProrrogasModel->insertar(
                     $array[0],
-                    $_POST["meses_prorroga"],
                     $_POST["dias_prorroga"]
                 );        
               
@@ -32,12 +33,24 @@ class ProrrogasControlador extends ControllerBase {
 
     public function insertarEditar() {
         
+        $fechas = new Fechas();
+
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();  
+
         $this->model->cargar("ProrrogasModel.php", "contratos");
         $ProrrogasModel = new ProrrogasContratosModel();  
+
+        $dias = $ProrrogasModel->getDiasProrrogas($_POST['id_contrato']) + $_POST["dias_prorroga"];
+
+        $datos_contrato = $ContratosModel->getDatos($_POST['id_contrato']);
+
+        $fecha_actual = date("Y-m-d");
+
+        $nueva_fecha = $fechas->sumardias2($datos_contrato['fechafinal_contrato'], $dias);
                         
         $ProrrogasModel->insertar(
             $_POST['id_contrato'],
-            $_POST["meses_prorroga"],
             $_POST["dias_prorroga"]
         );        
                 

@@ -73,7 +73,7 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo $contrato['nombre_contratista'] .
+                    <?php echo $contrato['nombres_contratista']." ".$contrato['apellidos_contratista'].
                       " <img title='" . $contrato['nombre_pais'] . "' src='imagenes/banderas/" .
                       $contrato['codigo3_pais'] . ".png'>"; ?>
 
@@ -115,7 +115,7 @@
                             $id_contrato = $contrato['id_contrato'];
                             
                             echo '<td style="background-color: #FF8D8D" class="mailbox-subject">';
-                            echo "<b><center>".$contrato['nombre_estado']."</center></b>";
+                            echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
                               echo '</td>';
                         }
                     ?>
@@ -126,7 +126,7 @@
                             $id_contrato = $contrato['id_contrato'];
                             
                             echo '<td style="background-color: #FF8D8D" class="mailbox-subject">';
-                            echo "<b><center>".$contrato['nombre_estado']."</center></b>";
+                            echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
                              echo '</td>';
                         }
                     ?>
@@ -138,7 +138,7 @@
                             $id_contrato = $contrato['id_contrato'];
                             
                             echo '<td style="background-color: #F0E438" class="mailbox-subject">';
-                            echo "<b><center>".$contrato['nombre_estado']."</center></b>";
+                            echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
                               echo '</td>';
                         }
                     ?>
@@ -149,7 +149,7 @@
                             $id_contrato = $contrato['id_contrato'];
                             
                             echo '<td style="background-color: #77F76C" class="mailbox-subject">';
-                            echo "<b><center>".$contrato['nombre_estado']."</center></b>";
+                            echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
                             echo '</td>';
                         }
                     ?>

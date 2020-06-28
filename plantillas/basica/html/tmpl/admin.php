@@ -168,14 +168,6 @@
   <!-- BARRA LATERAL IZQUIERA -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-    <!-- ICONO SUPERIOR IZQUIERDO -->
-    <a  href="javascript:location.reload()"  class="brand-link">
-      <span class="brand-text font-weight-light">
-        <center><img src="imagenes/logos/logo_mediano.png"  style="opacity: .8"></center>
-      </span>
-    </a>
-
-
     <!-- DATOS DE USUARIO -->
     <div class="sidebar">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">

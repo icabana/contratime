@@ -67,8 +67,6 @@ function agregar_pago_editar() {
     }
 
 
-    $('#modal_pagos_editar').modal('hide');    
-
     ejecutarAccion(
       'contratos',
       'Pagos',
@@ -77,7 +75,7 @@ function agregar_pago_editar() {
       "&fecha_pago="+$("#fecha_pago").val()+
       "&valor_pago="+$("#valor_pago").val()+
       '&id_contrato='+$("#id_contrato").val(),
-      '$("#tab_6_pagos").html(data); mensaje_alertas("success", "CDP Agregado Correctamente", "center"); '
+      'if(data == "error"){ mensaje_alertas("error", "Los Pagos no pueden superar el valor del Contrato", "center"); }else{ $("#modal_pagos_editar").modal("hide");  $("#tab_6_pagos").html(data); mensaje_alertas("success", "Pago Agregado Correctamente", "center"); }'
     );
 
     $("#fecha_pago").val("");
@@ -98,7 +96,7 @@ function eliminar_pago_contrato(id_pago, id_contrato) {
           'Pagos',
           'eliminar',
           "id_pago=" + id_pago+"&id_contrato=" + id_contrato,
-          '$("#tab_6_pagos").html(data);  mensaje_alertas("success", "CDP Eliminado con Éxito", "center"); '
+          '$("#tab_6_pagos").html(data);  mensaje_alertas("success", "Pago Eliminado con Éxito", "center"); '
       );
   
   }

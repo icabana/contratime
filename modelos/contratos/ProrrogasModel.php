@@ -5,11 +5,11 @@ class ProrrogasContratosModel extends ModelBase {
   
     function getTodos() {
         
-        $query = "select 
+        $query = "SELECT 
 
                     contratos_prorrogas.id_prorroga, 
                     contratos_prorrogas.contrato_prorroga, 
-                    contratos_prorrogas.meses_prorroga, 
+                    contratos_prorrogas.fecha_prorroga, 
                     contratos_prorrogas.dias_prorroga, 
 
                     contratos.tipo_contrato,
@@ -26,8 +26,10 @@ class ProrrogasContratosModel extends ModelBase {
                     contratos.objeto_contrato,
                     contratos.estado_contrato
                 
-                    from contratos_prorrogas 
-                            left join contratos ON contratos_prorrogas.contrato_prorroga = contratos.id_contrato";
+                    FROM contratos_prorrogas 
+                            left join contratos ON contratos_prorrogas.contrato_prorroga = contratos.id_contrato
+                            
+                    ORDER BY contratos_prorrogas.fecha_prorroga";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -40,7 +42,7 @@ class ProrrogasContratosModel extends ModelBase {
 
                     contratos_prorrogas.id_prorroga, 
                     contratos_prorrogas.contrato_prorroga, 
-                    contratos_prorrogas.meses_prorroga, 
+                    contratos_prorrogas.fecha_prorroga, 
                     contratos_prorrogas.dias_prorroga, 
 
                     contratos.tipo_contrato,
@@ -60,8 +62,9 @@ class ProrrogasContratosModel extends ModelBase {
                     from contratos_prorrogas 
                             left join contratos ON contratos_prorrogas.contrato_prorroga = contratos.id_contrato
 
+                    where contratos_prorrogas.contrato_prorroga='".$contrato_prorroga."'
                     
-                    where contratos_prorrogas.contrato_prorroga='".$contrato_prorroga."'";
+                    ORDER BY contratos_prorrogas.fecha_prorroga";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -75,7 +78,7 @@ class ProrrogasContratosModel extends ModelBase {
 
                     contratos_prorrogas.id_prorroga, 
                     contratos_prorrogas.contrato_prorroga, 
-                    contratos_prorrogas.meses_prorroga, 
+                    contratos_prorrogas.fecha_prorroga, 
                     contratos_prorrogas.dias_prorroga, 
 
                     contratos.tipo_contrato,
@@ -103,20 +106,36 @@ class ProrrogasContratosModel extends ModelBase {
     }
     
 
+    function getDiasProrrogas($id_contrato) {
+       
+        $query = "select sum(contratos_prorrogas.dias_prorroga) as dias
+                
+                    from contratos_prorrogas 
+                    
+                    where contratos_prorrogas.contrato_prorroga='".$id_contrato."'";
+        
+         $consulta = $this->consulta($query);
+        return $consulta[0]['dias'];    
+        
+    }
+    
+
+
     function insertar(    
         $contrato_prorroga,
-        $meses_prorroga,
         $dias_prorroga
     ){
-                
+        
+        $fecha_actual = date('Y-m-d H:i:s');
+
         $query = "INSERT INTO contratos_prorrogas (
                             contrato_prorroga,
-                            meses_prorroga,
+                            fecha_prorroga,
                             dias_prorroga
                             )
                     VALUES(
                             '".$contrato_prorroga."',
-                            '".$meses_prorroga."',
+                            '".$fecha_actual."',
                             '".$dias_prorroga."'
                     );";
        

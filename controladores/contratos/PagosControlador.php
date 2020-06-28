@@ -52,6 +52,15 @@ class PagosControlador extends ControllerBase {
                         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();  
+
+        $datos_contrato = $ContratosModel->getDatos($_POST['id_contrato']);
+
+        $total_pagos = $PagosModel->getTotalPagos($_POST['id_contrato']) + $_POST["valor_pago"];
+
+        if($total_pagos > $datos_contrato['valor_contrato']){
+            echo "error";
+            return;
+        }
          
         require_once("controladores/contratos/TrazabilidadControlador.php");
         $TrazabilidadControlador = new TrazabilidadControlador();   

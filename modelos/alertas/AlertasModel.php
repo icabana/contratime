@@ -104,6 +104,7 @@ class AlertasModel extends ModelBase {
 
 
                     WHERE DATEDIFF(contratos.fechafinal_contrato, '".$fecha_actual."') < ".$dias." and 
+                                contratos.estado_contrato >= 3 and
                             contratos.fechafinal_contrato >= '".$fecha_actual."'";
         
         $consulta = $this->consulta($query);
@@ -111,6 +112,83 @@ class AlertasModel extends ModelBase {
                
     }  
 
+    
+    
+    function getContratosFinalizadosSinPagar() {
+        
+        $params = new Parametros();
+
+        $fecha_actual = date("Y-m-d");
+
+        $query = "SELECT 
+
+                        contratos.id_contrato, 
+                        contratos.tipo_contrato,
+                        contratos.modalidad_contrato,
+                        contratos.valor_contrato,
+                        contratos.valproceso_contrato,
+                        contratos.contratista_contrato,
+                        contratos.fechainicio_contrato,
+                        contratos.fechafinal_contrato,
+                        contratos.favisoproceso_contrato,
+                        contratos.fpresentacionproceso_contrato,
+                        contratos.fevaluacionproceso_contrato,
+                        contratos.fcierreproceso_contrato,
+                        contratos.fadjudicacionproceso_contrato,
+                        contratos.numero_contrato,
+                        contratos.numproceso_contrato,
+                        contratos.objeto_contrato,
+                        contratos.estado_contrato,
+
+
+                        contratistas.id_contratista, 
+
+                        contratistas.tipo_contratista,
+                        contratistas.tipodocumento_contratista,
+                        contratistas.documento_contratista,
+                        contratistas.nombres_contratista,
+                        contratistas.apellidos_contratista,
+
+                        contratistas.dirresidencia_contratista,
+                        contratistas.dircorrespondencia_contratista,
+                        contratistas.telefono_contratista,
+                        contratistas.celular_contratista,
+                        contratistas.correo_contratista,
+                        contratistas.paginaweb_contratista,
+
+                        contratistas.pais_contratista,
+                        contratistas.departamento_contratista,
+                        contratistas.municipio_contratista,
+
+                        contratistas.fechanacimiento_contratista,
+
+                        contratistas.genero_contratista,
+                        contratistas.estadocivil_contratista,
+                        contratistas.hijos_contratista,
+
+                        contratistas.profesion_contratista,
+
+                        estadoscontrato.id_estado, 
+                        estadoscontrato.nombre_estado,
+
+                        (select sum(contratos_pagos.valor_pago) from contratos_pagos where contrato_pago = contratos.id_contrato) as saldo
+                
+                        FROM contratos                             
+                                left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista  
+                                left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
+
+                        WHERE contratos.fechafinal_contrato < '".$fecha_actual."' and 
+                        
+                        contratos.estado_contrato >= 3 and
+
+                        (contratos.valor_contrato > (select sum(contratos_pagos.valor_pago) as total from contratos_pagos where contrato_pago = contratos.id_contrato)  or  (select sum(contratos_pagos.valor_pago) as total from contratos_pagos where contrato_pago = contratos.id_contrato) is nullz)
+
+                    ";
+        
+        $consulta = $this->consulta($query);
+        return $consulta;       
+               
+    }  
 
     
     function getContratosMitadEjecucion() {

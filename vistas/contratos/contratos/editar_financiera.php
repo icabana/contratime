@@ -14,7 +14,7 @@ $froms = new Formularios();
 
 
         <div class="card-header">
-          <h3 class="card-title">Editar Contrato (Estado Actual: <?php echo $contrato['nombre_estado']; ?>)</h3>
+          <h3 class="card-title">Editar Contrato (Estado Actual: <?php echo $contrato['nombreestado_contrato']; ?>)</h3>
         </div>
 
 

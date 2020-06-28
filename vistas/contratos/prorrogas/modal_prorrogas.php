@@ -12,17 +12,7 @@
 
 
       <div class="modal-body">
-       
-        <div class="col-md-12">
-
-          <label>Meses de Prorroga: </label>
-          <input type="text" class="form-control requerido_prorroga" id="meses_prorroga" name="meses_prorroga" 
-          maxlength="20" onkeypress="return no_numeros(event)">
-
-        </div>
-    
-        <br>
-
+         
         <div class="col-md-12">
 
           <label>D&iacute;as de Prorroga: </label>
