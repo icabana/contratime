@@ -19,7 +19,7 @@ $froms = new Formularios();
 
 
 
-        <div class="card-body">
+        <div class="card-body" style="font-size:0.8rem">
 
           <!--TITULOS DE LOS TAB-->
           <ul class="nav nav-pills ml-auto p-2">

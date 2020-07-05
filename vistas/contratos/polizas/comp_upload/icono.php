@@ -46,8 +46,8 @@ if ($num_archivos >  0) {
 
             $documento_poliza .= '  
                 <a target="_blank" title="Ver/Descargar Documento"  href="' . $ruta_archivo . '">' . $icono_archivo . '</a>                         
-                 
-                      <a href="#"  title="Eliminar Documento" onclick="eliminar_documento_poliza(\'' . $ruta_archivo . '\', '.$poliza['contrato_poliza'].'); return false;">Eliminar</a>
+                <br/> 
+                <a href="#"  title="Eliminar Documento" onclick="eliminar_documento_poliza(\'' . $ruta_archivo . '\', '.$poliza['contrato_poliza'].'); return false;">Eliminar</a>
                 ';
         }
         

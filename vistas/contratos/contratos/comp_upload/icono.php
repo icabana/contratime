@@ -47,7 +47,7 @@ if ($num_archivos >  0) {
             $documento_contrato .= '  
                 <a target="_blank" title="Ver/Descargar Documento"  href="' . $ruta_archivo . '">' . $icono_archivo . '</a>                         
                  
-                      <a href="#"  title="Eliminar Documento" onclick="eliminar_documento_contrato(\'' . $ruta_archivo . '\', '.$contrato['contrato_contrato'].'); return false;">Eliminar</a>
+                      <br><a href="#"  title="Eliminar Documento" onclick="eliminar_documento_contrato(\'' . $ruta_archivo . '\', '.$contrato['contrato_contrato'].'); return false;">Eliminar</a>
                 ';
         }
         

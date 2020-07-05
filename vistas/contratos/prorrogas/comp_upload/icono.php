@@ -46,8 +46,8 @@ if ($num_archivos >  0) {
 
             $documento_prorroga .= '  
                 <a target="_blank" title="Ver/Descargar Documento"  href="' . $ruta_archivo . '">' . $icono_archivo . '</a>                         
-                 
-                      <a href="#"  title="Eliminar Documento" onclick="eliminar_documento_prorroga(\'' . $ruta_archivo . '\', '.$prorroga['contrato_prorroga'].'); return false;">Eliminar</a>
+                <br/> 
+                <a href="#"  title="Eliminar Documento" onclick="eliminar_documento_prorroga(\'' . $ruta_archivo . '\', '.$prorroga['contrato_prorroga'].'); return false;">Eliminar</a>
                 ';
         }
         

@@ -9,19 +9,20 @@
 <input type="hidden" name="id_contrato_sel" id="id_contrato_sel">
 
 <div class="table-responsive mailbox-messages">
-          <table id="tabla_contratos" style="width:100%" width='100%' class="table table-hover table-striped">
+          <table id="tabla_contratos" style="width:100%; font-size:11px" width='100%' class="table table-hover table-striped">
             <thead>
               <tr>
                 <th style='background-color:lavender'></th>   
-                <th style='background-color:lavender'>N&uacute;mero</th>
-                <th style='background-color:lavender'>Tipo de Contrato</th>
-                <th style='background-color:lavender'>Contratista</th>
-                <th style='background-color:lavender'>Valor </th>
-                <th style='background-color:lavender; width:15px'>Objeto</th>
-                <th style='background-color:lavender'>Estado</th>                           
-                <th style='background-color:lavender'>Adjuntar</th>  
-                <th  style='background-color:lavender; width:15px'></th>
-                <th  style='background-color:lavender; width:15px'></th>
+                <th style='background-color:lavender; width:5%'>N&uacute;mero</th>
+                <th style='background-color:lavender; width:10%'>Tipo</th>
+                <th style='background-color:lavender; width:20%'>Contratista</th>
+                <th style='background-color:lavender; width:10%'>Valor </th>
+                <th style='background-color:lavender; width:35%'>Objeto</th>
+                <th style='background-color:lavender; width:5%'>Estado</th>                           
+                <th style='background-color:lavender; width:4%'>Acciones</th>                           
+                <th style='background-color:lavender; width:4%'>Adjuntar</th>  
+                <th  style='background-color:lavender; width:2%'></th>
+                <th  style='background-color:lavender; width:2%'></th>
               </tr>
             </thead>
             <tbody>
@@ -118,9 +119,13 @@
                             
                             echo '<td style="background-color: #F0E438" class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
-                            echo '<center><button onclick="sel_adjudicar_contrato(' . $id_contrato . ');"  title="Adjudicar Contrato" data-toggle="modal" data-target="#modal_adjudicar" type="button" class="btn btn-success ">¿Adjudicar?</button></center>';
-                            echo '<center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger ">¿Descartar?</button></center>';
+                           echo '</td>';
+
+                            echo '<td  class="mailbox-subject">';                        
+                            echo '<center><button onclick="sel_adjudicar_contrato(' . $id_contrato . ');"  title="Adjudicar Contrato" data-toggle="modal" data-target="#modal_adjudicar" type="button" class="btn btn-success btn-xs ">¿Adjudicar?</button></center>';
+                            echo '<br><center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger  btn-xs">¿Descartar?</button></center>';
                             echo '</td>';
+
                         }
                     ?>
 
@@ -131,6 +136,10 @@
                             
                             echo '<td style="background-color: #FF8D8D" class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
+                           echo '</td>';
+
+
+                            echo '<td class="mailbox-subject">';
                             echo '<button onclick="sel_adjudicar_contrato(' . $id_contrato . ');"  title="Adjudicar Contrato" data-toggle="modal" data-target="#modal_adjudicar" type="button" class="btn btn-success ">¿Adjudicar?</button>';                            
                             echo '</td>';
                         }
@@ -144,9 +153,13 @@
                             
                             echo '<td style="background-color: #F0E438" class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
-                            echo '<center><button onclick="sel_celebrar_contrato(' . $id_contrato . ');"  title="Celebrar Contrato" data-toggle="modal" data-target="#modal_celebrar" type="button" class="btn btn-success ">¿Celebrar?</button></center>';
-                            echo '<center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger ">¿Descartar?</button></center>';
+                           echo '</td>';
+
+                            echo '<td  class="mailbox-subject">';
+                             echo '<center><button onclick="sel_celebrar_contrato(' . $id_contrato . ');"  title="Celebrar Contrato" data-toggle="modal" data-target="#modal_celebrar" type="button" class="btn btn-success ">¿Celebrar?</button></center>';
+                            echo '<br><center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger ">¿Descartar?</button></center>';
                             echo '</td>';
+
                         }
                     ?>
 
@@ -157,9 +170,13 @@
                             
                             echo '<td style="background-color: #77F76C" class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
-                            echo '<center><button onclick="liquidar_contrato(' . $id_contrato . ');"  title="Liquidar Contrato" data-toggle="modal" data-target="#modal_liquidar" type="button" class="btn btn-success ">¿Liquidar?</button></center>';
-                            echo '<center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger ">¿Descartar?</button></center>';
+                             echo '</td>';
+
+                            echo '<td class="mailbox-subject">';
+                            echo '<center><button onclick="liquidar_contrato(' . $id_contrato . ');"  title="Liquidar Contrato" data-toggle="modal" data-target="#modal_liquidar" type="button" class="btn btn-success btn-xs">¿Liquidar?</button></center>';
+                            echo '<br><center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger btn-xs">¿Descartar?</button></center>';
                             echo '</td>';
+
                         }
                     ?>
 
@@ -178,7 +195,7 @@
 
                   <?php               
                        
-                       if($contrato['estado_contrato'] >= 3){                                      
+                      if($contrato['estado_contrato'] >= 3){                                      
                         include("vistas/contratos/contratos/comp_upload/icono.php");
                         echo "<td><center> " . $documento_contrato . "</center></td>";
                       }else{

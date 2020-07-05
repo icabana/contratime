@@ -46,8 +46,8 @@ if ($num_archivos >  0) {
 
             $documento_ajuste .= '  
                 <a target="_blank" title="Ver/Descargar Documento"  href="' . $ruta_archivo . '">' . $icono_archivo . '</a>                         
-                 
-                      <a href="#"  title="Eliminar Documento" onclick="eliminar_documento_ajuste(\'' . $ruta_archivo . '\', '.$ajuste['contrato_ajuste'].'); return false;">Eliminar</a>
+                <br/> 
+                <a href="#"  title="Eliminar Documento" onclick="eliminar_documento_ajuste(\'' . $ruta_archivo . '\', '.$ajuste['contrato_ajuste'].'); return false;">Eliminar</a>
                 ';
         }
         
