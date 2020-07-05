@@ -48,7 +48,7 @@ class SistemaControlador extends ControllerBase {
         $fecha_ultima_alerta = $params->valor("fecha_ultima_alerta");
         
         if($fecha_ultima_alerta != date("Y-m-d")){
-
+            /*
             include("controladores/alertas/AlertasControlador.php");
             $AlertasControlador = new AlertasControlador();
 
@@ -57,7 +57,7 @@ class SistemaControlador extends ControllerBase {
             $AlertasControlador->procesosxAdjudicar();
             $AlertasControlador->procesosxCerrar();
             $AlertasControlador->procesosxEvaluar();
-
+            */
             $params->set("fecha_ultima_alerta", date("Y-m-d"));
 
         }

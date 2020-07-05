@@ -52,7 +52,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
+            //$correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
         }
                         
     }    
@@ -107,7 +107,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
+            //$correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
         }
                         
     }    
@@ -163,7 +163,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
+            //$correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
 
         }
                         
@@ -226,7 +226,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
+            //$correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
         }
                         
     }    
@@ -285,7 +285,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
+            //$correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
         }
                         
     }    
@@ -344,7 +344,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
+            //$correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
         }
                         
     }    
@@ -404,7 +404,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
+            //$correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
         }
                         
     }    
@@ -466,7 +466,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
+            //$correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
         }
                         
     }    
