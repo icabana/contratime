@@ -129,6 +129,12 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a  href="javascript:location.reload()" class="nav-link">Inicio</a>
       </li>
+       <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" onclick="nuevo_contrato(); return false;" class="nav-link"><b>Nuevo Contrato</b></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" onclick="cargar_contratistas(); return false;" class="nav-link"><b>Contratistas</b></a>
+      </li>
      
     </ul>
 

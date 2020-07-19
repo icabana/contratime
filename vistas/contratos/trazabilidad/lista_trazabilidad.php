@@ -46,7 +46,7 @@
 
         echo "<td>".$traza['documento_usuario']."</td>";
 
-        echo "<td>".utf8_encode($traza['accion_trazabilidad']) . "</td>";
+        echo "<td>".$traza['accion_trazabilidad']. "</td>";
 
         echo "</tr>";
     }

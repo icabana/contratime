@@ -36,27 +36,35 @@
                 <table id="tabla_documentos" class="table table-bordered table-hover">
                     <thead>
                         <tr>
+                            <th style='background-color:lavender'>No.</th>
                             <th style='background-color:lavender'>Nombre del Documento</th>
-                            <th style='background-color:lavender'></th>
-                            <th style='background-color:lavender'></th>
+                            <th style='background-color:lavender; width:15px'></th>
+                            <th style='background-color:lavender; width:15px'></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
+
+                        $cont = 1;
+
                         foreach ($documentos as $documento) {
 
                             echo "<tr>";
 
+                            echo "<td>" . $cont . "</td>";
+
                             echo "<td>" . $documento['nombre_documento'] . "</td>";
 
-                            echo "<td><a href='#'><i onclick='editar_documento(" . $documento['id_documento'] . ", " . $documento['modalidad_documento'] . ");' 
+                            echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_documento(" . $documento['id_documento'] . ", " . $documento['modalidad_documento'] . ");'><i 
                                     class='fas fa-edit'></i></a></td>";
 
-                            echo "<td><a href='#'><i onclick='eliminar_documento(" . $documento['id_documento'] . ", " . $documento['modalidad_documento'] . ");' 
+                            echo "<td><a  class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#'  onclick='eliminar_documento(" . $documento['id_documento'] . ", " . $documento['modalidad_documento'] . ");'><i 
                                     class='fas fa-trash'></i></a></td>";
 
-
                             echo "</tr>";
+
+                            $cont++;
+
                         }
                         ?>
                     </tbody>

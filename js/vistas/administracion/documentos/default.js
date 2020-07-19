@@ -24,7 +24,7 @@ function editar_documento(id_documento, modalidad_documento) {
 
 function eliminar_documento(id_documento, modalidad_documento) {
 
-    mensaje_confirmar("¿Está seguro de eliminar el documento?", "eliminar_documento2(" + id_documento + ", " + modalidad_documento + "); ");
+    mensaje_confirmar("¿Está seguro de Eliminar el Documento?", "eliminar_documento2(" + id_documento + ", " + modalidad_documento + "); ");
 
 }
 

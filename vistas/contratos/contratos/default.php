@@ -30,7 +30,7 @@ $froms = new Formularios();
             </div>
             <div class="col-md-2">
               <button onclick="nuevo_contrato(); return false;" class="btn btn-success btn-sm">
-                Nuevo contrato
+                Nuevo Contrato
               </button>
             </div>
 

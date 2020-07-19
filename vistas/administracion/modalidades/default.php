@@ -41,31 +41,35 @@
                 <table id="tabla_modalidades" class="table table-bordered table-hover">
                     <thead>
                         <tr>
+                            <th style='background-color:lavender'>No.</th>
                             <th style='background-color:lavender'>Modalidad de Contrataci&oacute;n</th>
-                            <th style='background-color:lavender; width:15px'></th>
                             <th style='background-color:lavender; width:15px'></th>
                             <th style='background-color:lavender; width:15px'></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
+
+                        $cont = 1;
+
                         foreach ($modalidades as $modalidad) {
 
                             echo "<tr>";
 
-                            echo "<td>" . utf8_encode($modalidad['nombre_modalidad']) . "</td>";
+                            echo "<td>" . $cont . "</td>";
 
-                            echo "<td><a href='#'><i title='Ver Documentos' onclick='documentos_modalidad(" . $modalidad['id_modalidad'] . ");' 
+                            echo "<td>" . $modalidad['nombre_modalidad'] . "</td>";
+                            
+                            echo "<td><a class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#'  onclick='documentos_modalidad(" . $modalidad['id_modalidad'] . ");'><i title='Ver Documentos' 
                             class='fas fa-file'></i></a></td>";
 
-                            echo "<td><a href='#'><i title='Editar Modalidad' onclick='editar_modalidad(" . $modalidad['id_modalidad'] . ");' 
+                            echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_modalidad(" . $modalidad['id_modalidad'] . ");'><i title='Editar Modalidad' 
                                     class='fas fa-edit'></i></a></td>";
 
-                            echo "<td><a href='#'><i title='Eliminar Modalidad' onclick='eliminar_modalidad(" . $modalidad['id_modalidad'] . ");' 
-                                    class='fas fa-trash'></i></a></td>";
-
-
                             echo "</tr>";
+
+                            $cont++;
+
                         }
                         ?>
                     </tbody>

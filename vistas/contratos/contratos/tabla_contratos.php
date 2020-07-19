@@ -9,7 +9,7 @@
 <input type="hidden" name="id_contrato_sel" id="id_contrato_sel">
 
 <div class="table-responsive mailbox-messages">
-          <table id="tabla_contratos" style="width:100%; font-size:11px" width='100%' class="table table-hover table-striped">
+          <table id="tabla_contratos" style="width:100%; font-size:12px" width='100%' class="table table-hover table-striped">
             <thead>
               <tr>
                 <th style='background-color:lavender'></th>   
@@ -202,10 +202,10 @@
                         echo "<td></td>";
                       }
             
-                      echo "<td><a href='#' title='Editar Contrato'><i onclick='editar_contrato(" . $contrato['id_contrato'] . ");' 
+                      echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_contrato(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
                       class='fas fa-edit'></i></a></td>";                                 
 
-                      echo "<td><a href='#' title='Editar Contrato'><i onclick='eliminar_contrato(" . $contrato['id_contrato'] . ");' 
+                      echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' onclick='eliminar_contrato(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
                                     class='fas fa-trash'></i></a></td>";
 
                   ?>

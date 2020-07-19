@@ -24,7 +24,7 @@ function editar_modalidad(id_modalidad) {
 
 function eliminar_modalidad(id_modalidad) {
 
-    mensaje_confirmar("¿Está seguro de eliminar el modalidad?", "eliminar_modalidad2(" + id_modalidad + "); ");
+    mensaje_confirmar("¿Está seguro de eliminar la Modalidad?", "eliminar_modalidad2(" + id_modalidad + "); ");
 
 }
 

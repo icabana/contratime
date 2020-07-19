@@ -18,17 +18,43 @@
 
 <body style='background:white' class="hold-transition login-page">
 
-  <div class="login-box">
 
-    <div class="login-logo">
-      <span class="brand-text font-weight-light">        
-          <img src="imagenes/logos/logo.png"  style="opacity: .8">        
-        </span>
-    </div>
+  <div id="cargando"></div>
 
+</body>
 
-    
-    <div class="card">
+<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>..: LoginTime :..</title>
+        
+		<link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="<?php echo $this->ruta(); ?>/html/tmpl/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="<?php echo $this->ruta(); ?>/html/tmpl/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+				  <div style="margin-top: 2px;" class="login-logo">
+            <span class="brand-text font-weight-light">        
+                <img src="imagenes/logos/logo.png" width="250px"  style="opacity: .8">        
+              </span>
+          </div>
+
+					  <div class="card">
       <div class="card-body login-card-body">
 
         <p class="login-box-msg">Iniciar Sesi&oacute;n</p>
@@ -44,11 +70,10 @@
               </div>         
               
               <div class="row">
-                <div class="col-md-9">
-                  <button onclick="recordar_contrasena(); return false;"  class="btn btn-primary">Recordar Contraseña</button>
-                </div>
-                <div class="col-md-3">
+                <div class="col-md-12">
+                <center>
                   <button onclick="login(); return false;"  class="btn btn-success">Ingresar</button>
+                  </center>
                 </div>
               </div>
               
@@ -56,13 +81,27 @@
   
       </div>
     </div>
+					</header>
 
-    
-  </div>
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; 2020   Todos los derechos reservados. LoginTime .</span>
+					</footer>
 
-  <div id="cargando"></div>
+			</div>
+		</div>
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script>
+	
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>
 
-</body>
 </html>
 
 
