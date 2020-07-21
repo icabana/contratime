@@ -82,7 +82,7 @@ $tabla_documentos = "
                       <span class="mailbox-attachment-size">
                       <a target="_blank" href="'.$path."/".$nombre_archivo.'" class="mailbox-attachment-name">
                       </span>
-                        <i class="fa fa-paperclip"></i> '.utf8_encode(substr($nombre_archivo,0,43)).'
+                        <i class="fa fa-paperclip"></i> '.substr($nombre_documento,0,43).'
                       </a>
                       <span class="mailbox-attachment-size">
                           <a href="#"  onclick="eliminar_documento_contrato(\''.$ruta_archivo.'\', '.$id_contrato.', '.$id_documento.'); return false;">

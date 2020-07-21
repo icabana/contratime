@@ -34,7 +34,7 @@
 
             
             <div class="card-body">
-                <table id="tabla_contratistas" class="table table-bordered table-hover">
+                <table id="tabla_contratistas" style="font-size: 13px;" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th style='background-color:lavender'>Documento</th>
@@ -64,10 +64,10 @@
                         echo "<td>".$contratista['celular_contratista'] . "</td>";
                        
 
-                        echo "<td><a href='#'><i onclick='editar_contratista(" . $contratista['id_contratista'] . ");' 
+                        echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_contratista(" . $contratista['id_contratista'] . ");'><i 
                                 class='fas fa-edit'></i></a></td>";
 
-                        echo "<td><a href='#'><i onclick='eliminar_contratista(" . $contratista['id_contratista'] . ");' 
+                        echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#'  onclick='eliminar_contratista(" . $contratista['id_contratista'] . ");' ><i
                                 class='fas fa-trash'></i></a></td>";
 
                         echo "</tr>";

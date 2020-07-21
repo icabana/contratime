@@ -38,10 +38,10 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tabla_modalidades" class="table table-bordered table-hover">
+                <table id="tabla_modalidades" style="font-size: 13px;" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th style='background-color:lavender'>No.</th>
+                            <th style='background-color:lavender; width:15px'>No.</th>
                             <th style='background-color:lavender'>Modalidad de Contrataci&oacute;n</th>
                             <th style='background-color:lavender; width:15px'></th>
                             <th style='background-color:lavender; width:15px'></th>

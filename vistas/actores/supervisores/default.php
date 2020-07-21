@@ -34,7 +34,7 @@
 
             
             <div class="card-body">
-                <table id="tabla_supervisores" class="table table-bordered table-hover">
+                <table id="tabla_supervisores" style="font-size: 13px;" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th style='background-color:lavender'>Documento</th>
@@ -63,10 +63,10 @@
                         echo "<td>".$supervisor['celular_supervisor'] . "</td>";
                    
 
-                        echo "<td><a href='#'><i onclick='editar_supervisor(" . $supervisor['id_supervisor'] . ");' 
+                        echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_supervisor(" . $supervisor['id_supervisor'] . ");'><i 
                                 class='fas fa-edit'></i></a></td>";
 
-                        echo "<td><a href='#'><i onclick='eliminar_supervisor(" . $supervisor['id_supervisor'] . ");' 
+                        echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#'  onclick='eliminar_supervisor(" . $supervisor['id_supervisor'] . ");'><i 
                                 class='fas fa-trash'></i></a></td>";
 
                         echo "</tr>";

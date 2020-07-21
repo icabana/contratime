@@ -108,28 +108,22 @@
 
 
 
-<?php 
-  if(count($contratos_x_finalizar) > 0){
-?>
+
 
       <div class="col-md-4">
               <!-- PRODUCT LIST -->
               <div class="card">
                     <div class="card-header">
-                      <h2 class="card-title"><center>Contratos Proximos a Finalizar</center></h2>
+                      <h2 class="card-title"><center><b>Contratos Pr&oacute;ximos a Finalizar</b></center></h2>
 
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                          <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove">
-                          <i class="fas fa-times"></i>
-                        </button>
-                      </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                       <ul class="products-list product-list-in-card pl-2 pr-2">
+
+                      <?php 
+                        if(count($contratos_x_finalizar) > 0){
+                      ?>
 
                       <?php
                         foreach($contratos_x_finalizar as $contrato){
@@ -166,6 +160,16 @@
 
                       <?php
                         }
+
+                        }else{
+                      ?>
+                          <li style="padding-left: 15px;" class="item">
+                        
+                         No hay registros para mostrar
+                          
+                      </li>
+                      <?php
+                        }                      
                       ?>
 
                     
@@ -175,9 +179,6 @@
                   </div>
             </div>
 
-            <?php 
-                  }
-            ?>
 
 
 

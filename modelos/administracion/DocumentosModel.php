@@ -9,7 +9,9 @@ class DocumentosModel extends ModelBase {
                     documentos.modalidad_documento,
                     documentos.nombre_documento
                 
-                    from documentos";
+                    from documentos
+                    
+                    order by documentos.nombre_documento";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -26,7 +28,9 @@ class DocumentosModel extends ModelBase {
                 
                     from documentos 
 
-                    where documentos.modalidad_documento='".$modalidad_documento."'";
+                    where documentos.modalidad_documento='".$modalidad_documento."'
+                    
+                    order by documentos.nombre_documento";
         
          $consulta = $this->consulta($query);
         return $consulta;    

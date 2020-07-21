@@ -38,30 +38,39 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tabla_tiposcontrato" class="table table-bordered table-hover">
+                <table id="tabla_tiposcontrato" style="font-size: 13px;" class="table table-bordered table-hover">
                     <thead>
                         <tr>
+                            <th style='background-color:lavender; width:15px'>No.</th>
                             <th style='background-color:lavender'>Tipo de Contrato</th>
-                            <th style='background-color:lavender'></th>
-                            <th style='background-color:lavender'></th>
+                            <th style='background-color:lavender; width:15px'></th>
+                            <th style='background-color:lavender; width:15px'></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
+
+                        $cont = 1;
+
                         foreach ($tiposcontrato as $tipocontrato) {
 
                             echo "<tr>";
 
+                            echo "<td>" . $cont . "</td>";
+
                             echo "<td>" . $tipocontrato['nombre_tipocontrato'] . "</td>";
 
-                            echo "<td><a href='#'><i onclick='editar_tipocontrato(" . $tipocontrato['id_tipocontrato'] . ");' 
+                            echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_tipocontrato(" . $tipocontrato['id_tipocontrato'] . ");'><i 
                                     class='fas fa-edit'></i></a></td>";
 
-                            echo "<td><a href='#'><i onclick='eliminar_tipocontrato(" . $tipocontrato['id_tipocontrato'] . ");' 
+                            echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' onclick='eliminar_tipocontrato(" . $tipocontrato['id_tipocontrato'] . ");' ><i
                                     class='fas fa-trash'></i></a></td>";
 
 
                             echo "</tr>";
+
+                            $cont++;
+                            
                         }
                         ?>
                     </tbody>

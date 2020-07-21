@@ -33,10 +33,10 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tabla_documentos" class="table table-bordered table-hover">
+                <table id="tabla_documentos" style="font-size: 13px;" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th style='background-color:lavender'>No.</th>
+                            <th style='background-color:lavender; width:15px'>No.</th>
                             <th style='background-color:lavender'>Nombre del Documento</th>
                             <th style='background-color:lavender; width:15px'></th>
                             <th style='background-color:lavender; width:15px'></th>
