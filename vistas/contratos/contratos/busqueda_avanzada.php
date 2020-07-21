@@ -3,9 +3,9 @@
 <script>
 
     $( document ).ready(function() {
-      $('#modalidad_busqueda').prepend("<option value='0' selected >NO SELECCIONAR</option>");
-      $('#tipocontrato_busqueda').prepend("<option value='0' selected >NO SELECCIONAR</option>");
-      $('#estado_busqueda').prepend("<option value='0' selected >NO SELECCIONAR</option>");
+      $('#modalidad_busqueda').prepend("<option value='0' selected >Todos</option>");
+      $('#tipocontrato_busqueda').prepend("<option value='0' selected >Todos</option>");
+      $('#estado_busqueda').prepend("<option value='0' selected >Todos</option>");
     });
 
 </script>

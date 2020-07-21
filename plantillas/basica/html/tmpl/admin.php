@@ -134,6 +134,18 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" onclick="cargar_contratistas(); return false;" class="nav-link"><b>Contratistas</b></a>
+      </li>  
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" onclick="cargar_supervisores(); return false;" class="nav-link"><b>Supervisores</b></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" onclick="cargar_encargados(); return false;" class="nav-link"><b>Encargados</b></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" onclick="cargar_modalidades(); return false;" class="nav-link"><b>Modalidades</b></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" onclick="cargar_tiposcontrato(); return false;" class="nav-link"><b>Tipos de Contrato</b></a>
       </li>
      
     </ul>

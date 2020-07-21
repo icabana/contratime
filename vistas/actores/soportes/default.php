@@ -15,7 +15,7 @@
 
 
                         <div class="col-md-5">
-                            <h4 style="color:grey">GESTIONAR SOPORTES DE CONTRATISTAS</h4>
+                            <h4 style="color:grey">SOPORTES DE CONTRATISTAS</h4>
                         </div>
                         <div class="col-md-5">
                         <button onclick="generar_pdf_soportes(); return false;" type="button" title="Descargar PDF"
@@ -41,31 +41,37 @@
                 <table id="tabla_soportes" class="table table-bordered table-hover">
                     <thead>
                         <tr>
+                            <th style='background-color:lavender; width:15px'>No.</th>
                             <th style='background-color:lavender'>Tipo de Persona</th>
                             <th style='background-color:lavender'>Nombre del Soporte</th>
-                            <th style='background-color:lavender'>Descripci&oacute;n del Soporte</th>
                             <th style='background-color:lavender; width:15px'></th>
                             <th style='background-color:lavender; width:15px'></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
+
+                        $cont = 1;
+
                         foreach ($soportes as $soporte) {
 
                             echo "<tr>";
 
+                            echo "<td>" . $cont . "</td>";
                             echo "<td>" . $soporte['nombre_tipopersona'] . "</td>";
                             echo "<td>" . $soporte['nombre_soporte'] . "</td>";
-                            echo "<td>" . $soporte['descripcion_soporte'] . "</td>";
 
-                            echo "<td><a href='#'><i title='Editar Soporte' onclick='editar_soporte(" . $soporte['id_soporte'] . ");' 
+                            echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_soporte(" . $soporte['id_soporte'] . ");' ><i title='Editar Soporte'
                                     class='fas fa-edit'></i></a></td>";
 
-                            echo "<td><a href='#'><i title='Eliminar Soporte' onclick='eliminar_soporte(" . $soporte['id_soporte'] . ");' 
+                            echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#'  onclick='eliminar_soporte(" . $soporte['id_soporte'] . ");'><i title='Eliminar Soporte' 
                                     class='fas fa-trash'></i></a></td>";
 
 
                             echo "</tr>";
+
+                            $cont++;
+
                         }
                         ?>
                     </tbody>

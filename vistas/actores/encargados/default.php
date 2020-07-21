@@ -12,7 +12,7 @@
 
 
                         <div class="col-md-5">
-                            <h4 style="color:grey">GESTIONAR SUPERVISORES</h4>
+                            <h4 style="color:grey">GESTIONAR ENCARGADOS</h4>
                         </div>
                         <div class="col-md-5">
                         <button onclick="generar_pdf_encargados(); return false;" type="button" title="Descargar PDF"
@@ -22,7 +22,7 @@
                         </div>
                         <div class="col-md-2">
                             <button onclick="nuevo_encargado(); return false;" class="btn btn-success btn-sm">
-                                Nuevo encargado
+                                Nuevo Encargado
                             </button>
                         </div>
 
@@ -63,10 +63,10 @@
                         echo "<td>".$encargado['celular_encargado'] . "</td>";
                    
 
-                        echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'><i onclick='editar_encargado(" . $encargado['id_encargado'] . ");' 
+                        echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_encargado(" . $encargado['id_encargado'] . ");'><i 
                                 class='fas fa-edit'></i></a></td>";
 
-                        echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#'><i onclick='eliminar_encargado(" . $encargado['id_encargado'] . ");' 
+                        echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' onclick='eliminar_encargado(" . $encargado['id_encargado'] . ");'><i 
                                 class='fas fa-trash'></i></a></td>";
 
                         echo "</tr>";

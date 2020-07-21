@@ -8,12 +8,12 @@ class SoportesModel extends ModelBase {
                         soportes.id_soporte, 
                         soportes.tipo_soporte,
                         soportes.nombre_soporte,
-                        soportes.descripcion_soporte,
 
                         tipospersona.id_tipopersona,
                         tipospersona.nombre_tipopersona
                 
-                    FROM soportes left join tipospersona on soportes.tipo_soporte = tipospersona.id_tipopersona
+                    FROM soportes 
+                    left join tipospersona on soportes.tipo_soporte = tipospersona.id_tipopersona
 
                     ORDER BY nombre_soporte";
         
@@ -29,12 +29,12 @@ class SoportesModel extends ModelBase {
                         soportes.id_soporte, 
                         soportes.tipo_soporte,
                         soportes.nombre_soporte,
-                        soportes.descripcion_soporte,
 
                         tipospersona.id_tipopersona,
                         tipospersona.nombre_tipopersona
                 
-                    FROM soportes left join tipospersona on soportes.tipo_soporte = tipospersona.id_tipopersona
+                    FROM soportes 
+                    left join tipospersona on soportes.tipo_soporte = tipospersona.id_tipopersona
 
                     WHERE soportes.tipo_soporte = '".$tipo_soporte."'
 
@@ -51,12 +51,12 @@ class SoportesModel extends ModelBase {
                         soportes.id_soporte, 
                         soportes.tipo_soporte,
                         soportes.nombre_soporte,
-                        soportes.descripcion_soporte,
 
                         tipospersona.id_tipopersona,
                         tipospersona.nombre_tipopersona
 
-                    FROM soportes left join tipospersona on soportes.tipo_soporte = tipospersona.id_tipopersona
+                    FROM soportes 
+                    left join tipospersona on soportes.tipo_soporte = tipospersona.id_tipopersona
 
                     where soportes.id_soporte='".$id_soporte."'";
         
@@ -67,19 +67,16 @@ class SoportesModel extends ModelBase {
 
     function insertar(                               
                         $tipo_soporte,
-                        $nombre_soporte,
-                        $descripcion_soporte
+                        $nombre_soporte
                     ){
                 
         $query = "INSERT INTO soportes (
                         tipo_soporte,
-                        nombre_soporte,
-                        descripcion_soporte
+                        nombre_soporte
                     )
                     VALUES(
                         '".$tipo_soporte."',
-                        '".$nombre_soporte."',
-                        '".$descripcion_soporte."'
+                        '".$nombre_soporte."'
                     );";
        
         return $this->crear_ultimo_id($query);       
@@ -89,16 +86,14 @@ class SoportesModel extends ModelBase {
     function editar(
                     $id_soporte, 
                     $tipo_soporte,
-                    $nombre_soporte,
-                    $descripcion_soporte
+                    $nombre_soporte
                 ) {
         
         $query = "  UPDATE soportes 
                 
                     SET 
                         tipo_soporte = '". $tipo_soporte ."',
-                        nombre_soporte = '". $nombre_soporte ."',
-                        descripcion_soporte = '". $descripcion_soporte ."'
+                        nombre_soporte = '". $nombre_soporte ."'
         
                     WHERE id_soporte = '" . $id_soporte . "'";       
             

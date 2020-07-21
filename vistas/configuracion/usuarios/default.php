@@ -44,7 +44,7 @@
                             <th style='background-color:lavender'>Documento</th>
                             <th style='background-color:lavender'>Correo</th>
                             <th style='background-color:lavender'>Estado</th>
-                            <th style='background-color:lavender'></th>
+                            <th style='background-color:lavender; width:15px'></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,7 +62,7 @@
                                 echo "<td>Inactivo</td>";
                             }
 
-                            echo "<td><a href='#'><i onclick='editar_usuario(" . $usuario['id_usuario'] . ");' 
+                            echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_usuario(" . $usuario['id_usuario'] . ");'><i 
                                     class='fas fa-edit'></i></a></td>";
 
 

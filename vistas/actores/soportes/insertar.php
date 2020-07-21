@@ -51,17 +51,6 @@
 
             </div>
 
-            <div class="row">
-
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label>Descripci&oacute;n del Soporte: </label>
-                  <textarea class="form-control" id="descripcion_soporte" name="descripcion_soporte"></textarea>                
-                </div>
-              </div>
-
-              </div>
-
 
           </form>          
         </div>
