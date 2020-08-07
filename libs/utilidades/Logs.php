@@ -4,13 +4,16 @@
 		function insertarLog($tipo, $mensaje){
 
             if($tipo == "ERROR"){
-                $mensaje = "\n\n\n ####### ERROR ####### (".date('Y-m-d H:i:s').")".$mensaje." \r\n\n\n";
+                $mensaje = "\n\n\n ####### ERROR ####### (".date('Y-m-d H:i:s').") (Usuario: ".$_SESSION['documento_usuario'].")".$mensaje." \r\n\n\n";
             }
             if($tipo == "SUCCESS"){
-                $mensaje = "SUCCESS ---------->  (".date('Y-m-d H:i:s').") ".$mensaje."\r\n";
+                $mensaje = "\nSUCCESS ---------->  (".date('Y-m-d H:i:s').") (Usuario: ".$_SESSION['documento_usuario'].") ".$mensaje."\r\n";
             }
             if($tipo == "DEBUG"){
-                $mensaje = "\nDEBUG .............>  (".date('Y-m-d H:i:s').") ".$mensaje."\r\n";
+                $mensaje = "\nDEBUG .............>  (".date('Y-m-d H:i:s').") (Usuario: ".$_SESSION['documento_usuario'].") ".$mensaje."\r\n";
+            }
+            if($tipo == "SQL"){
+                $mensaje = "\nSQL .............>  (".date('Y-m-d H:i:s').") (Usuario: ".$_SESSION['documento_usuario'].") ".$mensaje."\r\n";
             }
 
             $fecha = date("Y-m-d");

@@ -9,7 +9,7 @@
             class="form-control" 
             id="dirresidencia_supervisor" 
             name="dirresidencia_supervisor" 
-            value="<?php echo $datos['dirresidencia_supervisor']; ?>">
+            value="<?php echo utf8_encode($datos['dirresidencia_supervisor']); ?>">
 
       </div>
 
@@ -22,7 +22,7 @@
             class="form-control" 
             id="dircorrespondencia_supervisor" 
             name="dircorrespondencia_supervisor" 
-            value="<?php echo $datos['dircorrespondencia_supervisor']; ?>">
+            value="<?php echo utf8_encode($datos['dircorrespondencia_supervisor']); ?>">
 
       </div>  
 

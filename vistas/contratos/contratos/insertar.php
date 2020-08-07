@@ -7,7 +7,7 @@ $froms = new Formularios();
 
   <div style="padding: 25px" class="box-body">
 
-    <div class="card card-primary">
+    <div class="card card-primary" style="font-size:0.8rem">
       <div class="card-header">
         <h3 class="card-title">Crear Nuevo Contrato (Estado Actual: Borrador)</h3>
       </div>
@@ -17,7 +17,7 @@ $froms = new Formularios();
         <div class="card-body">
           <div class="row">
 
-            <div class="col-md-3">
+            <div class="col-md-2">
 
               <label>No. de Proceso<span style="color:red">*</span></label>
               <input type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" onkeypress="return no_numeros(event)" value="<?php echo $numproceso_contrato; ?>">
@@ -25,71 +25,14 @@ $froms = new Formularios();
             </div>
 
 
-            <div class="col-md-3">
+            <div class="col-md-2">
 
               <label>Valor del Proceso<span style="color:red">*</span></label>
-              <input type="text" class="form-control requerido" id="valproceso_contrato" name="valproceso_contrato" 
-              onkeypress="return no_numeros(event)" value="<?php echo $numproceso_contrato; ?>">
+              <input type="text" class="form-control requerido" id="valproceso_contrato" name="valproceso_contrato" onkeypress="return no_numeros(event)" value="<?php echo $numproceso_contrato; ?>">
 
             </div>
-
-            <div class="col-md-3">
-
-              <label>Fecha Aviso Convocatoria<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="favisoproceso_contrato" name="favisoproceso_contrato">
-
-            </div>
-            
-            <div class="col-md-3">
-
-              <label>Limite Presentaci&oacute;n Propuestas<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="fpresentacionproceso_contrato" name="fpresentacionproceso_contrato">
-
-            </div>
-
-
-
-          </div>
-
-          <br>
-
-
-          <div class="row">
-
-          
 
             <div class="col-md-4">
-
-              <label>Fecha Evaluaci&oacute;n<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="fevaluacionproceso_contrato" name="fevaluacionproceso_contrato">
-
-            </div>
-            
-            <div class="col-md-4">
-
-              <label>Fecha Adjudicaci&oacute;n<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato">
-
-            </div>
-
-
-            <div class="col-md-4">
-
-              <label>Fecha Cierre<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato">
-
-            </div>
-
-
-
-
-          </div>
-
-          <br>
-
-          <div class="row">
-
-            <div class="col-md-6">
               <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
 
               <?php
@@ -108,7 +51,7 @@ $froms = new Formularios();
             </div>
 
 
-            <div class="col-md-6">
+            <div class="col-md-4">
               <label>Tipo de Contrataci&oacute;n <span style="color:red">*</span></label>
 
               <?php
@@ -127,15 +70,68 @@ $froms = new Formularios();
 
           </div>
 
-
           <br>
 
 
           <div class="row">
 
+            <div class="col-md-2">
+
+              <label>Fecha de Apertura<span style="color:red">*</span></label>
+              <input type="date" class="form-control requerido" id="fapertura_contrato" name="fapertura_contrato">
+
+            </div>
+
+            <div class="col-md-2">
+
+              <label>Fecha de Aviso<span style="color:red">*</span></label>
+              <input type="date" class="form-control requerido" id="favisoproceso_contrato" name="favisoproceso_contrato">
+
+            </div>
+
+            <div class="col-md-2">
+
+              <label>Limite de Propuestas<span style="color:red">*</span></label>
+              <input type="date" class="form-control requerido" id="fpresentacionproceso_contrato" name="fpresentacionproceso_contrato">
+
+            </div>
+
+
+
+            <div class="col-md-2">
+
+              <label>Fecha Evaluaci&oacute;n<span style="color:red">*</span></label>
+              <input type="date" class="form-control requerido" id="fevaluacionproceso_contrato" name="fevaluacionproceso_contrato">
+
+            </div>
+
+            <div class="col-md-2">
+
+              <label>Fecha de Adjudicaci&oacute;n<span style="color:red">*</span></label>
+              <input type="date" class="form-control requerido" id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato">
+
+            </div>
+
+
+            <div class="col-md-2">
+
+              <label>Fecha de Cierre<span style="color:red">*</span></label>
+              <input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato">
+
+            </div>
+
+
+
+
+          </div>
+
+          <br>
+
+          <div class="row">
+
             <div class="col-md-12">
               <label>Objeto del Contrato<span style="color:red">*</span></label>
-              <textarea class="form-control requerido" rows="3" id="objeto_contrato" name="objeto_contrato"></textarea>
+              <textarea class="form-control requerido" rows="2" id="objeto_contrato" name="objeto_contrato"></textarea>
             </div>
 
           </div>

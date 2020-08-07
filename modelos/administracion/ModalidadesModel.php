@@ -40,7 +40,7 @@ class ModalidadesModel extends ModelBase {
                         nombre_modalidad
                     )
                     VALUES(
-                        '".$nombre_modalidad."'
+                        '".utf8_decode($nombre_modalidad)."'
                     );";
        
         return $this->crear_ultimo_id($query);       
@@ -54,7 +54,7 @@ class ModalidadesModel extends ModelBase {
         
         $query = "  UPDATE modalidades 
                 
-                    SET nombre_modalidad = '". $nombre_modalidad ."'
+                    SET nombre_modalidad = '". utf8_decode($nombre_modalidad) ."'
         
                     WHERE id_modalidad = '" . $id_modalidad . "'";       
             

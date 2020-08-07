@@ -55,7 +55,7 @@
                         <div class="col-md-2">
 
                             <button onclick="nuevo_rol(); return false;" class="btn btn-success btn-sm">
-                                NUEVO ROL
+                                Nuevo Rol
                             </button>
 
                         </div>

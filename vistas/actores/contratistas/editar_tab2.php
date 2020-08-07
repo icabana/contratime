@@ -9,7 +9,7 @@
             class="form-control" 
             id="dirresidencia_contratista" 
             name="dirresidencia_contratista" 
-            value="<?php echo $datos['dirresidencia_contratista']; ?>">
+            value="<?php echo utf8_encode($datos['dirresidencia_contratista']); ?>">
 
       </div>
 
@@ -22,7 +22,7 @@
             class="form-control" 
             id="dircorrespondencia_contratista" 
             name="dircorrespondencia_contratista" 
-            value="<?php echo $datos['dircorrespondencia_contratista']; ?>">
+            value="<?php echo utf8_encode($datos['dircorrespondencia_contratista']); ?>">
 
       </div>  
 

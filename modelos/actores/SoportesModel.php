@@ -76,7 +76,7 @@ class SoportesModel extends ModelBase {
                     )
                     VALUES(
                         '".$tipo_soporte."',
-                        '".$nombre_soporte."'
+                        '".utf8_decode($nombre_soporte)."'
                     );";
        
         return $this->crear_ultimo_id($query);       
@@ -93,7 +93,7 @@ class SoportesModel extends ModelBase {
                 
                     SET 
                         tipo_soporte = '". $tipo_soporte ."',
-                        nombre_soporte = '". $nombre_soporte ."'
+                        nombre_soporte = '". utf8_decode($nombre_soporte) ."'
         
                     WHERE id_soporte = '" . $id_soporte . "'";       
             

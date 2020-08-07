@@ -58,7 +58,7 @@
 
                             echo "<td>" . $cont . "</td>";
 
-                            echo "<td>" . $modalidad['nombre_modalidad'] . "</td>";
+                            echo "<td>" . utf8_encode($modalidad['nombre_modalidad']) . "</td>";
                             
                             echo "<td><a class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#'  onclick='documentos_modalidad(" . $modalidad['id_modalidad'] . ");'><i title='Ver Documentos' 
                             class='fas fa-file'></i></a></td>";

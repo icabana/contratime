@@ -27,7 +27,7 @@
                       <label>Nombre: <span style="color:red">*</span></label>
                       
                       <input type="text" class="form-control" id="nombre_modalidad" name="nombre_modalidad" 
-                              value="<?php echo $datos['nombre_modalidad']; ?>"  > 
+                              value="<?php echo utf8_encode($datos['nombre_modalidad']); ?>"  > 
                       
                     </div>
                   </div>

@@ -22,7 +22,7 @@
                         </div>
                         <div class="col-md-2">
                             <button onclick="nuevo_supervisor(); return false;" class="btn btn-success btn-sm">
-                                Nuevo supervisor
+                                Nuevo Supervisor
                             </button>
                         </div>
 
@@ -53,7 +53,7 @@
 
                         echo "<td>".$supervisor['codigo_tipodocumento']." ".$supervisor['documento_supervisor']."</td>";
 
-                        echo "<td>".$supervisor['nombre_supervisor'].
+                        echo "<td>".utf8_encode($supervisor['nombre_supervisor']).
                             " <img title='".$supervisor['nombre_pais']."' src='imagenes/banderas/".
                                 $supervisor['codigo3_pais'].".png'></td>";
 

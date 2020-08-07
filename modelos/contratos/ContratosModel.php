@@ -5,7 +5,7 @@ class ContratosModel extends ModelBase {
   
     function getTodos() {
         
-        $query = "select 
+        $query = "SELECT 
 
                     contratos.id_contrato, 
                     contratos.tipo_contrato,
@@ -80,7 +80,7 @@ class ContratosModel extends ModelBase {
                     estadoscontrato.id_estado, 
                     estadoscontrato.nombre_estado as nombreestado_contrato
                 
-                    from contratos 
+                    FROM contratos 
                             left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipocontrato
                             left join modalidades ON contratos.modalidad_contrato = modalidades.id_modalidad
                             left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista  left join tipospersona on contratistas.tipo_contratista = tipospersona.id_tipopersona
@@ -93,8 +93,10 @@ class ContratosModel extends ModelBase {
                             left join profesiones on contratistas.profesion_contratista = profesiones.id_profesion
                             left join estados on contratistas.estado_contratista = estados.id_estado
                             left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
+                        
+                    WHERE contratos.estado_contrato != '6'
                     
-                    order by contratos.numero_contrato";
+                    ORDER BY contratos.numero_contrato";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -194,7 +196,7 @@ class ContratosModel extends ModelBase {
 
                     WHERE estado_contrato = '".$estado_contrato."' 
                     
-                    order by contratos.numero_contrato";
+                    ORDER BY contratos.numero_contrato";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -311,7 +313,7 @@ class ContratosModel extends ModelBase {
 
                      ".$where."
                     
-                    order by contratos.numero_contrato";
+                    ORDER BY contratos.numero_contrato";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -418,7 +420,7 @@ class ContratosModel extends ModelBase {
 
                         WHERE contratos.fechafinal_contrato < '".$fecha_actual."' and 
                         
-                        contratos.estado_contrato >= 3 and
+                        contratos.estado_contrato >= 3 and contratos.estado_contrato != '6'
 
                         contratos.valor_contrato > (select sum(contratos_pagos.valor_pago) from contratos_pagos where contrato_pago = contratos.id_contrato)
 
@@ -538,7 +540,7 @@ class ContratosModel extends ModelBase {
 
                      ".$where."
                     
-                    order by contratos.numero_contrato";
+                    ORDER BY contratos.numero_contrato";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -681,9 +683,10 @@ class ContratosModel extends ModelBase {
                         '".$fcierreproceso_contrato."',
                         '".$modalidad_contrato."',
                         '".$tipo_contrato."',
-                        '".$objeto_contrato."',
+                        '".utf8_decode($objeto_contrato)."',
                         '1'
                     );";
+  
        
         return $this->crear_ultimo_id($query);
         
@@ -715,11 +718,11 @@ class ContratosModel extends ModelBase {
                         fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
                         modalidad_contrato = '". $modalidad_contrato ."',
                         tipo_contrato = '". $tipo_contrato ."',
-                        objeto_contrato = '". $objeto_contrato ."',
-                        objeto_contrato = '". $objeto_contrato ."'
+                        objeto_contrato = '". utf8_decode($objeto_contrato) ."'
 
                     WHERE id_contrato = '" . $id_contrato . "'";
-       
+         
+
         return $this->modificarRegistros($query);
        
     }
@@ -728,7 +731,8 @@ class ContratosModel extends ModelBase {
     
     function eliminar($id_contrato) {
         
-        $query = "DELETE FROM contratos WHERE id_contrato = '". $id_contrato ."'";    
+        $query = "UPDATE contratos SET estado_contrato = '6' WHERE id_contrato = '". $id_contrato ."'";    
+ 
 
         $this->modificarRegistros($query);
         
@@ -740,6 +744,7 @@ class ContratosModel extends ModelBase {
         $query = "  UPDATE contratos 
                     SET estado_contrato = '5'
                     WHERE id_contrato = '". $id_contrato ."'";    
+     
 
         $this->modificarRegistros($query);
         
@@ -751,6 +756,7 @@ class ContratosModel extends ModelBase {
         $query = "  UPDATE contratos 
                     SET estado_contrato = '4'
                     WHERE id_contrato = '". $id_contrato ."'";    
+        
 
         $this->modificarRegistros($query);
         
@@ -761,6 +767,7 @@ class ContratosModel extends ModelBase {
         $query = "  UPDATE contratos 
                     SET estado_contrato = '2', contratista_contrato = '".$contratista."'
                     WHERE id_contrato = '". $id_contrato ."'";    
+    
 
         $this->modificarRegistros($query);
         
@@ -777,6 +784,7 @@ class ContratosModel extends ModelBase {
                         valor_contrato = '".$valor."'
 
                     WHERE id_contrato = '". $id_contrato ."'";    
+     
 
         $this->modificarRegistros($query);
         
@@ -793,6 +801,7 @@ class ContratosModel extends ModelBase {
                     where estado_contrato = '1'";
         
         $consulta = $this->consulta($query);
+  
 
         return $consulta[0]['numero'];       
                
@@ -809,7 +818,8 @@ class ContratosModel extends ModelBase {
                     WHERE estado_contrato = '2'";
         
         $consulta = $this->consulta($query);
-        
+             
+
         return $consulta[0]['numero'];       
                
     }  

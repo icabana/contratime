@@ -73,7 +73,7 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo $contrato['nombres_contratista']." ".$contrato['apellidos_contratista'].
+                    <?php echo utf8_encode($contrato['nombres_contratista']." ".$contrato['apellidos_contratista']).
                       " <img title='" . $contrato['nombre_pais'] . "' src='imagenes/banderas/" .
                       $contrato['codigo3_pais'] . ".png'>"; ?>
 
@@ -105,7 +105,7 @@
 
 
                   <td class="mailbox-subject">
-                    <?php echo substr($contrato['objeto_contrato'], 0, 90) . "..."; ?>
+                    <?php echo utf8_encode(substr($contrato['objeto_contrato'], 0, 90)) . "..."; ?>
                   </td>
 
                  

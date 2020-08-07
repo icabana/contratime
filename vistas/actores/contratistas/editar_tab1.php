@@ -75,7 +75,7 @@
           class="form-control requerido" 
           id="nombres_contratista" 
           name="nombres_contratista" 
-          value="<?php echo $datos['nombres_contratista']; ?>">
+          value="<?php echo utf8_encode($datos['nombres_contratista']); ?>">
 
       </div>
 
@@ -89,7 +89,7 @@
           class="form-control requerido" 
           id="apellidos_contratista" 
           name="apellidos_contratista" 
-          value="<?php echo $datos['apellidos_contratista']; ?>">
+          value="<?php echo utf8_encode($datos['apellidos_contratista']); ?>">
 
       </div>
 

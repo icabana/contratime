@@ -14,7 +14,7 @@
       </div>
 
 
-      <div class="card-body" style="height: 400px">
+      <div class="card-body" style="height: 400px; font-size:0.8rem">
 
 
             <input 

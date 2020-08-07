@@ -75,7 +75,7 @@
           class="form-control requerido" 
           id="nombres_encargado" 
           name="nombres_encargado" 
-          value="<?php echo $datos['nombres_encargado']; ?>">
+          value="<?php echo utf8_encode($datos['nombres_encargado']); ?>">
 
       </div>
 
@@ -89,7 +89,7 @@
           class="form-control requerido" 
           id="apellidos_encargado" 
           name="apellidos_encargado" 
-          value="<?php echo $datos['apellidos_encargado']; ?>">
+          value="<?php echo utf8_encode($datos['apellidos_encargado']); ?>">
 
       </div>
 

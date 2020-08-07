@@ -64,7 +64,7 @@ class DocumentosModel extends ModelBase {
                     )
                     VALUES(
                         '".$modalidad_documento."',
-                        '".$nombre_documento."'
+                        '".utf8_decode($nombre_documento)."'
                     );";
        
         return $this->crear_ultimo_id($query);       
@@ -78,7 +78,7 @@ class DocumentosModel extends ModelBase {
         
         $query = "  UPDATE documentos 
                 
-                    SET nombre_documento = '". $nombre_documento ."'
+                    SET nombre_documento = '". utf8_decode($nombre_documento) ."'
         
                     WHERE id_documento = '" . $id_documento . "'";       
             

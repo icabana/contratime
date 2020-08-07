@@ -58,8 +58,8 @@
                             echo "<tr>";
 
                             echo "<td>" . $cont . "</td>";
-                            echo "<td>" . $soporte['nombre_tipopersona'] . "</td>";
-                            echo "<td>" . $soporte['nombre_soporte'] . "</td>";
+                            echo "<td>" . utf8_encode($soporte['nombre_tipopersona']) . "</td>";
+                            echo "<td>" . utf8_encode($soporte['nombre_soporte']) . "</td>";
 
                             echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_soporte(" . $soporte['id_soporte'] . ");' ><i title='Editar Soporte'
                                     class='fas fa-edit'></i></a></td>";

@@ -41,7 +41,7 @@ class TiposcontratoModel extends ModelBase {
                 nombre_tipocontrato
             )
             VALUES(
-                '".$nombre_tipocontrato."'
+                '".utf8_decode($nombre_tipocontrato)."'
             );";
 
         return $this->crear_ultimo_id($query);       
@@ -55,7 +55,7 @@ class TiposcontratoModel extends ModelBase {
 
         $query = "  UPDATE tiposcontrato 
 
-            SET nombre_tipocontrato = '". $nombre_tipocontrato ."'
+            SET nombre_tipocontrato = '". utf8_decode($nombre_tipocontrato) ."'
 
             WHERE id_tipocontrato = '" . $id_tipocontrato . "'";       
 

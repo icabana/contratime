@@ -53,7 +53,7 @@
 
             echo "<td><center> " . $documento_poliza . "</center></td>";            
 
-            echo "<td>".$poliza['numero_poliza'] . "</td>";
+            echo "<td>".utf8_encode($poliza['numero_poliza']) . "</td>";
 
             echo "<td>".$poliza['fechaexp_poliza'] . "</td>";
 

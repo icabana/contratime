@@ -52,7 +52,7 @@
                     <div class="form-group">
                       <label>Nombre del Soporte: <span style="color:red">*</span></label>
                       <input type="text" class="form-control requerido" id="nombre_soporte" name="nombre_soporte"
-                          value="<?php echo $datos['nombre_soporte'] ?>">
+                          value="<?php echo utf8_encode($datos['nombre_soporte']) ?>">
                     </div>
                   </div>
 

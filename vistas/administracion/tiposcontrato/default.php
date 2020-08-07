@@ -58,7 +58,7 @@
 
                             echo "<td>" . $cont . "</td>";
 
-                            echo "<td>" . $tipocontrato['nombre_tipocontrato'] . "</td>";
+                            echo "<td>" . utf8_encode($tipocontrato['nombre_tipocontrato']) . "</td>";
 
                             echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_tipocontrato(" . $tipocontrato['id_tipocontrato'] . ");'><i 
                                     class='fas fa-edit'></i></a></td>";

@@ -130,7 +130,7 @@ class TrazabilidadModel extends ModelBase {
                         usuario_trazabilidad
                     )
                     VALUES(
-                        '".$accion_trazabilidad."',
+                        '".utf8_decode($accion_trazabilidad)."',
                         '".$contrato_trazabilidad."',
                         '".date("Y-m-d H:i:s")."',
                         '".$usuario_trazabilidad."'

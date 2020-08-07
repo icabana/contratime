@@ -35,6 +35,10 @@ abstract class ModelBase {
         
     function crear_ultimo_id($query) {
         $consulta = $this->prepararConsulta($query);
+
+        $Logs = new Logs();
+        $Logs->insertarLog("SQL", $query);        
+
         if( $consulta != null ){
             $consulta->execute();                  
             return $this->db->lastInsertId();	
@@ -46,6 +50,10 @@ abstract class ModelBase {
 
     function modificarRegistros($query) {
         $consulta = $this->prepararConsulta($query);
+
+        $Logs = new Logs();
+        $Logs->insertarLog("SQL", $query);        
+
         if( $consulta != null ){
 			$consulta->execute();                  
         	return $consulta->rowCount();         	

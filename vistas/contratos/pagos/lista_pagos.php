@@ -42,7 +42,7 @@
 
             echo "<tr>";
 
-            echo "<td>".$pago['nombre_tipopago'] . "</td>";
+            echo "<td>".utf8_encode($pago['nombre_tipopago']) . "</td>";
 
             echo "<td>".$pago['fecha_pago'] . "</td>";
 

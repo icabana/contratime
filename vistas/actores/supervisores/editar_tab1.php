@@ -75,7 +75,7 @@
           class="form-control requerido" 
           id="nombres_supervisor" 
           name="nombres_supervisor" 
-          value="<?php echo $datos['nombres_supervisor']; ?>">
+          value="<?php echo utf8_encode($datos['nombres_supervisor']); ?>">
 
       </div>
 
@@ -89,7 +89,7 @@
           class="form-control requerido" 
           id="apellidos_supervisor" 
           name="apellidos_supervisor" 
-          value="<?php echo $datos['apellidos_supervisor']; ?>">
+          value="<?php echo utf8_encode($datos['apellidos_supervisor']); ?>">
 
       </div>
 

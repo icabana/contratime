@@ -5,7 +5,7 @@ function editar_info_contrato() {
   }
   
   var datos = $('#formContratos').serialize();
-
+alert("dfeffwef");
   ejecutarAccion(
     'contratos',
     'Contratos',
@@ -17,7 +17,7 @@ function editar_info_contrato() {
 }
 
 function editar_contrato2(data) {
-
+alert(data);
   if (data == 1) {
     mensaje_alertas("success", "Contrato Editado Exitosamente", "center");
     cargar_contratos();

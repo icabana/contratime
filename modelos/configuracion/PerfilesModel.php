@@ -33,7 +33,7 @@ class PerfilesModel extends ModelBase {
                                 rol_perfil
                             )
                             VALUES(
-                                '".$usuario_perfil."',
+                                '".utf8_decode($usuario_perfil)."',
                                 '".$rol_perfil."'
                             );";
        
