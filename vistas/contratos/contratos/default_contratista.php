@@ -22,7 +22,7 @@ $froms = new Formularios();
 
 
             <div class="col-md-5">
-              <h4 style="color:grey">CONTRATOS A SUPERVISAR</h4>
+              <h4 style="color:grey">REGISTROS DE CONTRATOS</h4>
             </div>
           
           </div>
@@ -33,21 +33,11 @@ $froms = new Formularios();
       <div class="card-body p-0">
         <div class="mailbox-controls">
           
-          <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i onclick="seleccionar_check(); opcion_checkeada(); return false;" class="far fa-square"></i>
+          <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i onclick="seleccionar_check(); return false;" class="far fa-square"></i>
           </button>
-          <div class="btn-group ">
-            
-          <div id="acciones_contratos"  style="display: none;">
-            <?php
-            if ($_SESSION['rol'] == '1') {
-            ?>
-              <button title="Eliminar Contrato" onclick="eliminar_contrato();" type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-            <?php
-            }
-            ?>
+          <div class="btn-group ">         
             <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
           </div>
-        </div>
 
           <button title="Actualizar Lista de Contratos" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
 
@@ -59,7 +49,7 @@ $froms = new Formularios();
       <div id="div_tabla_contratos" class="card-body">
 
             <?php
-              include("vistas/contratos/contratos/tabla_contratos_supervisor.php");
+              include("vistas/contratos/contratos/tabla_contratos_contratista.php");
             ?>
        
            

@@ -484,12 +484,11 @@
 
 
 <br>
-         <!-- MENU DE CONTRATOS --> 
     <li class="nav-item has-treeview menu-open">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-folder-open"></i>
         <p>
-          Contrataciones
+          Supervisar
           <i class="fas fa-angle-right right"></i>
           
         </p>
@@ -497,16 +496,21 @@
       <ul class="nav nav-treeview">
 
 
-
-      
-
         <li class="nav-item">
-          <a href="#" onclick="cargar_contratos_supervisor();" class="nav-link">
+          <a href="#" onclick="cargar_contratos_supervisor(3);" class="nav-link">
             <i class="fas fa-archive nav-icon"></i>
-            <p>Contratos</p>
+            <p>Celebrados</p>
           </a>
         </li>
   
+        
+        <li class="nav-item">
+          <a href="#" onclick="cargar_contratos_supervisor(4);" class="nav-link">
+            <i class="fas fa-archive nav-icon"></i>
+            <p>Liquidados</p>
+          </a>
+        </li>  
+
 
       </ul>
     </li>
@@ -514,6 +518,97 @@
 <?php
     }
   ?>
+
+
+
+
+
+ <!-- ROL DE ENCARGADO --> 
+
+ <?php
+  if($_SESSION['rol'] == 4){
+?>
+
+
+<br>
+    <li class="nav-item has-treeview menu-open">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-folder-open"></i>
+        <p>
+          Supervisar
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+
+      
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_contratos_encargado('1,2');" class="nav-link">
+            <i class="fas fa-archive nav-icon"></i>
+            <p>Procesos Contractuales</p>
+          </a>
+        </li>
+  
+        
+        <li class="nav-item">
+          <a href="#" onclick="cargar_contratos_encargado('3,4,5');" class="nav-link">
+            <i class="fas fa-archive nav-icon"></i>
+            <p>Contratos</p>
+          </a>
+        </li>
+  
+
+
+      </ul>
+    </li>
+
+<?php
+    }
+  ?>
+
+
+
+
+ <!-- ROL DE CONTRATISTA --> 
+
+ <?php
+  if($_SESSION['rol'] == 5){
+?>
+
+
+<br>
+         <!-- MENU DE CONTRATOS --> 
+    <li class="nav-item has-treeview menu-open">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-folder-open"></i>
+        <p>
+          Contratos
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+      
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_contratos_contratista();" class="nav-link">
+            <i class="fas fa-archive nav-icon"></i>
+            <p>Ver mis Contratos</p>
+          </a>
+        </li>
+  
+
+
+      </ul>
+    </li>
+
+<?php
+    }
+  ?>
+
+
 
 
 
@@ -553,8 +648,22 @@
       <!-- DASHBOARD -->
       <div class="container-fluid">
           <?php
-
-            require_once("plantillas/basica/html/tmpl/dashboard.php");
+        
+            if($_SESSION['rol'] == 1){      
+              require_once("plantillas/basica/html/tmpl/dashboard.php");
+            }
+            if($_SESSION['rol'] == 2){      
+              require_once("plantillas/basica/html/tmpl/dashboard_financiera.php");
+            }
+            if($_SESSION['rol'] == 3){      
+              require_once("plantillas/basica/html/tmpl/dashboard_supervisor.php");
+            }
+            if($_SESSION['rol'] == 4){      
+              require_once("plantillas/basica/html/tmpl/dashboard_encargado.php");
+            }
+            if($_SESSION['rol'] == 5){      
+              require_once("plantillas/basica/html/tmpl/dashboard_contratista.php");
+            }
 
           ?>
       </div>

@@ -466,3 +466,5 @@ SQL .............>  (2020-08-08 02:32:11) (Usuario: 1083459981) INSERT INTO perf
 SUCCESS ---------->  (2020-08-08 02:32:19) (Usuario: 1083459981) Se cerró la Sesión de forma correcta.
 
 SUCCESS ---------->  (2020-08-08 02:32:24) (Usuario: 1083459981) Inicio de Sesión correcto.
+
+SUCCESS ---------->  (2020-08-08 12:33:19) (Usuario: 1083459981) Inicio de Sesión correcto.

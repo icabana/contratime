@@ -90,8 +90,7 @@ $froms = new Formularios();
 
             <?php
               include("vistas/contratos/contratos/tabla_contratos.php");
-            ?>
-       
+            ?>      
            
         </div>
 

@@ -14,12 +14,12 @@
               <tr>
                 <th style='background-color:lavender; width:5%'></th>            
                 <th style='background-color:lavender; width:5%'>N&uacute;mero</th>
-                <th style='background-color:lavender; width:10%'>Tipo de Contrato</th>
+                <th style='background-color:lavender; width:15%'>Tipo de Contrato</th>
                 <th style='background-color:lavender; width:20%'>Contratista</th>
                 <th style='background-color:lavender; width:10%'>Valor </th>
-                <th style='background-color:lavender; width:30px'>Objeto</th>
-                <th style='background-color:lavender; width:12%'>Estado</th>                
-                <th style='background-color:lavender; width:12%'>Adjuntar</th>  
+                <th style='background-color:lavender; width:30%'>Objeto</th>
+                <th style='background-color:lavender; width:8%'>Estado</th>                
+                <th style='background-color:lavender; width:8%'>Adjuntar</th>  
                 <th  style='background-color:lavender; width:5%'></th>
               </tr>
             </thead>
@@ -36,7 +36,7 @@
                 <tr id="fila_contrato_<?php echo $contrato['id_contrato']?>" >
                   <td>
                     <div class="icheck-primary">
-                      <input estado="<?php echo $contrato['estado_contrato']?>" class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
+                      <input estado="<?php echo $contrato['estado_contrato']?>" onchange="opcion_checkeada(); return false;" class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
                       <label for="check<?php echo $id_check; ?>"></label>
                     </div>
                   </td>
@@ -176,9 +176,8 @@
                     }
             
                   
-                    echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
+                    echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato_supervisor(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
                     class='fas fa-edit'></i></a></td>";                                 
-
 
                   ?>
 

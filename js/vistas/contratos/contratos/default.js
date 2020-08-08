@@ -35,6 +35,44 @@ function editar_contrato_financiera(id_contrato) {
 }
 
 
+function editar_contrato_supervisor(id_contrato) {
+
+    abrirVentanaContenedor(
+        'contratos',
+        'Contratos',
+        'editarSupervisor',
+        'id_contrato=' + id_contrato,
+        ''
+    );
+
+}
+
+
+function editar_contrato_encargado(id_contrato) {
+
+    abrirVentanaContenedor(
+        'contratos',
+        'Contratos',
+        'editarEncargado',
+        'id_contrato=' + id_contrato,
+        ''
+    );
+
+}
+
+function editar_contrato_contratista(id_contrato) {
+
+    abrirVentanaContenedor(
+        'contratos',
+        'Contratos',
+        'editarContratista',
+        'id_contrato=' + id_contrato,
+        ''
+    );
+
+}
+
+
 function eliminar_contrato(id_contrato) {
 
     mensaje_confirmar("¿Está seguro de eliminar el Contrato? Se eliminará toda la información asociada a este contrato y su documentación Anexa", "eliminar_contrato2(" + id_contrato + "); ");

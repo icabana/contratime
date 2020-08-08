@@ -29,6 +29,19 @@ $froms = new Formularios();
                 Datos Contrato
               </a>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="#tab_2_supervisores" data-toggle="tab">
+                  Supervisores
+                </a>
+              </li>
+
+         
+              <li class="nav-item">
+                <a class="nav-link" href="#tab_77_encargados" data-toggle="tab">
+                  Encargados
+                </a>
+              </li>
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_4_cdps" data-toggle="tab">
@@ -81,27 +94,39 @@ $froms = new Formularios();
           
             </div>
 
+            
+            <div style="padding: 20px" class="tab-pane" id="tab_2_supervisores">
 
-         
+              <?php
+              include("vistas/contratos/supervisores/lista_supervisores_lectura.php");
+              ?>
+            </div>
+
+            <div style="padding: 20px" class="tab-pane" id="tab_77_encargados">
+
+              <?php
+              include("vistas/contratos/encargados/lista_encargados_lectura.php");
+              ?>
+            </div>
 
             <div style="padding: 20px; " class="tab-pane" id="tab_4_cdps">
 
               <?php
-              include("vistas/contratos/cdps/lista_cdps.php");
+              include("vistas/contratos/cdps/lista_cdps_lectura.php");
               ?>
             </div>
 
             <div style="padding: 20px; " class="tab-pane" id="tab_5_rps">
 
               <?php
-              include("vistas/contratos/rps/lista_rps.php");
+              include("vistas/contratos/rps/lista_rps_lectura.php");
               ?>
             </div>
 
             <div style="padding: 20px; " class="tab-pane" id="tab_6_pagos">
 
               <?php
-              include("vistas/contratos/pagos/lista_pagos.php");
+              include("vistas/contratos/pagos/lista_pagos_lectura.php");
               ?>
 
             </div>
@@ -111,7 +136,7 @@ $froms = new Formularios();
             <div style="padding: 20px; " class="tab-pane" id="tab_34_polizas">
 
               <?php
-              include("vistas/contratos/polizas/lista_polizas.php");
+              include("vistas/contratos/polizas/lista_polizas_lectura.php");
               ?>
 
             </div>
@@ -120,7 +145,7 @@ $froms = new Formularios();
             <div style="padding: 20px;" class="tab-pane" id="tab_3_trazabilidad">
 
               <?php
-              include("vistas/contratos/trazabilidad/lista_trazabilidad.php");
+              include("vistas/contratos/trazabilidad/lista_trazabilidad_lectura.php");
               ?>
             </div>
 
@@ -130,7 +155,7 @@ $froms = new Formularios();
 
               <?php
               
-                  include("vistas/contratos/documentos/lista_documentos.php");
+                  include("vistas/contratos/documentos/lista_documentos_lectura.php");
 
               ?>
 

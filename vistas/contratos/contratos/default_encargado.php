@@ -44,9 +44,6 @@ $froms = new Formularios();
             }
             ?>
             <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
-            <button title="Agregar CDP" data-toggle="modal" data-target="#modal_cdps" type="button" class="btn btn-default btn-sm"><i class="fas fa-money-bill"></i></button>
-            <button title="Agregar RP" data-toggle="modal" data-target="#modal_rps" type="button" class="btn btn-default btn-sm"><i class="fas fa-cash-register"></i></button>
-            <button title="Agregar Pago" data-toggle="modal" data-target="#modal_pagos" type="button" class="btn btn-default btn-sm"><i class="fas fa-comment-dollar"></i></button>
            </div>
 
           <button title="Actualizar Lista de Contratos" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
@@ -59,7 +56,7 @@ $froms = new Formularios();
       <div id="div_tabla_contratos" class="card-body">
 
             <?php
-              include("vistas/contratos/contratos/tabla_contratos_financiera.php");
+              include("vistas/contratos/contratos/tabla_contratos_encargado.php");
             ?>
        
            

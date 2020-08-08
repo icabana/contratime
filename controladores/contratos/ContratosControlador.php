@@ -68,7 +68,7 @@ class ContratosControlador extends ControllerBase {
         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
-        $contratos = $ContratosModel->getTodosxSupervisor();        
+        $contratos = $ContratosModel->getTodosxSupervisor($_POST['estado']);        
         
         $this->model->cargar("SupervisoresModel.php", "actores");
         $SupervisoresModel = new SupervisoresModel();
@@ -99,7 +99,7 @@ class ContratosControlador extends ControllerBase {
         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
-        $contratos = $ContratosModel->getTodosxEncargado();        
+        $contratos = $ContratosModel->getTodosxEncargado($_POST['estados']);        
         
         $this->model->cargar("SupervisoresModel.php", "actores");
         $SupervisoresModel = new SupervisoresModel();
@@ -124,6 +124,39 @@ class ContratosControlador extends ControllerBase {
         include 'vistas/contratos/contratos/default_encargado.php';
                         
     }    
+
+    
+
+    public function indexContratista() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosxContratista();        
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel->getTodos();
+        
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel = new EncargadosModel();
+        $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();     
+          
+        include 'vistas/contratos/contratos/default_contratista.php';
+                        
+    }    
+
 
     public function index_x_estado() {
         
@@ -436,6 +469,204 @@ class ContratosControlador extends ControllerBase {
         include 'vistas/contratos/contratos/editar_financiera.php';
                
     }       
+
+
+    public function editarSupervisor(){
+       
+        $this->model->cargar("ModalidadesModel.php", "administracion");
+        $ModalidadesModel = new ModalidadesModel();
+        $modalidades = $ModalidadesModel->getTodos();
+
+        $this->model->cargar("TiposcontratoModel.php", "administracion");
+        $Tiposcontrato = new TiposcontratoModel();
+        $tiposcontrato = $Tiposcontrato->getTodos();
+        
+        $this->model->cargar("SupervisoresModel.php", "contratos");
+        $SupervisoresModel = new SupervisoresContratosModel();
+        $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+    
+        $this->model->cargar("EncargadosModel.php", "contratos");
+        $EncargadosModel = new EncargadosContratosModel();
+        $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("CdpsModel.php", "contratos");
+        $CdpsModel = new CdpsContratosModel();
+        $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("RpsModel.php", "contratos");
+        $RpsModel = new RpsContratosModel();
+        $rps = $RpsModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("PagosModel.php", "contratos");
+        $PagosModel = new pagosContratosModel();
+        $pagos = $PagosModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("AjustesModel.php", "contratos");
+        $AjustesModel = new AjustesContratosModel();
+        $ajustes = $AjustesModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("ProrrogasModel.php", "contratos");
+        $ProrrogasModel = new ProrrogasContratosModel();
+        $prorrogas = $ProrrogasModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("TrazabilidadModel.php", "contratos");
+        $TrazabilidadModel = new TrazabilidadModel();
+        $trazabilidad = $TrazabilidadModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel2 = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel2->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();            
+       
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contrato = $ContratosModel->getDatos($_POST['id_contrato']);        
+
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
+        $documentos = $DocumentosModel->getTodosxModalidad($contrato['modalidad_contrato']); 
+
+        include 'vistas/contratos/contratos/editar_supervisor.php';
+               
+    }       
+
+    
+
+    public function editarEncargado(){
+       
+        $this->model->cargar("ModalidadesModel.php", "administracion");
+        $ModalidadesModel = new ModalidadesModel();
+        $modalidades = $ModalidadesModel->getTodos();
+
+        $this->model->cargar("TiposcontratoModel.php", "administracion");
+        $Tiposcontrato = new TiposcontratoModel();
+        $tiposcontrato = $Tiposcontrato->getTodos();
+        
+        $this->model->cargar("SupervisoresModel.php", "contratos");
+        $SupervisoresModel = new SupervisoresContratosModel();
+        $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("EncargadosModel.php", "contratos");
+        $EncargadosModel = new EncargadosContratosModel();
+        $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("CdpsModel.php", "contratos");
+        $CdpsModel = new CdpsContratosModel();
+        $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("RpsModel.php", "contratos");
+        $RpsModel = new RpsContratosModel();
+        $rps = $RpsModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("PagosModel.php", "contratos");
+        $PagosModel = new pagosContratosModel();
+        $pagos = $PagosModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("AjustesModel.php", "contratos");
+        $AjustesModel = new AjustesContratosModel();
+        $ajustes = $AjustesModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("ProrrogasModel.php", "contratos");
+        $ProrrogasModel = new ProrrogasContratosModel();
+        $prorrogas = $ProrrogasModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("TrazabilidadModel.php", "contratos");
+        $TrazabilidadModel = new TrazabilidadModel();
+        $trazabilidad = $TrazabilidadModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel2 = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel2->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();            
+       
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contrato = $ContratosModel->getDatos($_POST['id_contrato']);        
+
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
+        $documentos = $DocumentosModel->getTodosxModalidad($contrato['modalidad_contrato']); 
+
+        include 'vistas/contratos/contratos/editar_encargado.php';
+               
+    }       
+
+
+    public function editarContratista(){
+       
+        $this->model->cargar("ModalidadesModel.php", "administracion");
+        $ModalidadesModel = new ModalidadesModel();
+        $modalidades = $ModalidadesModel->getTodos();
+
+        $this->model->cargar("TiposcontratoModel.php", "administracion");
+        $Tiposcontrato = new TiposcontratoModel();
+        $tiposcontrato = $Tiposcontrato->getTodos();
+        
+        $this->model->cargar("SupervisoresModel.php", "contratos");
+        $SupervisoresModel = new SupervisoresContratosModel();
+        $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("CdpsModel.php", "contratos");
+        $CdpsModel = new CdpsContratosModel();
+        $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("RpsModel.php", "contratos");
+        $RpsModel = new RpsContratosModel();
+        $rps = $RpsModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("PagosModel.php", "contratos");
+        $PagosModel = new pagosContratosModel();
+        $pagos = $PagosModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("AjustesModel.php", "contratos");
+        $AjustesModel = new AjustesContratosModel();
+        $ajustes = $AjustesModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("ProrrogasModel.php", "contratos");
+        $ProrrogasModel = new ProrrogasContratosModel();
+        $prorrogas = $ProrrogasModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("TrazabilidadModel.php", "contratos");
+        $TrazabilidadModel = new TrazabilidadModel();
+        $trazabilidad = $TrazabilidadModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel2 = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel2->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();            
+       
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contrato = $ContratosModel->getDatos($_POST['id_contrato']);        
+
+        $this->model->cargar("DocumentosModel.php", "administracion");
+        $DocumentosModel = new DocumentosModel();
+        $documentos = $DocumentosModel->getTodosxModalidad($contrato['modalidad_contrato']); 
+
+        include 'vistas/contratos/contratos/editar_contratista.php';
+               
+    }
 
 
     public function insertar() {

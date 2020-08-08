@@ -40,7 +40,7 @@ function cargar_contratos_financiera(){
         
 }
 
-function cargar_contratos_supervisor(){
+function cargar_contratos_supervisor(estado){
 
     $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
 
@@ -56,6 +56,50 @@ function cargar_contratos_supervisor(){
         'contratos', 
         'Contratos', 
         'indexSupervisor', 
+        'estado='+estado
+    );    
+        
+}
+
+
+function cargar_contratos_encargado(estados){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
+    $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
+    $('.ui-widget').remove();
+    $('.elfinder-quicklook').remove();
+    $('.ui-draggable').remove();
+    $('.ui-resizable').remove();
+
+    limpiar_cuerpo();
+    
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'indexEncargado', 
+        'estados='+estados
+    );    
+        
+}
+
+
+function cargar_contratos_contratista(){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
+    $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
+    $('.ui-widget').remove();
+    $('.elfinder-quicklook').remove();
+    $('.ui-draggable').remove();
+    $('.ui-resizable').remove();
+
+    limpiar_cuerpo();
+    
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'indexContratista', 
         ''
     );    
         
