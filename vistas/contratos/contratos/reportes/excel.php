@@ -26,49 +26,31 @@
     // CABECERA DEL EXCEL
     $this->excel->setActiveSheetIndex(0)            
         ->setCellValue('A1', 'No.')
-        ->setCellValue('B1', 'Tipo Persona')                    
-        ->setCellValue('C1', 'Documento')                    
-        ->setCellValue('D1', 'Nombre')                    
-        ->setCellValue('E1', 'Dirección Residencia')                    
-        ->setCellValue('F1', 'Dirección Correspondencia')                    
-        ->setCellValue('G1', 'Telefono')                    
-        ->setCellValue('H1', 'Celular')                    
-        ->setCellValue('I1', 'Correo')                    
-        ->setCellValue('J1', 'Pagina Web')                    
-        ->setCellValue('K1', 'Pais')                    
-        ->setCellValue('L1', 'Departamento')                    
-        ->setCellValue('M1', 'Ciudad')                    
-        ->setCellValue('N1', 'Fecha de Nacimiento')                    
-        ->setCellValue('O1', 'Estado Civil')                    
-        ->setCellValue('P1', 'Genero')                    
-        ->setCellValue('Q1', 'No de Hijos')                    
-        ->setCellValue('R1', 'Profesión');    
+        ->setCellValue('B1', 'Número')                    
+        ->setCellValue('C1', 'Modalidad')                    
+        ->setCellValue('D1', 'Tipo de Contrato')                    
+        ->setCellValue('E1', 'Contratista')                    
+        ->setCellValue('F1', 'Valor')                    
+        ->setCellValue('G1', 'Fecha de Inicio')                    
+        ->setCellValue('H1', 'Fecha Final')                    
+        ->setCellValue('I1', 'Objeto');    
 
     $columna =2;    
     $cont = 1;
     
     // TABLA DEL EXCEL
-    foreach($contratistas as $contratista){
+    foreach($contratos as $contrato){
 
         $this->excel->setActiveSheetIndex(0)
              ->setCellValue('A'.$columna, $cont)
-             ->setCellValue('B'.$columna, $contratista['nombre_tipopersona'])                                
-             ->setCellValue('C'.$columna, $contratista['documento_contratista'])
-             ->setCellValue('D'.$columna, $contratista['nombre_contratista'])
-             ->setCellValue('E'.$columna, $contratista['dirresidencia_contratista'])
-             ->setCellValue('F'.$columna, $contratista['dircorrespondencia_contratista'])
-             ->setCellValue('G'.$columna, $contratista['telefono_contratista'])
-             ->setCellValue('H'.$columna, $contratista['celular_contratista'])
-             ->setCellValue('I'.$columna, $contratista['correo_contratista'])
-             ->setCellValue('J'.$columna, $contratista['paginaweb_contratista'])
-             ->setCellValue('K'.$columna, $contratista['nombre_pais'])
-             ->setCellValue('L'.$columna, $contratista['nombre_departamento'])
-             ->setCellValue('M'.$columna, $contratista['nombre_municipio'])
-             ->setCellValue('N'.$columna, $contratista['fechanacimiento_contratista'])
-             ->setCellValue('O'.$columna, $contratista['nombre_estadocivil'])
-             ->setCellValue('P'.$columna, $contratista['nombre_genero'])
-             ->setCellValue('Q'.$columna, $contratista['hijos_contratista'])
-             ->setCellValue('R'.$columna, $contratista['nombre_profesion']);
+             ->setCellValue('B'.$columna, $contrato['numero_contrato'])      
+             ->setCellValue('C'.$columna, $contrato['nombre_modalidad'])
+             ->setCellValue('D'.$columna, $contrato['nombre_tipocontrato'])
+             ->setCellValue('E'.$columna, $contrato['nombres_contratista']." ".$contrato['apellidos_contratista'])
+             ->setCellValue('F'.$columna, $contrato['valor_contrato'])
+             ->setCellValue('G'.$columna, $contrato['fechainicio_contrato'])
+             ->setCellValue('H'.$columna, $contrato['fechafinal_contrato'])
+             ->setCellValue('I'.$columna, $contrato['objeto_contrato']);
 
         $columna ++;
         $cont ++;
@@ -100,10 +82,10 @@
         ),
     );
 
-    $this->excel->getActiveSheet()->getStyle('A1:R1')->applyFromArray($styleArray_color);
+    $this->excel->getActiveSheet()->getStyle('A1:I1')->applyFromArray($styleArray_color);
 
-    $this->excel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
-    $this->excel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
+    $this->excel->getActiveSheet()->getColumnDimension('A')->setWidth(5);
+    $this->excel->getActiveSheet()->getColumnDimension('B')->setWidth(15);
     $this->excel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('D')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('E')->setWidth(30);
@@ -111,15 +93,6 @@
     $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('J')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('K')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('L')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('M')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('N')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('O')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('P')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('Q')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('R')->setWidth(30);
 
 
     /////// ALMACENAR EL DOCUMENTO

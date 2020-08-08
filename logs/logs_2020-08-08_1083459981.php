@@ -468,3 +468,7 @@ SUCCESS ---------->  (2020-08-08 02:32:19) (Usuario: 1083459981) Se cerró la Se
 SUCCESS ---------->  (2020-08-08 02:32:24) (Usuario: 1083459981) Inicio de Sesión correcto.
 
 SUCCESS ---------->  (2020-08-08 12:33:19) (Usuario: 1083459981) Inicio de Sesión correcto.
+
+SUCCESS ---------->  (2020-08-08 16:27:07) (Usuario: 1083459981) Inicio de Sesión correcto.
+
+SUCCESS ---------->  (2020-08-08 16:43:12) (Usuario: 1083459981) Se cerró la Sesión de forma correcta.

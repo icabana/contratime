@@ -973,5 +973,39 @@ class ContratosControlador extends ControllerBase {
     }
 
 
+    public function generarPdf(){
+         
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+
+        $contratos = $ContratosModel->getTodos();
+          
+        include("vistas/contratos/contratos/reportes/pdf.php");   
+       
+        $dirPdf = "archivos/reportes/contratos/contratos_".date("Y-m-d")."_.pdf";
+
+        $this->pdf->Output(''.$dirPdf.'');
+
+        echo "urlRuta=".$dirPdf;
+        
+    }
+    
+    public function generarExcel(){
+         
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+
+        $contratos = $ContratosModel->getTodos();
+                        
+        $nombre_archivo = "contratos_".date('Y-m-d_H-i-s').".xls";        
+
+        $ruta = dirname(__FILE__, 3)."/archivos/reportes/contratos/".$nombre_archivo;        
+
+        include("vistas/contratos/contratos/reportes/excel.php");        
+           
+        echo "archivos/reportes/contratos/".$nombre_archivo;
+
+    }
+    
              
  }
