@@ -20,7 +20,7 @@
         mensaje_alertas("success", "Parametro Registrado Exitosamente", "center");
         cargar_parametros();
       } else {
-        mensaje_alertas("error", "Error al insertar el parametro", "center");
+        mensaje_alertas("error", "El parametro ya se encuentra Registrado", "center");
       }
 
   }

@@ -1,5 +1,7 @@
 function cargar_encargados(){
 
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
     $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
     $('.ui-widget').remove();
     $('.elfinder-quicklook').remove();
@@ -20,6 +22,8 @@ function cargar_encargados(){
 
 
 function cargar_municipios_encargado(){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
 
     ejecutarAccion(
         'actores',

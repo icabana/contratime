@@ -1,5 +1,7 @@
 function cargar_usuarios(){
 
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
     $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
     $('.ui-widget').remove();
     $('.elfinder-quicklook').remove();
@@ -19,6 +21,8 @@ function cargar_usuarios(){
 }
 
 function cargar_roles(){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
 
     $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
     $('.ui-widget').remove();
@@ -40,6 +44,8 @@ function cargar_roles(){
 
 
 function cargar_parametros(){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
 
     $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
     $('.ui-widget').remove();

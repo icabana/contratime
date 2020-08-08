@@ -140,8 +140,15 @@
                             echo '</td>';
 
                             echo '<td class="mailbox-subject">';
-                            echo '<center><button onclick="liquidar_contrato(' . $id_contrato . ');"  title="Liquidar Contrato" data-toggle="modal" data-target="#modal_liquidar" type="button" class="btn btn-success  btn-xs">¿Liquidar?</button></center>';
-                            echo '<br><center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger btn-xs ">¿Descartar?</button></center>';
+                            echo '<center>
+                                  <button onclick="enviar_contrato(' . $id_contrato . ');"  title="Enviar Contrato al Contratista" data-toggle="modal" type="button" class="btn btn-primary  btn-xs">¿Enviar Por Correo?</button>
+                                  <br>
+                                  <br>
+                                  <button onclick="liquidar_contrato(' . $id_contrato . ');"  title="Liquidar Contrato" data-toggle="modal" data-target="#modal_liquidar" type="button" class="btn btn-success  btn-xs">¿Liquidar?</button>
+                                  <br>
+                                  <br>
+                                  <center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger btn-xs ">¿Descartar?</button></center>';
+
                             echo '</td>';
                         }
                     ?>

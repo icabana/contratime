@@ -12,11 +12,19 @@ function editar_info_usuario() {
     }
 
     var roles = "roles=";
-    $("input[type=checkbox]:checked").each(function(){       
+    var cont = 0;
+
+    $("input[type=checkbox]:checked").each(function(){      
+        cont++;
         roles += $(this).val()+",";
     });
     roles += "0";
     
+    if(cont == 0){
+      mensaje_alertas("error", "Debe Seleccionar un Rol de Usuario", "center");
+      return false;
+    }
+
     var datos = $('#form_usuarios').serialize()+"&"+roles;
     
     ejecutarAccion(

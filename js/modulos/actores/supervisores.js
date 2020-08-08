@@ -1,5 +1,7 @@
 function cargar_supervisores(){
 
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
     $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
     $('.ui-widget').remove();
     $('.elfinder-quicklook').remove();
@@ -21,6 +23,8 @@ function cargar_supervisores(){
 
 function cargar_municipios_supervisor(){
 
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+    
     ejecutarAccion(
         'actores',
         'Supervisores',

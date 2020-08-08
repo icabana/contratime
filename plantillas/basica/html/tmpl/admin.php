@@ -114,10 +114,6 @@
   
   <div class="wrapper">
 
-
-
-
-
   <!-- BARRA SUPERIOR -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 

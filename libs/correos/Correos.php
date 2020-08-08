@@ -89,7 +89,7 @@ class Correos extends PHPMailer{
 			}			
 		}
 		
-		function EnviarCorreo($mensaje, $asunto, $correos){
+		function EnviarCorreo($mensaje, $asunto, $correos, $path = ''){
 					 
 			foreach($correos as $correo){
 				$this->AddBCC( $correo );                
@@ -97,6 +97,10 @@ class Correos extends PHPMailer{
 							
 			$this->Subject = $asunto;          
 			$this->Body = $mensaje;              
+
+			if($path != ""){
+				$this->AddAttachment = $path;
+			}
 					 
 			$enviado = $this->Send();         
 				

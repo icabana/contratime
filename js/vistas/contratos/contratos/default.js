@@ -144,7 +144,7 @@ function celebrar_contrato2(id_contrato, numero_contra, fechainicio_contra, fech
 
 
 function liquidar_contrato(id_contrato) {
-
+ 
     mensaje_confirmar("¿Está seguro de Liquidar el Contrato?", "liquidar_contrato2(" + id_contrato + "); ");
 
 }
@@ -154,11 +154,51 @@ function liquidar_contrato2(id_contrato) {
     ejecutarAccion(
         'contratos',
         'Contratos',
-        'liquidar',
+        'liquidarContrato',
         "id_contrato=" + id_contrato,
-        'mensaje_alertas("success", "Contrato Descartado con Éxito", "center"); cargar_contratos();'
+        'liquidar_contrato3(data);'
     );
 
+}
+
+function liquidar_contrato3(resp) {
+
+    if(resp == "notienecontratoadjunto"){
+        mensaje_alertas("error", "Debe Adjuntar Copia del Contrato para poder Liquidarlo.", "center");
+        return false;
+    }
+
+    mensaje_alertas("success", "Contrato Liquidado Correctamente", "center");
+    cargar_contratos();
+}
+
+
+function enviar_contrato(id_contrato) {
+ 
+    mensaje_confirmar("¿Está seguro de Enviar Copia del Contrato Por Correo al Contratista?", "enviar_contrato2(" + id_contrato + "); ");
+
+}
+
+function enviar_contrato2(id_contrato) {
+
+    ejecutarAccion(
+        'contratos',
+        'Contratos',
+        'enviarContrato',
+        "id_contrato=" + id_contrato,
+        'enviar_contrato3(data);'
+    );
+
+}
+
+function enviar_contrato3(resp) {
+
+    if(resp == "notienecontratoadjunto"){
+        mensaje_alertas("error", "Debe Adjuntar Copia del Contrato para poder enviar el correo.", "center");
+        return false;
+    }
+
+    mensaje_alertas("success", "Correo Enviado Correctamente", "center");
 }
 
 

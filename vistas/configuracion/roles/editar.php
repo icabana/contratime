@@ -20,7 +20,7 @@
       mensaje_alertas("success", "Rol Editado Exitosamente", "center");
       cargar_roles();
     } else {
-      mensaje_alertas("error", "El Nick ya se encuentra registrado", "center");
+      mensaje_alertas("error", "El Rol ya se encuentra registrado", "center");
     }
 
   }

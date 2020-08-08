@@ -61,7 +61,7 @@
 
           <form id="form_login" action="" method="post">
               <div class="form-group">
-                <input type="text" class="form-control" id="documento" name="documento" onkeypress="return no_numeros(event)">
+                <input type="text" class="form-control" id="documento" name="documento" onkeypress="return no_numeros(event)" placeholder="Documento">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
               </div>
               <div class="form-group">

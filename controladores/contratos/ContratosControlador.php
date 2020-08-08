@@ -532,8 +532,30 @@ class ContratosControlador extends ControllerBase {
     }
 
     
-    public function liquidar() {
+    public function liquidarContrato() {
         
+        //VALIDAR SI TIENE EL CONTRATO ADJUNTO
+        $path = 'archivos/uploads/contratos/' . $_POST["id_contrato"] . '/';
+
+        $directorio = dir($path);
+        $num_archivos = 0;
+
+        if (file_exists($path)) {
+
+            while ($archivo = $directorio->read()) {
+
+                if ($archivo != "." && $archivo != "..") {
+
+                    $num_archivos++;
+                }
+            }
+        }
+
+        if ($num_archivos ==  0) {
+            echo "notienecontratoadjunto";     
+            return;
+        }
+
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
         
@@ -543,6 +565,74 @@ class ContratosControlador extends ControllerBase {
         $ContratosModel->liquidar($_POST["id_contrato"]);
         
         $accion = "Se ha Liquidado este contrato con No. de contrato: ".$_POST["numero_contra"].".";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);
+        
+        echo "1";        
+        
+    }
+
+    
+    
+    public function enviarContrato() {
+        
+        //VALIDAR SI TIENE EL CONTRATO ADJUNTO
+        $path = 'archivos/uploads/contratos/' . $_POST["id_contrato"] . '/';
+
+        $directorio = dir($path);
+        $num_archivos = 0;
+
+        if (file_exists($path)) {
+
+            while ($archivo = $directorio->read()) {
+
+                if ($archivo != "." && $archivo != "..") {
+
+                    $num_archivos++;
+                    $ruta_archivo = $path . $archivo;
+
+                }
+            }
+        }
+
+        if ($num_archivos ==  0) {
+            echo "notienecontratoadjunto";     
+            return;
+        }
+
+        //ENVIAR CORREO
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $param = new Parametros();
+        $correo = new Correos();
+        $datos_contrato = $ContratosModel->getDatos($_POST["id_contrato"]);
+
+        $mensaje = file_get_contents("plantillas/correos/plantilla_contratos/index.html");
+        
+        $mensaje = str_replace("#nombre#", $datos_contrato['nombres_contratista']." ".$datos_contrato['apellidos_contratista'], $mensaje);
+        $mensaje = str_replace("#numcontrato#", $datos_contrato['numproceso_contrato'], $mensaje);
+        $mensaje = str_replace("#modalidad#", $datos_contrato['nombre_modalidad'], $mensaje);
+        $mensaje = str_replace("#tipocontrato#", $datos_contrato['nombre_tipocontrato'], $mensaje);
+        $mensaje = str_replace("#fecha_inicio#", $datos_contrato['fechaoinicio_contrato'], $mensaje);
+        $mensaje = str_replace("#fecha_final#", $datos_contrato['fechafinal_contrato'], $mensaje);
+        $mensaje = str_replace("#valor#", "$".number_format($datos_contrato['valor_contrato'],0,',','.'), $mensaje);
+
+        $mensaje = str_replace("#nombre_empresa#",  $param->valor('empresa'), $mensaje);
+        $mensaje = str_replace("#direccion#", $param->valor('direccion'), $mensaje);
+        $mensaje = str_replace("#telefono#", $param->valor('telefono'), $mensaje);
+        $mensaje = str_replace("#correo#", $param->valor('correo'), $mensaje);
+        $mensaje = str_replace("#paginaweb#", $param->valor('paginaweb'), $mensaje);
+        $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
+        $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
+
+        echo $correo->EnviarCorreo($mensaje, "Envío de Copia de Contrato", array($datos_contrato['correo_contratista']), $ruta_archivo);
+
+
+        //GUARDAR TRAZABILIDAD        
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();           
+
+        $accion = "Se ha Enviado una Copia del Contrato No. : ".$_POST["numero_contra"]." por correo al contratista este contrato con .";
 
         $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);
         

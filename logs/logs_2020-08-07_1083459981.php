@@ -764,3 +764,307 @@ SQL .............>  (2020-08-07 19:36:00) (Usuario: 1083459981) INSERT INTO cont
                         '2020-08-07 19:36:00',
                         '1'
                     );
+
+SUCCESS ---------->  (2020-08-07 20:47:43) (Usuario: 1083459981) Se cerró la Sesión de forma correcta.
+
+SUCCESS ---------->  (2020-08-07 21:01:29) (Usuario: 1083459981) Inicio de Sesión correcto.
+
+SQL .............>  (2020-08-07 21:10:18) (Usuario: 1083459981) INSERT INTO usuarios (
+                        documento_usuario, 
+                        password_usuario,                        
+                        correo_usuario,
+                        estado_usuario
+                    )
+                    VALUES(
+                        '1083459981', 
+                        '81dc9bdb52d04dc20036dbd8313ed055',
+                        'dsdsdsd@gmaill.com',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-07 21:12:34) (Usuario: 1083459981) INSERT INTO usuarios (
+                        documento_usuario, 
+                        password_usuario,                        
+                        correo_usuario,
+                        estado_usuario
+                    )
+                    VALUES(
+                        '10834599812', 
+                        '81dc9bdb52d04dc20036dbd8313ed055',
+                        'dsdsdsd@gmaill.com',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-07 21:12:34) (Usuario: 1083459981) DELETE FROM perfiles WHERE usuario_perfil = '7'
+
+SQL .............>  (2020-08-07 21:12:34) (Usuario: 1083459981) INSERT INTO perfiles (
+                                usuario_perfil,
+                                rol_perfil
+                            )
+                            VALUES(
+                                '7',
+                                '0'
+                            );
+
+SQL .............>  (2020-08-07 21:12:43) (Usuario: 1083459981)   UPDATE usuarios 
+                    
+                        SET correo_usuario = 'dsdsdsd@gmaill.com', 
+                            estado_usuario = '1'
+            
+                        WHERE id_usuario = '7'
+
+SQL .............>  (2020-08-07 21:12:43) (Usuario: 1083459981) DELETE FROM perfiles WHERE usuario_perfil = '7'
+
+SQL .............>  (2020-08-07 21:12:43) (Usuario: 1083459981) INSERT INTO perfiles (
+                                usuario_perfil,
+                                rol_perfil
+                            )
+                            VALUES(
+                                '7',
+                                '0'
+                            );
+
+SQL .............>  (2020-08-07 21:13:27) (Usuario: 1083459981)   UPDATE usuarios 
+                    
+                        SET correo_usuario = 'dsdsdsd@gmaill.com', 
+                            estado_usuario = '1'
+            
+                        WHERE id_usuario = '7'
+
+SQL .............>  (2020-08-07 21:13:27) (Usuario: 1083459981) DELETE FROM perfiles WHERE usuario_perfil = '7'
+
+SQL .............>  (2020-08-07 21:13:27) (Usuario: 1083459981) INSERT INTO perfiles (
+                                usuario_perfil,
+                                rol_perfil
+                            )
+                            VALUES(
+                                '7',
+                                '0'
+                            );
+
+SQL .............>  (2020-08-07 21:15:33) (Usuario: 1083459981)   UPDATE usuarios 
+                    
+                        SET correo_usuario = 'dsdsdsd@gmaill.com', 
+                            estado_usuario = '1'
+            
+                        WHERE id_usuario = '7'
+
+SQL .............>  (2020-08-07 21:15:33) (Usuario: 1083459981) DELETE FROM perfiles WHERE usuario_perfil = '7'
+
+SQL .............>  (2020-08-07 21:15:33) (Usuario: 1083459981) INSERT INTO perfiles (
+                                usuario_perfil,
+                                rol_perfil
+                            )
+                            VALUES(
+                                '7',
+                                '0'
+                            );
+
+SQL .............>  (2020-08-07 21:16:11) (Usuario: 1083459981)   UPDATE usuarios 
+                    
+                        SET correo_usuario = 'dsdsdsd@gmaill.com', 
+                            estado_usuario = '1'
+            
+                        WHERE id_usuario = '7'
+
+SQL .............>  (2020-08-07 21:16:11) (Usuario: 1083459981) DELETE FROM perfiles WHERE usuario_perfil = '7'
+
+SQL .............>  (2020-08-07 21:16:11) (Usuario: 1083459981) INSERT INTO perfiles (
+                                usuario_perfil,
+                                rol_perfil
+                            )
+                            VALUES(
+                                '7',
+                                '0'
+                            );
+
+SQL .............>  (2020-08-07 21:17:00) (Usuario: 1083459981) INSERT INTO usuarios (
+                        documento_usuario, 
+                        password_usuario,                        
+                        correo_usuario,
+                        estado_usuario
+                    )
+                    VALUES(
+                        '10834599813', 
+                        '81dc9bdb52d04dc20036dbd8313ed055',
+                        'icabana@solati.com.co',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-07 21:17:00) (Usuario: 1083459981) DELETE FROM perfiles WHERE usuario_perfil = '8'
+
+SQL .............>  (2020-08-07 21:17:00) (Usuario: 1083459981) INSERT INTO perfiles (
+                                usuario_perfil,
+                                rol_perfil
+                            )
+                            VALUES(
+                                '8',
+                                '1'
+                            );
+
+SQL .............>  (2020-08-07 21:48:22) (Usuario: 1083459981) INSERT INTO roles (
+                                nombre_rol
+                            )
+                            VALUES(
+                                'dcdc'
+                            );
+
+SQL .............>  (2020-08-07 21:50:54) (Usuario: 1083459981) INSERT INTO roles (
+                                nombre_rol
+                            )
+                            VALUES(
+                                'Administrador'
+                            );
+
+SQL .............>  (2020-08-07 21:51:43) (Usuario: 1083459981)   UPDATE roles SET nombre_rol = 'Administrador'           
+                    WHERE id_rol = '1'
+
+SQL .............>  (2020-08-07 21:51:47) (Usuario: 1083459981)   UPDATE roles SET nombre_rol = 'Administrador2'           
+                    WHERE id_rol = '1'
+
+SQL .............>  (2020-08-07 21:51:51) (Usuario: 1083459981)   UPDATE roles SET nombre_rol = 'Administrador'           
+                    WHERE id_rol = '1'
+
+SQL .............>  (2020-08-07 21:52:07) (Usuario: 1083459981) INSERT INTO roles (
+                                nombre_rol
+                            )
+                            VALUES(
+                                'Administrador'
+                            );
+
+SQL .............>  (2020-08-07 21:54:50) (Usuario: 1083459981) INSERT INTO parametros (
+                        nombre_parametro,
+                        valor_parametro
+                    )
+                    VALUES(
+                        'ciudad',
+                        '33'
+                    );
+
+SQL .............>  (2020-08-07 21:54:53) (Usuario: 1083459981) INSERT INTO parametros (
+                        nombre_parametro,
+                        valor_parametro
+                    )
+                    VALUES(
+                        'ciudad',
+                        '33'
+                    );
+
+SQL .............>  (2020-08-07 22:19:45) (Usuario: 1083459981)   UPDATE contratos 
+                    SET estado_contrato = '4'
+                    WHERE id_contrato = '4'
+
+SQL .............>  (2020-08-07 22:19:45) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha Liquidado este contrato con No. de contrato: .',
+                        '4',
+                        '2020-08-07 22:19:45',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-07 22:21:15) (Usuario: 1083459981)   UPDATE contratos 
+                    SET estado_contrato = '4'
+                    WHERE id_contrato = '3'
+
+SQL .............>  (2020-08-07 22:21:16) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha Liquidado este contrato con No. de contrato: .',
+                        '3',
+                        '2020-08-07 22:21:16',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-07 22:22:33) (Usuario: 1083459981)   UPDATE contratos 
+                    SET estado_contrato = '4'
+                    WHERE id_contrato = '6'
+
+SQL .............>  (2020-08-07 22:22:33) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha Liquidado este contrato con No. de contrato: .',
+                        '6',
+                        '2020-08-07 22:22:33',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-07 22:23:47) (Usuario: 1083459981)   UPDATE contratos 
+                    SET estado_contrato = '4'
+                    WHERE id_contrato = '1'
+
+SQL .............>  (2020-08-07 22:23:48) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha Liquidado este contrato con No. de contrato: .',
+                        '1',
+                        '2020-08-07 22:23:48',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-07 22:25:48) (Usuario: 1083459981)   UPDATE contratos 
+                    SET estado_contrato = '4'
+                    WHERE id_contrato = '3'
+
+SQL .............>  (2020-08-07 22:25:48) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha Liquidado este contrato con No. de contrato: .',
+                        '3',
+                        '2020-08-07 22:25:48',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-07 22:28:16) (Usuario: 1083459981)   UPDATE contratos 
+                    SET estado_contrato = '4'
+                    WHERE id_contrato = '3'
+
+SQL .............>  (2020-08-07 22:28:16) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha Liquidado este contrato con No. de contrato: .',
+                        '3',
+                        '2020-08-07 22:28:16',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-07 22:28:53) (Usuario: 1083459981)   UPDATE contratos 
+                    SET estado_contrato = '4'
+                    WHERE id_contrato = '6'
+
+SQL .............>  (2020-08-07 22:28:54) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha Liquidado este contrato con No. de contrato: .',
+                        '6',
+                        '2020-08-07 22:28:54',
+                        '1'
+                    );
