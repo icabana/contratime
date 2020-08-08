@@ -45,6 +45,117 @@ class SupervisoresControlador extends ControllerBase {
                 $TrazabilidadControlador->insertarExterno($array[0], $accion);   
 
     
+            
+                $accion = "Se ha enviado un correo de Notificación a ".$nombre_supervisor." Informando que ha sido Asignado cómo supervisor de éste contrato";
+
+                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+              
+            }  
+
+        }        
+           
+          
+
+    }
+
+    
+    
+    public function insertarEditar() {
+        
+        $this->model->cargar("SupervisoresModel.php", "contratos");
+        $SupervisoresModel = new SupervisoresContratosModel();  
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel2 = new SupervisoresModel();  
+                
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();    
+        
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
+
+        $numero = $SupervisoresModel->existeSupervisorenContrato($_POST['id_contrato'], $_POST["supervisor_supervisor"]);
+
+        if($numero <= 0 ){
+
+            $correo = new Correos();
+            $param = new Parametros();
+
+            $datos_supervisor = $SupervisoresModel2->getDatos($_POST["supervisor_supervisor"]);
+        
+            $nombre_supervisor = $datos_supervisor['nombres_supervisor']." ".$datos_supervisor['apellidos_supervisor'];
+
+            $datos_contrato = $ContratosModel->getDatos($_POST['id_contrato']);
+
+            $SupervisoresModel->insertar(
+                $_POST["supervisor_supervisor"],
+                $_POST['id_contrato']
+            );                    
+
+            $accion = "Se ha Asignado cómo supervisor de éste contrato a ".$nombre_supervisor;
+
+            $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
+
+            $accion = "Se ha enviado un correo de Notificación a ".$nombre_supervisor." Informando que ha sido Asignado cómo supervisor de éste contrato";
+
+            $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
+                
+            $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+
+            include("vistas/contratos/supervisores/lista_supervisores.php");
+
+        }else{
+
+            echo "error";
+
+        }
+        
+    }
+
+    
+    
+    public function insertar_correo() {
+        
+        $this->model->cargar("SupervisoresModel.php", "contratos");
+        $SupervisoresModel = new SupervisoresContratosModel();  
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel2 = new SupervisoresModel();  
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();    
+
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();      
+        
+        $correo = new Correos();
+        $param = new Parametros();
+
+        $datos_supervisor = $SupervisoresModel2->getDatos($_POST["supervisor_supervisor"]);
+
+        $nombre_supervisor = $datos_supervisor['nombres_supervisor']." ".$datos_supervisor['apellidos_supervisor'];
+
+        $array_contratos = explode(",", $_POST['contratos']);
+
+        foreach($array_contratos as $array){
+            
+            $numero = $SupervisoresModel->existeSupervisorenContrato($array[0], $_POST["supervisor_supervisor"]);
+    
+            if($array[0] != 0 && $numero <= 0){
+
+                $datos_contrato = $ContratosModel->getDatos($array[0]);
+
+                $SupervisoresModel->insertar(
+                    $_POST["supervisor_supervisor"],
+                    $array[0]
+                );                    
+
+
+                $accion = "Se ha Asignado cómo supervisor de éste contrato a ".$nombre_supervisor;
+
+                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+
+    
                 $mensaje = file_get_contents("plantillas/correos/plantilla2/index.html");
         
                 $mensaje = str_replace("#nombre#", $datos_supervisor['nombre_supervisor'], $mensaje);
@@ -79,7 +190,7 @@ class SupervisoresControlador extends ControllerBase {
 
     
     
-    public function insertarEditar() {
+    public function insertarEditar_correo() {
         
         $this->model->cargar("SupervisoresModel.php", "contratos");
         $SupervisoresModel = new SupervisoresContratosModel();  

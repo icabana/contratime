@@ -9,7 +9,7 @@
 <input type="hidden" name="id_contrato_sel" id="id_contrato_sel">
 
 <div class="table-responsive mailbox-messages">
-          <table id="tabla_contratos" style="width:100%; font-size:12px" width='100%' class="table table-hover table-striped">
+          <table id="tabla_contratos" style="width:100%; font-size:12px" class="table table-hover table-striped">
             <thead>
               <tr>
                 <th style='background-color:lavender'></th>   

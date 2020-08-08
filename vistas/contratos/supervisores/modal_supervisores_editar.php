@@ -24,8 +24,8 @@
         </div>
       </div>
       <div class="modal-footer">        
-        <button onclick="agregar_supervisor_editar_correo();" type="button" class="btn btn-primary">Asociar y Enviar Correo</button>
-        <button onclick="agregar_supervisor_editar();" type="button" class="btn btn-primary">Asociar Supervisor</button>
+        <button onclick="asociar_supervisor_editar_correo();" type="button" class="btn btn-success">Asociar y Enviar Correo</button>
+        <button onclick="asociar_supervisor_editar();" type="button" class="btn btn-primary">Asociar Supervisor</button>
       </div>
     </div>
   </div>

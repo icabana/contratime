@@ -382,14 +382,14 @@
           </a>
         </li>
 
-
+      <!--
         <li class="nav-item">
           <a href="#" onclick="cargar_roles();" class="nav-link">
             <i class="fas fa-users nav-icon"></i>
             <p>Roles</p>
           </a>
         </li>
-
+      -->
         
         <li class="nav-item">
           <a  href="#" onclick="cargar_parametros();" class="nav-link">
@@ -399,10 +399,7 @@
           </a>
 
 
-
-
-
-
+          
           
         </li>
 
@@ -431,7 +428,7 @@
              
 
 
-
+  <!-- ROL DE FINANCIERO --> 
 
 <?php
   if($_SESSION['rol'] == 2){
@@ -439,7 +436,7 @@
 
 
 <br>
-         <!-- MENU DE CONTRATOS --> 
+       
     <li class="nav-item has-treeview menu-open">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-folder-open"></i>
@@ -450,9 +447,6 @@
         </p>
       </a>
       <ul class="nav nav-treeview">
-
-
-
       
 
         <li class="nav-item">
@@ -478,6 +472,50 @@
 <?php
     }
   ?>
+
+
+
+
+ <!-- ROL DE SUPERVISOR --> 
+
+<?php
+  if($_SESSION['rol'] == 3){
+?>
+
+
+<br>
+         <!-- MENU DE CONTRATOS --> 
+    <li class="nav-item has-treeview menu-open">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-folder-open"></i>
+        <p>
+          Contrataciones
+          <i class="fas fa-angle-right right"></i>
+          
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+
+
+
+      
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_contratos_supervisor();" class="nav-link">
+            <i class="fas fa-archive nav-icon"></i>
+            <p>Contratos</p>
+          </a>
+        </li>
+  
+
+      </ul>
+    </li>
+
+<?php
+    }
+  ?>
+
+
 
       
       </ul>

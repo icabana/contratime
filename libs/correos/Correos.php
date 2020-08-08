@@ -99,7 +99,7 @@ class Correos extends PHPMailer{
 			$this->Body = $mensaje;              
 
 			if($path != ""){
-				$this->AddAttachment = $path;
+				$this->AddAttachment($path);
 			}
 					 
 			$enviado = $this->Send();         

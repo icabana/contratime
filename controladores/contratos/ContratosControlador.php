@@ -63,6 +63,68 @@ class ContratosControlador extends ControllerBase {
                         
     }    
     
+
+    public function indexSupervisor() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosxSupervisor();        
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel->getTodos();
+        
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel = new EncargadosModel();
+        $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();     
+          
+        include 'vistas/contratos/contratos/default_supervisor.php';
+                        
+    }    
+
+
+    public function indexEncargado() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosxEncargado();        
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel->getTodos();
+        
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel = new EncargadosModel();
+        $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();     
+          
+        include 'vistas/contratos/contratos/default_encargado.php';
+                        
+    }    
+
     public function index_x_estado() {
         
         $this->model->cargar("ContratosModel.php", "contratos");
@@ -626,7 +688,6 @@ class ContratosControlador extends ControllerBase {
         $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
         echo $correo->EnviarCorreo($mensaje, "Envío de Copia de Contrato", array($datos_contrato['correo_contratista']), $ruta_archivo);
-
 
         //GUARDAR TRAZABILIDAD        
         require_once("controladores/contratos/TrazabilidadControlador.php");

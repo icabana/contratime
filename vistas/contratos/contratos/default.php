@@ -43,18 +43,19 @@ $froms = new Formularios();
       <div class="card-body p-0">
         <div class="mailbox-controls">
           
-          <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i onclick="seleccionar_check(); return false;" class="far fa-square"></i>
+          <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i onclick="seleccionar_check(); opcion_checkeada(); return false;" class="far fa-square"></i>
           </button>
           <div class="btn-group ">
-            <?php
-            if ($_SESSION['rol'] == '1') {
-            ?>
-              <button title="Eliminar Contratos" onclick="eliminar_contrato();" type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-            <?php
-            }
-            ?>
+          
 
-            <div id="acciones_contratos">
+            <div id="acciones_contratos"  style="display: none;">
+              <?php
+              if ($_SESSION['rol'] == '1') {
+              ?>
+                <button title="Eliminar Contratos" onclick="eliminar_contrato();" type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+              <?php
+              }
+              ?>
               <button title="Agregar Supervisor" data-toggle="modal" data-target="#modal_supervisores" type="button" class="btn btn-default btn-sm"><i class="fas fa-user"></i></button>
               <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
               <button title="Agregar CDP" data-toggle="modal" data-target="#modal_cdps" type="button" class="btn btn-default btn-sm"><i class="fas fa-money-bill"></i></button>
@@ -65,6 +66,13 @@ $froms = new Formularios();
               <button title="Agregar Prorroga" data-toggle="modal" data-target="#modal_prorrogas" type="button" class="btn btn-default btn-sm"><i class="fas fa-calendar-plus"></i></button>
             </div>
             <div id="acciones_procesos" style="display: none;">
+            <?php
+              if ($_SESSION['rol'] == '1') {
+              ?>
+                <button title="Eliminar Procesos" onclick="eliminar_contrato();" type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+              <?php
+              }
+              ?>
               <button title="Agregar Encargado" data-toggle="modal" data-target="#modal_encargados" type="button" class="btn btn-default btn-sm"><i class="fas fa-user"></i></button>
               <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>           
             </div>

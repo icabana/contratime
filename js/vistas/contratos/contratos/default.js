@@ -48,7 +48,7 @@ function eliminar_contrato2(id_contrato) {
         'Contratos',
         'eliminar',
         "id_contrato=" + id_contrato,
-        ' mensaje_alertas("success", "Contrato Eliminado con Éxito", "center"); cargar_contratos();'
+        'mensaje_alertas("success", "Contrato Eliminado con Éxito", "center"); cargar_contratos();'
     );
 
 }
@@ -249,19 +249,26 @@ function seleccionar_check() {
 function opcion_checkeada(estado_contrato) {
 
     var cont = 0;
+    var cont_todos = 0;
     $("input[name=check_contratos]:checked").each(
         function(){
             if( $(this).attr("estado") < 3 ){
                 cont++;
             }
+            cont_todos++;
         }
     );
 
-    if(cont > 0){
-        $("#acciones_contratos").css("display","none");
-        $("#acciones_procesos").css("display","inline");
+    if(cont_todos > 0){
+        if(cont > 0){
+            $("#acciones_contratos").css("display","none");
+            $("#acciones_procesos").css("display","inline");
+        }else{
+            $("#acciones_contratos").css("display","inline");
+            $("#acciones_procesos").css("display","none");
+        }
     }else{
-        $("#acciones_contratos").css("display","inline");
+        $("#acciones_contratos").css("display","none");
         $("#acciones_procesos").css("display","none");
     }
 
