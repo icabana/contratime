@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Agregar Encargado</h5>
+        <h5 class="modal-title">Asociar Encargado al Proceso</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -24,7 +24,8 @@
         </div>
       </div>
       <div class="modal-footer">        
-        <button onclick="agregar_encargado_editar();" type="button" class="btn btn-primary">Agregar</button>
+        <button onclick="asociar_encargado_editar_correo();" type="button" class="btn btn-success">Asociar y Enviar Correo</button>
+        <button onclick="asociar_encargado_editar();" type="button" class="btn btn-primary">Asociar Encargado</button>
       </div>
     </div>
   </div>

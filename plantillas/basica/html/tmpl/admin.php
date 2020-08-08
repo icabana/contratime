@@ -129,6 +129,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a  href="javascript:location.reload()" class="nav-link">Inicio</a>
       </li>
+      <?php
+        if($_SESSION['rol'] == 1){
+      ?>
        <li class="nav-item d-none d-sm-inline-block">
         <a href="#" onclick="nuevo_contrato(); return false;" class="nav-link"><b>Nuevo Contrato</b></a>
       </li>
@@ -147,7 +150,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" onclick="cargar_tiposcontrato(); return false;" class="nav-link"><b>Tipos de Contrato</b></a>
       </li>
-     
+      <?php
+        }
+      ?>
     </ul>
 
     
@@ -540,7 +545,7 @@
 
 
     <footer class="main-footer">
-      <strong>Copyright &copy; 2020 <a target='_blank' href="https://setpsantamarta.gov.co/">LoginTime S.A.S.</a></strong>
+      <strong>Copyright &copy; 2020 <a target='_blank' href="http://logintime.co/">LoginTime S.A.S.</a></strong>
       Todos los derechos Reservados.
       <div class="float-right d-none d-sm-inline-block">
         <b>Version</b> 3.0.1

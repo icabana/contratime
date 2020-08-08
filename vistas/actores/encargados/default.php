@@ -53,7 +53,7 @@
 
                         echo "<td>".$encargado['codigo_tipodocumento']." ".$encargado['documento_encargado']."</td>";
 
-                        echo "<td>".utf8_encode($encargado['nombre_encargado']).
+                        echo "<td>".strtoupper(utf8_encode($encargado['nombre_encargado'])).
                             " <img title='".$encargado['nombre_pais']."' src='imagenes/banderas/".
                                 $encargado['codigo3_pais'].".png'></td>";
 

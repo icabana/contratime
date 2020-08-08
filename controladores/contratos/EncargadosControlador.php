@@ -36,9 +36,103 @@ class EncargadosControlador extends ControllerBase {
 
                 $EncargadosModel->insertar(
                     $_POST["encargado_encargado"],
-                    $array[0],
-                );                    
+                    $array[0]
+                ); 
 
+                $accion = "Se ha enviado un correo de Notificación a ".$nombre_encargado." Informando que ha 
+                            sido Asignado cómo encargado de éste Proceso";
+
+                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+              
+            }  
+
+        }                  
+
+    }
+
+    
+    
+    public function insertarEditar() {
+        
+        $this->model->cargar("EncargadosModel.php", "contratos");
+        $EncargadosModel = new EncargadosContratosModel();  
+        
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel2 = new EncargadosModel();  
+                
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();    
+        
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
+
+        $numero = $EncargadosModel->existeEncargadoenContrato($_POST['id_contrato'], $_POST["encargado_encargado"]);
+
+        if($numero <= 0 ){
+
+            $correo = new Correos();
+            $param = new Parametros();
+
+            $datos_encargado = $EncargadosModel2->getDatos($_POST["encargado_encargado"]);
+        
+            $nombre_encargado = $datos_encargado['nombres_encargado']." ".$datos_encargado['apellidos_encargado'];
+
+            $contrato = $ContratosModel->getDatos($_POST['id_contrato']);
+
+            $EncargadosModel->insertar(
+                $_POST["encargado_encargado"],
+                $_POST['id_contrato']
+            );     
+                
+            $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
+
+            include("vistas/contratos/encargados/lista_encargados.php");
+
+        }else{
+
+            echo "error";
+
+        }
+        
+    }
+
+    
+    
+    public function insertar_correo() {
+        
+        $this->model->cargar("EncargadosModel.php", "contratos");
+        $EncargadosModel = new EncargadosContratosModel();  
+        
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel2 = new EncargadosModel();  
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();    
+
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();      
+        
+        $correo = new Correos();
+        $param = new Parametros();
+
+        $datos_encargado = $EncargadosModel2->getDatos($_POST["encargado_encargado"]);
+
+        $nombre_encargado = $datos_encargado['nombres_encargado']." ".$datos_encargado['apellidos_encargado'];
+
+        $array_contratos = explode(",", $_POST['contratos']);
+
+        foreach($array_contratos as $array){
+            
+            $numero = $EncargadosModel->existeEncargadoenContrato($array[0], $_POST["encargado_encargado"]);
+    
+            if($array[0] != 0 && $numero <= 0){
+
+                $datos_contrato = $ContratosModel->getDatos($array[0]);
+
+                $EncargadosModel->insertar(
+                    $_POST["encargado_encargado"],
+                    $array[0]
+                );          
 
                 $accion = "Se ha Asignado cómo encargado de éste proceso a ".$nombre_encargado;
 
@@ -80,7 +174,7 @@ class EncargadosControlador extends ControllerBase {
 
     
     
-    public function insertarEditar() {
+    public function insertarEditar_correo() {
         
         $this->model->cargar("EncargadosModel.php", "contratos");
         $EncargadosModel = new EncargadosContratosModel();  
@@ -159,6 +253,8 @@ class EncargadosControlador extends ControllerBase {
     }
 
     
+   
+
    
     public function eliminar() {
         

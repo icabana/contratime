@@ -78,7 +78,7 @@ $froms = new Formularios();
             <div class="col-md-2">
 
               <label>Fecha de Apertura<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="fapertura_contrato" name="fapertura_contrato">
+              <input type="date" class="form-control requerido" id="faperturaproceso_contrato" name="faperturaproceso_contrato">
 
             </div>
 

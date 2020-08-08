@@ -15,6 +15,7 @@ class ContratosModel extends ModelBase {
                     contratos.contratista_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.faperturaproceso_contrato,
                     contratos.favisoproceso_contrato,
                     contratos.fpresentacionproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
@@ -94,7 +95,7 @@ class ContratosModel extends ModelBase {
                             left join estados on contratistas.estado_contratista = estados.id_estado
                             left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
                         
-                    WHERE contratos.estado_contrato != '6'
+                    WHERE contratos.estado_contrato != '6' && contratos.estado_contrato != '5'
                     
                     ORDER BY contratos.numero_contrato";
         
@@ -232,6 +233,7 @@ class ContratosModel extends ModelBase {
                     contratos.contratista_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.faperturaproceso_contrato,
                     contratos.favisoproceso_contrato,
                     contratos.fpresentacionproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
@@ -337,6 +339,7 @@ class ContratosModel extends ModelBase {
                         contratos.contratista_contrato,
                         contratos.fechainicio_contrato,
                         contratos.fechafinal_contrato,
+                        contratos.faperturaproceso_contrato,
                         contratos.favisoproceso_contrato,
                         contratos.fpresentacionproceso_contrato,
                         contratos.fevaluacionproceso_contrato,
@@ -420,7 +423,7 @@ class ContratosModel extends ModelBase {
 
                         WHERE contratos.fechafinal_contrato < '".$fecha_actual."' and 
                         
-                        contratos.estado_contrato >= 3 and contratos.estado_contrato != '6'
+                        contratos.estado_contrato >= 3 and contratos.estado_contrato != '6' && contratos.estado_contrato != '5'
 
                         contratos.valor_contrato > (select sum(contratos_pagos.valor_pago) from contratos_pagos where contrato_pago = contratos.id_contrato)
 
@@ -459,6 +462,7 @@ class ContratosModel extends ModelBase {
                     contratos.contratista_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.faperturaproceso_contrato,
                     contratos.favisoproceso_contrato,
                     contratos.fpresentacionproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
@@ -560,6 +564,7 @@ class ContratosModel extends ModelBase {
         contratos.contratista_contrato,
         contratos.fechainicio_contrato,
         contratos.fechafinal_contrato,
+        contratos.faperturaproceso_contrato,
         contratos.favisoproceso_contrato,
         contratos.fpresentacionproceso_contrato,
         contratos.fevaluacionproceso_contrato,
@@ -650,6 +655,7 @@ class ContratosModel extends ModelBase {
     function insertar(      
         $numproceso_contrato,
         $valproceso_contrato,
+        $faperturaproceso_contrato,
         $favisoproceso_contrato,
         $fpresentacionproceso_contrato,
         $fevaluacionproceso_contrato,
@@ -663,6 +669,7 @@ class ContratosModel extends ModelBase {
         $query = "INSERT INTO contratos (
                         numproceso_contrato,
                         valproceso_contrato,
+                        faperturaproceso_contrato,
                         favisoproceso_contrato,
                         fpresentacionproceso_contrato,
                         fevaluacionproceso_contrato,
@@ -676,6 +683,7 @@ class ContratosModel extends ModelBase {
                     VALUES(
                         '".$numproceso_contrato."',
                         '".$valproceso_contrato."',
+                        '".$faperturaproceso_contrato."',
                         '".$favisoproceso_contrato."',
                         '".$fpresentacionproceso_contrato."',
                         '".$fevaluacionproceso_contrato."',
@@ -697,6 +705,7 @@ class ContratosModel extends ModelBase {
                     $id_contrato, 
                     $numproceso_contrato,
                     $valproceso_contrato,
+                    $faperturaproceso_contrato,
                     $favisoproceso_contrato,
                     $fpresentacionproceso_contrato,
                     $fevaluacionproceso_contrato,
@@ -711,6 +720,7 @@ class ContratosModel extends ModelBase {
 
                     SET numproceso_contrato = '". $numproceso_contrato ."',
                         valproceso_contrato = '". $valproceso_contrato ."',
+                        faperturaproceso_contrato = '". $faperturaproceso_contrato ."',
                         favisoproceso_contrato = '". $favisoproceso_contrato ."',
                         fpresentacionproceso_contrato = '". $fpresentacionproceso_contrato ."',
                         fevaluacionproceso_contrato = '". $fevaluacionproceso_contrato ."',

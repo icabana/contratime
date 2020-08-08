@@ -54,7 +54,7 @@
                          echo "<td>".$contratista['codigo_tipodocumento']." ".$contratista['documento_contratista']."</td>";
 
                         
-                        echo "<td>".utf8_encode($contratista['nombres_contratista']." ".$contratista['apellidos_contratista']).
+                        echo "<td>".strtoupper(utf8_encode($contratista['nombres_contratista']." ".$contratista['apellidos_contratista'])).
                             " <img title='".$contratista['nombre_pais']."' src='imagenes/banderas/".
                                 $contratista['codigo3_pais'].".png'></td>";
 

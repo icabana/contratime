@@ -18,7 +18,7 @@
             data-toggle="modal" 
             data-target="#modal_supervisores_editar" 
             type="button" 
-            class="btn btn-success btn-sm">Nuevo Supervisor</button>
+            class="btn btn-success btn-sm">Asociar Supervisor</button>
             </div>
 
 

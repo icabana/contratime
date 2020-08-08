@@ -151,13 +151,13 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
         $contratos = $ContratosModel->getTodosAvanzada(
-                                            $_POST['modalidad_busqueda'], 
-                                            $_POST['tipocontrato_busqueda'],
-                                            $_POST['estado_busqueda'],
-                                            $_POST['fechainicio_busqueda'],
-                                            $_POST['fechafinal_busqueda'],
-                                            $array_rango
-                                        );        
+            $_POST['modalidad_busqueda'], 
+            $_POST['tipocontrato_busqueda'],
+            $_POST['estado_busqueda'],
+            $_POST['fechainicio_busqueda'],
+            $_POST['fechafinal_busqueda'],
+            $array_rango
+        );        
         
         $this->model->cargar("SupervisoresModel.php", "actores");
         $SupervisoresModel = new SupervisoresModel();
@@ -384,6 +384,7 @@ class ContratosControlador extends ControllerBase {
         $resp = $ContratosModel->insertar(
             $_POST["numproceso_contrato"],
             $_POST["valproceso_contrato"],
+            $_POST["faperturaproceso_contrato"],
             $_POST["favisoproceso_contrato"],
             $_POST["fpresentacionproceso_contrato"],
             $_POST["fevaluacionproceso_contrato"],
@@ -415,17 +416,18 @@ class ContratosControlador extends ControllerBase {
         $ContratosModel = new ContratosModel();
             
         $resp = $ContratosModel->editar(
-                $_POST["id_contrato"], 
-                $_POST["numproceso_contrato"],
-                $_POST["valproceso_contrato"],
-                $_POST["favisoproceso_contrato"],
-                $_POST["fpresentacionproceso_contrato"],
-                $_POST["fevaluacionproceso_contrato"],
-                $_POST["fadjudicacionproceso_contrato"],
-                $_POST["fcierreproceso_contrato"],
-                $_POST["modalidad_contrato"],
-                $_POST["tipo_contrato"],
-                $_POST["objeto_contrato"]
+            $_POST["id_contrato"], 
+            $_POST["numproceso_contrato"],
+            $_POST["valproceso_contrato"],
+            $_POST["faperturaproceso_contrato"],
+            $_POST["favisoproceso_contrato"],
+            $_POST["fpresentacionproceso_contrato"],
+            $_POST["fevaluacionproceso_contrato"],
+            $_POST["fadjudicacionproceso_contrato"],
+            $_POST["fcierreproceso_contrato"],
+            $_POST["modalidad_contrato"],
+            $_POST["tipo_contrato"],
+            $_POST["objeto_contrato"]
         );        
       
         if( $resp != 0 ){

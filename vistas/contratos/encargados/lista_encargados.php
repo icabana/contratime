@@ -18,7 +18,7 @@
             data-toggle="modal" 
             data-target="#modal_encargados_editar" 
             type="button" 
-            class="btn btn-success btn-sm">Nuevo Encargado</button>
+            class="btn btn-success btn-sm">Asociar Encargado</button>
             </div>
 
 

@@ -11,7 +11,7 @@ function cargar_tiposcontrato(){
     abrirVentanaContenedorTabla(
         'tabla_tiposcontrato', 
         'administracion', 
-        'tiposcontrato', 
+        'Tiposcontrato', 
         'index', 
         ''
     );    

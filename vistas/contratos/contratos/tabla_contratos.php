@@ -140,7 +140,7 @@
 
 
                             echo '<td class="mailbox-subject">';
-                            echo '<button onclick="sel_adjudicar_contrato(' . $id_contrato . ');"  title="Adjudicar Contrato" data-toggle="modal" data-target="#modal_adjudicar" type="button" class="btn btn-success ">¿Adjudicar?</button>';                            
+                            
                             echo '</td>';
                         }
                     ?>
@@ -156,8 +156,8 @@
                            echo '</td>';
 
                             echo '<td  class="mailbox-subject">';
-                             echo '<center><button onclick="sel_celebrar_contrato(' . $id_contrato . ');"  title="Celebrar Contrato" data-toggle="modal" data-target="#modal_celebrar" type="button" class="btn btn-success ">¿Celebrar?</button></center>';
-                            echo '<br><center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger ">¿Descartar?</button></center>';
+                             echo '<center><button onclick="sel_celebrar_contrato(' . $id_contrato . ');"  title="Celebrar Contrato" data-toggle="modal" data-target="#modal_celebrar" type="button" class="btn btn-success btn-xs">¿Celebrar?</button></center>';
+                            echo '<br><center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger btn-xs">¿Descartar?</button></center>';
                             echo '</td>';
 
                         }
@@ -189,13 +189,16 @@
                             echo "<b><center>LIQUIDADO</center></b>";                          
                             echo '</td>';
 
+                            echo '<td class="mailbox-subject">';
+                            echo '</td>';
+
                         }
                     ?>
                
 
                   <?php               
                        
-                      if($contrato['estado_contrato'] >= 3){                                      
+                      if($contrato['estado_contrato'] >= 3 && $contrato['estado_contrato'] != 5){                                      
                         include("vistas/contratos/contratos/comp_upload/icono.php");
                         echo "<td><center> " . $documento_contrato . "</center></td>";
                       }else{

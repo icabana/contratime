@@ -82,11 +82,14 @@
       </div>
     </div>
 					</header>
+					<footer class="main-footer">
+						<strong>Copyright &copy; 2020 <a target='_blank' href="http://logintime.co/">LoginTime S.A.S.</a></strong>
+						Todos los derechos Reservados.
+						<div class="float-right d-none d-sm-inline-block">
+							<b>Version</b> 3.0.1
+						</div>
+    				</footer>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; 2020   Todos los derechos reservados. LoginTime .</span>
-					</footer>
 
 			</div>
 		</div>

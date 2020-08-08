@@ -81,9 +81,9 @@
 
                             echo "<tr>";
 
-                            echo "<td>" . $items['nombre_parametro'] . "</td>";
+                            echo "<td>" . utf8_encode($items['nombre_parametro']) . "</td>";
 
-                            echo "<td>" . $items['valor_parametro'] . "</td>";
+                            echo "<td>" . utf8_encode($items['valor_parametro']) . "</td>";
 
                             echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_parametro(" . $items['id_parametro'] . ");'><i 
                                     class='fas fa-edit'></i></a></td>";
