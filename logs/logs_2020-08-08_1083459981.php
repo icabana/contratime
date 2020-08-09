@@ -472,3 +472,83 @@ SUCCESS ---------->  (2020-08-08 12:33:19) (Usuario: 1083459981) Inicio de Sesi�
 SUCCESS ---------->  (2020-08-08 16:27:07) (Usuario: 1083459981) Inicio de Sesión correcto.
 
 SUCCESS ---------->  (2020-08-08 16:43:12) (Usuario: 1083459981) Se cerró la Sesión de forma correcta.
+
+SUCCESS ---------->  (2020-08-08 17:48:15) (Usuario: 1083459981) Inicio de Sesión correcto.
+
+SQL .............>  (2020-08-08 18:18:49) (Usuario: 1083459981) INSERT INTO contratos_pagos (
+                            contrato_pago,
+                            tipo_pago,
+                            fecha_pago, 
+                            valor_pago
+                            )
+                    VALUES(
+                            '1',
+                            '1',
+                            '2020-08-08',
+                            '1'
+                    );
+
+SQL .............>  (2020-08-08 18:18:49) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha regitrado un pago a este contrato: Tipo de pago: ANTICIPO, Valor: $1',
+                        '1',
+                        '2020-08-08 18:18:49',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-08 18:21:21) (Usuario: 1083459981) INSERT INTO contratos_pagos (
+                            contrato_pago,
+                            tipo_pago,
+                            fecha_pago, 
+                            valor_pago
+                            )
+                    VALUES(
+                            '1',
+                            '1',
+                            '2020-08-22',
+                            '1'
+                    );
+
+SQL .............>  (2020-08-08 18:21:21) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha regitrado un pago a este contrato: Tipo de pago: ANTICIPO, Valor: $1',
+                        '1',
+                        '2020-08-08 18:21:21',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-08 18:21:29) (Usuario: 1083459981) INSERT INTO contratos_pagos (
+                            contrato_pago,
+                            tipo_pago,
+                            fecha_pago, 
+                            valor_pago
+                            )
+                    VALUES(
+                            '1',
+                            '2',
+                            '2020-08-14',
+                            '1'
+                    );
+
+SQL .............>  (2020-08-08 18:21:38) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha regitrado un pago a este contrato: Tipo de pago: PAGO PARCIAL, Valor: $1',
+                        '1',
+                        '2020-08-08 18:21:38',
+                        '1'
+                    );

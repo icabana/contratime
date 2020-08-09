@@ -1,11 +1,3 @@
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_pagos");
-        }
-    );
-</script>
-
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -26,7 +18,6 @@
     </div>
 </div>
 
-<br>
 <table id="tabla_pagos" class="table table-bordered table-hover">
     <thead>
         <tr>

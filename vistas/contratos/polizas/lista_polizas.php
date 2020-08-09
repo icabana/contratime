@@ -2,14 +2,6 @@
     include("vistas/contratos/polizas/comp_upload/modal.php");
 ?>
 
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_polizas");
-        }
-    );
-</script>
-
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -30,7 +22,6 @@
     </div>
 </div>
 
-<br>
 <div id="div_tabla_polizas">
 <table id="tabla_polizas" class="table table-bordered table-hover">
     <thead>

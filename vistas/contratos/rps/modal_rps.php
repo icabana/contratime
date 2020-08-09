@@ -12,7 +12,7 @@
 
           <div class="col-md-12">
 
-            <label>N&uacute;mero del RP: </label>
+            <label>N&uacute;mero del RP: <span style="color:red">*</span></label>
             <input type="text" class="form-control requerido_rp" id="numero_rp" name="numero_rp" 
              maxlength="10" onkeypress="return no_numeros(event)">
 
@@ -22,7 +22,7 @@
 
           <div class="col-md-12">
 
-            <label>Fecha del RP: </label>
+            <label>Fecha del RP: <span style="color:red">*</span></label>
             <input type="date" class="form-control requerido_rp" id="fecha_rp" name="fecha_rp" >
 
           </div>
@@ -31,7 +31,7 @@
 
           <div class="col-md-12">
 
-            <label>Valor del RP: </label>
+            <label>Valor del RP: <span style="color:red">*</span></label>
             <input type="text" class="form-control requerido_rp" id="valor_rp" name="valor_rp" 
             maxlength="20" onkeypress="return no_numeros(event)">
 

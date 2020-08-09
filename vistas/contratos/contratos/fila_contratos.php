@@ -137,19 +137,31 @@
                             
                             echo '<td style="background-color: #77F76C" class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
+
+                            echo '<br>
+                            <button onclick="enviar_contrato(' . $id_contrato . ');"  title="Enviar Contrato al Contratista" data-toggle="modal" type="button" class="btn btn-primary btn-xs">
+                            <i class="fas fa-envelope-square"></i> ¿Enviar Por Correo?
+                            </button></center>';
+
+                            echo '<br><br>
+                            <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_vista_previa_contrato" type="button" class="btn btn-primary btn-xs">
+                            <i class="fas fa-envelope-square"></i> ¿Ver Vista Previa?
+                            </button></center>';
+
                             echo '</td>';
 
-                            echo '<td class="mailbox-subject">';
+                           echo '<td class="mailbox-subject">';
                             echo '<center>
-                                  <button onclick="enviar_contrato(' . $id_contrato . ');"  title="Enviar Contrato al Contratista" data-toggle="modal" type="button" class="btn btn-primary  btn-xs">¿Enviar Por Correo?</button>
-                                  <br>
-                                  <br>
-                                  <button onclick="liquidar_contrato(' . $id_contrato . ');"  title="Liquidar Contrato" data-toggle="modal" data-target="#modal_liquidar" type="button" class="btn btn-success  btn-xs">¿Liquidar?</button>
-                                  <br>
-                                  <br>
-                                  <center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger btn-xs ">¿Descartar?</button></center>';
-
-                            echo '</td>';
+                            <button onclick="liquidar_contrato(' . $id_contrato . ');"  title="Liquidar Contrato" data-toggle="modal" data-target="#modal_liquidar" type="button" class="btn btn-success  btn-xs">
+                            <i class="fas fa-file-invoice-dollar"></i> ¿Liquidar?
+                            </button>
+                            <br>
+                            <br>
+                            <center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger btn-xs ">
+                            <i class="fas fa-trash"></i> ¿Descartar?
+                            </button>
+                            </center>';
+                           echo '</td>';
                         }
                     ?>
 

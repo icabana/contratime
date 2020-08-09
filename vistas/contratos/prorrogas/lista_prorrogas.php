@@ -2,14 +2,6 @@
     include("vistas/contratos/prorrogas/comp_upload/modal.php");
 ?>
 
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_prorrogas");
-        }
-    );
-</script>
-
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -30,7 +22,6 @@
     </div>
 </div>
 
-<br>
 <div id="div_tabla_prorrogas">
 <table id="tabla_prorrogas" class="table table-bordered table-hover">
 

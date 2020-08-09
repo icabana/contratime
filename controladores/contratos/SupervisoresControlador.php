@@ -156,7 +156,7 @@ class SupervisoresControlador extends ControllerBase {
                 $TrazabilidadControlador->insertarExterno($array[0], $accion);   
 
     
-                $mensaje = file_get_contents("plantillas/correos/plantilla2/index.html");
+                $mensaje = file_get_contents("plantillas/correos/plantilla_supervisores/index.html");
         
                 $mensaje = str_replace("#nombre#", $datos_supervisor['nombre_supervisor'], $mensaje);
                 $mensaje = str_replace("#numproceso#", $datos_contrato['numproceso_contrato'], $mensaje);

@@ -10,15 +10,8 @@
       include("modelos/alertas/AlertasModel.php");
       $AlertasModel = new AlertasModel();
       
-      $num_convocados = $ContratosModel->getNumConvocados();
-      $num_adjudicados = $ContratosModel->getNumAdjudicados();
-      $num_celebrados = $ContratosModel->getNumCelebrados();
-      $num_liquidados = $ContratosModel->getNumLiquidados();
-      $num_descartados = $ContratosModel->getNumDescartados();
-
-
-      $contratos_sin_pagar = $AlertasModel->getContratosFinalizadosSinPagar();
-      $contratos_x_finalizar = $AlertasModel->getContratosxFinalizar();
+      $num_celebrados = $ContratosModel->getNumCelebradosContratista();
+      $num_liquidados = $ContratosModel->getNumLiquidadosContratista();
     
     ?>
 
@@ -28,36 +21,10 @@
 
         <div class="row">
 
-            <div class="col-md-4">
-              <a href="#" onclick="cargar_contratos_x_estado(1);">
-                <div class="info-box mb-3">
-                  <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Contratos Convocados</span>
-                    <span class="info-box-number"><?php echo $num_convocados; ?></span>
-                  </div>
-                </div>
-              </a>
-            </div>
-
+       
 
             <div class="col-md-4">
-              <a href="#" onclick="cargar_contratos_x_estado(2);">
-                <div class="info-box">
-                  <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Contratos Adjudicados</span>
-                    <span class="info-box-number"><?php echo $num_adjudicados; ?></span>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-
-            <div class="col-md-4">
-              <a href="#" onclick="cargar_contratos_x_estado(3);">
+              <a href="#" onclick="cargar_contratos_contratista_x_estado(3);">
                 <div class="info-box mb-3">
                   <span class="info-box-icon bg-success elevation-1"><i class="fas fa-list-alt"></i></span>
 
@@ -68,12 +35,9 @@
                 </div>
               </a>
             </div>
-        </div>
-        
-        
-        <div class="row">
+     
             <div class="col-md-4">
-              <a href="#" onclick="cargar_contratos_x_estado(4);">
+              <a href="#" onclick="cargar_contratos_contratista_x_estado(4);">
                 <div class="info-box mb-3">
                   <span class="info-box-icon bg-success elevation-1"><i class="fas fa-list-alt"></i></span>
 
@@ -86,18 +50,6 @@
             </div>
 
 
-          <div class=" col-md-4">
-            <a href="#" onclick="cargar_contratos_x_estado(5);">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-list-alt"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Contratos Descartados</span>
-                  <span class="info-box-number"><?php echo $num_descartados; ?></span>
-                </div>
-              </div>
-            </a>  
-          </div>
         </div>
 
 </div>

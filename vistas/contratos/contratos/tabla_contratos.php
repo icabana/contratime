@@ -175,6 +175,12 @@
                              <button onclick="enviar_contrato(' . $id_contrato . ');"  title="Enviar Contrato al Contratista" data-toggle="modal" type="button" class="btn btn-primary btn-xs">
                              <i class="fas fa-envelope-square"></i> ¿Enviar Por Correo?
                              </button></center>';
+
+                             echo '<br><br>
+                             <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_vista_previa_contrato" type="button" class="btn btn-primary btn-xs">
+                             <i class="fas fa-envelope-square"></i> ¿Ver Vista Previa?
+                             </button></center>';
+
                              echo '</td>';
 
                             echo '<td class="mailbox-subject">';

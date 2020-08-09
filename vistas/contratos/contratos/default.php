@@ -162,4 +162,10 @@ $froms = new Formularios();
 ?>
 
 
+<!-- Modal Vista Previa Contrato-->
+<?php
+  include("vistas/contratos/contratos/vista_correos/modal_vista_previa_contrato.php");
+?>
+
+
 <script language="JavaScript" type='text/javascript' src='vistas/contratos/contratos/comp_upload/upload.js'></script> 

@@ -12,7 +12,7 @@
 
         <div class="col-md-12">
 
-          <label>Seleccionar Tipo de Pago: </label>
+          <label>Seleccionar Tipo de Pago: <span style="color:red">*</span></label>
           <?php
             echo $froms->Lista_Desplegable(
               $tipospago_select,
@@ -31,7 +31,7 @@
 
           <div class="col-md-12">
 
-            <label>Fecha del Pago: </label>
+            <label>Fecha del Pago: <span style="color:red">*</span></label>
             <input type="date" class="form-control requerido_pago" id="fecha_pago" name="fecha_pago" >
 
           </div>
@@ -40,7 +40,7 @@
 
           <div class="col-md-12">
 
-            <label>Valor del Pago: </label>
+            <label>Valor del Pago: <span style="color:red">*</span></label>
             <input type="text" class="form-control requerido_pago" id="valor_pago" name="valor_pago" 
             maxlength="20" onkeypress="return no_numeros(event)">
 
@@ -51,7 +51,8 @@
 
       </div>
       <div class="modal-footer">        
-        <button onclick="agregar_pago_editar();" type="button" class="btn btn-primary">Agregar</button>
+        <button onclick="agregar_pago_editar_correo();" type="button" class="btn btn-success">Agregar Pago y Enviar Correo</button>
+        <button onclick="agregar_pago_editar();" type="button" class="btn btn-primary">Agregar Nuevo Pago</button>
       </div>
     </div>
   </div>

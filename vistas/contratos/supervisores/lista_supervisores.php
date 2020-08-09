@@ -1,11 +1,3 @@
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_supervisores");
-        }
-    );
-</script>
-
 <div class="card-header">
     <div class="box">
         <div class="row">
@@ -25,7 +17,7 @@
         </div>
     </div>
 </div>
-<br>
+
 <table id="tabla_supervisores" class="table table-bordered table-hover">
     <thead>
         <tr>
