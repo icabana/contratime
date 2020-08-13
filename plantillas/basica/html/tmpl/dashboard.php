@@ -27,7 +27,7 @@
 ?>
 
   <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
 
         <div class="row">
 
@@ -37,7 +37,7 @@
                   <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
 
                   <div class="info-box-content">
-                    <span class="info-box-text">Contratos Convocados</span>
+                    <span class="info-box-text">Procesos Convocados</span>
                     <span class="info-box-number"><?php echo $num_convocados; ?></span>
                   </div>
                 </div>
@@ -51,7 +51,7 @@
                   <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
 
                   <div class="info-box-content">
-                    <span class="info-box-text">Contratos Adjudicados</span>
+                    <span class="info-box-text">Procesos Adjudicados</span>
                     <span class="info-box-number"><?php echo $num_adjudicados; ?></span>
                   </div>
                 </div>
@@ -105,12 +105,13 @@
 
 </div>
 
+  </div>
 
 
+  <div class="row">
 
 
-
-      <div class="col-md-4">
+      <div class="col-md-3">
               <!-- PRODUCT LIST -->
               <div class="card">
                     <div class="card-header">
@@ -132,7 +133,9 @@
                         <li style="padding-left: 15px;" class="item">
                         
                             <a href="javascript:void(0)" class="product-title">
-                              <?php echo "Contrato No.". $contrato['numero_contrato']." (".$contrato['nombres_contratista']." ".$contrato['apellidos_contratista'].")"; ?>
+                            <?php echo "<center>Contrato No.". $contrato['numero_contrato']."</center>"; ?>
+                            <?php echo "<br><center>NOMBRE DEL CONTRATISTA</center>"; ?>
+                            <?php echo "<center>".strtoupper($contrato['nombres_contratista']." ".$contrato['apellidos_contratista'])."</center><br>"; ?>
                            
                               <?php
                                 if($contrato['numero'] > 5){
@@ -146,14 +149,21 @@
                                 }
                               ?>
                             <span class="product-description">
-                             <?php echo "<b>Fecha Inicio:</b> ". $contrato['fechainicio_contrato']." - <b>Fecha Final:</b> ".$contrato['fechafinal_contrato']; ?>
+                             <?php echo "<b>Fecha de Inicio:</b> ". $contrato['fechainicio_contrato']; ?>
+                             <?php echo "<br><b>Fecha Final:</b> <span style='color:red'>".$contrato['fechafinal_contrato']."</span>"; ?>
                              </span>
                              <span class="product-description">
                              <?php echo "<b>Dias Restantes:</b> ".number_format(($fechas->diasEntreFechas($contrato['fechafinal_contrato'], date("Y-m-d"))),0,',','.'); ?>
                              </span>
+                             <span class="product-description">
+                            <?php echo "<b>Saldo por Pagar: </b> $".number_format($contrato['valor_contrato'] - $contrato['total_pagos']); ?>
+                            </span>
                              <br>
                               <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
                                 Enviar Correo
+                              </button>
+                              <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-primary btn-sm">
+                                Ver Vista Previa
                               </button>
                             
                         </li>
@@ -183,30 +193,105 @@
 
 
 
-
-
-<?php 
-  if(count($contratos_sin_pagar) > 0){
-?>
-
-      <div class="col-md-4">
+      <div class="col-md-3">
               <!-- PRODUCT LIST -->
               <div class="card">
                     <div class="card-header">
-                      <h2 class="card-title"><center>Contratos Finalizados Sin Pagar</center></h2>
+                      <h4 class="card-title"><center><b>Contratos Vencidos Sin Pagar</b></center></h4>
 
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                          <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove">
-                          <i class="fas fa-times"></i>
-                        </button>
-                      </div>
+                    
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                       <ul class="products-list product-list-in-card pl-2 pr-2">
+
+                      <?php 
+                      if(count($contratos_sin_pagar) > 0){
+                    ?>
+
+                      <?php
+                        foreach($contratos_sin_pagar as $contrato){
+                      ?>
+
+                      <li style="padding-left: 15px;" class="item">
+                        
+                        <a href="javascript:void(0)" class="product-title">
+                        <?php echo "<center>Contrato No.". $contrato['numero_contrato']."</center>"; ?>
+                        <?php echo "<br><center>NOMBRE DEL CONTRATISTA</center>"; ?>
+                        <?php echo "<center>".strtoupper($contrato['nombres_contratista']." ".$contrato['apellidos_contratista'])."</center><br>"; ?>
+                       
+                          <?php
+                            if($contrato['numero'] > 5){
+                          ?>
+                          <span class="badge badge-danger float-right"><?php echo $contrato['numero']; ?></span></a>
+                          <?php
+                            }else{
+                          ?>
+                          <span class="badge badge-warning float-right"><?php echo $contrato['numero']; ?></span></a>
+                          <?php
+                            }
+                          ?>
+                        <span class="product-description">
+                         <?php echo "<b>Fecha de Inicio:</b> ". $contrato['fechainicio_contrato']; ?>
+                         <?php echo "<br><b>Fecha Final:</b> <span style='color:red'>".$contrato['fechafinal_contrato']."</span>"; ?>
+                         </span>
+                         <span class="product-description">
+                         <?php echo "<b>Dias de Retraso: </b> ".number_format(($fechas->diasEntreFechas($contrato['fechafinal_contrato'], date("Y-m-d"))),0,',','.'); ?>
+                         </span>
+                         <span class="product-description">
+                         <?php echo "<b>Saldo sin Pagar: </b> $".number_format($contrato['valor_contrato'] - $contrato['total_pagos']); ?>
+                         </span>
+                         <br>
+                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
+                            Enviar Correo
+                          </button>
+                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-primary btn-sm">
+                            Ver Vista Previa
+                          </button>
+                        
+                    </li>
+
+
+                        <?php
+                        }
+
+                        }else{
+                      ?>
+                          <li style="padding-left: 15px;" class="item">
+                        
+                         No hay registros para mostrar
+                          
+                      </li>
+                      <?php
+                        }                      
+                      ?>
+
+                    
+                      </ul>
+                    </div>
+                   
+                  </div>
+            </div>
+
+
+
+
+            
+      <div class="col-md-3">
+              <!-- PRODUCT LIST -->
+              <div class="card">
+                    <div class="card-header">
+                      <h4 class="card-title"><center><b>Procesos Próximos a Finalizar</b></center></h4>
+
+                    
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                      <ul class="products-list product-list-in-card pl-2 pr-2">
+
+                      <?php 
+                      if(count($contratos_sin_pagar) > 0){
+                    ?>
 
                       <?php
                         foreach($contratos_sin_pagar as $contrato){
@@ -215,7 +300,8 @@
                         <li style="padding-left: 15px;" class="item">
                         
                             <a href="javascript:void(0)" class="product-title">
-                              <?php echo "Contrato No.". $contrato['numero_contrato']." (".$contrato['nombres_contratista']." ".$contrato['apellidos_contratista'].")"; ?>
+                              <?php echo "Contrato No.". $contrato['numero_contrato']; ?>
+                              <?php echo "Contratista: ".$contrato['nombres_contratista']." ".$contrato['apellidos_contratista'].""; ?>
                            
                               <?php
                                 if($contrato['numero'] > 5){
@@ -241,8 +327,18 @@
                             
                         </li>
 
-                      <?php
+                        <?php
                         }
+
+                        }else{
+                      ?>
+                          <li style="padding-left: 15px;" class="item">
+                        
+                         No hay registros para mostrar
+                          
+                      </li>
+                      <?php
+                        }                      
                       ?>
 
                     
@@ -252,15 +348,99 @@
                   </div>
             </div>
 
-            <?php 
-                  }
-            ?>
+
+
+
+
+
+
+            
+      <div class="col-md-3">
+              <!-- PRODUCT LIST -->
+              <div class="card">
+                    <div class="card-header">
+                      <h4 class="card-title"><center><b>Procesos Próximos a Cerrar</b></center></h4>
+
+                    
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                      <ul class="products-list product-list-in-card pl-2 pr-2">
+
+                      <?php 
+                      if(count($contratos_sin_pagar) > 0){
+                    ?>
+
+                      <?php
+                        foreach($contratos_sin_pagar as $contrato){
+                      ?>
+
+                        <li style="padding-left: 15px;" class="item">
+                        
+                            <a href="javascript:void(0)" class="product-title">
+                              <?php echo "Contrato No.". $contrato['numero_contrato']; ?>
+                              <?php echo "Contratista: ".$contrato['nombres_contratista']." ".$contrato['apellidos_contratista'].""; ?>
+                           
+                              <?php
+                                if($contrato['numero'] > 5){
+                              ?>
+                              <span class="badge badge-danger float-right"><?php echo $contrato['numero']; ?></span></a>
+                              <?php
+                                }else{
+                              ?>
+                              <span class="badge badge-warning float-right"><?php echo $contrato['numero']; ?></span></a>
+                              <?php
+                                }
+                              ?>
+                            <span class="product-description">
+                             <?php echo "<b>Fecha Inicio:</b> ". $contrato['fechainicio_contrato']." - <b>Fecha Final:</b> ".$contrato['fechafinal_contrato']; ?>
+                             </span>
+                             <span class="product-description">
+                             <?php echo "<b>Valor Contrato</b>: $".number_format($contrato['valor_contrato'],0,',','.')." - <b>Saldo:</b> $".number_format($contrato['saldo'],0,',','.'); ?>
+                             </span>
+                             <br>
+                              <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
+                                Enviar Correo
+                              </button>
+                            
+                        </li>
+
+                        <?php
+                        }
+
+                        }else{
+                      ?>
+                          <li style="padding-left: 15px;" class="item">
+                        
+                         No hay registros para mostrar
+                          
+                      </li>
+                      <?php
+                        }                      
+                      ?>
+
+                    
+                      </ul>
+                    </div>
+                   
+                  </div>
+            </div>
+
+
+
+
+
+
 
 
 
 
 
     </div>
+
+
+
+
   </div>
 
 

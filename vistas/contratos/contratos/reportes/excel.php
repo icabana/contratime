@@ -33,7 +33,8 @@
         ->setCellValue('F1', 'Valor')                    
         ->setCellValue('G1', 'Fecha de Inicio')                    
         ->setCellValue('H1', 'Fecha Final')                    
-        ->setCellValue('I1', 'Objeto');    
+        ->setCellValue('I1', 'Objeto')    
+        ->setCellValue('J1', 'Estado');    
 
     $columna =2;    
     $cont = 1;
@@ -50,7 +51,8 @@
              ->setCellValue('F'.$columna, $contrato['valor_contrato'])
              ->setCellValue('G'.$columna, $contrato['fechainicio_contrato'])
              ->setCellValue('H'.$columna, $contrato['fechafinal_contrato'])
-             ->setCellValue('I'.$columna, $contrato['objeto_contrato']);
+             ->setCellValue('I'.$columna, $contrato['objeto_contrato'])
+             ->setCellValue('J'.$columna, $contrato['nombreestado_contrato']);
 
         $columna ++;
         $cont ++;
@@ -82,22 +84,23 @@
         ),
     );
 
-    $this->excel->getActiveSheet()->getStyle('A1:I1')->applyFromArray($styleArray_color);
+    $this->excel->getActiveSheet()->getStyle('A1:J1')->applyFromArray($styleArray_color);
 
     $this->excel->getActiveSheet()->getColumnDimension('A')->setWidth(5);
     $this->excel->getActiveSheet()->getColumnDimension('B')->setWidth(15);
     $this->excel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('D')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('E')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
+    $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(15);
+    $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(15);
+    $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(15);
     $this->excel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
+    $this->excel->getActiveSheet()->getColumnDimension('J')->setWidth(15);
 
 
     /////// ALMACENAR EL DOCUMENTO
     
-    $this->excel->getActiveSheet()->setTitle('Reporte de Contratistas');
+    $this->excel->getActiveSheet()->setTitle('Reporte de Contratos');
 
     $this->excel->setActiveSheetIndex(0);
 

@@ -182,9 +182,9 @@
 
     /* ION SLIDER */
     $('#range_1').ionRangeSlider({
-      min     : 1000000,
+      min     : 100000,
       max     : 100000000,
-      from    : 1000000,
+      from    : 100000,
       to      : 50000000,
       type    : 'double',
       step    : 1000000,

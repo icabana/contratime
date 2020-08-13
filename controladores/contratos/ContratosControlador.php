@@ -304,7 +304,7 @@ class ContratosControlador extends ControllerBase {
         $TiposajustesModel = new TiposajustescontratoModel();
         $tiposajustes_select = $TiposajustesModel->getTodos();     
                   
-        include 'vistas/contratos/contratos/default.php';
+        include 'vistas/contratos/contratos/default_busqueda.php';
                         
     }    
 
@@ -344,7 +344,7 @@ class ContratosControlador extends ControllerBase {
         $TiposajustesModel = new TiposajustescontratoModel();
         $tiposajustes_select = $TiposajustesModel->getTodos();     
                   
-        include 'vistas/contratos/contratos/default_financiera.php';
+        include 'vistas/contratos/contratos/default_financiera_busqueda.php';
                         
     }    
 
@@ -707,10 +707,9 @@ class ContratosControlador extends ControllerBase {
         $resp = $ContratosModel->insertar(
             $_POST["numproceso_contrato"],
             $_POST["valproceso_contrato"],
-            $_POST["faperturaproceso_contrato"],
             $_POST["favisoproceso_contrato"],
-            $_POST["fpresentacionproceso_contrato"],
             $_POST["fevaluacionproceso_contrato"],
+            $_POST["fevaluacionproceso2_contrato"],
             $_POST["fadjudicacionproceso_contrato"],
             $_POST["fcierreproceso_contrato"],
             $_POST["modalidad_contrato"],
@@ -742,15 +741,20 @@ class ContratosControlador extends ControllerBase {
             $_POST["id_contrato"], 
             $_POST["numproceso_contrato"],
             $_POST["valproceso_contrato"],
-            $_POST["faperturaproceso_contrato"],
             $_POST["favisoproceso_contrato"],
-            $_POST["fpresentacionproceso_contrato"],
             $_POST["fevaluacionproceso_contrato"],
+            $_POST["fevaluacionproceso2_contrato"],
             $_POST["fadjudicacionproceso_contrato"],
             $_POST["fcierreproceso_contrato"],
             $_POST["modalidad_contrato"],
             $_POST["tipo_contrato"],
-            $_POST["objeto_contrato"]
+            $_POST["objeto_contrato"],
+
+            $_POST["numero_contrato"],
+            $_POST["valor_contrato"],
+            $_POST["fechainicio_contrato"],
+            $_POST["fechafinal_contrato"]
+
         );        
       
         if( $resp != 0 ){
@@ -770,6 +774,27 @@ class ContratosControlador extends ControllerBase {
    
 
     public function eliminar() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        
+        $array_contratos = explode(",", $_POST['contratos']);
+
+        foreach($array_contratos as $array){
+    
+            if($array[0] != 0){
+
+                $ContratosModel->eliminar($array[0]);
+                    
+            }  
+
+        }   
+        
+        echo "1";        
+        
+    }
+   
+    public function eliminarEditar() {
         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
@@ -881,6 +906,14 @@ class ContratosControlador extends ControllerBase {
 
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
+
+        $resp = $ContratosModel->getContratoPagado($_POST["id_contrato"]);
+
+        if(count($resp) > 0){
+            echo "nopagado";     
+            return;
+        }
+
         
         require_once("controladores/contratos/TrazabilidadControlador.php");
         $TrazabilidadControlador = new TrazabilidadControlador();           

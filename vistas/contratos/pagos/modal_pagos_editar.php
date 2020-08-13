@@ -32,7 +32,8 @@
           <div class="col-md-12">
 
             <label>Fecha del Pago: <span style="color:red">*</span></label>
-            <input type="date" class="form-control requerido_pago" id="fecha_pago" name="fecha_pago" >
+            <input type="date" class="form-control requerido_pago" id="fecha_pago" name="fecha_pago"
+                  value="<?php echo date('Y-m-d') ?>" >
 
           </div>
 

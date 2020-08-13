@@ -20,7 +20,7 @@ $froms = new Formularios();
             <div class="col-md-2">
 
               <label>No. de Proceso<span style="color:red">*</span></label>
-              <input type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" onkeypress="return no_numeros(event)" value="<?php echo $numproceso_contrato; ?>">
+              <input type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato">
 
             </div>
 
@@ -75,52 +75,40 @@ $froms = new Formularios();
 
           <div class="row">
 
-            <div class="col-md-2">
+       
+            <div class="col-md-3">
 
-              <label>Fecha de Apertura<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="faperturaproceso_contrato" name="faperturaproceso_contrato">
-
-            </div>
-
-            <div class="col-md-2">
-
-              <label>Fecha de Aviso<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="favisoproceso_contrato" name="favisoproceso_contrato">
-
-            </div>
-
-            <div class="col-md-2">
-
-              <label>Limite de Propuestas<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="fpresentacionproceso_contrato" name="fpresentacionproceso_contrato">
+              <label>Fecha de Invitaci&oacute;n a la Convocatoria<span style="color:red">*</span></label>
+              <input type="date" onchange="fchinv(this);" class="form-control requerido" id="favisoproceso_contrato" name="favisoproceso_contrato">
 
             </div>
 
 
+            <div class="col-md-3">
 
-            <div class="col-md-2">
-
-              <label>Fecha Evaluaci&oacute;n<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="fevaluacionproceso_contrato" name="fevaluacionproceso_contrato">
+              <label>Fecha de Evaluaci&oacute;n<span style="color:red">*</span></label><br>
+               <b>Desde:</b> <input onchange="fchevl1(this);" type="date" class="form-control requerido" id="fevaluacionproceso_contrato" name="fevaluacionproceso_contrato">
+               <b>Hasta:</b> <input onchange="fchevl2(this);" size="20" type="date" class="form-control requerido" id="fevaluacionproceso2_contrato" name="fevaluacionproceso2_contrato">
 
             </div>
 
-            <div class="col-md-2">
+
+       
+
+             <div class="col-md-3">
 
               <label>Fecha de Adjudicaci&oacute;n<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato">
+              <input onchange="fchadj(this);" type="date" class="form-control requerido" id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato">
 
             </div>
 
 
-            <div class="col-md-2">
+            <div class="col-md-3">
 
               <label>Fecha de Cierre<span style="color:red">*</span></label>
-              <input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato">
+              <input onchange="fchcie(this);" type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato">
 
             </div>
-
-
 
 
           </div>

@@ -15,10 +15,9 @@ class ContratosModel extends ModelBase {
                     contratos.contratista_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
-                    contratos.faperturaproceso_contrato,
                     contratos.favisoproceso_contrato,
-                    contratos.fpresentacionproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
                     contratos.numero_contrato,
@@ -119,6 +118,7 @@ class ContratosModel extends ModelBase {
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
                     contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
                     contratos.numero_contrato,
@@ -219,6 +219,7 @@ class ContratosModel extends ModelBase {
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
                     contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
                     contratos.numero_contrato,
@@ -320,6 +321,7 @@ class ContratosModel extends ModelBase {
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
                     contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
                     contratos.numero_contrato,
@@ -423,6 +425,7 @@ class ContratosModel extends ModelBase {
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
                     contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
                     contratos.numero_contrato,
@@ -499,7 +502,9 @@ class ContratosModel extends ModelBase {
                             left join estados on contratistas.estado_contratista = estados.id_estado
                             left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
 
-                    WHERE  contratistas.documento_contratista = '".$_SESSION['documento_usuario']."'
+                    WHERE  contratistas.documento_contratista = '".$_SESSION['documento_usuario']."' and
+                           contratos.estado_contrato in (3,4)
+
                     
                     ORDER BY contratos.numero_contrato";
         
@@ -523,6 +528,7 @@ class ContratosModel extends ModelBase {
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
                     contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
                     contratos.numero_contrato,
@@ -638,10 +644,9 @@ class ContratosModel extends ModelBase {
                     contratos.contratista_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
-                    contratos.faperturaproceso_contrato,
                     contratos.favisoproceso_contrato,
-                    contratos.fpresentacionproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
                     contratos.numero_contrato,
@@ -744,10 +749,9 @@ class ContratosModel extends ModelBase {
                         contratos.contratista_contrato,
                         contratos.fechainicio_contrato,
                         contratos.fechafinal_contrato,
-                        contratos.faperturaproceso_contrato,
                         contratos.favisoproceso_contrato,
-                        contratos.fpresentacionproceso_contrato,
                         contratos.fevaluacionproceso_contrato,
+                        contratos.fevaluacionproceso2_contrato,
                         contratos.fcierreproceso_contrato,
                         contratos.fadjudicacionproceso_contrato,
                         contratos.numero_contrato,
@@ -867,10 +871,9 @@ class ContratosModel extends ModelBase {
                     contratos.contratista_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
-                    contratos.faperturaproceso_contrato,
                     contratos.favisoproceso_contrato,
-                    contratos.fpresentacionproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
                     contratos.fcierreproceso_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.numero_contrato,
@@ -969,10 +972,9 @@ class ContratosModel extends ModelBase {
         contratos.contratista_contrato,
         contratos.fechainicio_contrato,
         contratos.fechafinal_contrato,
-        contratos.faperturaproceso_contrato,
         contratos.favisoproceso_contrato,
-        contratos.fpresentacionproceso_contrato,
         contratos.fevaluacionproceso_contrato,
+        contratos.fevaluacionproceso2_contrato,
         contratos.fcierreproceso_contrato,
         contratos.fadjudicacionproceso_contrato,
         contratos.numero_contrato,
@@ -1060,10 +1062,9 @@ class ContratosModel extends ModelBase {
     function insertar(      
         $numproceso_contrato,
         $valproceso_contrato,
-        $faperturaproceso_contrato,
         $favisoproceso_contrato,
-        $fpresentacionproceso_contrato,
         $fevaluacionproceso_contrato,
+        $fevaluacionproceso2_contrato,
         $fadjudicacionproceso_contrato,
         $fcierreproceso_contrato,
         $modalidad_contrato,
@@ -1074,10 +1075,9 @@ class ContratosModel extends ModelBase {
         $query = "INSERT INTO contratos (
                         numproceso_contrato,
                         valproceso_contrato,
-                        faperturaproceso_contrato,
                         favisoproceso_contrato,
-                        fpresentacionproceso_contrato,
                         fevaluacionproceso_contrato,
+                        fevaluacionproceso2_contrato,
                         fadjudicacionproceso_contrato,
                         fcierreproceso_contrato,
                         modalidad_contrato,
@@ -1088,10 +1088,9 @@ class ContratosModel extends ModelBase {
                     VALUES(
                         '".$numproceso_contrato."',
                         '".$valproceso_contrato."',
-                        '".$faperturaproceso_contrato."',
                         '".$favisoproceso_contrato."',
-                        '".$fpresentacionproceso_contrato."',
                         '".$fevaluacionproceso_contrato."',
+                        '".$fevaluacionproceso2_contrato."',
                         '".$fadjudicacionproceso_contrato."',
                         '".$fcierreproceso_contrato."',
                         '".$modalidad_contrato."',
@@ -1110,30 +1109,38 @@ class ContratosModel extends ModelBase {
                     $id_contrato, 
                     $numproceso_contrato,
                     $valproceso_contrato,
-                    $faperturaproceso_contrato,
                     $favisoproceso_contrato,
-                    $fpresentacionproceso_contrato,
                     $fevaluacionproceso_contrato,
+                    $fevaluacionproceso2_contrato,
                     $fadjudicacionproceso_contrato,
                     $fcierreproceso_contrato,
                     $modalidad_contrato,
                     $tipo_contrato,
-                    $objeto_contrato
+                    $objeto_contrato,
+
+                    $numero_contrato,
+                    $valor_contrato,
+                    $fechainicio_contrato,
+                    $fechafinal_contrato
                 ) {
         
         $query = "  UPDATE contratos 
 
                     SET numproceso_contrato = '". $numproceso_contrato ."',
                         valproceso_contrato = '". $valproceso_contrato ."',
-                        faperturaproceso_contrato = '". $faperturaproceso_contrato ."',
                         favisoproceso_contrato = '". $favisoproceso_contrato ."',
-                        fpresentacionproceso_contrato = '". $fpresentacionproceso_contrato ."',
                         fevaluacionproceso_contrato = '". $fevaluacionproceso_contrato ."',
+                        fevaluacionproceso2_contrato = '". $fevaluacionproceso2_contrato ."',
                         fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
                         fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
                         modalidad_contrato = '". $modalidad_contrato ."',
                         tipo_contrato = '". $tipo_contrato ."',
-                        objeto_contrato = '". utf8_decode($objeto_contrato) ."'
+                        objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+
+                        numero_contrato = '". $numero_contrato ."',
+                        valor_contrato = '". $valor_contrato ."',
+                        fechainicio_contrato = '". $fechainicio_contrato ."',
+                        fechafinal_contrato = '". $fechafinal_contrato ."'
 
                     WHERE id_contrato = '" . $id_contrato . "'";
          
@@ -1377,6 +1384,23 @@ class ContratosModel extends ModelBase {
         return $consulta[0]['numero'];       
                
     }  
+
+      
+    function getContratoPagado($id_contrato) {
+        
+        $query = "SELECT 
+                      
+                    contratos.id_contrato
+                    FROM contratos           
+                    WHERE contratos.id_contrato = '".$id_contrato."' and
+                     (contratos.valor_contrato > (select sum(contratos_pagos.valor_pago) as total from contratos_pagos where contrato_pago = contratos.id_contrato)  or  (select sum(contratos_pagos.valor_pago) as total from contratos_pagos where contrato_pago = contratos.id_contrato) is null)";
+        
+        $consulta = $this->consulta($query);
+        return $consulta;       
+               
+    }  
+
+
 
 }
 

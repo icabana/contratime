@@ -47,7 +47,7 @@ function agregar_pago2() {
       "&fecha_pago="+$("#fecha_pago").val()+
       "&valor_pago="+$("#valor_pago").val()+
       '&contratos='+contratos,
-      'mensaje_alertas("success", "CDP Agregado Correctamente", "center"); seleccionar_check();'
+      'mensaje_alertas("success", "Pago Agregado Correctamente", "center"); seleccionar_check();'
     );
 
     $("#fecha_pago").val("");
@@ -132,7 +132,7 @@ function agregar_pago2_correo() {
       "&fecha_pago="+$("#fecha_pago").val()+
       "&valor_pago="+$("#valor_pago").val()+
       '&contratos='+contratos,
-      'mensaje_alertas("success", "CDP Agregado Correctamente", "center"); seleccionar_check();'
+      'mensaje_alertas("success", "Pago Agregado Correctamente", "center"); seleccionar_check();'
     );
 
     $("#fecha_pago").val("");
@@ -171,7 +171,7 @@ function agregar_pago_editar_correo() {
 
 function eliminar_pago_contrato(id_pago, id_contrato) {
 
-    mensaje_confirmar("¿Está seguro de eliminar el CDP asociado a este contrato?", "eliminar_pago_contrato2(" + id_pago + ", " + id_contrato + "); ");
+    mensaje_confirmar("¿Está seguro de eliminar el Pago asociado a este contrato?", "eliminar_pago_contrato2(" + id_pago + ", " + id_contrato + "); ");
   
   }
   

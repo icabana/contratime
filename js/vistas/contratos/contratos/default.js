@@ -81,10 +81,40 @@ function eliminar_contrato(id_contrato) {
 
 function eliminar_contrato2(id_contrato) {
 
+    var contratos = "";
+
+    $("input[name=check_contratos]:checked").each(
+        function(){
+            contratos += $(this).val()+",";
+        }
+    );
+
+    contratos += '0';
+    
     ejecutarAccion(
         'contratos',
         'Contratos',
         'eliminar',
+        "contratos=" + contratos,
+        'mensaje_alertas("success", "Contrato Eliminado con Éxito", "center"); cargar_contratos();'
+    );
+
+}
+
+
+
+function eliminar_contrato_editar(id_contrato) {
+
+    mensaje_confirmar("¿Está seguro de eliminar el Contrato? Se eliminará toda la información asociada a este contrato y su documentación Anexa", "eliminar_contrato_editar2(" + id_contrato + "); ");
+
+}
+
+function eliminar_contrato_editar2(id_contrato) {
+
+    ejecutarAccion(
+        'contratos',
+        'Contratos',
+        'eliminarEditar',
         "id_contrato=" + id_contrato,
         'mensaje_alertas("success", "Contrato Eliminado con Éxito", "center"); cargar_contratos();'
     );
@@ -205,6 +235,12 @@ function liquidar_contrato3(resp) {
         mensaje_alertas("error", "Debe Adjuntar Copia del Contrato para poder Liquidarlo.", "center");
         return false;
     }
+
+    if(resp == "nopagado"){
+        mensaje_alertas("error", "El Contrato debe tener todos los pagos realizados para poder Liquidarlo.", "center");
+        return false;
+    }
+
 
     mensaje_alertas("success", "Contrato Liquidado Correctamente", "center");
     cargar_contratos();

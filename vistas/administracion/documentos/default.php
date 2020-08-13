@@ -53,7 +53,7 @@
 
                             echo "<td>" . $cont . "</td>";
 
-                            echo "<td>" . $documento['nombre_documento'] . "</td>";
+                            echo "<td>" . utf8_encode($documento['nombre_documento']) . "</td>";
 
                             echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_documento(" . $documento['id_documento'] . ", " . $documento['modalidad_documento'] . ");'><i 
                                     class='fas fa-edit'></i></a></td>";

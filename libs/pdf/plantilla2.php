@@ -60,8 +60,8 @@ class Plantilla2 extends FPDF
 
         $y = $this->GetY();
 
-        $this->line('25', $y, '185', $y);
-
+        $this->line('50', $y, '300', $y);
+        
         $this->SetFont('Arial', 'B', 8);
 
         $this->Cell(0, 4, utf8_decode("Teléfono: ").$telefono.utf8_decode("    -    Dirección: ").$direccion."    -    Ciudad: ".$ciudad, 0, 1, 'C');
