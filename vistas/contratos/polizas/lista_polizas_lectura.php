@@ -27,7 +27,7 @@
 
             echo "<tr>";
             
-            include("vistas/contratos/polizas/comp_upload/icono.php");
+            include("vistas/contratos/polizas/comp_upload/icono_lectura.php");
 
             echo "<td><center> " . $documento_poliza . "</center></td>";            
 

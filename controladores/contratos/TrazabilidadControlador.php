@@ -12,11 +12,11 @@ class TrazabilidadControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
                 $TrazabilidadModel->insertar(
                     $_POST["accion_trazabilidad"],
-                    $array[0],
+                    $array,
                     $_SESSION['id_usuario']
                 ); 
                 
@@ -54,11 +54,11 @@ class TrazabilidadControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
                 $TrazabilidadModel->insertar(
                     $accion,
-                    $array[0],
+                    $array,
                     $_SESSION['id_usuario']
                 ); 
                 

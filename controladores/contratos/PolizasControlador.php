@@ -18,10 +18,10 @@ class PolizasControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
                 $PolizasModel->insertar(
-                    $array[0],
+                    $array,
                     $_POST["numero_poliza"],
                     $_POST["fechaexp_poliza"],
                     $_POST["fechainicio_poliza"],
@@ -30,7 +30,7 @@ class PolizasControlador extends ControllerBase {
                 
                 $accion = "Se ha asociado la Poliza de Garantía No. ".$_POST["numero_poliza"]." a éste contrato";
 
-                $TrazabilidadControlador->insertarExterno($array[0], $accion);     
+                $TrazabilidadControlador->insertarExterno($array, $accion);     
               
             }
 

@@ -338,8 +338,8 @@ class SupervisoresModel extends ModelBase {
             '". $tipo_supervisor."',
             '". $tipodocumento_supervisor."', 
             '". $documento_supervisor."',
-            '". utf8_decode($nombres_supervisor)."', 
-            '". utf8_decode($apellidos_supervisor)."', 
+            '". strtoupper(utf8_decode($nombres_supervisor))."', 
+            '". strtoupper(utf8_decode($apellidos_supervisor))."', 
 
             '". utf8_decode($dirresidencia_supervisor)."', 
             '". utf8_decode($dircorrespondencia_supervisor)."', 
@@ -408,8 +408,8 @@ class SupervisoresModel extends ModelBase {
         tipo_supervisor = '".$tipo_supervisor."',
         tipodocumento_supervisor = '".$tipodocumento_supervisor."', 
         documento_supervisor = '".$documento_supervisor."', 
-        nombres_supervisor = '".utf8_decode($nombres_supervisor)."',
-        apellidos_supervisor = '".utf8_decode($apellidos_supervisor)."', 
+        nombres_supervisor = '".strtoupper(utf8_decode($nombres_supervisor))."',
+        apellidos_supervisor = '".strtoupper(utf8_decode($apellidos_supervisor))."', 
 
         dirresidencia_supervisor = '".utf8_decode($dirresidencia_supervisor)."', 
         dircorrespondencia_supervisor = '".utf8_decode($dircorrespondencia_supervisor)."', 

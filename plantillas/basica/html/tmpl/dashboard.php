@@ -19,6 +19,8 @@
 
       $contratos_sin_pagar = $AlertasModel->getContratosFinalizadosSinPagar();
       $contratos_x_finalizar = $AlertasModel->getContratosxFinalizar();
+      $procesos_x_finalizar = $AlertasModel->getProcesosxEvaluar();
+      $procesos_x_cerrar = $AlertasModel->getProcesosxCerrar();
     
     ?>
 
@@ -108,8 +110,8 @@
   </div>
 
 
+  <div class="col-md-12">
   <div class="row">
-
 
       <div class="col-md-3">
               <!-- PRODUCT LIST -->
@@ -193,7 +195,8 @@
 
 
 
-      <div class="col-md-3">
+   
+            <div class="col-md-3">
               <!-- PRODUCT LIST -->
               <div class="card">
                     <div class="card-header">
@@ -216,7 +219,7 @@
                       <li style="padding-left: 15px;" class="item">
                         
                         <a href="javascript:void(0)" class="product-title">
-                        <?php echo "<center>Contrato No.". $contrato['numero_contrato']."</center>"; ?>
+                        <?php echo "<center>Contrato No.: ". $contrato['numero_contrato']."</center>"; ?>
                         <?php echo "<br><center>NOMBRE DEL CONTRATISTA</center>"; ?>
                         <?php echo "<center>".strtoupper($contrato['nombres_contratista']." ".$contrato['apellidos_contratista'])."</center><br>"; ?>
                        
@@ -281,52 +284,47 @@
               <!-- PRODUCT LIST -->
               <div class="card">
                     <div class="card-header">
-                      <h4 class="card-title"><center><b>Procesos Próximos a Finalizar</b></center></h4>
-
-                    
+                      <h4 class="card-title"><center><b>Procesos Próximos a Finalizar su Fase de Evaluación</b></center></h4>                    
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                       <ul class="products-list product-list-in-card pl-2 pr-2">
 
                       <?php 
-                      if(count($contratos_sin_pagar) > 0){
+                      if(count($procesos_x_finalizar) > 0){
                     ?>
 
                       <?php
-                        foreach($contratos_sin_pagar as $contrato){
+                        foreach($procesos_x_finalizar as $contrato){
                       ?>
 
-                        <li style="padding-left: 15px;" class="item">
+                      <li style="padding-left: 15px;" class="item">
                         
-                            <a href="javascript:void(0)" class="product-title">
-                              <?php echo "Contrato No.". $contrato['numero_contrato']; ?>
-                              <?php echo "Contratista: ".$contrato['nombres_contratista']." ".$contrato['apellidos_contratista'].""; ?>
-                           
-                              <?php
-                                if($contrato['numero'] > 5){
-                              ?>
-                              <span class="badge badge-danger float-right"><?php echo $contrato['numero']; ?></span></a>
-                              <?php
-                                }else{
-                              ?>
-                              <span class="badge badge-warning float-right"><?php echo $contrato['numero']; ?></span></a>
-                              <?php
-                                }
-                              ?>
-                            <span class="product-description">
-                             <?php echo "<b>Fecha Inicio:</b> ". $contrato['fechainicio_contrato']." - <b>Fecha Final:</b> ".$contrato['fechafinal_contrato']; ?>
-                             </span>
-                             <span class="product-description">
-                             <?php echo "<b>Valor Contrato</b>: $".number_format($contrato['valor_contrato'],0,',','.')." - <b>Saldo:</b> $".number_format($contrato['saldo'],0,',','.'); ?>
-                             </span>
-                             <br>
-                              <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
-                                Enviar Correo
-                              </button>
-                            
-                        </li>
-
+                        <a href="javascript:void(0)" class="product-title">
+                        <?php echo "<center>Proceso No.: ". $contrato['numproceso_contrato']."</center>"; ?>
+                        <?php echo "<center>Valor del Proceso: $". number_format($contrato['valproceso_contrato'], 0, ',', '.')."</center><br>"; ?>
+                        </a>
+                        
+                        <span class="product-description">
+                         <?php echo "<b>Fecha de invitación:</b> ". $contrato['favisoproceso_contrato']; ?>
+                         <?php echo "<br><b>Fecha de Evaluación:</b>"; ?>
+                         <?php echo "<br><center><b>Desde: </b>".$contrato['fevaluacionproceso_contrato']."</center>"; ?>
+                         <?php echo "<span style='color:red'><center><b>Hasta: </b>".$contrato['fevaluacionproceso2_contrato']."</center></span>"; ?>
+                         </span>
+                         <span class="product-description">
+                         <?php echo "<b>Fecha Adjudicación: ".$contrato['fadjudicacionproceso_contrato']."</b>"; ?>
+                         </span>
+                         <span class="product-description">
+                         <?php echo "<b>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']."<br>"; ?>
+                         </span>
+                         <br>
+                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
+                            Enviar Correo
+                          </button>
+                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-primary btn-sm">
+                            Ver Vista Previa
+                          </button>
+                          </li>
                         <?php
                         }
 
@@ -340,7 +338,7 @@
                       <?php
                         }                      
                       ?>
-
+               
                     
                       </ul>
                     </div>
@@ -349,6 +347,7 @@
             </div>
 
 
+            
 
 
 
@@ -360,51 +359,46 @@
               <div class="card">
                     <div class="card-header">
                       <h4 class="card-title"><center><b>Procesos Próximos a Cerrar</b></center></h4>
-
-                    
                     </div>
-                    <!-- /.card-header -->
+
                     <div class="card-body p-0">
                       <ul class="products-list product-list-in-card pl-2 pr-2">
 
                       <?php 
-                      if(count($contratos_sin_pagar) > 0){
+                      if(count($procesos_x_finalizar) > 0){
                     ?>
 
                       <?php
-                        foreach($contratos_sin_pagar as $contrato){
+                        foreach($procesos_x_finalizar as $contrato){
                       ?>
 
-                        <li style="padding-left: 15px;" class="item">
+                      <li style="padding-left: 15px;" class="item">
                         
-                            <a href="javascript:void(0)" class="product-title">
-                              <?php echo "Contrato No.". $contrato['numero_contrato']; ?>
-                              <?php echo "Contratista: ".$contrato['nombres_contratista']." ".$contrato['apellidos_contratista'].""; ?>
-                           
-                              <?php
-                                if($contrato['numero'] > 5){
-                              ?>
-                              <span class="badge badge-danger float-right"><?php echo $contrato['numero']; ?></span></a>
-                              <?php
-                                }else{
-                              ?>
-                              <span class="badge badge-warning float-right"><?php echo $contrato['numero']; ?></span></a>
-                              <?php
-                                }
-                              ?>
-                            <span class="product-description">
-                             <?php echo "<b>Fecha Inicio:</b> ". $contrato['fechainicio_contrato']." - <b>Fecha Final:</b> ".$contrato['fechafinal_contrato']; ?>
-                             </span>
-                             <span class="product-description">
-                             <?php echo "<b>Valor Contrato</b>: $".number_format($contrato['valor_contrato'],0,',','.')." - <b>Saldo:</b> $".number_format($contrato['saldo'],0,',','.'); ?>
-                             </span>
-                             <br>
-                              <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
-                                Enviar Correo
-                              </button>
-                            
-                        </li>
-
+                        <a href="javascript:void(0)" class="product-title">
+                        <?php echo "<center>Proceso No.: ". $contrato['numproceso_contrato']."</center>"; ?>
+                        <?php echo "<center>Valor del Proceso: $". number_format($contrato['valproceso_contrato'], 0, ',', '.')."</center><br>"; ?>
+                        </a>
+                        
+                        <span class="product-description">
+                         <?php echo "<b>Fecha de invitación:</b> ". $contrato['favisoproceso_contrato']; ?>
+                         <?php echo "<br><b>Fecha de Evaluación:</b>"; ?>
+                         <?php echo "<br><center><b>Desde: </b>".$contrato['fevaluacionproceso_contrato']."</center>"; ?>
+                         <?php echo "<center><b>Hasta: </b>".$contrato['fevaluacionproceso2_contrato']."</center>"; ?>
+                         </span>
+                         <span class="product-description">
+                         <?php echo "<b>Fecha Adjudicación: </b>".$contrato['fadjudicacionproceso_contrato']."" ?>
+                         </span>
+                         <span class="product-description">
+                         <?php echo "<span style='color:red'><b>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']."</span><br>"; ?>
+                         </span>
+                         <br>
+                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
+                            Enviar Correo
+                          </button>
+                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-primary btn-sm">
+                            Ver Vista Previa
+                          </button>
+                       
                         <?php
                         }
 
@@ -422,9 +416,12 @@
                     
                       </ul>
                     </div>
+
+                   
+                    </div>
                    
                   </div>
-            </div>
+           
 
 
 
@@ -440,6 +437,7 @@
 
 
 
+    </div>
 
   </div>
 

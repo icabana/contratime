@@ -17,10 +17,10 @@ class ProrrogasControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
                 $ProrrogasModel->insertar(
-                    $array[0],
+                    $array,
                     $_POST["dias_prorroga"]
                 );        
               

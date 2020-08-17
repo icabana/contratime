@@ -1,10 +1,3 @@
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_polizas");
-        }
-    );
-</script>
 <table id="tabla_polizas" class="table table-bordered table-hover">
     <thead>
         <tr>

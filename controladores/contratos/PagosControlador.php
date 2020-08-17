@@ -23,10 +23,10 @@ class PagosControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
                 $PagosModel->insertar(
-                    $array[0],
+                    $array,
                     $_POST["tipo_pago"],
                     $_POST["fecha_pago"],
                     $_POST["valor_pago"]
@@ -34,7 +34,7 @@ class PagosControlador extends ControllerBase {
               
                 $accion = "Se ha regitrado un pago a este contrato: Tipo de pago: ".$tipopago["nombre_tipopago"].", Valor: $".number_format($_POST["valor_pago"], 0, ',', '.');
 
-                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+                $TrazabilidadControlador->insertarExterno($array, $accion);   
 
             }
 
@@ -107,10 +107,10 @@ class PagosControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
                 $id_pago = $PagosModel->insertar(
-                    $array[0],
+                    $array,
                     $_POST["tipo_pago"],
                     $_POST["fecha_pago"],
                     $_POST["valor_pago"]
@@ -148,7 +148,7 @@ class PagosControlador extends ControllerBase {
 
                 $accion = "Se ha regitrado un pago a este contrato: Tipo de pago: ".$tipopago["nombre_tipopago"].", Valor: $".number_format($_POST["valor_pago"], 0, ',', '.');
 
-                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+                $TrazabilidadControlador->insertarExterno($array, $accion);   
 
             }
 

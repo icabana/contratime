@@ -17,9 +17,6 @@ class EncargadosControlador extends ControllerBase {
         require_once("controladores/contratos/TrazabilidadControlador.php");
         $TrazabilidadControlador = new TrazabilidadControlador();      
         
-        $correo = new Correos();
-        $param = new Parametros();
-
         $datos_encargado = $EncargadosModel2->getDatos($_POST["encargado_encargado"]);
 
         $nombre_encargado = $datos_encargado['nombres_encargado']." ".$datos_encargado['apellidos_encargado'];
@@ -28,21 +25,20 @@ class EncargadosControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
             
-            $numero = $EncargadosModel->existeEncargadoenContrato($array[0], $_POST["encargado_encargado"]);
+            $numero = $EncargadosModel->existeEncargadoenContrato($array, $_POST["encargado_encargado"]);
     
-            if($array[0] != 0 && $numero <= 0){
+            if($array != 0 && $numero <= 0){
 
-                $datos_contrato = $ContratosModel->getDatos($array[0]);
+                $datos_contrato = $ContratosModel->getDatos($array);
 
                 $EncargadosModel->insertar(
                     $_POST["encargado_encargado"],
-                    $array[0]
+                    $array
                 ); 
 
-                $accion = "Se ha enviado un correo de Notificación a ".$nombre_encargado." Informando que ha 
-                            sido Asignado cómo encargado de éste Proceso";
+                $accion = "Se Asoció a ".$nombre_encargado." cómo Encargado de éste Proceso";
 
-                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+                $TrazabilidadControlador->insertarExterno($array, $accion);   
               
             }  
 
@@ -70,9 +66,6 @@ class EncargadosControlador extends ControllerBase {
 
         if($numero <= 0 ){
 
-            $correo = new Correos();
-            $param = new Parametros();
-
             $datos_encargado = $EncargadosModel2->getDatos($_POST["encargado_encargado"]);
         
             $nombre_encargado = $datos_encargado['nombres_encargado']." ".$datos_encargado['apellidos_encargado'];
@@ -83,6 +76,10 @@ class EncargadosControlador extends ControllerBase {
                 $_POST["encargado_encargado"],
                 $_POST['id_contrato']
             );     
+
+            $accion = "Se Asoció a ".$nombre_encargado." cómo Encargado de éste Proceso";
+
+            $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
                 
             $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
 
@@ -123,20 +120,20 @@ class EncargadosControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
             
-            $numero = $EncargadosModel->existeEncargadoenContrato($array[0], $_POST["encargado_encargado"]);
+            $numero = $EncargadosModel->existeEncargadoenContrato($array, $_POST["encargado_encargado"]);
     
-            if($array[0] != 0 && $numero <= 0){
+            if($array != 0 && $numero <= 0){
 
-                $datos_contrato = $ContratosModel->getDatos($array[0]);
+                $datos_contrato = $ContratosModel->getDatos($array);
 
                 $EncargadosModel->insertar(
                     $_POST["encargado_encargado"],
-                    $array[0]
+                    $array
                 );          
 
-                $accion = "Se ha Asignado cómo encargado de éste proceso a ".$nombre_encargado;
+                $accion = "Se ha Asignado cómo Encargado de éste proceso a ".$nombre_encargado;
 
-                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+                $TrazabilidadControlador->insertarExterno($array, $accion);   
 
     
                 $mensaje = file_get_contents("plantillas/correos/plantilla2/index.html");
@@ -159,10 +156,10 @@ class EncargadosControlador extends ControllerBase {
         
                 echo $correo->EnviarCorreo($mensaje, "Usted ha sido asignado como Encargado", array($datos_encargado['correo_encargado']));
 
-                $accion = "Se ha enviado un correo de Notificación a ".$nombre_encargado." Informando que ha 
-                            sido Asignado cómo encargado de éste Proceso";
+                $accion = "Se Asoció a ".$nombre_encargado." cómo Encargado de éste Proceso y 
+                se le envio un correo de Notificación";
 
-                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+                $TrazabilidadControlador->insertarExterno($array, $accion);   
               
             }  
 
@@ -206,12 +203,7 @@ class EncargadosControlador extends ControllerBase {
                 $_POST['id_contrato']
             );                    
 
-            $accion = "Se ha Asignado cómo encargado de éste proceso a ".$nombre_encargado;
-
-            $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
-
-            $accion = "Se ha enviado un correo de Notificación a ".$nombre_encargado." 
-                        Informando que ha sido Asignado cómo encargado de éste Proceso";
+            $accion = "Se Asoció a ".$nombre_encargado." cómo Encargado de éste Proceso y se le envio un correo de Notificación";
 
             $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);   
 
@@ -261,9 +253,20 @@ class EncargadosControlador extends ControllerBase {
         $this->model->cargar("EncargadosModel.php", "contratos");
         $EncargadosModel = new EncargadosContratosModel();
 
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();   
+        
+        $datos_encargado = $EncargadosModel->getDatos($_POST["id_encargado"]);
+
         $EncargadosModel->eliminar($_POST["id_encargado"], $_POST['id_contrato']);
         
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $nombre_encargado = $datos_encargado['nombres_encargado']." ".$datos_encargado['apellidos_encargado'];
+
+        $accion = "Se Desasoció a ".$nombre_encargado." cómo Encargado de éste Proceso";
+
+        $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
 
         include("vistas/contratos/encargados/lista_encargados.php");
              

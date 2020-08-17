@@ -388,6 +388,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("RpsModel.php", "contratos");
         $RpsModel = new RpsContratosModel();
         $rps = $RpsModel->getTodosxContrato($_POST['id_contrato']);
+
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
         
         $this->model->cargar("PagosModel.php", "contratos");
         $PagosModel = new pagosContratosModel();
@@ -456,6 +460,10 @@ class ContratosControlador extends ControllerBase {
         $CdpsModel = new CdpsContratosModel();
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
         
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
         $this->model->cargar("RpsModel.php", "contratos");
         $RpsModel = new RpsContratosModel();
         $rps = $RpsModel->getTodosxContrato($_POST['id_contrato']);
@@ -518,6 +526,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("EncargadosModel.php", "contratos");
         $EncargadosModel = new EncargadosContratosModel();
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
 
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();
@@ -587,6 +599,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosContratosModel();
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
         
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
@@ -649,6 +665,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("SupervisoresModel.php", "contratos");
         $SupervisoresModel = new SupervisoresContratosModel();
         $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
 
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();
@@ -689,6 +709,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
         $contrato = $ContratosModel->getDatos($_POST['id_contrato']);        
+        
+        $this->model->cargar("PolizasModel.php", "contratos");
+        $PolizasModel = new PolizasContratosModel();
+        $polizas = $PolizasModel->getTodosxContrato($_POST['id_contrato']);        
 
         $this->model->cargar("DocumentosModel.php", "administracion");
         $DocumentosModel = new DocumentosModel();
@@ -701,6 +725,9 @@ class ContratosControlador extends ControllerBase {
 
     public function insertar() {
         
+        require_once("controladores/contratos/TrazabilidadControlador.php");
+        $TrazabilidadControlador = new TrazabilidadControlador();     
+
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();                 
 
@@ -718,9 +745,6 @@ class ContratosControlador extends ControllerBase {
         );        
         
         if( $resp != 0 ){
-
-            require_once("controladores/contratos/TrazabilidadControlador.php");
-            $TrazabilidadControlador = new TrazabilidadControlador();      
 
             $TrazabilidadControlador->insertarExterno($resp, "Se Registró el contrato por primera vez, con estado Convocado");
 
@@ -747,6 +771,7 @@ class ContratosControlador extends ControllerBase {
             $_POST["fadjudicacionproceso_contrato"],
             $_POST["fcierreproceso_contrato"],
             $_POST["modalidad_contrato"],
+            $_POST["contratista_contrato"],
             $_POST["tipo_contrato"],
             $_POST["objeto_contrato"],
 
@@ -782,9 +807,9 @@ class ContratosControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
-                $ContratosModel->eliminar($array[0]);
+                $ContratosModel->eliminar($array);
                     
             }  
 

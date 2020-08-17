@@ -10,7 +10,7 @@
             'nombre_pais',
             'id_pais',
             'pais_encargado',
-            '',
+            '50',
             '',
             ''
           );

@@ -1115,6 +1115,7 @@ class ContratosModel extends ModelBase {
                     $fadjudicacionproceso_contrato,
                     $fcierreproceso_contrato,
                     $modalidad_contrato,
+                    $contratista_contrato,
                     $tipo_contrato,
                     $objeto_contrato,
 
@@ -1134,6 +1135,7 @@ class ContratosModel extends ModelBase {
                         fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
                         fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
                         modalidad_contrato = '". $modalidad_contrato ."',
+                        contratista_contrato = '". $contratista_contrato ."',
                         tipo_contrato = '". $tipo_contrato ."',
                         objeto_contrato = '". utf8_decode($objeto_contrato) ."',
 

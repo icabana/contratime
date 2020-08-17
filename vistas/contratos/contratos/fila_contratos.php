@@ -4,10 +4,9 @@
                 $id_check = "check" . $contrato['id_contrato'];
 
               ?>
-             
-                  <td>
+                 <td>
                     <div class="icheck-primary">
-                      <input class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
+                      <input estado="<?php echo $contrato['estado_contrato']?>" onchange="opcion_checkeada(); return false;" class="check" name="check_contratos" type="checkbox" value="<?php echo $contrato['id_contrato']; ?>" id="check<?php echo $id_check; ?>">
                       <label for="check<?php echo $id_check; ?>"></label>
                     </div>
                   </td>
@@ -192,11 +191,11 @@
                   
 
                   if($contrato['estado_contrato'] != 4){
-                    echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' title='Editar Contrato'><i onclick='editar_contrato(" . $contrato['id_contrato'] . ");' 
-                    class='fas fa-edit'></i></a></td>";
+                    echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
+                    class='fas fa-edit'></i></a></td>";   
                   }else{
-                    echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' title='Editar Contrato'><i onclick='editar_contrato(" . $contrato['id_contrato'] . ");' 
-                    class='fas fa-edit'></i></a></td>";
+                    echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
+                    class='fas fa-edit'></i></a></td>";    
                   }                  
 
                   echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' title='Editar Contrato'><i onclick='eliminar_contrato(" . $contrato['id_contrato'] . ");' 

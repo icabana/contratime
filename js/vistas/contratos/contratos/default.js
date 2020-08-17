@@ -187,6 +187,11 @@ function celebrar_contrato() {
         mensaje_alertas("error", "Todos los campos son obligatorios", "center");
         return false;
     }
+    
+    if(fechainicio_contra > fechafinal_contra){
+        mensaje_alertas("error", "La Fecha Final del Contrato debe ser Mayor a la Fecha de Inicio", "center");
+        return false;
+    }
 
     mensaje_confirmar(
         "¿Está seguro de Celebrar el Contrato? No podrá regresar al estado actual: Adjudicado", 

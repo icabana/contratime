@@ -26,15 +26,18 @@
     // CABECERA DEL EXCEL
     $this->excel->setActiveSheetIndex(0)            
         ->setCellValue('A1', 'No.')
-        ->setCellValue('B1', 'Número')                    
-        ->setCellValue('C1', 'Modalidad')                    
-        ->setCellValue('D1', 'Tipo de Contrato')                    
-        ->setCellValue('E1', 'Contratista')                    
-        ->setCellValue('F1', 'Valor')                    
-        ->setCellValue('G1', 'Fecha de Inicio')                    
-        ->setCellValue('H1', 'Fecha Final')                    
-        ->setCellValue('I1', 'Objeto')    
-        ->setCellValue('J1', 'Estado');    
+        ->setCellValue('B1', 'Número de Proceso')                    
+        ->setCellValue('C1', 'Valor del Proceso')                    
+        ->setCellValue('D1', 'Número de Contrato')                    
+        ->setCellValue('E1', 'Valor del Contrato')                    
+        ->setCellValue('F1', 'Modalidad')                    
+        ->setCellValue('G1', 'Tipo de Contrato')                    
+        ->setCellValue('H1', 'Contratista')                    
+        ->setCellValue('I1', 'Valor')                    
+        ->setCellValue('J1', 'Fecha de Inicio')                    
+        ->setCellValue('K1', 'Fecha Final')                    
+        ->setCellValue('L1', 'Objeto')    
+        ->setCellValue('M1', 'Estado');    
 
     $columna =2;    
     $cont = 1;
@@ -44,15 +47,18 @@
 
         $this->excel->setActiveSheetIndex(0)
              ->setCellValue('A'.$columna, $cont)
-             ->setCellValue('B'.$columna, $contrato['numero_contrato'])      
-             ->setCellValue('C'.$columna, $contrato['nombre_modalidad'])
-             ->setCellValue('D'.$columna, $contrato['nombre_tipocontrato'])
-             ->setCellValue('E'.$columna, $contrato['nombres_contratista']." ".$contrato['apellidos_contratista'])
-             ->setCellValue('F'.$columna, $contrato['valor_contrato'])
-             ->setCellValue('G'.$columna, $contrato['fechainicio_contrato'])
-             ->setCellValue('H'.$columna, $contrato['fechafinal_contrato'])
-             ->setCellValue('I'.$columna, $contrato['objeto_contrato'])
-             ->setCellValue('J'.$columna, $contrato['nombreestado_contrato']);
+             ->setCellValue('B'.$columna, $contrato['numproceso_contrato'])      
+             ->setCellValue('C'.$columna, $contrato['valproceso_contrato'])      
+             ->setCellValue('D'.$columna, $contrato['numero_contrato'])      
+             ->setCellValue('E'.$columna, $contrato['valor_contrato'])      
+             ->setCellValue('F'.$columna, $contrato['nombre_modalidad'])
+             ->setCellValue('G'.$columna, $contrato['nombre_tipocontrato'])
+             ->setCellValue('H'.$columna, $contrato['nombres_contratista']." ".$contrato['apellidos_contratista'])
+             ->setCellValue('I'.$columna, $contrato['valor_contrato'])
+             ->setCellValue('J'.$columna, $contrato['fechainicio_contrato'])
+             ->setCellValue('K'.$columna, $contrato['fechafinal_contrato'])
+             ->setCellValue('L'.$columna, $contrato['objeto_contrato'])
+             ->setCellValue('M'.$columna, $contrato['nombreestado_contrato']);
 
         $columna ++;
         $cont ++;
@@ -84,19 +90,21 @@
         ),
     );
 
-    $this->excel->getActiveSheet()->getStyle('A1:J1')->applyFromArray($styleArray_color);
+    $this->excel->getActiveSheet()->getStyle('A1:M1')->applyFromArray($styleArray_color);
 
     $this->excel->getActiveSheet()->getColumnDimension('A')->setWidth(5);
-    $this->excel->getActiveSheet()->getColumnDimension('B')->setWidth(15);
+    $this->excel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('D')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('E')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(15);
-    $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(15);
-    $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(15);
+    $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(30);
+    $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(30);
+    $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('J')->setWidth(15);
-
+    $this->excel->getActiveSheet()->getColumnDimension('J')->setWidth(30);
+    $this->excel->getActiveSheet()->getColumnDimension('K')->setWidth(30);
+    $this->excel->getActiveSheet()->getColumnDimension('L')->setWidth(30);
+    $this->excel->getActiveSheet()->getColumnDimension('M')->setWidth(30);
 
     /////// ALMACENAR EL DOCUMENTO
     

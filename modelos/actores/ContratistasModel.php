@@ -338,8 +338,8 @@ class ContratistasModel extends ModelBase {
             '". $tipo_contratista."',
             '". $tipodocumento_contratista."', 
             '". $documento_contratista."',
-            '". utf8_decode($nombres_contratista)."', 
-            '". utf8_decode($apellidos_contratista)."', 
+            '". strtoupper(utf8_decode($nombres_contratista))."', 
+            '". strtoupper(utf8_decode($apellidos_contratista))."', 
 
             '". utf8_decode($dirresidencia_contratista)."', 
             '". utf8_decode($dircorrespondencia_contratista)."', 
@@ -408,8 +408,8 @@ class ContratistasModel extends ModelBase {
         tipo_contratista = '".$tipo_contratista."',
         tipodocumento_contratista = '".$tipodocumento_contratista."', 
         documento_contratista = '".$documento_contratista."', 
-        nombres_contratista = '".utf8_decode($nombres_contratista)."',
-        apellidos_contratista = '".utf8_decode($apellidos_contratista)."', 
+        nombres_contratista = '".strtoupper(utf8_decode($nombres_contratista))."',
+        apellidos_contratista = '".strtoupper(utf8_decode($apellidos_contratista))."', 
 
         dirresidencia_contratista = '".utf8_decode($dirresidencia_contratista)."', 
         dircorrespondencia_contratista = '".utf8_decode($dircorrespondencia_contratista)."', 

@@ -338,8 +338,8 @@ class EncargadosModel extends ModelBase {
             '". $tipo_encargado."',
             '". $tipodocumento_encargado."', 
             '". $documento_encargado."',
-            '". utf8_decode($nombres_encargado)."', 
-            '". utf8_decode($apellidos_encargado)."', 
+            '". strtoupper(utf8_decode($nombres_encargado))."', 
+            '". strtoupper(utf8_decode($apellidos_encargado))."', 
 
             '". utf8_decode($dirresidencia_encargado)."', 
             '". utf8_decode($dircorrespondencia_encargado)."', 
@@ -408,8 +408,8 @@ class EncargadosModel extends ModelBase {
         tipo_encargado = '".$tipo_encargado."',
         tipodocumento_encargado = '".$tipodocumento_encargado."', 
         documento_encargado = '".$documento_encargado."', 
-        nombres_encargado = '".utf8_decode($nombres_encargado)."',
-        apellidos_encargado = '".utf8_decode($apellidos_encargado)."', 
+        nombres_encargado = '".strtoupper(utf8_decode($nombres_encargado))."',
+        apellidos_encargado = '".strtoupper(utf8_decode($apellidos_encargado))."', 
 
         dirresidencia_encargado = '".utf8_decode($dirresidencia_encargado)."', 
         dircorrespondencia_encargado = '".utf8_decode($dircorrespondencia_encargado)."', 

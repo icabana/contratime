@@ -18,20 +18,20 @@ class CdpsControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
-                $datos_contrato = $ContratosModel->getDatos($array[0]);
+                $datos_contrato = $ContratosModel->getDatos($array);
 
                 $CdpsModel->insertar(
-                    $array[0],
+                    $array,
                     $_POST["numero_cdp"],
                     $_POST["fecha_cdp"],
                     $_POST["valor_cdp"]
                 );        
                 
-                $accion = "Se ha asociado el CDP No. ".$_POST["numero_cdp"]." a éste contrato";
+                $accion = "Se Asoció el CDP No. ".$_POST["numero_cdp"]." a éste contrato";
 
-                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+                $TrazabilidadControlador->insertarExterno($array, $accion);   
                     
             }  
 
@@ -54,7 +54,7 @@ class CdpsControlador extends ControllerBase {
             $_POST["valor_cdp"]
         );               
 
-        $accion = "Se ha asociado el CDP No. ".$_POST["numero_cdp"]." a éste contrato";
+        $accion = "Se Asoció el CDP No. ".$_POST["numero_cdp"]." a éste contrato";
 
         $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
         
@@ -77,7 +77,7 @@ class CdpsControlador extends ControllerBase {
 
         $CdpsModel->eliminar($_POST["id_cdp"], $_POST['id_contrato']);
 
-        $accion = "Se ha eliminado la asociación del CDP No. ".$datos_cdp["numero_cdp"]." en éste contrato";
+        $accion = "Se Desasoció el CDP No. ".$datos_cdp["numero_cdp"]." a éste contrato";
 
         $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
         

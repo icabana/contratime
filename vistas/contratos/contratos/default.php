@@ -158,7 +158,6 @@ $froms = new Formularios();
 <!-- Modal Prorrogas-->
 <?php
   include("vistas/contratos/prorrogas/modal_prorrogas.php");
-  include("vistas/contratos/prorrogas/modal_prorrogas.php");
 ?>
 
 

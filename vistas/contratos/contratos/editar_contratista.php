@@ -14,7 +14,7 @@ $froms = new Formularios();
 
 
         <div class="card-header">
-          <h3 class="card-title">Editar Contrato (Estado Actual: <?php echo $contrato['nombreestado_contrato']; ?>)</h3>
+          <h3 class="card-title">Detalle del Contrato (Estado Actual: <?php echo $contrato['nombreestado_contrato']; ?>)</h3>
         </div>
 
 
@@ -52,7 +52,19 @@ $froms = new Formularios();
               <a class="nav-link" href="#tab_34_polizas" data-toggle="tab">
                 Polizas
               </a>
-            </li>         
+            </li>      
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_7_ajustes" data-toggle="tab">
+                Ajustes 
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_8_prorrogas" data-toggle="tab">
+                Prorrogas
+              </a>
+            </li>
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
@@ -75,7 +87,7 @@ $froms = new Formularios();
             <div style="padding: 20px; " class="tab-pane active" id="tab_1">
 
             <?php
-              include("vistas/contratos/contratos/form_financiera.php");
+              include("vistas/contratos/contratos/form_contratista.php");
               ?>
             
           
@@ -116,6 +128,25 @@ $froms = new Formularios();
 
             </div>
 
+            
+            
+            <div style="padding: 20px; " class="tab-pane" id="tab_7_ajustes">
+
+              <?php
+              include("vistas/contratos/ajustes/lista_ajustes_lectura.php");
+              ?>
+
+            </div>
+
+            
+            <div style="padding: 20px" class="tab-pane" id="tab_8_prorrogas">
+
+              <?php
+              include("vistas/contratos/prorrogas/lista_prorrogas_lectura.php");
+              ?>
+
+            </div>
+
 
             <div style="padding: 20px;" class="tab-pane" id="tab_3_trazabilidad">
 
@@ -130,7 +161,7 @@ $froms = new Formularios();
 
               <?php
               
-                  include("vistas/contratos/documentos/lista_documentos_lectura.php");
+                  include("vistas/contratos/documentos/lista_documentos.php");
 
               ?>
 

@@ -81,7 +81,7 @@ if($contrato['estado_contrato'] > 2){
 ?>
 <div class="row">
 
-    <div class="col-md-3">
+    <div class="col-md-2">
 
         <label>No. de Contrato<span style="color:red">*</span></label>
         <input type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato"   
@@ -91,7 +91,7 @@ if($contrato['estado_contrato'] > 2){
     </div>
 
 
-    <div class="col-md-3">
+    <div class="col-md-2">
 
         <label>Valor del Contrato<span style="color:red">*</span></label>
         <input type="text" class="form-control requerido" id="valor_contrato" name="valor_contrato"       
@@ -100,7 +100,7 @@ if($contrato['estado_contrato'] > 2){
 
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
 
         <label>Fecha de Inicio<span style="color:red">*</span></label>
         <input type="date" class="form-control requerido" id="fechainicio_contrato" name="fechainicio_contrato"         value="<?php echo $contrato['fechainicio_contrato']; ?>">
@@ -108,10 +108,27 @@ if($contrato['estado_contrato'] > 2){
     </div>
 
 
-    <div class="col-md-3">
+    <div class="col-md-2">
 
         <label>Fecha Final<span style="color:red">*</span></label>
         <input type="date" class="form-control requerido" id="fechafinal_contrato" name="fechafinal_contrato"         value="<?php echo $contrato['fechafinal_contrato']; ?>">
+
+    </div>
+
+    <div class="col-md-4">
+
+    <label>Contratista<span style="color:red">*</span></label>
+      <?php
+        echo $froms->Lista_Desplegable(
+          $contratistas_select,
+          'nombre_contratista',
+          'id_contratista',
+          'contratista_contrato',
+          $contrato['contratista_contrato'],
+          '',
+          ''
+        );
+    ?>
 
     </div>
 

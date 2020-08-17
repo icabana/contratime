@@ -27,7 +27,7 @@
 
         echo "<tr>";
         
-        include("vistas/contratos/rps/comp_upload/icono.php");
+        include("vistas/contratos/rps/comp_upload/icono_lectura.php");
 
         echo "<td><center> " . $documento_rp . "</center></td>";
 

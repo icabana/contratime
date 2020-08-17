@@ -15,10 +15,10 @@ class AjustesControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
                 $AjustesModel->insertar(
-                    $array[0],
+                    $array,
                     $_POST["tipo_ajuste"],
                     $_POST["fecha_ajuste"],
                     $_POST["valor_ajuste"]

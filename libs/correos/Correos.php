@@ -47,7 +47,7 @@ class Correos extends PHPMailer{
                 $this->Username = "contacto@legalteamcolombia.co";
 				$this->Password = "Ismael777880428";
 				
-                $this->From = "contacto@legalteamcolombia.co";
+                $this->From = "contacto@logintime.co";
 				/*	*/
 
 

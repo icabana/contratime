@@ -18,18 +18,18 @@ class RpsControlador extends ControllerBase {
 
         foreach($array_contratos as $array){
     
-            if($array[0] != 0){
+            if($array != 0){
 
                 $RpsModel->insertar(
-                    $array[0],
+                    $array,
                     $_POST["numero_rp"],
                     $_POST["fecha_rp"],
                     $_POST["valor_rp"]
                 );        
                 
-                $accion = "Se ha asociado el RP No. ".$_POST["numero_rp"]." a éste contrato";
+                $accion = "Se Asoció el RP No. ".$_POST["numero_rp"]." a éste contrato";
 
-                $TrazabilidadControlador->insertarExterno($array[0], $accion);   
+                $TrazabilidadControlador->insertarExterno($array, $accion);   
               
             }  
 
@@ -53,7 +53,7 @@ class RpsControlador extends ControllerBase {
             $_POST["valor_rp"]
         );        
 
-        $accion = "Se ha asociado el RP No. ".$_POST["numero_rp"]." a éste contrato";
+        $accion = "Se Asoció el RP No. ".$_POST["numero_rp"]." a éste contrato";
 
         $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
 
@@ -76,7 +76,7 @@ class RpsControlador extends ControllerBase {
 
         $RpsModel->eliminar($_POST["id_rp"], $_POST['id_contrato']);
         
-        $accion = "Se ha eliminado la asociación del RP No. ".$datos_rp["numero_rp"]." en éste contrato";
+        $accion = "Se Desasoció el RP No. ".$datos_rp["numero_rp"]." a éste contrato";
 
         $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
         

@@ -22,7 +22,7 @@ $froms = new Formularios();
 
 
             <div class="col-md-5">
-              <h4 style="color:grey">REGISTROS DE CONTRATOS</h4>
+              <h4 style="color:grey">LISTA DE MIS CONTRATOS</h4>
             </div>
           
           </div>
@@ -39,7 +39,7 @@ $froms = new Formularios();
             <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
           </div>
 
-          <button title="Actualizar Lista de Contratos" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+          <button title="Actualizar Lista de Contratos" onclick="cargar_contratos_contratista();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
 
         </div>
       </div>

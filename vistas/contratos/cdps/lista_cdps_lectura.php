@@ -18,7 +18,6 @@
             <th width='30%' style='background-color:lavender'>No. de CDP</th>
             <th width='30%' style='background-color:lavender'>Fecha del CDP</th>
             <th width='30%' style='background-color:lavender'>Valor del Cdp</th>
-            <th style='background-color:lavender; width:15px'></th>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +28,7 @@
 
             echo "<tr  id='fila_cdp_".$id_cdp."'>";
 
-            include("vistas/contratos/cdps/comp_upload/icono.php");
+            include("vistas/contratos/cdps/comp_upload/icono_lectura.php");
 
             echo "<td><center> " . $documento_cdp . "</center></td>";
 
@@ -39,9 +38,6 @@
 
             echo "<td>$" . number_format($cdp['valor_cdp'], 0, ',', '.') . "</td>";
 
-
-            echo "<td><a title='Eliminar CDP' href='#'><i onclick='eliminar_cdp_contrato(" . $cdp['id_cdp'] . ", " . $cdp['contrato_cdp'] . ");' 
-                class='fas fa-trash'></i></a></td>";
 
             echo "</tr>";
         }

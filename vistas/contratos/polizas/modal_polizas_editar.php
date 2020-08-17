@@ -11,7 +11,7 @@
      
         <div class="col-md-12">
 
-          <label>N&uacute;mero de la Poliza: </label>
+          <label>N&uacute;mero de la Poliza:  <span style="color:red">*</span></label>
           <input type="text" class="form-control requerido_poliza" id="numero_poliza" name="numero_poliza" >
 
         </div>
@@ -20,7 +20,7 @@
 
           <div class="col-md-12">
 
-            <label>Fecha de Expedici&oacute;n: </label>
+            <label>Fecha de Expedici&oacute;n:  <span style="color:red">*</span></label>
             <input type="date" class="form-control requerido_poliza" id="fechaexp_poliza" name="fechaexp_poliza" >
 
           </div>
@@ -29,7 +29,7 @@
 
         <div class="col-md-12">
 
-          <label>Fecha de Inicio: </label>
+          <label>Fecha de Inicio:  <span style="color:red">*</span></label>
           <input type="date" class="form-control requerido_poliza" id="fechainicio_poliza" name="fechainicio_poliza" >
 
           </div>
@@ -37,7 +37,7 @@
 
           <div class="col-md-12">
 
-            <label>Fecha Final: </label>
+            <label>Fecha Final:  <span style="color:red">*</span></label>
             <input type="date" class="form-control requerido_poliza" id="fechafinal_poliza" name="fechafinal_poliza" >
 
             </div>

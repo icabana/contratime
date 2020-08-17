@@ -5,7 +5,7 @@ class TrazabilidadModel extends ModelBase {
   
     function getTodos() {
         
-        $query = "select 
+        $query = "SELECT 
 
                     contratos_trazabilidad.id_trazabilidad, 
                     contratos_trazabilidad.contrato_trazabilidad, 
@@ -30,9 +30,11 @@ class TrazabilidadModel extends ModelBase {
                     usuarios.id_usuario,
                     usuarios.documento_usuario
                 
-                    from contratos_trazabilidad 
+                    FROM contratos_trazabilidad 
                             inner join contratos ON contratos_trazabilidad.contrato_trazabilidad = contratos.id_contrato
-                            inner join usuarios ON contratos_trazabilidad.usuario_trazabilidad = usuarios.id_usuario";
+                            inner join usuarios ON contratos_trazabilidad.usuario_trazabilidad = usuarios.id_usuario
+                            
+                    ORDER BY contratos_trazabilidad.fecha_trazabilidad DESC";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -41,7 +43,7 @@ class TrazabilidadModel extends ModelBase {
 
     function getTodosxContrato($contrato_trazabilidad) {
         
-        $query = "select 
+        $query = "SELECT 
 
                     contratos_trazabilidad.id_trazabilidad, 
                     contratos_trazabilidad.contrato_trazabilidad, 
@@ -66,11 +68,13 @@ class TrazabilidadModel extends ModelBase {
                     usuarios.id_usuario,
                     usuarios.documento_usuario
                 
-                    from contratos_trazabilidad 
+                    FROM contratos_trazabilidad 
                             inner join contratos ON contratos_trazabilidad.contrato_trazabilidad = contratos.id_contrato
                             inner join usuarios ON contratos_trazabilidad.usuario_trazabilidad = usuarios.id_usuario 
                     
-                    where contratos_trazabilidad.contrato_trazabilidad='".$contrato_trazabilidad."'";
+                    WHERE contratos_trazabilidad.contrato_trazabilidad='".$contrato_trazabilidad."'
+
+                    ORDER BY contratos_trazabilidad.fecha_trazabilidad DESC";
         
         $consulta = $this->consulta($query);
         return $consulta;       

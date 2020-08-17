@@ -82,7 +82,7 @@ $("#modal_remitentes").modal("hide");
                     <div class="row">
 
                       <div class="col-md-6">
-                        <label>Tipo de Documento</label>
+                        <label>Tipo de Documento: </label>
                         <?php
                         echo $froms->Lista_Desplegable(
                           $tiposdocumento,

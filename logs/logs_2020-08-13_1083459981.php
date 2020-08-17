@@ -315,3 +315,5 @@ SQL .............>  (2020-08-13 02:01:12) (Usuario: 1083459981) INSERT INTO cont
                         '2',
                         '2'
                     );
+
+SUCCESS ---------->  (2020-08-13 11:27:26) (Usuario: 1083459981) Inicio de Sesión correcto.

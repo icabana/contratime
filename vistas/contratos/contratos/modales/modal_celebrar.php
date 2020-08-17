@@ -12,16 +12,16 @@
      
         <div class="col-md-12">
 
-          <label>N&uacute;mero de Contrato: </label>
+          <label>N&uacute;mero de Contrato: <span style="color:red">*</span></label>
           <input type="text" class="form-control requerido_celebrar" id="numero_contra" name="numero_contra" 
-          maxlength="20" onkeypress="return no_numeros(event)">
+          maxlength="20">
 
         </div>
         <br>
         
         <div class="col-md-12">
 
-          <label>Fecha de Inicio: </label>
+          <label>Fecha de Inicio: <span style="color:red">*</span></label>
           <input type="date" class="form-control requerido_celebrar" id="fechainicio_contra" name="fechainicio_contra" >
 
         </div>
@@ -30,7 +30,7 @@
         
         <div class="col-md-12">
 
-          <label>Fecha Final: </label>
+          <label>Fecha Final: <span style="color:red">*</span></label>
           <input type="date" class="form-control requerido_celebrar" id="fechafinal_contra" name="fechafinal_contra" >
 
         </div>
@@ -39,7 +39,7 @@
 
         <div class="col-md-12">
 
-          <label>Valor del Contrato: </label>
+          <label>Valor del Contrato: <span style="color:red">*</span></label>
           <input type="text" class="form-control requerido_celebrar" id="valor_contra" name="valor_contra" 
           maxlength="20" onkeypress="return no_numeros(event)">
 
