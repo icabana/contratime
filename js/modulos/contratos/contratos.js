@@ -40,7 +40,7 @@ function cargar_contratos_financiera(){
         
 }
 
-function cargar_contratos_supervisor(estado){
+function cargar_contratos_supervisor(){
 
     $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
 
@@ -56,13 +56,13 @@ function cargar_contratos_supervisor(estado){
         'contratos', 
         'Contratos', 
         'indexSupervisor', 
-        'estado='+estado
+        ''
     );    
         
 }
 
 
-function cargar_contratos_encargado(estados){
+function cargar_contratos_encargado(){
 
     $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
 
@@ -77,8 +77,8 @@ function cargar_contratos_encargado(estados){
     abrirVentanaContenedor(
         'contratos', 
         'Contratos', 
-        'indexEncargado', 
-        'estados='+estados
+        'indexEncargado',
+        ''
     );    
         
 }
@@ -127,6 +127,47 @@ function cargar_contratos_contratista_x_estado(estado){
         
 }
 
+function cargar_contratos_encargado_x_estado(estado){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
+    $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
+    $('.ui-widget').remove();
+    $('.elfinder-quicklook').remove();
+    $('.ui-draggable').remove();
+    $('.ui-resizable').remove();
+
+    limpiar_cuerpo();
+    
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'indexEncargadoxEstado', 
+        'estado='+estado
+    );    
+        
+}
+
+function cargar_contratos_supervisor_x_estado(estado){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
+    $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
+    $('.ui-widget').remove();
+    $('.elfinder-quicklook').remove();
+    $('.ui-draggable').remove();
+    $('.ui-resizable').remove();
+
+    limpiar_cuerpo();
+    
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'indexSupervisorxEstado', 
+        'estado='+estado
+    );    
+        
+}
 
 function cargar_contratos_x_estado(estado){
 

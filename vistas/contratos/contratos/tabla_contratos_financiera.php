@@ -19,7 +19,7 @@
                 <th style='background-color:lavender; width:10%'>Valor </th>
                 <th style='background-color:lavender; width:30px'>Objeto</th>
                 <th style='background-color:lavender; width:12%'>Estado</th>                
-                <th style='background-color:lavender; width:12%'>Adjuntar</th>  
+                <th style='background-color:lavender; width:12%'>Descargar</th>  
                 <th  style='background-color:lavender; width:5%'></th>
               </tr>
             </thead>
@@ -176,7 +176,7 @@
                     }
             
                   
-                    echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
+                    echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato_financiera(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
                     class='fas fa-edit'></i></a></td>";                                 
 
 

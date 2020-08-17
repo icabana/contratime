@@ -97,7 +97,7 @@
                              <?php echo "<b>Dias Restantes:</b> ".number_format(($fechas->diasEntreFechas($contrato['fechafinal_contrato'], date("Y-m-d"))),0,',','.'); ?>
                              </span>
                              <span class="product-description">
-                            <?php echo "<b>Saldo por Pagar: </b> $".number_format($contrato['valor_contrato'] - $contrato['total_pagos']); ?>
+                            <?php echo "<b>Saldo por Pagar: </b> $".number_format(($contrato['valor_contrato'] - $contrato['total_pagos']),0,',','.'); ?>
                             </span>
                              <br>
                            
@@ -175,7 +175,7 @@
                          <?php echo "<b>Dias de Retraso: </b> ".number_format(($fechas->diasEntreFechas($contrato['fechafinal_contrato'], date("Y-m-d"))),0,',','.'); ?>
                          </span>
                          <span class="product-description">
-                         <?php echo "<b>Saldo sin Pagar: </b> $".number_format($contrato['valor_contrato'] - $contrato['total_pagos']); ?>
+                         <?php echo "<b>Saldo sin Pagar: </b> $".number_format(($contrato['valor_contrato'] - $contrato['total_pagos']),0,',','.'); ?>
                          </span>
                          <br>
                         

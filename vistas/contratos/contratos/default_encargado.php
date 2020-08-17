@@ -46,7 +46,7 @@ $froms = new Formularios();
             <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_trazabilidad" type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i></button>
            </div>
 
-          <button title="Actualizar Lista de Contratos" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+          <button title="Actualizar Lista de Contratos" onclick="cargar_contratos_encargado();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
 
         </div>
       </div>

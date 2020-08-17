@@ -176,8 +176,8 @@
                     }
             
                    
-                    echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato_encargado(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
-                    class='fas fa-edit'></i></a></td>";                                 
+                    echo "<td><a class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato_encargado(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
+                    class='fas fa-search'></i></a></td>";                                 
 
 
                   ?>

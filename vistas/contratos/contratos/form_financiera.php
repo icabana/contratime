@@ -6,7 +6,7 @@ $froms = new Formularios();
 
   <div class="row">
 
-    <div class="col-md-3">
+    <div class="col-md-2">
 
       <label>No. de Proceso<span style="color:red">*</span></label>
       <input type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato"  maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
@@ -14,13 +14,46 @@ $froms = new Formularios();
     </div>
 
 
-    <div class="col-md-3">
+    <div class="col-md-2">
 
       <label>Valor del Proceso<span style="color:red">*</span></label>
       <input type="text" class="form-control requerido" id="valproceso_contrato" name="valproceso_contrato" onkeypress="return no_numeros(event)" value="<?php echo $contrato['valproceso_contrato']; ?>">
 
     </div>
+    <div class="col-md-44">
+                  <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
 
+                  <?php
+
+                  echo $froms->Lista_Desplegable(
+                    $modalidades,
+                    'nombre_modalidad',
+                    'id_modalidad',
+                    'modalidad_contrato',
+                    $contrato['modalidad_contrato'],
+                    '',
+                    ''
+                  );
+
+                  ?>
+                </div>
+
+
+                <div class="col-md-4">
+                  <label>Tipo de Contrataci&oacute;n <span style="color:red">*</span></label>
+
+                  <?php
+                  echo $froms->Lista_Desplegable(
+                    $tiposcontrato,
+                    'nombre_tipocontrato',
+                    'id_tipocontrato',
+                    'tipo_contrato',
+                    $contrato['tipo_contrato'],
+                    '',
+                    ''
+                  );
+                  ?>
+                </div>
       
 
 
@@ -139,48 +172,7 @@ if($contrato['estado_contrato'] > 2){
 
 ?>
 
-              <br>
-
-              <div class="row">
-
-                <div class="col-md-6">
-                  <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
-
-                  <?php
-
-                  echo $froms->Lista_Desplegable(
-                    $modalidades,
-                    'nombre_modalidad',
-                    'id_modalidad',
-                    'modalidad_contrato',
-                    $contrato['modalidad_contrato'],
-                    '',
-                    ''
-                  );
-
-                  ?>
-                </div>
-
-
-                <div class="col-md-6">
-                  <label>Tipo de Contrataci&oacute;n <span style="color:red">*</span></label>
-
-                  <?php
-                  echo $froms->Lista_Desplegable(
-                    $tiposcontrato,
-                    'nombre_tipocontrato',
-                    'id_tipocontrato',
-                    'tipo_contrato',
-                    $contrato['tipo_contrato'],
-                    '',
-                    ''
-                  );
-                  ?>
-                </div>
-
-
-              </div>
-      
+           
 
               <br>
 

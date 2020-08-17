@@ -54,6 +54,19 @@ $froms = new Formularios();
               </a>
             </li>         
 
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_7_ajustes" data-toggle="tab">
+                Ajustes 
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_8_prorrogas" data-toggle="tab">
+                Prorrogas
+              </a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
                 Trazabilidad
@@ -84,24 +97,25 @@ $froms = new Formularios();
 
          
 
+          
             <div style="padding: 20px; " class="tab-pane" id="tab_4_cdps">
 
               <?php
-              include("vistas/contratos/cdps/lista_cdps.php");
+              include("vistas/contratos/cdps/lista_cdps_lectura.php");
               ?>
             </div>
 
             <div style="padding: 20px; " class="tab-pane" id="tab_5_rps">
 
               <?php
-              include("vistas/contratos/rps/lista_rps.php");
+              include("vistas/contratos/rps/lista_rps_lectura.php");
               ?>
             </div>
 
             <div style="padding: 20px; " class="tab-pane" id="tab_6_pagos">
 
               <?php
-              include("vistas/contratos/pagos/lista_pagos.php");
+              include("vistas/contratos/pagos/lista_pagos_lectura.php");
               ?>
 
             </div>
@@ -111,7 +125,26 @@ $froms = new Formularios();
             <div style="padding: 20px; " class="tab-pane" id="tab_34_polizas">
 
               <?php
-              include("vistas/contratos/polizas/lista_polizas.php");
+              include("vistas/contratos/polizas/lista_polizas_lectura.php");
+              ?>
+
+            </div>
+
+            
+            
+            <div style="padding: 20px; " class="tab-pane" id="tab_7_ajustes">
+
+              <?php
+              include("vistas/contratos/ajustes/lista_ajustes_lectura.php");
+              ?>
+
+            </div>
+
+            
+            <div style="padding: 20px" class="tab-pane" id="tab_8_prorrogas">
+
+              <?php
+              include("vistas/contratos/prorrogas/lista_prorrogas_lectura.php");
               ?>
 
             </div>

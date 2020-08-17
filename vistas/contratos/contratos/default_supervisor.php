@@ -49,7 +49,7 @@ $froms = new Formularios();
           </div>
         </div>
 
-          <button title="Actualizar Lista de Contratos" onclick="cargar_contratos();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+          <button title="Actualizar Lista de Contratos" onclick="cargar_contratos_supervisor();" type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
 
         </div>
       </div>

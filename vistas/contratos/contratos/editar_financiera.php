@@ -32,37 +32,37 @@ $froms = new Formularios();
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_4_cdps" data-toggle="tab">
-                Cdps
+                Asociar Cdps
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_5_rps" data-toggle="tab">
-                Rps
+              Asociar Rps
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_6_pagos" data-toggle="tab">
-                Pagos
+              Asociar Pagos
               </a>
             </li>         
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_34_polizas" data-toggle="tab">
-                Polizas
+              Asociar Polizas
               </a>
             </li>         
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
-                Trazabilidad
+                Ver Trazabilidad
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" href="#tab_10_documentos" data-toggle="tab">
-                Documentos
+                Ver Documentos
               </a>
             </li>
 

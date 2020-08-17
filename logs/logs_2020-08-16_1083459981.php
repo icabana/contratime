@@ -1351,3 +1351,277 @@ SQL .............>  (2020-08-16 19:18:02) (Usuario: 1083459981)
         profesion_contratista = '19'
 
         WHERE id_contratista = '2'
+
+SQL .............>  (2020-08-16 19:52:27) (Usuario: 1083459981) INSERT INTO contratos_encargados (
+                        encargado_encargado,
+                        contrato_encargado
+                            )
+                    VALUES(
+                        '6',
+                        '24'
+                    );
+
+SQL .............>  (2020-08-16 19:52:27) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se Asoció a Ismael Cabana Manga cómo Encargado de éste Proceso',
+                        '24',
+                        '2020-08-16 19:52:27',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 20:04:27) (Usuario: 1083459981) DELETE FROM contratos_encargados WHERE id_encargado = '46'
+
+SQL .............>  (2020-08-16 20:04:27) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se Desasoció a Ismael Cabana Manga cómo Encargado de éste Proceso',
+                        '24',
+                        '2020-08-16 20:04:27',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 20:08:02) (Usuario: 1083459981) INSERT INTO contratos_encargados (
+                        encargado_encargado,
+                        contrato_encargado
+                            )
+                    VALUES(
+                        '6',
+                        '24'
+                    );
+
+SQL .............>  (2020-08-16 20:08:03) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se Asoció a Ismael Cabana Manga cómo Encargado de éste Proceso',
+                        '24',
+                        '2020-08-16 20:08:03',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 20:19:17) (Usuario: 1083459981) INSERT INTO contratos_encargados (
+                        encargado_encargado,
+                        contrato_encargado
+                            )
+                    VALUES(
+                        '6',
+                        '19'
+                    );
+
+SQL .............>  (2020-08-16 20:19:17) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se Asoció a Ismael Cabana Manga cómo Encargado de éste Proceso',
+                        '19',
+                        '2020-08-16 20:19:17',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 20:19:51) (Usuario: 1083459981) INSERT INTO contratos (
+                        numproceso_contrato,
+                        valproceso_contrato,
+                        favisoproceso_contrato,
+                        fevaluacionproceso_contrato,
+                        fevaluacionproceso2_contrato,
+                        fadjudicacionproceso_contrato,
+                        fcierreproceso_contrato,
+                        modalidad_contrato,
+                        tipo_contrato,
+                        objeto_contrato,
+                        estado_contrato
+                            )
+                    VALUES(
+                        '0005',
+                        '120000',
+                        '2020-08-14',
+                        '2020-08-18',
+                        '2020-08-20',
+                        '2020-08-23',
+                        '2020-08-27',
+                        '8',
+                        '6',
+                        'vfvdfvfdfv',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 20:19:51) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se Registró el contrato por primera vez, con estado Convocado',
+                        '25',
+                        '2020-08-16 20:19:51',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 20:20:01) (Usuario: 1083459981) INSERT INTO contratos_encargados (
+                        encargado_encargado,
+                        contrato_encargado
+                            )
+                    VALUES(
+                        '6',
+                        '25'
+                    );
+
+SQL .............>  (2020-08-16 20:20:01) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se Asoció a Ismael Cabana Manga cómo Encargado de éste Proceso',
+                        '25',
+                        '2020-08-16 20:20:01',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 21:21:38) (Usuario: 1083459981)   UPDATE contratos 
+                    SET estado_contrato = '2', contratista_contrato = '2'
+                    WHERE id_contrato = '25'
+
+SQL .............>  (2020-08-16 21:21:38) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha realizado la Adjudicación de este contrato al Contratista: PEDRO 
+         PEREZ PERTUZ.',
+                        '25',
+                        '2020-08-16 21:21:38',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 21:22:01) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha Adjuntado un documento a éste contrato',
+                        '25',
+                        '2020-08-16 21:22:01',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 21:22:17) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se ha Adjuntado un documento a éste contrato',
+                        '24',
+                        '2020-08-16 21:22:17',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 22:40:46) (Usuario: 1083459981) INSERT INTO contratos_supervisores (
+                        supervisor_supervisor,
+                        contrato_supervisor
+                            )
+                    VALUES(
+                        '6',
+                        '22'
+                    );
+
+SQL .............>  (2020-08-16 22:40:46) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se Asoció a Ismael Cabana Manga cómo Supervisor de éste Contrato',
+                        '22',
+                        '2020-08-16 22:40:46',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 23:22:52) (Usuario: 1083459981) INSERT INTO contratos_supervisores (
+                        supervisor_supervisor,
+                        contrato_supervisor
+                            )
+                    VALUES(
+                        '2',
+                        '20'
+                    );
+
+SQL .............>  (2020-08-16 23:22:52) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se Asoció a Maikol  Grandett cómo Supervisor de éste Contrato',
+                        '20',
+                        '2020-08-16 23:22:52',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 23:23:34) (Usuario: 1083459981) INSERT INTO contratos_supervisores (
+                        supervisor_supervisor,
+                        contrato_supervisor
+                            )
+                    VALUES(
+                        '6',
+                        '19'
+                    );
+
+SQL .............>  (2020-08-16 23:23:34) (Usuario: 1083459981) INSERT INTO contratos_trazabilidad (
+                        accion_trazabilidad,
+                        contrato_trazabilidad,
+                        fecha_trazabilidad,
+                        usuario_trazabilidad
+                    )
+                    VALUES(
+                        'Se Asoció a Ismael Cabana Manga cómo Supervisor de éste Contrato',
+                        '19',
+                        '2020-08-16 23:23:34',
+                        '1'
+                    );
+
+SQL .............>  (2020-08-16 23:53:51) (Usuario: 1083459981)   UPDATE contratos 
+
+                    SET numproceso_contrato = '0007',
+                        valproceso_contrato = '70000',
+                        favisoproceso_contrato = '2020-07-17',
+                        fevaluacionproceso_contrato = '2020-07-17',
+                        fevaluacionproceso2_contrato = '2020-07-25',
+                        fadjudicacionproceso_contrato = '2020-07-29',
+                        fcierreproceso_contrato = '2020-08-29',
+                        modalidad_contrato = '8',
+                        contratista_contrato = '1',
+                        tipo_contrato = '6',
+                        objeto_contrato = 'cwev weewef',
+
+                        numero_contrato = '0007',
+                        valor_contrato = '80000000',
+                        fechainicio_contrato = '2020-06-17',
+                        fechafinal_contrato = '2020-07-25'
+
+                    WHERE id_contrato = '22'

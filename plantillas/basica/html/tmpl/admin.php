@@ -80,6 +80,7 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/encargados/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/encargados/editar.js'></script> 
   
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/dashboard.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/editar.js'></script> 
@@ -497,20 +498,12 @@
 
 
         <li class="nav-item">
-          <a href="#" onclick="cargar_contratos_supervisor(3);" class="nav-link">
+          <a href="#" onclick="cargar_contratos_supervisor();" class="nav-link">
             <i class="fas fa-archive nav-icon"></i>
-            <p>Celebrados</p>
+            <p>Ver Contratos</p>
           </a>
         </li>
   
-        
-        <li class="nav-item">
-          <a href="#" onclick="cargar_contratos_supervisor(4);" class="nav-link">
-            <i class="fas fa-archive nav-icon"></i>
-            <p>Liquidados</p>
-          </a>
-        </li>  
-
 
       </ul>
     </li>
@@ -545,21 +538,13 @@
       
 
         <li class="nav-item">
-          <a href="#" onclick="cargar_contratos_encargado('1,2');" class="nav-link">
+          <a href="#" onclick="cargar_contratos_encargado();" class="nav-link">
             <i class="fas fa-archive nav-icon"></i>
             <p>Procesos Contractuales</p>
           </a>
         </li>
   
         
-        <li class="nav-item">
-          <a href="#" onclick="cargar_contratos_encargado('3,4,5');" class="nav-link">
-            <i class="fas fa-archive nav-icon"></i>
-            <p>Contratos</p>
-          </a>
-        </li>
-  
-
 
       </ul>
     </li>

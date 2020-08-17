@@ -155,7 +155,7 @@ $froms = new Formularios();
 
               <?php
               
-                  include("vistas/contratos/documentos/lista_documentos_lectura.php");
+                  include("vistas/contratos/documentos/lista_documentos.php");
 
               ?>
 

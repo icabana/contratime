@@ -117,7 +117,6 @@ $froms = new Formularios();
               ?>
 
             </div>
-
             
 
             <div style="padding: 20px; " class="tab-pane" id="tab_34_polizas">
@@ -127,7 +126,6 @@ $froms = new Formularios();
               ?>
 
             </div>
-
             
             
             <div style="padding: 20px; " class="tab-pane" id="tab_7_ajustes">

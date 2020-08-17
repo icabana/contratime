@@ -158,13 +158,13 @@
                              <?php echo "<b>Dias Restantes:</b> ".number_format(($fechas->diasEntreFechas($contrato['fechafinal_contrato'], date("Y-m-d"))),0,',','.'); ?>
                              </span>
                              <span class="product-description">
-                            <?php echo "<b>Saldo por Pagar: </b> $".number_format($contrato['valor_contrato'] - $contrato['total_pagos']); ?>
+                            <?php echo "<b>Saldo por Pagar: </b> $".number_format(($contrato['valor_contrato'] - $contrato['total_pagos']),0,',','.'); ?>
                             </span>
                              <br>
-                              <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
+                              <button onclick="enviar_correo_contratosxfinalizar(<?php echo $contrato['id_contrato']; ?>); return false;" class="btn btn-success btn-sm">
                                 Enviar Correo
                               </button>
-                              <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-primary btn-sm">
+                              <button data-toggle="modal" data-target="#modal_vista_previa_contratoxfinalizar" class="btn btn-primary btn-sm">
                                 Ver Vista Previa
                               </button>
                             
@@ -242,13 +242,13 @@
                          <?php echo "<b>Dias de Retraso: </b> ".number_format(($fechas->diasEntreFechas($contrato['fechafinal_contrato'], date("Y-m-d"))),0,',','.'); ?>
                          </span>
                          <span class="product-description">
-                         <?php echo "<b>Saldo sin Pagar: </b> $".number_format($contrato['valor_contrato'] - $contrato['total_pagos']); ?>
+                         <?php echo "<b>Saldo sin Pagar: </b> $".number_format(($contrato['valor_contrato'] - $contrato['total_pagos']),0,',','.'); ?>
                          </span>
                          <br>
-                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
+                          <button onclick="enviar_correo_contratos_sin_pagar(<?php echo $contrato['id_contrato']; ?>); return false;" class="btn btn-success btn-sm">
                             Enviar Correo
                           </button>
-                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-primary btn-sm">
+                          <button  data-toggle="modal" data-target="#modal_vista_previa_contratos_sin_pagar" class="btn btn-primary btn-sm">
                             Ver Vista Previa
                           </button>
                         
@@ -318,10 +318,10 @@
                          <?php echo "<b>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']."<br>"; ?>
                          </span>
                          <br>
-                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
+                          <button onclick="enviar_correo_procesos_x_finalizar(<?php echo $contrato['id_contrato']; ?>); return false;" class="btn btn-success btn-sm">
                             Enviar Correo
                           </button>
-                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-primary btn-sm">
+                          <button data-toggle="modal" data-target="#modal_vista_previa_procesoxfinalizar" class="btn btn-primary btn-sm">
                             Ver Vista Previa
                           </button>
                           </li>
@@ -392,10 +392,10 @@
                          <?php echo "<span style='color:red'><b>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']."</span><br>"; ?>
                          </span>
                          <br>
-                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-success btn-sm">
+                          <button onclick="enviar_correo_procesos_x_cerrar(<?php echo $contrato['id_contrato']; ?>); return false;" class="btn btn-success btn-sm">
                             Enviar Correo
                           </button>
-                          <button onclick="enviar_correo_empleado('<?php echo $contrato['correo_empleado']; ?>', <?php echo $contrato['id_empleado']; ?>); return false;" class="btn btn-primary btn-sm">
+                          <button data-toggle="modal" data-target="#modal_vista_previa_procesoxcerrar" class="btn btn-primary btn-sm">
                             Ver Vista Previa
                           </button>
                        
@@ -446,4 +446,12 @@
 
 <?php
   }
+?>
+
+<!-- Modal Vista Previa Contrato-->
+<?php
+  include("vistas/contratos/contratos/vista_correos/modal_vista_previa_contratosxfinalizar.php");
+  include("vistas/contratos/contratos/vista_correos/modal_vista_previa_contratossinpagar.php");
+  include("vistas/contratos/contratos/vista_correos/modal_vista_previa_procesosxfinalizar.php");
+  include("vistas/contratos/contratos/vista_correos/modal_vista_previa_procesosxcerrar.php");
 ?>

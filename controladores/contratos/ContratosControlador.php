@@ -68,7 +68,7 @@ class ContratosControlador extends ControllerBase {
         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
-        $contratos = $ContratosModel->getTodosxSupervisor($_POST['estado']);        
+        $contratos = $ContratosModel->getTodosxSupervisor();        
         
         $this->model->cargar("SupervisoresModel.php", "actores");
         $SupervisoresModel = new SupervisoresModel();
@@ -99,7 +99,7 @@ class ContratosControlador extends ControllerBase {
         
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
-        $contratos = $ContratosModel->getTodosxEncargado($_POST['estados']);        
+        $contratos = $ContratosModel->getTodosxEncargado();        
         
         $this->model->cargar("SupervisoresModel.php", "actores");
         $SupervisoresModel = new SupervisoresModel();
@@ -186,6 +186,67 @@ class ContratosControlador extends ControllerBase {
         include 'vistas/contratos/contratos/default_contratista.php';
                         
     }    
+
+    public function indexEncargadoxEstado() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosxEncargadoxEstado($_POST['estado']);        
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel->getTodos();
+        
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel = new EncargadosModel();
+        $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();     
+          
+        include 'vistas/contratos/contratos/default_encargado.php';
+                        
+    }    
+
+    public function indexSupervisorxEstado() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosxEncargadoxEstado($_POST['estado']);        
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel->getTodos();
+        
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel = new EncargadosModel();
+        $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();     
+          
+        include 'vistas/contratos/contratos/default_supervisor.php';
+                        
+    }    
+
 
 
     public function index_x_estado() {
