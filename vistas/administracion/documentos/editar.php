@@ -28,7 +28,7 @@
                       <label>Nombre: <span style="color:red">*</span></label>
                       
                       <input type="text" class="form-control" id="nombre_documento" name="nombre_documento" 
-                              value="<?php echo $datos['nombre_documento']; ?>"  > 
+                              value="<?php echo utf8_encode($datos['nombre_documento']); ?>"  > 
                       
                     </div>
                   </div>

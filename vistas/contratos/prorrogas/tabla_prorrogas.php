@@ -1,12 +1,3 @@
-
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_prorrogas");
-        }
-    );
-</script>
-
 <table id="tabla_prorrogas" class="table table-bordered table-hover">
 
     <thead>

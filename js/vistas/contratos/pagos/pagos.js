@@ -50,7 +50,6 @@ function agregar_pago2() {
       'mensaje_alertas("success", "Pago Agregado Correctamente", "center"); seleccionar_check();'
     );
 
-    $("#fecha_pago").val("");
     $("#valor_pago").val("");
 
 }
@@ -78,7 +77,6 @@ function agregar_pago_editar() {
       'if(data == "error"){ mensaje_alertas("error", "Los Pagos no pueden superar el valor del Contrato", "center"); }else{ $("#modal_pagos_editar").modal("hide");  $("#tab_6_pagos").html(data); mensaje_alertas("success", "Pago Agregado Correctamente", "center"); }'
     );
 
-    $("#fecha_pago").val("");
     $("#valor_pago").val("");
 
 }
@@ -135,7 +133,6 @@ function agregar_pago2_correo() {
       'mensaje_alertas("success", "Pago Agregado Correctamente", "center"); seleccionar_check();'
     );
 
-    $("#fecha_pago").val("");
     $("#valor_pago").val("");
 
 }
@@ -162,7 +159,6 @@ function agregar_pago_editar_correo() {
       'if(data == "error"){ mensaje_alertas("error", "Los Pagos no pueden superar el valor del Contrato", "center"); }else{ $("#modal_pagos_editar").modal("hide");  $("#tab_6_pagos").html(data); mensaje_alertas("success", "Pago Agregado Correctamente", "center"); }'
     );
 
-    $("#fecha_pago").val("");
     $("#valor_pago").val("");
 
 }

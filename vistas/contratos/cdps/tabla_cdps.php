@@ -1,11 +1,3 @@
-<script>
-    $(document).ready(
-        function(){
-            CrearTabla("tabla_cdps");
-        }
-    );
-</script>
-
 <table id="tabla_cdps" class="table table-bordered table-hover">
     <thead>
         <tr>

@@ -15,7 +15,7 @@
 
 
                         <div class="col-md-10">
-                            <h4 style="color:grey">Documentos Soportes (<?php echo $datos['nombre_modalidad'] ?>)</h4>
+                            <h4 style="color:grey">Documentos Soportes (<?php echo utf8_encode($datos['nombre_modalidad']) ?>)</h4>
                         </div>
                     
                         <div class="col-md-2">

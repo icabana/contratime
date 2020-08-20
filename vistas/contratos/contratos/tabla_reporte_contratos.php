@@ -33,11 +33,11 @@
                       </td>
                       
                       <td class="mailbox-star">
-                       <?php  echo $contrato['nombre_modalidad']; ?>
+                       <?php  echo utf8_encode($contrato['nombre_modalidad']); ?>
                       </td>
 
                       <td class="mailbox-star">
-                       <?php  echo $contrato['nombre_tipocontrato']; ?>
+                       <?php  echo utf8_encode($contrato['nombre_tipocontrato']); ?>
                       </td>
 
                       <td class="mailbox-star">
@@ -49,7 +49,7 @@
                       </td>
                      
                       <td class="mailbox-star">
-                       <?php  echo $contrato['nombres_contratista']." ".$contrato['apellidos_contratista']; ?>
+                       <?php  echo utf8_encode($contrato['nombres_contratista']." ".$contrato['apellidos_contratista']); ?>
                       </td>
                      
                       <td class="mailbox-star">

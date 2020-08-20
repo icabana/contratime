@@ -77,14 +77,13 @@ class AlertasControlador extends ControllerBase {
         $numero_contrato = "";   
         $mensaje = "";
 
-
         $mensaje = file_get_contents("plantillas/correos/plantilla_contratos_x_finalizar/index.html");
 
         $numero_contrato = $contrato['numero_contrato'];
 
         $asunto = "Contrato No. ".$numero_contrato." esta por finalizar";
 
-        //$correos_supervisores = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
+        $correos_supervisores = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
 
         $correos_supervisores[] = $param->valor('correoalertas1');
         $correos_supervisores[] = $param->valor('correoalertas2');
@@ -106,7 +105,7 @@ class AlertasControlador extends ControllerBase {
         $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
         $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-        $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
+        echo $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
         
                         
     }    

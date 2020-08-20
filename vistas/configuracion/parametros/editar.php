@@ -56,7 +56,7 @@ $froms = new Formularios();
                   <label>Nombre del Parametro</label>
                   
                   <input type="text" class="form-control" id="nombre_parametro" name="nombre_parametro" 
-                        value="<?php echo $datos['nombre_parametro']; ?>">
+                        value="<?php echo utf8_encode($datos['nombre_parametro']); ?>">
 
                 </div>
 
@@ -64,7 +64,7 @@ $froms = new Formularios();
 
                   <label>Valor</label>
                   <input type="text" class="form-control" id="valor_parametro" name="valor_parametro"
-                        value="<?php echo $datos['valor_parametro']; ?>">
+                        value="<?php echo utf8_encode($datos['valor_parametro']); ?>">
 
                 </div>
 

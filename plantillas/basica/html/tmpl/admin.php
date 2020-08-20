@@ -680,7 +680,7 @@
 
 
     <footer class="main-footer">
-      <strong>Copyright &copy; 2020 <a target='_blank' href="http://logintime.co/">LoginTime S.A.S.</a></strong>
+      <strong>Copyright &copy; 2020 <a target='_blank' href="https://essmar.gov.co/">ESSMAR E.S.P.</a></strong>
       Todos los derechos Reservados.
       <div class="float-right d-none d-sm-inline-block">
         <b>Version</b> 3.0.1

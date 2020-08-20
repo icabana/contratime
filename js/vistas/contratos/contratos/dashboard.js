@@ -11,8 +11,14 @@ function enviar_correo_contratosxfinalizar2(id_contrato) {
         'Alertas',
         'contratoxFinalizar',
         "id_contrato=" + id_contrato,
-        ''
+        'enviar_correo_contratosxfinalizar3(data);'
     );
+
+}
+
+function enviar_correo_contratosxfinalizar3(data) {
+
+    mensaje_alertas("error", data, "center");    
 
 }
 

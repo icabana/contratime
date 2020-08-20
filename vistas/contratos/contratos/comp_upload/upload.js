@@ -22,6 +22,7 @@ function upload_contratos(){
         success: function(data)   
         {
            
+             $("#fileToUploadContratos").val("");
             actualizar_lista_contratos(contrato_contrato);
           
         }

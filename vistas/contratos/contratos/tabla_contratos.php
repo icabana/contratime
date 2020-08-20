@@ -69,14 +69,14 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo $contrato['nombre_tipocontrato']; ?>
+                    <?php echo utf8_encode($contrato['nombre_tipocontrato']); ?>
 
                   </td>
 
 
                   <td class="mailbox-name">
 
-                    <?php echo $contrato['nombres_contratista'] ." ".$contrato['apellidos_contratista'].
+                    <?php echo utf8_encode($contrato['nombres_contratista'] ." ".$contrato['apellidos_contratista']).
                       " <img title='" . $contrato['nombre_pais'] . "' src='imagenes/banderas/" .
                       $contrato['codigo3_pais'] . ".png'>"; ?>
 
@@ -177,7 +177,7 @@
                              </button></center>';
 
                              echo '<br><br>
-                             <button title="Agregar Bitacora" data-toggle="modal" data-target="#modal_vista_previa_contrato" type="button" class="btn btn-primary btn-xs">
+                             <button title="Ver Vista Previa" data-toggle="modal" data-target="#modal_vista_previa_contrato" type="button" class="btn btn-primary btn-xs">
                              <i class="fas fa-envelope-square"></i> ¿Ver Vista Previa?
                              </button></center>';
 
@@ -227,7 +227,7 @@
                       echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
                       class='fas fa-edit'></i></a></td>";                                 
 
-                      echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' onclick='eliminar_contrato_editar(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
+                      echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' onclick='eliminar_contrato_editar(" . $contrato['id_contrato'] . ");' title='Eliminar Contrato'><i 
                                     class='fas fa-trash'></i></a></td>";
 
                   ?>

@@ -16,7 +16,7 @@ class Plantilla1 extends FPDF
         $paginaweb = $params->valor("paginaweb");
         
         
-        $this->Image('imagenes/logos/logo.jpg', 15, 13, 27, 16);
+        $this->Image('imagenes/logos/logo.jpg', 15, 13, 40, 14);
 
         $this->SetFont('Arial', 'B', 12);
         $this->Cell(0, 5, utf8_decode($empresa), 0, 1, 'C');

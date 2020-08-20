@@ -66,7 +66,7 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo $contrato['nombre_tipocontrato']; ?>
+                    <?php echo utf8_encode($contrato['nombre_tipocontrato']); ?>
 
                   </td>
 
@@ -176,7 +176,7 @@
                     }
             
                    
-                    echo "<td><a class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato_encargado(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
+                    echo "<td><a class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato_encargado(" . $contrato['id_contrato'] . ");' title='Ver Contrato'><i 
                     class='fas fa-search'></i></a></td>";                                 
 
 
