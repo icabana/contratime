@@ -19,6 +19,44 @@ function cargar_contratos(){
         
 }
 
+function cargar_reporte_contratos(moda){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
+    $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
+    $('.ui-widget').remove();
+    $('.elfinder-quicklook').remove();
+    $('.ui-draggable').remove();
+    $('.ui-resizable').remove();
+
+    limpiar_cuerpo();
+
+    var modalidad = $(moda).val();
+    
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'index_reporte', 
+        'modalidad='+modalidad
+    );    
+        
+}
+
+
+function cargar_vista_reporte_contratos(moda){
+
+    var modalidad = $(moda).val();
+    
+    ejecutarAccion(
+        'contratos', 
+        'Contratos', 
+        'index_reporte_vista', 
+        'modalidad='+modalidad,
+        '$("#div_tabla_contratos_reportes").html(data);'
+    );    
+        
+}
+
 function cargar_contratos_financiera(){
 
     $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');

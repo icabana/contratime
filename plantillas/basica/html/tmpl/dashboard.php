@@ -365,11 +365,11 @@
                       <ul class="products-list product-list-in-card pl-2 pr-2">
 
                       <?php 
-                      if(count($procesos_x_finalizar) > 0){
+                      if(count($procesos_x_cerrar) > 0){
                     ?>
 
                       <?php
-                        foreach($procesos_x_finalizar as $contrato){
+                        foreach($procesos_x_cerrar as $contrato){
                       ?>
 
                       <li style="padding-left: 15px;" class="item">

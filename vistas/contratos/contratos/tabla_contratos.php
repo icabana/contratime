@@ -117,7 +117,7 @@
 
                             $id_contrato = $contrato['id_contrato'];
                             
-                            echo '<td style="background-color: #F0E438" class="mailbox-subject">';
+                            echo '<td style=" class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
                            echo '</td>';
 
@@ -134,7 +134,7 @@
 
                             $id_contrato = $contrato['id_contrato'];
                             
-                            echo '<td style="background-color: #FF8D8D" class="mailbox-subject">';
+                            echo '<td style=" class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
                            echo '</td>';
 
@@ -151,7 +151,7 @@
 
                             $id_contrato = $contrato['id_contrato'];
                             
-                            echo '<td style="background-color: #F0E438" class="mailbox-subject">';
+                            echo '<td style=" class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
                            echo '</td>';
 
@@ -168,7 +168,7 @@
 
                             $id_contrato = $contrato['id_contrato'];
                             
-                            echo '<td style="background-color: #77F76C" class="mailbox-subject">';
+                            echo '<td style="class="mailbox-subject">';
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
                          
                              echo '<br>
@@ -204,7 +204,7 @@
 
                             $id_contrato = $contrato['id_contrato'];
                             
-                            echo '<td style="background-color: #14FF00" class="mailbox-subject">';
+                            echo '<td style=" class="mailbox-subject">';
                             echo "<b><center>LIQUIDADO</center></b>";                          
                             echo '</td>';
 

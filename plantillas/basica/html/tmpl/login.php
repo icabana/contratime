@@ -50,7 +50,8 @@
 					<header id="header">
 				  <div style="margin-top: 2px;" class="login-logo">
             <span class="brand-text font-weight-light">        
-                <img src="imagenes/logos/logo.png" width="250px"  style="opacity: .8">        
+				<img src="imagenes/logos/logo.png" width="380px"  style="opacity: .8">    
+				<br>   <br>
               </span>
           </div>
 

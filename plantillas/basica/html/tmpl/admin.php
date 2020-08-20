@@ -250,6 +250,13 @@
           </a>
         </li>
 
+        <li class="nav-item">
+          <a href="#" onclick="cargar_reporte_contratos();" class="nav-link">
+            <i class="fas fa-file-pdf nav-icon"></i>
+            <p>Reporte de Contratos</p>
+          </a>
+        </li>
+
 
   
 

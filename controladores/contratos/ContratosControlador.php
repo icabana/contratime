@@ -32,6 +32,41 @@ class ContratosControlador extends ControllerBase {
                         
     }    
 
+    public function index_reporte() {        
+        
+        $this->model->cargar("ModalidadesModel.php", "administracion");
+        $ModalidadesModel = new ModalidadesModel();
+        $modalidades = $ModalidadesModel->getTodos();
+        
+        $this->model->cargar("TiposcontratoModel.php", "administracion");
+        $Tiposcontrato = new TiposcontratoModel();
+        $tiposcontrato = $Tiposcontrato->getTodos();
+        
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadosContratosModel = new EstadosContratosModel();
+        $estados = $EstadosContratosModel->getTodos();
+
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosReporte('', '', '');        
+          
+        include 'vistas/contratos/contratos/default_reporte.php';
+                        
+    }    
+
+    
+    public function index_reporte_vista() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosReporte($_POST['modalidad'], $_POST['tipocontrato'], $_POST['estado']);             
+      
+        include("vistas/contratos/contratos/tabla_reporte_contratos.php");
+            
+        
+                        
+    }    
+
 
     public function indexFinanciera() {
         
@@ -47,6 +82,7 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
 
+       
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
