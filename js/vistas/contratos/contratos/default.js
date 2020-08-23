@@ -10,6 +10,18 @@ function nuevo_contrato() {
 
 }
 
+function nuevo_proceso() {
+
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'nuevoProceso', 
+        '', 
+        ''
+    );
+
+}
+
 function editar_contrato(id_contrato) {
 
     abrirVentanaContenedor(

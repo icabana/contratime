@@ -41,6 +41,8 @@
   <script language="JavaScript" type='text/javascript' src='js/modulos/configuracion.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/contratos/contratos.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/modalidades.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/fuentes.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/planes.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/tiposcontrato.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/contratistas.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/soportes.js'></script> 
@@ -56,6 +58,14 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/modalidades/editar.js'></script>
   
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/fuentes/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/fuentes/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/fuentes/editar.js'></script>
+  
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/planes/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/planes/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/planes/editar.js'></script>
+
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/soportes/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/soportes/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/soportes/editar.js'></script>
@@ -142,7 +152,7 @@
         <a href="#" onclick="cargar_encargados(); return false;" class="nav-link"><b>Encargados</b></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" onclick="cargar_modalidades(); return false;" class="nav-link"><b>Modalidades</b></a>
+        <a href="#" onclick="cargar_modalidades(); return false;" class="nav-link"><b>Planes</b></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" onclick="cargar_tiposcontrato(); return false;" class="nav-link"><b>Tipos de Contrato</b></a>
@@ -347,7 +357,19 @@
           </a>
         </li>
         
-
+        <li class="nav-item">
+          <a href="#" onclick="cargar_fuentes();" class="nav-link">
+            <i class="far fa-file nav-icon"></i>
+            <p>Fuente de los Recursos </p>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="#" onclick="cargar_planes();" class="nav-link">
+            <i class="far fa-file nav-icon"></i>
+            <p>Planes de Adquisici&oacute;n </p>
+          </a>
+        </li>
       
         <li class="nav-item">
           <a href="#" onclick="cargar_tiposcontrato();" class="nav-link">

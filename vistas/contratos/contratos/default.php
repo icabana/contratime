@@ -21,16 +21,21 @@ $froms = new Formularios();
           <div class="row">
 
 
-            <div class="col-md-5">
+            <div class="col-md-4">
               <h4 style="color:grey">GESTIONAR CONTRATOS</h4>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
               <button onclick="generar_pdf_contratos(); return false;" type="button" title="Descargar PDF" class="btn-lg btn-danger btn-sm"><i class="fas fa-file-pdf"></i></button>
               <button onclick="generar_excel_contratos(); return false;" type="button" title="Descargar EXCEL" class="btn-lg btn-success btn-sm"><i class="fas fa-file-excel"></i></button>
             </div>
             <div class="col-md-2">
+              <button onclick="nuevo_proceso(); return false;" class="btn btn-primary btn-sm">
+                Iniciar Nuevo Proceso
+              </button>
+            </div>
+            <div class="col-md-2">
               <button onclick="nuevo_contrato(); return false;" class="btn btn-success btn-sm">
-                Nuevo Contrato
+                Iniciar Nuevo Contrato
               </button>
             </div>
 

@@ -458,7 +458,12 @@ class ContratosControlador extends ControllerBase {
         include 'vistas/contratos/contratos/insertar.php';
         
     }  
-       
+      
+    public function nuevoProceso(){
+
+        include 'vistas/contratos/contratos/insertar_proceso.php';
+        
+    }  
     
     public function editar(){
        
