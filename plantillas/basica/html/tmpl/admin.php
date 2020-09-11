@@ -65,6 +65,10 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/planes/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/planes/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/planes/editar.js'></script>
+  
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/detalles/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/detalles/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/administracion/detalles/editar.js'></script>
 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/soportes/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/soportes/insertar.js'></script> 
@@ -152,10 +156,10 @@
         <a href="#" onclick="cargar_encargados(); return false;" class="nav-link"><b>Encargados</b></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" onclick="cargar_modalidades(); return false;" class="nav-link"><b>Planes</b></a>
+        <a href="#" onclick="cargar_planes(); return false;" class="nav-link"><b>Planes de Adquisici&oacute;n</b></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" onclick="cargar_tiposcontrato(); return false;" class="nav-link"><b>Tipos de Contrato</b></a>
+        <a href="#" onclick="cargar_modalidades(); return false;" class="nav-link"><b>Modalidades</b></a>
       </li>
       <?php
         }

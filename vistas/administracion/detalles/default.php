@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-2">
                             <button onclick="nuevo_detalle(); return false;" class="btn btn-success btn-sm">
-                                Nueva Detalle
+                                Nuevo Registro
                             </button>
                         </div>
 
@@ -41,12 +41,16 @@
                 <table id="tabla_detalles" style="font-size: 13px;" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th style='background-color:lavender; width:15px'>No.</th>
-                            <th style='background-color:lavender'>Vigencia</th>
-                            <th style='background-color:lavender'>Contacto</th>
-                            <th style='background-color:lavender'>Valor</th>
-                            <th style='background-color:lavender; width:15px'></th>
-                            <th style='background-color:lavender; width:15px'></th>
+                            <th style='background-color:lavender; width:5px'>No.</th>
+                            <th style='background-color:lavender; width:10px'>C&oacute;digos</th>
+                            <th style='background-color:lavender; width:20px'>Descripci&oacute;n</th>
+                            <th style='background-color:lavender; width:10px'>Fecha Estimada Inicio de Proceso</th>
+                            <th style='background-color:lavender; width:10px'>Duraci&oacute;n Estimada del Proceso</th>
+                            <th style='background-color:lavender; width:15px'>Modalidad </th>
+                            <th style='background-color:lavender; width:15px'>Fuente de los Recursos</th>
+                            <th style='background-color:lavender; width:15px'>Valor Estimado</th>
+                            <th style='background-color:lavender; width:5px'></th>
+                            <th style='background-color:lavender; width:5px'></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,16 +63,20 @@
                             echo "<tr>";
 
                             echo "<td>" . $cont . "</td>";
-
-                            echo "<td>" . $detalle['ano_detalle'] . "</td>";
-                            echo "<td>" . utf8_encode($detalle['contacto_detalle']) . "</td>";
-                            echo "<td>$" . number_format($detalle['valor_detalle'],0,',','.') . "</td>";
-                            
-                            echo "<td><a class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#'  onclick='detalles_detalle(" . $detalle['id_detalle'] . ");'><i title='Ver Documentos' 
-                            class='fas fa-file'></i></a></td>";
+                            echo "<td>" . utf8_encode($detalle['codigos_detalle']) . "</td>";
+                            echo "<td>" . utf8_encode($detalle['descripcion_detalle']) . "</td>";
+                            echo "<td>" . utf8_encode($detalle['fechainicio_detalle']) . "</td>";
+                            echo "<td>" . utf8_encode($detalle['meses_detalle']) . " Meses</td>";
+                            echo "<td>" . utf8_encode($detalle['nombre_modalidad']) . "</td>";
+                            echo "<td>" . utf8_encode($detalle['nombre_fuente']) . "</td>";
+                            echo "<td>$" . number_format($detalle['valtotal_detalle'], 0, ',', '.') . "</td>";
+                          
 
                             echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_detalle(" . $detalle['id_detalle'] . ");'><i title='Editar Detalle' 
                                     class='fas fa-edit'></i></a></td>";
+  
+                            echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#'  onclick='eliminar_detalle(" . $detalle['id_detalle'] . ");'><i title='Eliminar Registro' 
+                                    class='fas fa-trash'></i></a></td>";
 
                             echo "</tr>";
 

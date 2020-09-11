@@ -16,9 +16,16 @@ class DetallesModel extends ModelBase {
                         valtotal_detalle,
                         futuras_detalle,
                         estadofuturas_detalle,
-                        contacto_detalle
+                        contacto_detalle,
+
+                        fuentes.nombre_fuente,
+                        modalidades.nombre_modalidad
+
                 
-                    FROM planes_detalles
+                    FROM planes_detalles 
+                            LEFT JOIN planes ON planes_detalles.plan_detalle = planes.id_plan
+                            LEFT JOIN modalidades ON planes_detalles.modalidad_detalle = modalidades.id_modalidad
+                            LEFT JOIN fuentes ON planes_detalles.fuente_detalle = fuentes.id_fuente
 
                     ORDER BY codigos_detalle";
         
@@ -66,7 +73,7 @@ class DetallesModel extends ModelBase {
                 $contacto_detalle
         ){
                 
-        $query = "INSERT INTO detalles (
+        $query = "INSERT INTO planes_detalles (
                         plan_detalle,
                         codigos_detalle,
                         descripcion_detalle,
@@ -80,7 +87,7 @@ class DetallesModel extends ModelBase {
                         contacto_detalle
                     )
                     VALUES(
-                        '".utf8_decode($plan_detalle)."',
+                        '1',
                         '".utf8_decode($codigos_detalle)."',
                         '".utf8_decode($descripcion_detalle)."',
                         '".utf8_decode($fechainicio_detalle)."',

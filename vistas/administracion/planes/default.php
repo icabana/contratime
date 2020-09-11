@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-2">
                             <button onclick="nuevo_plan(); return false;" class="btn btn-success btn-sm">
-                                Nueva Plan
+                                Nuevo Plan de Adquisición
                             </button>
                         </div>
 

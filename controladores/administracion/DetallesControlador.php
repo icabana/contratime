@@ -14,6 +14,18 @@ class DetallesControlador extends ControllerBase {
     }    
     
     public function nuevo(){
+
+        $this->model->cargar("ModalidadesModel.php", "administracion");
+        $ModalidadesModel = new ModalidadesModel();
+        $modalidades = $ModalidadesModel->getTodos();
+
+        $this->model->cargar("FuentesModel.php", "administracion");
+        $FuentesModel = new FuentesModel();
+        $fuentes = $FuentesModel->getTodos();
+
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel = new EncargadosModel();
+        $encargados = $EncargadosModel->getTodos();
         
         include 'vistas/administracion/detalles/insertar.php';
         
@@ -51,11 +63,19 @@ class DetallesControlador extends ControllerBase {
       
         $this->model->cargar("DetallesModel.php", "administracion");
         $DetallesModel = new DetallesModel();            
-        
+       
         $resp = $DetallesModel->insertar(
-            $_POST["ano_detalle"],
-            $_POST["contacto_detalle"],
-            $_POST["valor_detalle"]
+            $_POST["plan_detalle"],
+            $_POST["codigos_detalle"],
+            $_POST["descripcion_detalle"],
+            $_POST["fechainicio_detalle"],
+            $_POST["meses_detalle"],
+            $_POST["modalidad_detalle"],
+            $_POST["fuente_detalle"],
+            $_POST["valtotal_detalle"],
+            $_POST["futuras_detalle"],
+            $_POST["estadofuturas_detalle"],
+            $_POST["contacto_detalle"]
         );        
         
         if( $resp != 0 ){

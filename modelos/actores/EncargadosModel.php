@@ -6,7 +6,7 @@ class EncargadosModel extends ModelBase {
 
         $query = "
 
-            select 	
+            SELECT 	
                 encargados.id_encargado, 
 
                 encargados.tipo_encargado,
@@ -54,7 +54,7 @@ class EncargadosModel extends ModelBase {
 
                 estados.nombre_estado
 
-            from encargados
+            FROM encargados
                     
                 left join tipospersona on encargados.tipo_encargado = tipospersona.id_tipopersona
                 left join tiposdocumento on encargados.tipodocumento_encargado = tiposdocumento.id_tipodocumento
@@ -64,7 +64,9 @@ class EncargadosModel extends ModelBase {
                 left join generos on encargados.genero_encargado = generos.id_genero
                 left join estadoscivil on encargados.estadocivil_encargado = estadoscivil.id_estadocivil
                 left join profesiones on encargados.profesion_encargado = profesiones.id_profesion
-                left join estados on encargados.estado_encargado = estados.id_estado";
+                left join estados on encargados.estado_encargado = estados.id_estado
+                
+                ORDER BY encargados.nombres_encargado";
 
         $consulta = $this->consulta($query);
         return $consulta;                    
