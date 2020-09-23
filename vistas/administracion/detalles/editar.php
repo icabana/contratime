@@ -12,7 +12,10 @@ $froms = new Formularios();
         <h3 class="card-title">Editar Informaci&oacute;n del Detalle del Plan </h3>
       </div>
 
-      <form autocomplete="on" id="form_detalles" method="post">
+      <form autocomplete="on" id="form_detalles_editar" method="post">
+
+        <input type="text" class="form-control" id="id_plan_detalle_editar" name="id_plan_detalle_editar" value="<?php echo $id_plan; ?>" >
+        <input type="text" class="form-control" id="id_detalle" name="id_detalle" value="<?php echo $datos['id_detalle']; ?>" >
 
         <div class="card-body">
           <div class="row">
@@ -21,26 +24,26 @@ $froms = new Formularios();
 
               <label>Códigos UNSPSC<span style="color:red">*</span></label>
               <input type="text" class="form-control requerido" id="codigos_detalle" name="codigos_detalle"
-              >
+                    value="<?php echo $datos['codigos_detalle']; ?>" >
 
             </div>
 
             <div class="col-md-4">
 
               <label>Fecha Estimada de Inicio de proceso de Selecci&oacute;n<span style="color:red">*</span></label>
-              <select class="form-control requerido" id="fechainicio_detalle" name="fechainicio_detalle">
-                <option value="Enero">Enero</option>
-                <option value="Febrero">Febrero</option>
-                <option value="Marzo">Marzo</option>
-                <option value="Abril">Abril</option>
-                <option value="Mayo">Mayo</option>
-                <option value="Junio">Junio</option>
-                <option value="Julio">Julio</option>
-                <option value="Agosto">Agosto</option>
-                <option value="Septiembre">Septiembre</option>
-                <option value="Octubre">Octubre</option>
-                <option value="Noviembre">Noviembre</option>
-                <option value="Diciembre">Diciembre</option>
+                <select class="form-control requerido" id="fechainicio_detalle" name="fechainicio_detalle">
+                  <option <?php if($datos['fechainicio_detalle'] == 'Enero'){ echo "selected"; } ?> value="Enero">Enero</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Febrero'){ echo "selected"; } ?> value="Febrero">Febrero</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Marzo'){ echo "selected"; } ?> value="Marzo">Marzo</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Abril'){ echo "selected"; } ?> value="Abril">Abril</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Mayo'){ echo "selected"; } ?> value="Mayo">Mayo</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Junio'){ echo "selected"; } ?> value="Junio">Junio</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Julio'){ echo "selected"; } ?> value="Julio">Julio</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Agosto'){ echo "selected"; } ?> value="Agosto">Agosto</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Septiembre'){ echo "selected"; } ?> value="Septiembre">Septiembre</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Octubre'){ echo "selected"; } ?> value="Octubre">Octubre</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Noviembre'){ echo "selected"; } ?> value="Noviembre">Noviembre</option>
+                  <option <?php if($datos['fechainicio_detalle'] == 'Diciembre'){ echo "selected"; } ?> value="Diciembre">Diciembre</option>
               </select>
 
             </div>
@@ -49,7 +52,8 @@ $froms = new Formularios();
             <div class="col-md-4">
 
               <label>Duración Estimada del Contrato (Meses)<span style="color:red">*</span></label>
-              <input type="text" class="form-control requerido" id="meses_detalle" name="meses_detalle" onkeypress="return no_numeros(event)" value="<?php echo $numproceso_detalle; ?>">
+              <input type="text" class="form-control requerido" id="meses_detalle" name="meses_detalle" 
+                      onkeypress="return no_numeros(event)" value="<?php echo $datos['meses_detalle']; ?>">
 
             </div>
 
@@ -73,7 +77,7 @@ $froms = new Formularios();
                 'nombre_modalidad',
                 'id_modalidad',
                 'modalidad_detalle',
-                '',
+                $datos['modalidad_detalle'],
                 '',
                 ''
               );
@@ -91,7 +95,7 @@ $froms = new Formularios();
                 'nombre_fuente',
                 'id_fuente',
                 'fuente_detalle',
-                '',
+                $datos['fuente_detalle'],
                 '',
                 ''
               );
@@ -130,13 +134,15 @@ $froms = new Formularios();
             <div class="col-md-2">
 
               <label>Valor Total Estimado<span style="color:red">*</span></label>
-              <input type="text" class="form-control requerido" id="valtotal_detalle" name="valtotal_detalle" onkeypress="return no_numeros(event)" value="<?php echo $numproceso_detalle; ?>">
+              <input type="text" class="form-control requerido" id="valtotal_detalle" name="valtotal_detalle" 
+                    onkeypress="return no_numeros(event)" value="<?php echo $datos['valtotal_detalle']; ?>">
 
             </div>
             <div class="col-md-2">
 
               <label>Valor Vigencia Actual<span style="color:red">*</span></label>
-              <input type="text" class="form-control requerido" id="valactual_detalle" name="valactual_detalle" onkeypress="return no_numeros(event)" value="<?php echo $numproceso_detalle; ?>">
+              <input type="text" class="form-control requerido" id="valactual_detalle" name="valactual_detalle" 
+                  onkeypress="return no_numeros(event)" value="<?php echo $datos['valactual_detalle']; ?>">
 
             </div>
 
@@ -150,7 +156,7 @@ $froms = new Formularios();
                 'nombre_encargado',
                 'id_encargado',
                 'contacto_detalle',
-                '',
+                $datos['contacto_detalle'],
                 '',
                 ''
               );
@@ -166,7 +172,7 @@ $froms = new Formularios();
 
             <div class="col-md-12">
               <label>Descripción<span style="color:red">*</span></label>
-              <textarea class="form-control requerido" rows="3" id="descripcion_detalle" name="descripcion_detalle"></textarea>
+              <textarea class="form-control requerido" rows="3" id="descripcion_detalle" name="descripcion_detalle"><?php echo $datos['descripcion_detalle']; ?></textarea>
             </div>
 
           </div>
@@ -179,10 +185,10 @@ $froms = new Formularios();
           <div class="row">
             <div class="col-md-9">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button onclick="cargar_detalles();" class="btn btn-danger">Cancelar</button>
+              <button onclick="cargar_detalles_editar();" class="btn btn-danger">Cancelar</button>
             </div>
             <div class="col-md-3">
-              <button onclick="insertar_detalle(); return false;" class="btn btn-success">Guardar</button>
+              <button onclick="editar_info_detalle(); return false;" class="btn btn-success">Guardar</button>
             </div>
           </div>
         </div>

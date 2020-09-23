@@ -114,3 +114,12 @@ function fchcie_insertar(fchcie) {
   }
 
 }
+
+
+function mostrar_fechas_procesos() {
+
+  if("#modalidad_contrato").val() == ""){
+    
+  }
+
+}

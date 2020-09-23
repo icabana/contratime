@@ -77,9 +77,7 @@ class PlanesControlador extends ControllerBase {
                     
         $PlanesModel->editar(
             $_POST["id_plan"], 
-            $_POST["ano_plan"],
-            $_POST["contacto_plan"],
-            $_POST["valor_plan"]
+            $_POST["contacto_plan"]
         );              
             
         echo 1;

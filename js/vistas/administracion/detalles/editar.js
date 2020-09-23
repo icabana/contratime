@@ -4,7 +4,7 @@ function editar_info_detalle() {
         return 0;   
     }
     
-    var datos = $('#form_detalles').serialize();
+    var datos = $('#form_detalles_editar').serialize();
     
     ejecutarAccion(
       'administracion',
@@ -20,7 +20,7 @@ function editar_info_detalle() {
 
     if (data == 1) {
       mensaje_alertas("success", "Detalle Editado Exitosamente", "center");
-      cargar_detalles();
+      cargar_detalles_editar();
     } else {
       mensaje_alertas("error", "El Nick ya se encuentra registrado", "center");
     }

@@ -59,22 +59,50 @@ class PlanesModel extends ModelBase {
     
     function editar(
                     $id_plan, 
-                    $ano_plan,
-                    $contacto_plan,
-                    $valor_plan
+                    $contacto_plan
                 ) {
         
         $query = "  UPDATE planes 
                 
-                    SET ano_plan = '". $ano_plan ."',
-                        contacto_plan = '". utf8_decode($contacto_plan) ."',
-                        valor_plan = '". $valor_plan ."'
+                    SET contacto_plan = '". utf8_decode($contacto_plan) ."'
         
                     WHERE id_plan = '" . $id_plan . "'";       
             
         return $this->modificarRegistros($query);
        
     }
+
+    
+    function modificarValorSumar(
+        $id_plan
+    ) {
+
+        $query = "  UPDATE planes 
+            
+                SET valor_plan = (select sum(valactual_detalle) from planes_detalles where plan_detalle = '".$id_plan."')
+
+                WHERE id_plan = '" . $id_plan . "'";       
+
+        return $this->modificarRegistros($query);
+
+    }
+
+    
+    function modificarValorRestar(
+        $id_plan, 
+        $valor_plan
+    ) {
+
+        $query = "  UPDATE planes 
+            
+                SET valor_plan = valor_plan - ".$valor_plan."
+
+                WHERE id_plan = '" . $id_plan . "'";       
+
+        return $this->modificarRegistros($query);
+
+    }
+
     
     function eliminar($id_plan) {
         

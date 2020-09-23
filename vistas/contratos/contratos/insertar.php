@@ -44,7 +44,7 @@ $froms = new Formularios();
                 'modalidad_contrato',
                 '',
                 '',
-                ''
+                'mostrar_fechas_procesos()'
               );
 
               ?>
@@ -73,7 +73,7 @@ $froms = new Formularios();
           <br>
 
 
-          <div class="row">
+          <div id="div_fechas_procesos" class="row">
 
        
             <div class="col-md-3">

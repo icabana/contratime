@@ -14,6 +14,8 @@ $froms = new Formularios();
 
       <form autocomplete="on" id="form_detalles" method="post">
 
+        <input type="hidden" class="form-control" id="id_plan_detalle" name="id_plan_detalle" value="<?php echo $plan_detalle; ?>" >
+
         <div class="card-body">
           <div class="row">
 
@@ -178,7 +180,7 @@ $froms = new Formularios();
           <div class="row">
             <div class="col-md-9">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button onclick="cargar_detalles();" class="btn btn-danger">Cancelar</button>
+              <button onclick="cargar_detalles_insertar();" class="btn btn-danger">Cancelar</button>
             </div>
             <div class="col-md-3">
               <button onclick="insertar_detalle(); return false;" class="btn btn-success">Guardar</button>

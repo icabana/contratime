@@ -26,7 +26,7 @@
                     <div class="form-group">
                       <label>Vigencia: <span style="color:red">*</span></label>
                       
-                      <select name="ano_plan" id="ano_plan" class="form-control">
+                      <select disabled name="ano_plan" id="ano_plan" class="form-control">
                         <option value="2020">2020</option>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
@@ -40,7 +40,7 @@
                     <div class="form-group">
                       <label>Valor Total: <span style="color:red">*</span></label>
                       
-                      <input type="text" class="form-control input_dinero" id="valor_plan" name="valor_plan" 
+                      <input readonly type="text" class="form-control input_dinero" id="valor_plan" name="valor_plan" 
                               value="<?php echo $datos['valor_plan']; ?>"  > 
                       
                     </div>

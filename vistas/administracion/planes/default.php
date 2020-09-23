@@ -64,10 +64,10 @@
                             echo "<td>" . utf8_encode($plan['contacto_plan']) . "</td>";
                             echo "<td>$" . number_format($plan['valor_plan'],0,',','.') . "</td>";
                             
-                            echo "<td><a class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#'  onclick='detalles_plan(" . $plan['id_plan'] . ");'><i title='Ver Documentos' 
-                            class='fas fa-file'></i></a></td>";
+                            echo "<td><a title='Ver Detalles' class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#'  onclick='detalles_plan(" . $plan['id_plan'] . ");'><i' 
+                            class='fas fa-search'></i></a></td>";
 
-                            echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_plan(" . $plan['id_plan'] . ");'><i title='Editar Plan' 
+                            echo "<td><a title='Editar Plan'  class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_plan(" . $plan['id_plan'] . ");'><i
                                     class='fas fa-edit'></i></a></td>";
 
                             echo "</tr>";

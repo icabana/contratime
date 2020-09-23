@@ -53,7 +53,8 @@ class ModalidadesControlador extends ControllerBase {
         $ModalidadesModel = new ModalidadesModel();            
         
         $resp = $ModalidadesModel->insertar(
-            $_POST["nombre_modalidad"]
+            $_POST["nombre_modalidad"],
+            $_POST["tipo_modalidad"]
         );        
         
         if( $resp != 0 ){
@@ -75,7 +76,8 @@ class ModalidadesControlador extends ControllerBase {
                     
         $ModalidadesModel->editar(
             $_POST["id_modalidad"], 
-            $_POST["nombre_modalidad"]
+            $_POST["nombre_modalidad"],
+            $_POST["tipo_modalidad"]
         );              
             
         echo 1;

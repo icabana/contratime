@@ -43,6 +43,7 @@
                         <tr>
                             <th style='background-color:lavender; width:15px'>No.</th>
                             <th style='background-color:lavender'>Modalidad de Contrataci&oacute;n</th>
+                            <th style='background-color:lavender'>Tipo de Modalidad</th>
                             <th style='background-color:lavender; width:15px'></th>
                             <th style='background-color:lavender; width:15px'></th>
                         </tr>
@@ -57,6 +58,8 @@
                             echo "<tr>";
 
                             echo "<td>" . $cont . "</td>";
+
+                            echo "<td>" . utf8_encode($modalidad['tipo_modalidad']) . "</td>";
 
                             echo "<td>" . utf8_encode($modalidad['nombre_modalidad']) . "</td>";
                             

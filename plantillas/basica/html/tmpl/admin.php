@@ -43,6 +43,7 @@
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/modalidades.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/fuentes.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/planes.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/detalles.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/administracion/tiposcontrato.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/contratistas.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/soportes.js'></script> 

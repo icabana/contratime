@@ -21,7 +21,7 @@ function insertar_detalle2(data) {
 
     if (data == 1) {
       mensaje_alertas("success", "Detalle Registrado Exitosamente", "center");
-      cargar_detalles();
+      cargar_detalles_insertar();
     } else {
       mensaje_alertas("error", "El Documento ya se encuentra registrado", "center");
     }

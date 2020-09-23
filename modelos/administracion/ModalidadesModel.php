@@ -6,7 +6,8 @@ class ModalidadesModel extends ModelBase {
         
         $query = "  SELECT 
                         id_modalidad, 
-                        nombre_modalidad
+                        nombre_modalidad,
+                        tipo_modalidad
                 
                     FROM modalidades
 
@@ -21,7 +22,8 @@ class ModalidadesModel extends ModelBase {
        
         $query = "select 	
                     modalidades.id_modalidad, 
-                    modalidades.nombre_modalidad
+                    modalidades.nombre_modalidad,
+                    modalidades.tipo_modalidad
                 
                     from modalidades 
 
@@ -33,14 +35,17 @@ class ModalidadesModel extends ModelBase {
     }
 
     function insertar(                               
-                        $nombre_modalidad
+                        $nombre_modalidad,
+                        $tipo_modalidad
                     ){
                 
         $query = "INSERT INTO modalidades (
-                        nombre_modalidad
+                        nombre_modalidad,
+                        tipo_modalidad
                     )
                     VALUES(
-                        '".utf8_decode($nombre_modalidad)."'
+                        '".utf8_decode($nombre_modalidad)."',
+                        '".utf8_decode($tipo_modalidad)."'
                     );";
        
         return $this->crear_ultimo_id($query);       
@@ -49,12 +54,14 @@ class ModalidadesModel extends ModelBase {
     
     function editar(
                     $id_modalidad, 
-                    $nombre_modalidad
+                    $nombre_modalidad,
+                    $tipo_modalidad
                 ) {
         
         $query = "  UPDATE modalidades 
                 
-                    SET nombre_modalidad = '". utf8_decode($nombre_modalidad) ."'
+                    SET nombre_modalidad = '". utf8_decode($nombre_modalidad) ."',
+                        tipo_modalidad = '". utf8_decode($tipo_modalidad) ."'
         
                     WHERE id_modalidad = '" . $id_modalidad . "'";       
             
