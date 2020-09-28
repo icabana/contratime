@@ -88,7 +88,7 @@ $froms = new Formularios();
             <div style="padding: 20px; " class="tab-pane active" id="tab_1">
 
             <?php
-              include("vistas/contratos/contratos/form_financiera.php");
+              include("vistas/contratos/contratos/form_encargado.php");
               ?>
             
           

@@ -67,7 +67,7 @@
                             echo "<td>" . utf8_encode($detalle['codigos_detalle']) . "</td>";
                             echo "<td>" . utf8_encode($detalle['descripcion_detalle']) . "</td>";
                             echo "<td>" . utf8_encode($detalle['fechainicio_detalle']) . "</td>";
-                            echo "<td>" . utf8_encode($detalle['meses_detalle']) . " Meses</td>";
+                            echo "<td>" . utf8_encode($detalle['meses_detalle']) . "</td>";
                             echo "<td>" . utf8_encode($detalle['nombre_modalidad']) . "</td>";
                             echo "<td>" . utf8_encode($detalle['nombre_fuente']) . "</td>";
                             echo "<td>$" . number_format($detalle['valtotal_detalle'], 0, ',', '.') . "</td>";

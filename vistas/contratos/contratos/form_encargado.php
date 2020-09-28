@@ -5,10 +5,10 @@ $froms = new Formularios();
 
 <div class="row">
 
-  <div class="col-md-2">
+<div class="col-md-2">
 
     <label>No. de Proceso<span style="color:red">*</span></label>
-    <input type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato"  maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
+    <input readonly type="text" class="form-control" id="numproceso_contrato" name="numproceso_contrato" value="<?php echo $numero_proceso; ?>">
 
   </div>
 
@@ -20,7 +20,9 @@ $froms = new Formularios();
 
   </div>
 
-  
+  <?php
+    if($contrato['modalidad_contrato'] == ""){
+  ?>
   <div class="col-md-4">
     <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
 
@@ -38,6 +40,19 @@ $froms = new Formularios();
 
     ?>
   </div>
+  <?php
+    }else{
+      ?>
+
+<div class="col-md-4">
+    <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
+
+        <input type="hidden" id="modalidad_contrato" name="modalidad_contrato" value="<?php echo $contrato['modalidad_contrato']; ?>">
+        <input readonly type="text" class="form-control" id="modalidad" name="modalidad" value="<?php echo $contrato['nombre_modalidad']; ?>">
+    </div>
+  <?php
+    }
+  ?>
 
 
   <div class="col-md-4">
@@ -186,10 +201,10 @@ if ($contrato['estado_contrato'] > 2) {
   <div class="col-md-4"></div>
   <div class="col-md-2">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button onclick="cargar_contratos();" class="btn btn-danger">Cancelar</button>
+    <button onclick="cargar_procesos();" class="btn btn-danger">Cancelar</button>
   </div>
   <div class="col-md-2">
-    <button onclick="editar_info_contrato(); return false;" class="btn btn-success">Guardar</button>
+    <button onclick="editar_info_encargado(); return false;" class="btn btn-success">Guardar</button>
   </div>
   <div class="col-md-4"></div>
 </div>

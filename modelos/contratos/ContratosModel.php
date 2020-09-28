@@ -24,6 +24,9 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -103,6 +106,212 @@ class ContratosModel extends ModelBase {
                
     }  
 
+    function getTodosContratos() {
+        
+        $query = "SELECT 
+
+                    contratos.id_contrato, 
+                    contratos.tipo_contrato,
+                    contratos.modalidad_contrato,
+                    contratos.valor_contrato,
+                    contratos.valproceso_contrato,
+                    contratos.contratista_contrato,
+                    contratos.fechainicio_contrato,
+                    contratos.fechafinal_contrato,
+                    contratos.favisoproceso_contrato,
+                    contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
+                    contratos.fadjudicacionproceso_contrato,
+                    contratos.fcierreproceso_contrato,
+                    contratos.numero_contrato,
+                    contratos.numproceso_contrato,
+                    contratos.objeto_contrato,
+                    contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
+
+
+                    contratistas.id_contratista, 
+
+                    contratistas.tipo_contratista,
+                    contratistas.tipodocumento_contratista,
+                    contratistas.documento_contratista,
+                    contratistas.nombres_contratista,
+                    contratistas.apellidos_contratista,
+
+                    contratistas.dirresidencia_contratista,
+                    contratistas.dircorrespondencia_contratista,
+                    contratistas.telefono_contratista,
+                    contratistas.celular_contratista,
+                    contratistas.correo_contratista,
+                    contratistas.paginaweb_contratista,
+
+                    contratistas.pais_contratista,
+                    contratistas.departamento_contratista,
+                    contratistas.municipio_contratista,
+
+                    contratistas.fechanacimiento_contratista,
+
+                    contratistas.genero_contratista,
+                    contratistas.estadocivil_contratista,
+                    contratistas.hijos_contratista,
+
+                    contratistas.profesion_contratista,
+            
+                    tiposdocumento.codigo_tipodocumento,
+                    tiposdocumento.nombre_tipodocumento,
+    
+                    paises.codigo3_pais,
+                    paises.nombre_pais,
+                    departamentos.nombre_departamento,
+                    municipios.nombre_municipio,
+    
+                    generos.nombre_genero,
+    
+                    estadoscivil.nombre_estadocivil,
+    
+                    profesiones.nombre_profesion,
+    
+                    tipospersona.nombre_tipopersona,
+    
+                    estados.nombre_estado,
+
+                    modalidades.id_modalidad, 
+                    modalidades.nombre_modalidad,
+
+                    tiposcontrato.id_tipocontrato, 
+                    tiposcontrato.nombre_tipocontrato,
+
+                    estadoscontrato.id_estado, 
+                    estadoscontrato.nombre_estado as nombreestado_contrato
+                
+                    FROM contratos 
+                            left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipocontrato
+                            left join modalidades ON contratos.modalidad_contrato = modalidades.id_modalidad
+                            left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista  left join tipospersona on contratistas.tipo_contratista = tipospersona.id_tipopersona
+                            left join tiposdocumento on contratistas.tipodocumento_contratista = tiposdocumento.id_tipodocumento
+                            left join paises on contratistas.pais_contratista = paises.id_pais       
+                            left join departamentos on contratistas.departamento_contratista = departamentos.id_departamento
+                            left join municipios on contratistas.municipio_contratista = municipios.id_municipio
+                            left join generos on contratistas.genero_contratista = generos.id_genero
+                            left join estadoscivil on contratistas.estadocivil_contratista = estadoscivil.id_estadocivil
+                            left join profesiones on contratistas.profesion_contratista = profesiones.id_profesion
+                            left join estados on contratistas.estado_contratista = estados.id_estado
+                            left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
+                        
+                    WHERE contratos.estado_contrato = '3' || contratos.estado_contrato = '4'
+                    
+                    ORDER BY contratos.numero_contrato";
+        
+        $consulta = $this->consulta($query);
+        return $consulta;       
+               
+    }  
+
+    function getTodosProcesos() {
+        
+        $query = "SELECT 
+
+                    contratos.id_contrato, 
+                    contratos.tipo_contrato,
+                    contratos.modalidad_contrato,
+                    contratos.valor_contrato,
+                    contratos.valproceso_contrato,
+                    contratos.contratista_contrato,
+                    contratos.fechainicio_contrato,
+                    contratos.fechafinal_contrato,
+                    contratos.favisoproceso_contrato,
+                    contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
+                    contratos.fadjudicacionproceso_contrato,
+                    contratos.fcierreproceso_contrato,
+                    contratos.numero_contrato,
+                    contratos.numproceso_contrato,
+                    contratos.objeto_contrato,
+                    contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
+
+
+                    contratistas.id_contratista, 
+
+                    contratistas.tipo_contratista,
+                    contratistas.tipodocumento_contratista,
+                    contratistas.documento_contratista,
+                    contratistas.nombres_contratista,
+                    contratistas.apellidos_contratista,
+
+                    contratistas.dirresidencia_contratista,
+                    contratistas.dircorrespondencia_contratista,
+                    contratistas.telefono_contratista,
+                    contratistas.celular_contratista,
+                    contratistas.correo_contratista,
+                    contratistas.paginaweb_contratista,
+
+                    contratistas.pais_contratista,
+                    contratistas.departamento_contratista,
+                    contratistas.municipio_contratista,
+
+                    contratistas.fechanacimiento_contratista,
+
+                    contratistas.genero_contratista,
+                    contratistas.estadocivil_contratista,
+                    contratistas.hijos_contratista,
+
+                    contratistas.profesion_contratista,
+            
+                    tiposdocumento.codigo_tipodocumento,
+                    tiposdocumento.nombre_tipodocumento,
+    
+                    paises.codigo3_pais,
+                    paises.nombre_pais,
+                    departamentos.nombre_departamento,
+                    municipios.nombre_municipio,
+    
+                    generos.nombre_genero,
+    
+                    estadoscivil.nombre_estadocivil,
+    
+                    profesiones.nombre_profesion,
+    
+                    tipospersona.nombre_tipopersona,
+    
+                    estados.nombre_estado,
+
+                    modalidades.id_modalidad, 
+                    modalidades.nombre_modalidad,
+
+                    tiposcontrato.id_tipocontrato, 
+                    tiposcontrato.nombre_tipocontrato,
+
+                    estadoscontrato.id_estado, 
+                    estadoscontrato.nombre_estado as nombreestado_contrato
+                
+                    FROM contratos 
+                            left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipocontrato
+                            left join modalidades ON contratos.modalidad_contrato = modalidades.id_modalidad
+                            left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista  left join tipospersona on contratistas.tipo_contratista = tipospersona.id_tipopersona
+                            left join tiposdocumento on contratistas.tipodocumento_contratista = tiposdocumento.id_tipodocumento
+                            left join paises on contratistas.pais_contratista = paises.id_pais       
+                            left join departamentos on contratistas.departamento_contratista = departamentos.id_departamento
+                            left join municipios on contratistas.municipio_contratista = municipios.id_municipio
+                            left join generos on contratistas.genero_contratista = generos.id_genero
+                            left join estadoscivil on contratistas.estadocivil_contratista = estadoscivil.id_estadocivil
+                            left join profesiones on contratistas.profesion_contratista = profesiones.id_profesion
+                            left join estados on contratistas.estado_contratista = estados.id_estado
+                            left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
+                        
+                    WHERE contratos.estado_contrato = '1' || contratos.estado_contrato = '2'
+                    
+                    ORDER BY contratos.numero_contrato";
+        
+        $consulta = $this->consulta($query);
+        return $consulta;       
+               
+    }  
+
 
     function getTodosReporte($modalidad_contrato, $tipo_contrato, $estado_contrato) {
         
@@ -139,6 +348,9 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -341,6 +553,9 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -444,6 +659,9 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -548,6 +766,9 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -651,6 +872,9 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -753,6 +977,9 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -856,6 +1083,9 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -975,6 +1205,9 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -1080,6 +1313,9 @@ class ContratosModel extends ModelBase {
                         contratos.numproceso_contrato,
                         contratos.objeto_contrato,
                         contratos.estado_contrato,
+                        contratos.agncon,
+                        contratos.concon,
+                        contratos.plan_contrato,
 
 
                         contratistas.id_contratista, 
@@ -1202,6 +1438,7 @@ class ContratosModel extends ModelBase {
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
                     contratos.estado_contrato,
+                    contratos.plan_contrato,
 
 
                     contratistas.id_contratista, 
@@ -1303,6 +1540,9 @@ class ContratosModel extends ModelBase {
         contratos.numproceso_contrato,
         contratos.objeto_contrato,
         contratos.estado_contrato,
+        contratos.agncon,
+        contratos.concon,
+        contratos.plan_contrato,
 
 
         contratistas.id_contratista, 
@@ -1381,44 +1621,68 @@ class ContratosModel extends ModelBase {
     }
     
 
-    function insertar(      
-        $numproceso_contrato,
-        $valproceso_contrato,
-        $favisoproceso_contrato,
-        $fevaluacionproceso_contrato,
-        $fevaluacionproceso2_contrato,
-        $fadjudicacionproceso_contrato,
-        $fcierreproceso_contrato,
+    function insertarContratoDirecto(      
+        $numero_contrato,
+        $valor_contrato,
         $modalidad_contrato,
         $tipo_contrato,
-        $objeto_contrato
+        $fechainicio_contrato,
+        $fechafinal_contrato,
+        $contratista_contrato,
+        $objeto_contrato,
+        $concon
     ){
-                
+        
+        $agncon = date('Y');
+
         $query = "INSERT INTO contratos (
-                        numproceso_contrato,
-                        valproceso_contrato,
-                        favisoproceso_contrato,
-                        fevaluacionproceso_contrato,
-                        fevaluacionproceso2_contrato,
-                        fadjudicacionproceso_contrato,
-                        fcierreproceso_contrato,
+                        numero_contrato,
+                        valor_contrato,
                         modalidad_contrato,
                         tipo_contrato,
+                        fechainicio_contrato,
+                        fechafinal_contrato,
+                        contratista_contrato,
                         objeto_contrato,
-                        estado_contrato
+                        estado_contrato,
+                        agncon,
+                        concon
                             )
                     VALUES(
-                        '".$numproceso_contrato."',
-                        '".$valproceso_contrato."',
-                        '".$favisoproceso_contrato."',
-                        '".$fevaluacionproceso_contrato."',
-                        '".$fevaluacionproceso2_contrato."',
-                        '".$fadjudicacionproceso_contrato."',
-                        '".$fcierreproceso_contrato."',
+                        '".$numero_contrato."',
+                        '".$valor_contrato."',
                         '".$modalidad_contrato."',
                         '".$tipo_contrato."',
+                        '".$fechainicio_contrato."',
+                        '".$fechafinal_contrato."',
+                        '".$contratista_contrato."',
                         '".utf8_decode($objeto_contrato)."',
-                        '1'
+                        '3',
+                        '".$agncon."',
+                        '".$concon."'
+                    );";
+  
+       
+        return $this->crear_ultimo_id($query);
+        
+    }
+    
+
+    function insertarProceso(    
+        $objeto_contrato
+    ){
+        
+        $agncon = date('Y');
+
+        $query = "INSERT INTO contratos (                     
+                        objeto_contrato,
+                        estado_contrato,
+                        agncon
+                            )
+                    VALUES(                      
+                        '".utf8_decode($objeto_contrato)."',
+                        '1',
+                        '".$agncon."'
                     );";
   
        
@@ -1495,6 +1759,160 @@ class ContratosModel extends ModelBase {
         return $this->modificarRegistros($query);
        
     }
+
+
+    function editarProceso(
+                    $id_contrato, 
+                    $numproceso_contrato,
+                    $valproceso_contrato,
+                    $favisoproceso_contrato,
+                    $fevaluacionproceso_contrato,
+                    $fevaluacionproceso2_contrato,
+                    $fadjudicacionproceso_contrato,
+                    $fcierreproceso_contrato,
+                    $modalidad_contrato,
+                    $contratista_contrato,
+                    $tipo_contrato,
+                    $objeto_contrato,
+
+                    $numero_contrato,
+                    $valor_contrato,
+                    $fechainicio_contrato,
+                    $fechafinal_contrato
+                ) {
+
+                if($contratista_contrato == ''){
+        
+            $query = "  UPDATE contratos 
+
+                    SET numproceso_contrato = '". $numproceso_contrato ."',
+                        valproceso_contrato = '". $valproceso_contrato ."',
+                        favisoproceso_contrato = '". $favisoproceso_contrato ."',
+                        fevaluacionproceso_contrato = '". $fevaluacionproceso_contrato ."',
+                        fevaluacionproceso2_contrato = '". $fevaluacionproceso2_contrato ."',
+                        fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
+                        fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
+                        modalidad_contrato = '". $modalidad_contrato ."',
+                        tipo_contrato = '". $tipo_contrato ."',
+                        objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+
+                        numero_contrato = '". $numero_contrato ."',
+                        valor_contrato = '". $valor_contrato ."',
+                        fechainicio_contrato = '". $fechainicio_contrato ."',
+                        fechafinal_contrato = '". $fechafinal_contrato ."'
+
+                    WHERE id_contrato = '" . $id_contrato . "'";
+            }else{
+                $query = "  UPDATE contratos 
+
+                SET numproceso_contrato = '". $numproceso_contrato ."',
+                    valproceso_contrato = '". $valproceso_contrato ."',
+                    favisoproceso_contrato = '". $favisoproceso_contrato ."',
+                    fevaluacionproceso_contrato = '". $fevaluacionproceso_contrato ."',
+                    fevaluacionproceso2_contrato = '". $fevaluacionproceso2_contrato ."',
+                    fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
+                    fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
+                    modalidad_contrato = '". $modalidad_contrato ."',
+                    contratista_contrato = '". $contratista_contrato ."',
+                    tipo_contrato = '". $tipo_contrato ."',
+                    objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+
+                    numero_contrato = '". $numero_contrato ."',
+                    valor_contrato = '". $valor_contrato ."',
+                    fechainicio_contrato = '". $fechainicio_contrato ."',
+                    fechafinal_contrato = '". $fechafinal_contrato ."'
+
+                WHERE id_contrato = '" . $id_contrato . "'";
+            }
+         
+
+        return $this->modificarRegistros($query);
+       
+    }
+
+
+    function editarDirecto(
+        $id_contrato, 
+        $contratista_contrato,
+        $tipo_contrato,
+        $objeto_contrato,
+
+        $numero_contrato,
+        $valor_contrato,
+        $fechainicio_contrato,
+        $fechafinal_contrato
+    ) {
+
+    if($contratista_contrato == ''){
+
+            $query = "  UPDATE contratos 
+
+                    SET tipo_contrato = '". $tipo_contrato ."',
+                        objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+
+                        numero_contrato = '". $numero_contrato ."',
+                        valor_contrato = '". $valor_contrato ."',
+                        fechainicio_contrato = '". $fechainicio_contrato ."',
+                        fechafinal_contrato = '". $fechafinal_contrato ."'
+
+                    WHERE id_contrato = '" . $id_contrato . "'";
+            }else{
+                $query = "  UPDATE contratos 
+
+                SET contratista_contrato = '". $contratista_contrato ."',
+                    tipo_contrato = '". $tipo_contrato ."',
+                    objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+
+                    numero_contrato = '". $numero_contrato ."',
+                    valor_contrato = '". $valor_contrato ."',
+                    fechainicio_contrato = '". $fechainicio_contrato ."',
+                    fechafinal_contrato = '". $fechafinal_contrato ."'
+
+                WHERE id_contrato = '" . $id_contrato . "'";
+            }
+
+
+            return $this->modificarRegistros($query);
+
+            }
+
+    
+            
+    function seleccionarPlan(
+        $id_contrato, 
+        $plan_contrato
+    ) {
+
+            $query = "  UPDATE contratos 
+
+                    SET plan_contrato = '". $plan_contrato ."'
+
+                    WHERE id_contrato = '" . $id_contrato . "'";
+         
+
+
+            return $this->modificarRegistros($query);
+
+        }
+
+    
+    
+            
+    function deseleccionarPlan(
+        $id_contrato
+    ) {
+
+            $query = "  UPDATE contratos 
+
+                    SET plan_contrato = ''
+
+                    WHERE id_contrato = '" . $id_contrato . "'";
+         
+
+
+            return $this->modificarRegistros($query);
+
+        }
 
     
     
@@ -1575,6 +1993,49 @@ class ContratosModel extends ModelBase {
                
     }  
     
+    
+    
+    function getConsecutivo($modalidad_contrato) {
+        
+        $agncon = date("Y");
+
+        $query = "  SELECT concon
+                
+                    FROM contratos 
+                    
+                    WHERE modalidad_contrato = '".$modalidad_contrato."'
+                            and agncon = '".$agncon."'
+                    
+                    ORDER BY concon DESC
+                    
+                    LIMIT 1";
+        
+        $consulta = $this->consulta($query);  
+
+        return $consulta[0]['concon'];       
+               
+    }
+
+    function getConsecutivoProceso($modalidad_contrato) {
+        
+        $agncon = date("Y");
+
+        $query = "  SELECT conpro
+                
+                    FROM contratos 
+                    
+                    WHERE modalidad_contrato = '".$modalidad_contrato."'
+                            and agncon = '".$agncon."'
+                    
+                    ORDER BY concon DESC
+                    
+                    LIMIT 1";
+        
+        $consulta = $this->consulta($query);  
+
+        return $consulta[0]['concon'];       
+               
+    }  
     
     function getNumConvocadosXEncargado() {
         

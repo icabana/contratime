@@ -32,6 +32,76 @@ function insertar_contrato2(data) {
 
 }
 
+function insertar_contrato_directo() {
+
+  if(!validar_requeridos()){
+      return 0;
+  }
+  
+  var datos = $('#formContratos').serialize();
+
+  ejecutarAccion(
+    'contratos',
+    'Contratos',
+    'insertarContratoDirecto',
+    datos,
+    'insertar_contrato_directo2(data)'
+  );
+
+}
+
+function insertar_contrato_directo2(data) {
+
+  if (data == 'error_documento') {
+    mensaje_alertas("error", "El Documento ya se encuentra registrado", "center");
+    return false;
+  } 
+  if (data == 'error_correo') {
+    mensaje_alertas("error", "El Correo ya se encuentra registrado", "center");
+    return false;
+  } 
+  
+  mensaje_alertas("success", "Contrato registrado correctamente", "center");
+  cargar_contratos();
+
+}
+
+
+function insertar_proceso() {
+
+  if(!validar_requeridos()){
+      return 0;
+  }
+  
+  var datos = $('#formContratos').serialize();
+
+  ejecutarAccion(
+    'contratos',
+    'Contratos',
+    'insertarProceso',
+    datos,
+    'insertar_proceso2(data)'
+  );
+
+}
+
+function insertar_proceso2(data) {
+
+  if (data == 'error_documento') {
+    mensaje_alertas("error", "El Documento ya se encuentra registrado", "center");
+    return false;
+  } 
+  if (data == 'error_correo') {
+    mensaje_alertas("error", "El Correo ya se encuentra registrado", "center");
+    return false;
+  } 
+  
+  mensaje_alertas("success", "Contrato registrado correctamente", "center");
+  cargar_procesos();
+
+}
+
+
 function fchinv_insertar(fchevl1) {
 
   var fevaluacionproceso_contrato = $("#fevaluacionproceso_contrato").val();
@@ -111,15 +181,6 @@ function fchcie_insertar(fchcie) {
   if(fadjudicacionproceso_contrato > $(fchcie).val() && fadjudicacionproceso_contrato != ""){
     mensaje_alertas("error", "Esta Fecha debe ser mayor a la Fecha de Adjudicación", "center");
     $(fchcie).val($("#fadjudicacionproceso_contrato").val());
-  }
-
-}
-
-
-function mostrar_fechas_procesos() {
-
-  if("#modalidad_contrato").val() == ""){
-    
   }
 
 }

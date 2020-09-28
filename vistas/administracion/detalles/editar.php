@@ -14,8 +14,8 @@ $froms = new Formularios();
 
       <form autocomplete="on" id="form_detalles_editar" method="post">
 
-        <input type="text" class="form-control" id="id_plan_detalle_editar" name="id_plan_detalle_editar" value="<?php echo $id_plan; ?>" >
-        <input type="text" class="form-control" id="id_detalle" name="id_detalle" value="<?php echo $datos['id_detalle']; ?>" >
+        <input type="hidden" class="form-control" id="id_plan_detalle_editar" name="id_plan_detalle_editar" value="<?php echo $id_plan; ?>" >
+        <input type="hidden" class="form-control" id="id_detalle" name="id_detalle" value="<?php echo $datos['id_detalle']; ?>" >
 
         <div class="card-body">
           <div class="row">

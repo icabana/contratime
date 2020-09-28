@@ -30,8 +30,8 @@
                 <div class="form-group">
                   <label>Tipo: <span style="color:red">*</span></label>
                   <select class="form-control requerido" name="tipo_modalidad" id="tipo_modalidad">
-                      <option value="proceso">Incluye Fechas de Proceso </option>
-                      <option value="contrato">No Incluye Fechas de Proceso </option>
+                      <option value="Proceso">Proceso</option>
+                      <option value="Contrato">Contrato</option>
                   </select>
                 </div>
               </div>

@@ -14,10 +14,15 @@
                     <div class="row">
 
 
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             <h4 style="color:grey">Documentos Soportes (<?php echo utf8_encode($datos['nombre_modalidad']) ?>)</h4>
                         </div>
                     
+                        <div class="col-md-1">
+                            <button onclick="cargar_modalidades(); return false;" class="btn btn-danger btn-sm">
+                                Regresar
+                            </button>
+                        </div>
                         <div class="col-md-2">
                             <button onclick="nuevo_documento(<?php echo $datos['id_modalidad'] ?>); return false;" class="btn btn-success btn-sm">
                                 Nuevo Documento

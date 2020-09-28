@@ -33,10 +33,10 @@ $froms = new Formularios();
           <div class="row">
             <div class="col-md-9">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button onclick="cargar_contratos();" class="btn btn-danger">Cancelar</button>
+              <button onclick="cargar_procesos();" class="btn btn-danger">Cancelar</button>
             </div>
             <div class="col-md-3">
-              <button onclick="insertar_contrato(); return false;" class="btn btn-success">Guardar</button>
+              <button onclick="insertar_proceso(); return false;" class="btn btn-success">Guardar</button>
             </div>
           </div>
         </div>

@@ -13,8 +13,8 @@
         <div class="col-md-12">
 
           <label>N&uacute;mero de Contrato: <span style="color:red">*</span></label>
-          <input type="text" class="form-control requerido_celebrar" id="numero_contra" name="numero_contra" 
-          maxlength="20">
+          <input readonly type="text" class="form-control requerido_celebrar" id="numero_contra" name="numero_contra" 
+          maxlength="20" value="<?php echo date("Y").' - ?' ?>">
 
         </div>
         <br>

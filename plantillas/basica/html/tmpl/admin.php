@@ -145,7 +145,10 @@
         if($_SESSION['rol'] == 1){
       ?>
        <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" onclick="nuevo_contrato(); return false;" class="nav-link"><b>Nuevo Contrato</b></a>
+        <a href="#" onclick="nuevo_proceso(); return false;" class="nav-link"><b>Nuevo Proceso</b></a>
+      </li>
+       <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" onclick="nuevo_contrato_directo(); return false;" class="nav-link"><b>Nuevo Contrato</b></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" onclick="cargar_contratistas(); return false;" class="nav-link"><b>Contratistas</b></a>
@@ -252,9 +255,16 @@
       
 
         <li class="nav-item">
+          <a href="#" onclick="cargar_procesos();" class="nav-link">
+            <i class="fas fa-archive nav-icon"></i>
+            <p>Gestionar Procesos</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
           <a href="#" onclick="cargar_contratos();" class="nav-link">
             <i class="fas fa-archive nav-icon"></i>
-            <p>Contratos</p>
+            <p>Gestionar Contratos</p>
           </a>
         </li>
 

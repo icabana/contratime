@@ -22,10 +22,152 @@ function editar_contrato2(data) {
     mensaje_alertas("success", "Contrato Editado Exitosamente", "center");
     cargar_contratos();
   } else {
-    mensaje_alertas("error", "El Documento o Correo ya se encuentra registrado", "center");
+    mensaje_alertas("danger", "No realizó ningún cambio en el Formulario", "center");
   }
 
 }
+
+function seleccionar_plan(id_detalle) {
+  
+  var datos = $('#formContratos').serialize();
+
+  ejecutarAccion(
+    'contratos',
+    'Contratos',
+    'seleccionarPlan',
+    "plan_contrato="+id_detalle+"&id_contrato="+$("#id_contrato").val(),
+    'seleccionar_plan2(data)'
+  );
+
+}
+
+function seleccionar_plan2(data) {
+
+  if (data != 0) {
+    mensaje_alertas("success", "Plan Seleccionado Correctamente!", "center");
+    $("#tab_777_plan").html(data);
+  } else {
+    mensaje_alertas("error", "Error al Seleccionar el plan del Contrato", "center");
+  }
+
+}
+
+
+function deseleccionar_plan(id_detalle) {
+  
+  var datos = $('#formContratos').serialize();
+
+  ejecutarAccion(
+    'contratos',
+    'Contratos',
+    'deseleccionarPlan',
+    "plan_contrato="+id_detalle+"&id_contrato="+$("#id_contrato").val(),
+    'deseleccionar_plan2(data)'
+  );
+
+}
+
+function deseleccionar_plan2(data) {
+
+  if (data != 0) {
+    mensaje_alertas("success", "Se eliminó el Plan Asociado a este Contrato!", "center");
+    $("#tab_777_plan").html(data);
+  } else {
+    mensaje_alertas("error", "Error al eliminar el Plan Asociado a este Contrato", "center");
+  }
+
+}
+
+
+function editar_info_contrato_directo() {
+
+  if(!validar_requeridos()){
+      return 0;
+  }
+  
+  var datos = $('#formContratos').serialize();
+
+  ejecutarAccion(
+    'contratos',
+    'Contratos',
+    'guardarDirecto',
+    datos,
+    'editar_contrato_directo2(data)'
+  );
+
+}
+
+function editar_contrato_directo2(data) {
+
+  if (data == 1) {
+    mensaje_alertas("success", "Contrato Editado Exitosamente", "center");
+    cargar_contratos();
+  } else {
+    mensaje_alertas("danger", "No realizó ningún cambio en el Formulario", "center");
+  }
+
+}
+
+
+function editar_info_proceso() {
+
+  if(!validar_requeridos()){
+      return 0;
+  }
+  
+  var datos = $('#formContratos').serialize();
+
+  ejecutarAccion(
+    'contratos',
+    'Contratos',
+    'guardarProceso',
+    datos,
+    'editar_proceso2(data)'
+  );
+
+}
+
+function editar_proceso2(data) {
+
+  if (data == 1) {
+    mensaje_alertas("success", "Contrato Editado Exitosamente", "center");
+    cargar_procesos();
+  } else {
+    mensaje_alertas("danger", "No realizó ningún cambio en el Formulario", "center");
+  }
+
+}
+
+
+function editar_info_encargado() {
+
+  if(!validar_requeridos()){
+      return 0;
+  }
+  
+  var datos = $('#formContratos').serialize();
+
+  ejecutarAccion(
+    'contratos',
+    'Contratos',
+    'guardarProceso',
+    datos,
+    'editar_proceso_encargado2(data)'
+  );
+
+}
+
+function editar_proceso_encargado2(data) {
+
+  if (data == 1) {
+    mensaje_alertas("success", "Contrato Editado Exitosamente", "center");
+    cargar_contratos_encargado();
+  } else {
+    mensaje_alertas("danger", "No realizó ningún cambio en el Formulario", "center");
+  }
+
+}
+
 
 function fchinv(fchevl1) {
 

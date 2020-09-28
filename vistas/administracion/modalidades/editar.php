@@ -5,8 +5,8 @@
     <div class="box-body">
 
       <div class="row">
-        <div class="col-md-2"></div>
-        <div style="padding: 25px" class="col-md-8">
+        <div class="col-md-3"></div>
+        <div style="padding: 25px" class="col-md-6">
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">Editar Modalidad de Contrataci&oacute;n</h3>
@@ -40,8 +40,8 @@
                 <div class="form-group">
                   <label>Tipo: <span style="color:red">*</span></label>
                   <select class="form-control requerido" name="tipo_modalidad" id="tipo_modalidad">
-                      <option value="proceso">Incluye Fechas de Proceso </option>
-                      <option value="contrato">No Incluye Fechas de Proceso </option>
+                      <option <?php if($datos['tipo_modalidad'] == 'Proceso'){ echo "selected"; } ?> value="Proceso">Proceso</option>
+                      <option <?php if($datos['tipo_modalidad'] == 'Contrato'){ echo "selected"; } ?> value="Contrato">Contrato</option>
                   </select>
                 </div>
               </div>

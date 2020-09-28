@@ -1,3 +1,24 @@
+function cargar_procesos(){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
+    $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
+    $('.ui-widget').remove();
+    $('.elfinder-quicklook').remove();
+    $('.ui-draggable').remove();
+    $('.ui-resizable').remove();
+
+    limpiar_cuerpo();
+    
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'indexProcesos', 
+        ''
+    );    
+        
+}
+
 function cargar_contratos(){
 
     $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
@@ -228,6 +249,27 @@ function cargar_contratos_x_estado(estado){
         
 }
 
+function cargar_procesos_x_estado(estado){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+
+    $('.ui-helper-reset ui-widget elfinder-quicklook ui-draggable ui-resizable').remove();
+    $('.ui-widget').remove();
+    $('.elfinder-quicklook').remove();
+    $('.ui-draggable').remove();
+    $('.ui-resizable').remove();
+
+    limpiar_cuerpo();
+    
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'index_proceso_x_estado', 
+        'estado='+estado
+    );    
+        
+}
+
 function cargar_fila_contratos(id_contrato){
 
     $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
@@ -236,6 +278,20 @@ function cargar_fila_contratos(id_contrato){
         'contratos', 
         'Contratos', 
         'index_fila', 
+        'id_contrato='+id_contrato,
+        '$("#fila_contrato_'+id_contrato+'").html(data);'
+    );    
+        
+}
+
+function cargar_fila_procesos(id_contrato){
+
+    $('.main-sidebar').removeClass('sidebar-expanded sidebar-focused');
+    
+    ejecutarAccion(
+        'contratos', 
+        'Contratos', 
+        'index_fila_procesos', 
         'id_contrato='+id_contrato,
         '$("#fila_contrato_'+id_contrato+'").html(data);'
     );    

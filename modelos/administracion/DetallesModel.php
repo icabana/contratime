@@ -70,6 +70,75 @@ class DetallesModel extends ModelBase {
         return $consulta;       
                
     }  
+    
+    function getTodosxAgn($ano_plan) {
+        
+        $query = "  SELECT 
+                        id_detalle, 
+                        plan_detalle,
+                        codigos_detalle,
+                        descripcion_detalle,
+                        fechainicio_detalle,
+                        meses_detalle,
+                        modalidad_detalle,
+                        fuente_detalle,
+                        valtotal_detalle,
+                        valactual_detalle,
+                        futuras_detalle,
+                        estadofuturas_detalle,
+                        contacto_detalle,
+
+                        fuentes.nombre_fuente,
+                        modalidades.nombre_modalidad
+
+                
+                    FROM planes_detalles 
+                            LEFT JOIN planes ON planes_detalles.plan_detalle = planes.id_plan
+                            LEFT JOIN modalidades ON planes_detalles.modalidad_detalle = modalidades.id_modalidad
+                            LEFT JOIN fuentes ON planes_detalles.fuente_detalle = fuentes.id_fuente
+
+                    WHERE planes.ano_plan = '".$ano_plan."'
+
+                    ORDER BY codigos_detalle";
+        
+        $consulta = $this->consulta($query);
+        return $consulta;       
+               
+    }  
+
+    
+    function getTodosxID($id_detalle) {
+       
+        $query = "  SELECT 
+                        id_detalle, 
+                        plan_detalle,
+                        codigos_detalle,
+                        descripcion_detalle,
+                        fechainicio_detalle,
+                        meses_detalle,
+                        modalidad_detalle,
+                        fuente_detalle,
+                        valtotal_detalle,
+                        valactual_detalle,
+                        futuras_detalle,
+                        estadofuturas_detalle,
+                        contacto_detalle,
+
+                        fuentes.nombre_fuente,
+                        modalidades.nombre_modalidad
+
+
+                    FROM planes_detalles 
+                            LEFT JOIN planes ON planes_detalles.plan_detalle = planes.id_plan
+                            LEFT JOIN modalidades ON planes_detalles.modalidad_detalle = modalidades.id_modalidad
+                            LEFT JOIN fuentes ON planes_detalles.fuente_detalle = fuentes.id_fuente
+
+                WHERE planes_detalles.id_detalle='".$id_detalle."'";
+        
+         $consulta = $this->consulta($query);
+        return $consulta;    
+        
+    }
 
     function getDatos($id_detalle) {
        

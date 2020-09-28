@@ -10,6 +10,18 @@ function nuevo_contrato() {
 
 }
 
+function nuevo_contrato_directo() {
+
+    abrirVentanaContenedor(
+        'contratos', 
+        'Contratos', 
+        'nuevoContratoDirecto', 
+        '', 
+        ''
+    );
+
+}
+
 function nuevo_proceso() {
 
     abrirVentanaContenedor(
@@ -28,6 +40,18 @@ function editar_contrato(id_contrato) {
         'contratos',
         'Contratos',
         'editar',
+        'id_contrato=' + id_contrato,
+        ''
+    );
+
+}
+
+function editar_proceso(id_contrato) {
+
+    abrirVentanaContenedor(
+        'contratos',
+        'Contratos',
+        'editarProceso',
         'id_contrato=' + id_contrato,
         ''
     );
@@ -134,6 +158,28 @@ function eliminar_contrato_editar2(id_contrato) {
 }
 
 
+
+function eliminar_proceso_editar(id_contrato) {
+
+    mensaje_confirmar("¿Está seguro de eliminar el Proceso? Se eliminará toda la información asociada a este proceso y su documentación Anexa", "eliminar_proceso_editar2(" + id_contrato + "); ");
+
+}
+
+
+
+function eliminar_proceso_editar2(id_contrato) {
+
+    ejecutarAccion(
+        'contratos',
+        'Contratos',
+        'eliminarEditar',
+        "id_contrato=" + id_contrato,
+        'mensaje_alertas("success", "Contrato Eliminado con Éxito", "center"); cargar_procesos();'
+    );
+
+}
+
+
 function descartar_contrato(id_contrato) {
 
     mensaje_confirmar("¿Está seguro de Descartar el Contrato?", "descartar_contrato2(" + id_contrato + "); ");
@@ -175,7 +221,7 @@ function adjudicar_contrato2(id_contrato, contratista_adjudicar) {
         'Contratos',
         'adjudicar',
         "id_contrato=" + id_contrato+"&contratista_adjudicar=" + contratista_adjudicar,
-        '$("#modal_adjudicar").modal("hide"); $(".modal-backdrop").hide(); mensaje_alertas("success", "Contrato Adjudicado con Éxito", "center"); cargar_fila_contratos('+id_contrato+');'
+        '$("#modal_adjudicar").modal("hide"); $(".modal-backdrop").hide(); mensaje_alertas("success", "Contrato Adjudicado con Éxito", "center"); cargar_fila_procesos('+id_contrato+');'
     );
 
 }
@@ -190,12 +236,11 @@ function sel_celebrar_contrato(id_contrato) {
 function celebrar_contrato() {
 
     var id_contrato = $("#id_contrato_sel").val();
-    var numero_contra = $("#numero_contra").val();
     var fechainicio_contra = $("#fechainicio_contra").val();
     var fechafinal_contra = $("#fechafinal_contra").val();
     var valor_contra = $("#valor_contra").val();
 
-    if(numero_contra == "" || fechainicio_contra == "" || fechafinal_contra == "" || valor_contra == ""){
+    if(fechainicio_contra == "" || fechafinal_contra == "" || valor_contra == ""){
         mensaje_alertas("error", "Todos los campos son obligatorios", "center");
         return false;
     }
@@ -207,18 +252,17 @@ function celebrar_contrato() {
 
     mensaje_confirmar(
         "¿Está seguro de Celebrar el Contrato? No podrá regresar al estado actual: Adjudicado", 
-        "celebrar_contrato2(" + id_contrato + ", '"+numero_contra+"', '"+fechainicio_contra+"', '"+fechafinal_contra+"', '"+valor_contra+"'); ");
+        "celebrar_contrato2(" + id_contrato + ", '"+fechainicio_contra+"', '"+fechafinal_contra+"', '"+valor_contra+"'); ");
 
 }
 
-function celebrar_contrato2(id_contrato, numero_contra, fechainicio_contra, fechafinal_contra, valor_contra ) {
+function celebrar_contrato2(id_contrato, fechainicio_contra, fechafinal_contra, valor_contra ) {
 
     ejecutarAccionSinAlert(
         'contratos',
         'Contratos',
         'celebrar',
         "id_contrato=" + id_contrato+
-        "&numero_contra=" + numero_contra+
         "&fechainicio_contra=" + fechainicio_contra+
         "&fechafinal_contra=" + fechafinal_contra+
         "&valor_contra=" + valor_contra,

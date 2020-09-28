@@ -17,7 +17,6 @@
                 <th style='background-color:lavender; width:10%'>Tipo</th>
                 <th style='background-color:lavender; width:20%'>Contratista</th>
                 <th style='background-color:lavender; width:10%'>Valor </th>
-                <th style='background-color:lavender; width:10%'>Fechas </th>
                 <th style='background-color:lavender; width:25%'>Objeto</th>
                 <th style='background-color:lavender; width:11%'>Estado</th>                           
                 <th style='background-color:lavender; width:8%'>Acciones</th>                           
@@ -107,13 +106,7 @@
                       }
                     ?>
 
-                    
-                  <?php                     
-                        echo '<td class="mailbox-star">';
-                        echo $contrato['fechainicio_contrato'] . " - ".$contrato['fechafinal_contrato'];
-                        echo '</td>';                      
-                    ?>
-
+                  
 
 
                   <td class="mailbox-subject">
@@ -233,10 +226,10 @@
                         echo "<td></td>";
                       }
             
-                      echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
+                      echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_proceso(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
                       class='fas fa-edit'></i></a></td>";                                 
 
-                      echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' onclick='eliminar_contrato_editar(" . $contrato['id_contrato'] . ");' title='Eliminar Contrato'><i 
+                      echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' onclick='eliminar_proceso_editar(" . $contrato['id_contrato'] . ");' title='Eliminar Contrato'><i 
                                     class='fas fa-trash'></i></a></td>";
 
                   ?>

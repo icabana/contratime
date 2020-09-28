@@ -18,7 +18,8 @@
                 <th style='background-color:lavender; width:20%'>Contratista</th>
                 <th style='background-color:lavender; width:10%'>Valor </th>
                 <th style='background-color:lavender; width:30px'>Objeto</th>
-                <th style='background-color:lavender; width:12%'>Estado</th>                
+                <th style='background-color:lavender; width:12%'>Estado</th>                          
+                <th style='background-color:lavender; width:8%'>Acciones</th>                 
                 <th style='background-color:lavender; width:8%'>Descargar</th>  
                 <th  style='background-color:lavender; width:5%'></th>
               </tr>
@@ -164,7 +165,51 @@
                             echo '</td>';
                         }
                     ?>
+
+                    <?php 
+                        if($contrato['estado_contrato'] == 1 ){
+
+                            $id_contrato = $contrato['id_contrato'];
+                            
+
+                            echo '<td  class="mailbox-subject">';                        
+                            echo '<center><button onclick="sel_adjudicar_contrato(' . $id_contrato . ');"  title="Adjudicar Contrato" data-toggle="modal" data-target="#modal_adjudicar" type="button" class="btn btn-success btn-xs ">¿Adjudicar?</button></center>';
+                            
+                            echo '</td>';
+
+                        }
+                    ?>
+
                
+               <?php 
+                        if($contrato['estado_contrato'] == 2){
+
+                            $id_contrato = $contrato['id_contrato'];
+                            
+                         
+
+                            echo '<td  class="mailbox-subject">';
+                             echo '<center><button onclick="sel_celebrar_contrato(' . $id_contrato . ');"  title="Celebrar Contrato" data-toggle="modal" data-target="#modal_celebrar" type="button" class="btn btn-success btn-xs">¿Celebrar?</button></center>';
+                            echo '</td>';
+
+                        }
+                    ?>
+
+                         
+               <?php 
+                        if($contrato['estado_contrato'] > 2){
+
+                            $id_contrato = $contrato['id_contrato'];
+                            
+                         
+
+                            echo '<td  class="mailbox-subject">';
+                            
+                            echo '</td>';
+
+                        }
+                    ?>
+
 
                   <?php
                                       

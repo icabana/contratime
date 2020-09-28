@@ -71,6 +71,18 @@ $froms = new Formularios();
 
 
 
+<!-- Modal Celebrar-->
+<?php
+  include("vistas/contratos/contratos/modales/modal_celebrar.php");
+?>
+
+
+<!-- Modal Adjudicar-->
+<?php
+  include("vistas/contratos/contratos/modales/modal_adjudicar.php");
+?>
+
+
 
 
 <!-- Modal Trazabilidad-->

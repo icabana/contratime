@@ -74,11 +74,6 @@
                     ?>
 
      
-                    <?php                     
-                        echo '<td class="mailbox-star">';
-                        echo $contrato['fechainicio_contrato'] . " - ".$contrato['fechafinal_contrato'];
-                        echo '</td>';                      
-                    ?>
 
                   <td class="mailbox-subject">
                     <?php echo substr($contrato['objeto_contrato'], 0, 90) . "..."; ?>

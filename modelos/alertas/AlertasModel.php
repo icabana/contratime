@@ -588,7 +588,7 @@ class AlertasModel extends ModelBase {
         
         $params = new Parametros();
 
-        $dias = $params->valor("diasantesdeadjudicarproceso");
+        $dias = $params->valor("diasantesdeevaluarproceso");
 
         $fecha_actual = date("Y-m-d");
 

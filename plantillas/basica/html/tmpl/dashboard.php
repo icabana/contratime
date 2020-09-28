@@ -34,7 +34,7 @@
         <div class="row">
 
             <div class="col-md-4">
-              <a href="#" onclick="cargar_contratos_x_estado(1);">
+              <a href="#" onclick="cargar_procesos_x_estado(1);">
                 <div class="info-box mb-3">
                   <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
 
@@ -48,7 +48,7 @@
 
 
             <div class="col-md-4">
-              <a href="#" onclick="cargar_contratos_x_estado(2);">
+              <a href="#" onclick="cargar_procesos_x_estado(2);">
                 <div class="info-box">
                   <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-list-alt"></i></span>
 

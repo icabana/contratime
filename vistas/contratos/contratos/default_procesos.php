@@ -22,19 +22,17 @@ $froms = new Formularios();
 
 
             <div class="col-md-5">
-              <h4 style="color:grey">GESTIONAR CONTRATOS</h4>
+              <h4 style="color:grey">GESTIONAR PROCESOS</h4>
             </div>
             <div class="col-md-5">
               <button onclick="generar_pdf_contratos(); return false;" type="button" title="Descargar PDF" class="btn-lg btn-danger btn-sm"><i class="fas fa-file-pdf"></i></button>
               <button onclick="generar_excel_contratos(); return false;" type="button" title="Descargar EXCEL" class="btn-lg btn-success btn-sm"><i class="fas fa-file-excel"></i></button>
             </div>
-          
             <div class="col-md-2">
-              <button onclick="nuevo_contrato_directo(); return false;" class="btn btn-success btn-sm">
-                Iniciar Nuevo Contrato
+              <button onclick="nuevo_proceso(); return false;" class="btn btn-primary btn-sm">
+                Iniciar Nuevo Proceso
               </button>
             </div>
-
 
           </div>
         </div>
@@ -90,7 +88,7 @@ $froms = new Formularios();
       <div id="div_tabla_contratos" class="card-body">
 
             <?php
-              include("vistas/contratos/contratos/tabla_contratos.php");
+              include("vistas/contratos/contratos/tabla_procesos.php");
             ?>      
            
         </div>

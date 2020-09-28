@@ -14,7 +14,7 @@ $froms = new Formularios();
 
 
         <div class="card-header">
-          <h3 class="card-title">Editar Contrato (Estado Actual: <?php echo $contrato['nombreestado_contrato']; ?>)</h3>
+          <h3 class="card-title">Editar Proceso (Estado Actual: <?php echo $contrato['nombreestado_contrato']; ?>)</h3>
         </div>
 
 
@@ -39,17 +39,20 @@ $froms = new Formularios();
             <?php } 
             ?>
 
-         <?php
-          if($contrato['favisoproceso_contrato'] != ""){
-         ?>
+              <li class="nav-item">
+                <a class="nav-link" href="#tab_777_plan" data-toggle="tab">
+                  Plan de Adquisici&oacute;n
+                </a>
+              </li>
+            
+        
               <li class="nav-item">
                 <a class="nav-link" href="#tab_77_encargados" data-toggle="tab">
                   Encargados
                 </a>
               </li>
-              <?php
-          }
-         ?>
+            
+        
 
             <?php if($contrato['estado_contrato'] >= 3){ ?>
             <li class="nav-item">
@@ -119,12 +122,8 @@ $froms = new Formularios();
 
             <div style="padding: 20px; " class="tab-pane active" id="tab_1">
 
-              <?php
-                if($contrato['favisoproceso_contrato'] == ""){
-                  include("vistas/contratos/contratos/form_contrato.php");
-                }else{
+              <?php               
                   include("vistas/contratos/contratos/form_proceso.php");
-                }
               ?>            
           
             </div>
@@ -135,18 +134,22 @@ $froms = new Formularios();
               include("vistas/contratos/supervisores/lista_supervisores.php");
               ?>
             </div>
-            <?php
-          if($contrato['favisoproceso_contrato'] != ""){
-         ?>
+           
+            <div style="padding: 20px" class="tab-pane" id="tab_777_plan">
+
+              <?php
+              include("vistas/contratos/planes/lista_planes.php");
+              ?>
+            </div>
+
             <div style="padding: 20px" class="tab-pane" id="tab_77_encargados">
 
               <?php
               include("vistas/contratos/encargados/lista_encargados.php");
               ?>
             </div>
-            <?php
-          }
-         ?>
+          
+          
             <div style="padding: 20px; " class="tab-pane" id="tab_4_cdps">
 
               <?php

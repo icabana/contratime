@@ -41,11 +41,11 @@
                 <table id="tabla_modalidades" style="font-size: 13px;" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th style='background-color:lavender; width:15px'>No.</th>
-                            <th style='background-color:lavender'>Modalidad de Contrataci&oacute;n</th>
-                            <th style='background-color:lavender'>Tipo de Modalidad</th>
-                            <th style='background-color:lavender; width:15px'></th>
-                            <th style='background-color:lavender; width:15px'></th>
+                            <th style='background-color:lavender; width:10px'>No.</th>
+                            <th style='background-color:lavender; width:60px'>Modalidad de Contrataci&oacute;n</th>
+                            <th style='background-color:lavender; width:20px'>Tipo de Modalidad</th>
+                            <th style='background-color:lavender; width:5px'></th>
+                            <th style='background-color:lavender; width:5px'></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,15 +59,15 @@
 
                             echo "<td>" . $cont . "</td>";
 
-                            echo "<td>" . utf8_encode($modalidad['tipo_modalidad']) . "</td>";
-
                             echo "<td>" . utf8_encode($modalidad['nombre_modalidad']) . "</td>";
                             
-                            echo "<td><a class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#'  onclick='documentos_modalidad(" . $modalidad['id_modalidad'] . ");'><i title='Ver Documentos' 
-                            class='fas fa-file'></i></a></td>";
+                            echo "<td>" . utf8_encode($modalidad['tipo_modalidad']) . "</td>";
 
-                            echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_modalidad(" . $modalidad['id_modalidad'] . ");'><i title='Editar Modalidad' 
-                                    class='fas fa-edit'></i></a></td>";
+                            echo "<td><center><a title='Ver Documentos'  class='btn btn-sm btn-primary' style='padding:5px 11px 5px 11px' href='#'  onclick='documentos_modalidad(" . $modalidad['id_modalidad'] . ");'><i
+                            class='fas fa-file'></i></a></center></td>";
+
+                            echo "<td><center><a title='Editar Modalidad'  class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#'  onclick='editar_modalidad(" . $modalidad['id_modalidad'] . ");'><i
+                                    class='fas fa-edit'></i></a></center></td>";
 
                             echo "</tr>";
 

@@ -18,6 +18,45 @@ class ModalidadesModel extends ModelBase {
                
     }  
 
+    
+    function getTodosTipoProceso() {
+        
+        $query = "  SELECT 
+                        id_modalidad, 
+                        nombre_modalidad,
+                        tipo_modalidad
+                
+                    FROM modalidades
+
+                    WHERE tipo_modalidad = 'Proceso'
+
+                    ORDER BY nombre_modalidad";
+        
+        $consulta = $this->consulta($query);
+        return $consulta;       
+               
+    }  
+
+    
+    
+    function getTodosTipoContrato() {
+        
+        $query = "  SELECT 
+                        id_modalidad, 
+                        nombre_modalidad,
+                        tipo_modalidad
+                
+                    FROM modalidades
+
+                    WHERE tipo_modalidad = 'Contrato'
+
+                    ORDER BY nombre_modalidad";
+        
+        $consulta = $this->consulta($query);
+        return $consulta;       
+               
+    }  
+
     function getDatos($id_modalidad) {
        
         $query = "select 	
