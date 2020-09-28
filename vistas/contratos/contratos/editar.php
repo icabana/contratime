@@ -123,7 +123,7 @@ $froms = new Formularios();
                 if($contrato['favisoproceso_contrato'] == ""){
                   include("vistas/contratos/contratos/form_contrato.php");
                 }else{
-                  include("vistas/contratos/contratos/form_proceso.php");
+                  include("vistas/contratos/contratos/form_contrato_proceso.php");
                 }
               ?>            
           

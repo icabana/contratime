@@ -36,24 +36,26 @@ class LoginControlador extends ControllerBase {
         $this->model->cargar("LoginModel.php", "configuracion");
         $LoginModel = new LoginModel();
 
+        $LoginModel->modificarPassword($_SESSION['id_usuario'], $_POST['password_nuevo']);
+
+        /*
+        /// ENVIAR CORREO
+          
         $this->model->cargar("ParametrosModel.php", "configuracion");
         $ParametrosModel = new ParametrosModel();
 
         $parametros = $ParametrosModel->getTodos();
-
-        $LoginModel->modificarPassword($_SESSION['id_usuario'], $_POST['password_nuevo']);
-
         $correo = new Correos();
 
         $mensaje = file_get_contents("plantillas/correos/plantilla1/index.html");
 
         $mensaje = str_replace("#password#", $_POST['password_nuevo'], $mensaje);
-
+      
         echo $correo->EnviarCorreo($mensaje, "Cambio de Contraseña", array($_SESSION['correo_usuario']));
 
-        /*
         $sms = new SMS();
         echo $sms->enviarSMS("3043881447", "Mensaje de prueba");
+
         */
         
     }

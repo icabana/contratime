@@ -332,8 +332,12 @@ function enviar_contrato3(resp) {
         mensaje_alertas("error", "Debe Adjuntar Copia del Contrato para poder enviar el correo.", "center");
         return false;
     }
+    if(resp == 1){
+        mensaje_alertas("success", "Correo Enviado Correctamente", "center");
+    }else{        
+        mensaje_alertas("error", $resp, "center");
+    }
 
-    mensaje_alertas("success", "Correo Enviado Correctamente", "center");
 }
 
 

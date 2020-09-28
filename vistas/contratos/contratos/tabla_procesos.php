@@ -14,7 +14,7 @@
               <tr>
                 <th style='background-color:lavender'></th>   
                 <th style='background-color:lavender; width:5%'>N&uacute;mero</th>
-                <th style='background-color:lavender; width:10%'>Tipo</th>
+                <th style='background-color:lavender; width:10%'>Modalidad</th>
                 <th style='background-color:lavender; width:20%'>Contratista</th>
                 <th style='background-color:lavender; width:10%'>Valor </th>
                 <th style='background-color:lavender; width:25%'>Objeto</th>
@@ -69,7 +69,7 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo utf8_encode($contrato['nombre_tipocontrato']); ?>
+                    <?php echo utf8_encode($contrato['nombre_modalidad']); ?>
 
                   </td>
 

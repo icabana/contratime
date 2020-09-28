@@ -8,21 +8,8 @@ class Correos extends PHPMailer{
 		//https://myaccount.google.com/lesssecureapps
 
 		$params = Parametros::singleton();
-					 
-			/* GMAIL
-			$this->IsSMTP();
-			$this->SMTPSecure = 'tls';
-			$this->Host = 'smtp.gmail.com';
-			$this->SMTPAuth= true;
-			$this->Port = 587;                 
-			$this->From = "contacto@logintime.co";
-			$this->FromName = utf8_decode("SIVI");
-			$this->Username = "ismael.cabana@gmail.com";
-			$this->Password = "L0g1nT1m301012020*";
-			$this->AltBody = "Enfocados en la Calidad";
-			*/
 			
-				/*LOGNTIME 
+			/*LOGNTIME 
 			$this->IsSMTP();
 			$this->Host = 'mail.logintime.co';
 			$this->FromName = "Logintime";
@@ -32,7 +19,7 @@ class Correos extends PHPMailer{
 			$this->Username = "contacto@logintime.co";
 			$this->Password = "L0g1nT1m301012020*";
 			$this->From = "contacto@logintime.co";
-				*/
+			*/	
 
 			/* LEGALTEAM */
 			$this->IsSMTP();

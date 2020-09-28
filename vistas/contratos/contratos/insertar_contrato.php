@@ -9,7 +9,7 @@ $froms = new Formularios();
 
     <div class="card card-primary" style="font-size:0.8rem">
       <div class="card-header">
-        <h3 class="card-title">Crear Nuevo Contrato (Estado Actual: Borrador)</h3>
+        <h3 class="card-title">Crear Nuevo Contrato</h3>
       </div>
 
       <form autocomplete="on" id="formContratos" method="post">
@@ -21,7 +21,7 @@ $froms = new Formularios();
 
               <label>No. de Contrato<span style="color:red">*</span></label>
               <input readonly type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato"
-                    value="<?php echo $agncon." - ".$concon; ?>">
+                    value="<?php echo date('Y')." - ?"; ?>">
 
             </div>
 

@@ -545,22 +545,6 @@ class ContratosControlador extends ControllerBase {
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
 
-        $this->model->cargar("ContratosModel.php", "contratos");
-        $ContratosModel = new ContratosModel();
-        
-        $concon = $ContratosModel->getConsecutivo(1);
-
-        $agncon = date("Y");
-
-        if($concon == ""){
-            $concon = 1;
-        }else{
-            $concon = $concon+1;
-        }
-
-        $numero = $agncon." - ?";
-
-
         include 'vistas/contratos/contratos/insertar_contrato.php';
         
     }  
@@ -1178,6 +1162,7 @@ class ContratosControlador extends ControllerBase {
 
         }else{
             
+            $conpro = $contrato['conpro'];
             $numero_proceso = $contrato['numproceso_contrato'];
             
         }
@@ -1200,7 +1185,8 @@ class ContratosControlador extends ControllerBase {
             $_POST["numero_contrato"],
             $_POST["valor_contrato"],
             $_POST["fechainicio_contrato"],
-            $_POST["fechafinal_contrato"]
+            $_POST["fechafinal_contrato"],
+            $conpro
 
         );        
       
@@ -1235,7 +1221,7 @@ class ContratosControlador extends ControllerBase {
               
             $conpro = $ContratosModel->getConsecutivoProceso($_POST["modalidad_contrato"]);
 
-            $agncon = date("Y");
+            $agncon = $contrato['agncon'];
 
             if($conpro == ""){
                 $conpro = 1;
@@ -1245,8 +1231,9 @@ class ContratosControlador extends ControllerBase {
 
             $numero_proceso = $agncon." - ".$conpro;
 
-        }else{
+        }else{            
             
+            $conpro = $contrato['conpro'];
             $numero_proceso = $contrato['numproceso_contrato'];
             
         }
@@ -1268,7 +1255,8 @@ class ContratosControlador extends ControllerBase {
             $_POST["numero_contrato"],
             $_POST["valor_contrato"],
             $_POST["fechainicio_contrato"],
-            $_POST["fechafinal_contrato"]
+            $_POST["fechafinal_contrato"],
+            $conpro
 
         );        
       
@@ -1463,10 +1451,12 @@ class ContratosControlador extends ControllerBase {
         
         require_once("controladores/contratos/TrazabilidadControlador.php");
         $TrazabilidadControlador = new TrazabilidadControlador();    
-        
-        $contrato = $ContratosModel->getDatos($_POST["id_contrato"]);
-        
-        $concon = $ContratosModel->getConsecutivo($contrato['modalidad_contrato']);
+                           
+        $contrato = $ContratosModel->getDatos($_POST['id_contrato']);        
+
+        $concon = $ContratosModel->getConsecutivo($contrato["modalidad_contrato"]);
+
+        $agncon = $contrato['agncon'];
 
         if($concon == ""){
             $concon = 1;
@@ -1474,7 +1464,7 @@ class ContratosControlador extends ControllerBase {
             $concon = $concon+1;
         }
 
-        $numero = $contrato['agncon']." - ".$concon;
+        $numero = $agncon." - ".$concon;       
         
         $ContratosModel->celebrar(
             $_POST["id_contrato"], 
@@ -1580,10 +1570,10 @@ class ContratosControlador extends ControllerBase {
         $mensaje = file_get_contents("plantillas/correos/plantilla_contratos/index.html");
         
         $mensaje = str_replace("#nombre#", $datos_contrato['nombres_contratista']." ".$datos_contrato['apellidos_contratista'], $mensaje);
-        $mensaje = str_replace("#numcontrato#", $datos_contrato['numproceso_contrato'], $mensaje);
+        $mensaje = str_replace("#numcontrato#", $datos_contrato['numero_contrato'], $mensaje);
         $mensaje = str_replace("#modalidad#", $datos_contrato['nombre_modalidad'], $mensaje);
         $mensaje = str_replace("#tipocontrato#", $datos_contrato['nombre_tipocontrato'], $mensaje);
-        $mensaje = str_replace("#fecha_inicio#", $datos_contrato['fechaoinicio_contrato'], $mensaje);
+        $mensaje = str_replace("#fecha_inicio#", $datos_contrato['fechainicio_contrato'], $mensaje);
         $mensaje = str_replace("#fecha_final#", $datos_contrato['fechafinal_contrato'], $mensaje);
         $mensaje = str_replace("#valor#", "$".number_format($datos_contrato['valor_contrato'],0,',','.'), $mensaje);
 

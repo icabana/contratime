@@ -26,6 +26,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -129,6 +130,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -232,6 +234,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -350,6 +353,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -555,6 +559,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -661,6 +666,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -768,6 +774,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -874,6 +881,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -979,6 +987,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -1085,6 +1094,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -1207,6 +1217,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
+                    contratos.conpro,
                     contratos.plan_contrato,
 
 
@@ -1315,6 +1326,7 @@ class ContratosModel extends ModelBase {
                         contratos.estado_contrato,
                         contratos.agncon,
                         contratos.concon,
+                        contratos.conpro,
                         contratos.plan_contrato,
 
 
@@ -1542,6 +1554,7 @@ class ContratosModel extends ModelBase {
         contratos.estado_contrato,
         contratos.agncon,
         contratos.concon,
+        contratos.conpro,
         contratos.plan_contrato,
 
 
@@ -1708,7 +1721,8 @@ class ContratosModel extends ModelBase {
                     $numero_contrato,
                     $valor_contrato,
                     $fechainicio_contrato,
-                    $fechafinal_contrato
+                    $fechafinal_contrato,
+                    $conpro
                 ) {
 
                 if($contratista_contrato == ''){
@@ -1729,7 +1743,8 @@ class ContratosModel extends ModelBase {
                         numero_contrato = '". $numero_contrato ."',
                         valor_contrato = '". $valor_contrato ."',
                         fechainicio_contrato = '". $fechainicio_contrato ."',
-                        fechafinal_contrato = '". $fechafinal_contrato ."'
+                        fechafinal_contrato = '". $fechafinal_contrato ."',
+                        conpro = '". $conpro ."'
 
                     WHERE id_contrato = '" . $id_contrato . "'";
             }else{
@@ -1750,7 +1765,8 @@ class ContratosModel extends ModelBase {
                     numero_contrato = '". $numero_contrato ."',
                     valor_contrato = '". $valor_contrato ."',
                     fechainicio_contrato = '". $fechainicio_contrato ."',
-                    fechafinal_contrato = '". $fechafinal_contrato ."'
+                    fechafinal_contrato = '". $fechafinal_contrato ."',
+                    conpro = '". $conpro ."'
 
                 WHERE id_contrato = '" . $id_contrato . "'";
             }
@@ -1959,7 +1975,7 @@ class ContratosModel extends ModelBase {
         
     }
     
-    function celebrar($id_contrato, $numero, $fechainicio, $fechafinal, $valor) {
+    function celebrar($id_contrato, $numero, $fechainicio, $fechafinal, $valor, $concon) {
         
         $query = "  UPDATE contratos 
 
@@ -1967,7 +1983,8 @@ class ContratosModel extends ModelBase {
                         numero_contrato = '".$numero."',
                         fechainicio_contrato = '".$fechainicio."',
                         fechafinal_contrato = '".$fechafinal."',
-                        valor_contrato = '".$valor."'
+                        valor_contrato = '".$valor."',
+                        concon = '".$concon."'
 
                     WHERE id_contrato = '". $id_contrato ."'";    
      
@@ -2027,13 +2044,13 @@ class ContratosModel extends ModelBase {
                     WHERE modalidad_contrato = '".$modalidad_contrato."'
                             and agncon = '".$agncon."'
                     
-                    ORDER BY concon DESC
+                    ORDER BY conpro DESC
                     
                     LIMIT 1";
         
         $consulta = $this->consulta($query);  
 
-        return $consulta[0]['concon'];       
+        return $consulta[0]['conpro'];       
                
     }  
     

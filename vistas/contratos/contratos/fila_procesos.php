@@ -36,7 +36,7 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo utf8_encode($contrato['nombre_tipocontrato']); ?>
+                    <?php echo utf8_encode($contrato['nombre_modalidad']); ?>
 
                   </td>
 

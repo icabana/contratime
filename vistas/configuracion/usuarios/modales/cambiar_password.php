@@ -15,8 +15,7 @@
 
             <div class="form-group">
               <label>Nueva Contraseña: </label>
-              <input type="password" class="form-control" id="password_nuevo" name="password_nuevo"
-                      onkeypress="return no_numeros(event)">
+              <input type="password" class="form-control" id="password_nuevo" name="password_nuevo">
             </div>
 
           </div>

@@ -14,10 +14,9 @@
               <tr>
                 <th style='background-color:lavender'></th>   
                 <th style='background-color:lavender; width:5%'>N&uacute;mero</th>
-                <th style='background-color:lavender; width:10%'>Tipo</th>
+                <th style='background-color:lavender; width:10%'>Modalidad</th>
                 <th style='background-color:lavender; width:20%'>Contratista</th>
                 <th style='background-color:lavender; width:10%'>Valor </th>
-                <th style='background-color:lavender; width:10%'>Fechas </th>
                 <th style='background-color:lavender; width:25%'>Objeto</th>
                 <th style='background-color:lavender; width:11%'>Estado</th>                           
                 <th style='background-color:lavender; width:8%'>Acciones</th>                           
@@ -70,7 +69,7 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo utf8_encode($contrato['nombre_tipocontrato']); ?>
+                    <?php echo utf8_encode($contrato['nombre_modalidad']); ?>
 
                   </td>
 
@@ -107,12 +106,7 @@
                       }
                     ?>
 
-                    
-                  <?php                     
-                        echo '<td class="mailbox-star">';
-                        echo $contrato['fechainicio_contrato'] . " - ".$contrato['fechafinal_contrato'];
-                        echo '</td>';                      
-                    ?>
+                
 
 
 
