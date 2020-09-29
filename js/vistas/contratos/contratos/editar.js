@@ -139,6 +139,36 @@ function editar_proceso2(data) {
 }
 
 
+function editar_info_proceso_encargado() {
+
+  if(!validar_requeridos()){
+      return 0;
+  }
+  
+  var datos = $('#formContratos').serialize();
+
+  ejecutarAccion(
+    'contratos',
+    'Contratos',
+    'guardarProceso',
+    datos,
+    'editar_info_proceso_encargado2(data)'
+  );
+
+}
+
+function editar_info_proceso_encargado2(data) {
+
+  if (data == 1) {
+    mensaje_alertas("success", "Contrato Editado Exitosamente", "center");
+    cargar_contratos_encargado();
+  } else {
+    mensaje_alertas("danger", "No realizó ningún cambio en el Formulario", "center");
+  }
+
+}
+
+
 function editar_info_encargado() {
 
   if(!validar_requeridos()){

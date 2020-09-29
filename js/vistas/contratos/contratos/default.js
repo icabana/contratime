@@ -58,6 +58,18 @@ function editar_proceso(id_contrato) {
 
 }
 
+function editar_proceso_encargado(id_contrato) {
+
+    abrirVentanaContenedor(
+        'contratos',
+        'Contratos',
+        'editarProcesoEncargado',
+        'id_contrato=' + id_contrato,
+        ''
+    );
+
+}
+
 function editar_contrato_financiera(id_contrato) {
 
     abrirVentanaContenedor(
@@ -332,11 +344,9 @@ function enviar_contrato3(resp) {
         mensaje_alertas("error", "Debe Adjuntar Copia del Contrato para poder enviar el correo.", "center");
         return false;
     }
-    if(resp == 1){
-        mensaje_alertas("success", "Correo Enviado Correctamente", "center");
-    }else{        
-        mensaje_alertas("error", $resp, "center");
-    }
+   
+    mensaje_alertas("success", "Correo Enviado Correctamente", "center");
+  
 
 }
 
@@ -360,6 +370,41 @@ function generar_excel_contratos(){
       'Contratos', 
       'generarExcel', 
       "",
+      "location.href = data"         
+    );
+    
+}
+
+
+
+
+function generar_reporte_pdf_contratos(){
+      
+    var modalidad_reporte = $("#modalidad_reporte").val();
+    var tipocontrato = $("#tipocontrato_reporte").val();
+    var estado = $("#estado_reporte").val();
+
+    ejecutarAccion(
+      'contratos', 
+      'Contratos', 
+      'generarReportePdf',
+      'modalidad='+modalidad_reporte+'&tipocontrato='+tipocontrato+'&estado='+estado,
+      "cargarVisorPDF(data); "
+    );
+    
+}
+
+function generar_reporte_excel_contratos(){
+      
+    var modalidad_reporte = $("#modalidad_reporte").val();
+    var tipocontrato = $("#tipocontrato_reporte").val();
+    var estado = $("#estado_reporte").val();
+
+    ejecutarAccion(
+      'contratos', 
+      'Contratos', 
+      'generarReporteExcel', 
+      'modalidad='+modalidad_reporte+'&tipocontrato='+tipocontrato+'&estado='+estado,
       "location.href = data"         
     );
     

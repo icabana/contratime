@@ -28,7 +28,7 @@ class Correos extends PHPMailer{
 			$this->Port="587";
 			$this->SMTPAuth = true;
 			
-			$this->FromName = "LoginTime";
+			$this->FromName = "ESSMAR E.S.P.";
 			$this->AltBody = "Enfocados en la Calidad";
 			
 			$this->Username = "contacto@legalteamcolombia.co";

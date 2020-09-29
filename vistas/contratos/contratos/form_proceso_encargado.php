@@ -8,7 +8,7 @@ $froms = new Formularios();
   <div class="col-md-2">
 
     <label>No. de Proceso<span style="color:red">*</span></label>
-    <input readonly type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
+    <input readonly readonly type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" maxlength="25" value="<?php echo $numero_proceso; ?>">
 
   </div>
 
@@ -21,7 +21,6 @@ $froms = new Formularios();
   </div>
 
   
- 
   <?php
     if($contrato['modalidad_contrato'] == ""){
   ?>
@@ -55,6 +54,7 @@ $froms = new Formularios();
   <?php
     }
   ?>
+
 
 
 
@@ -114,7 +114,7 @@ $froms = new Formularios();
 </div>
 
 
-<div class="col-md-2">
+<div class="col-md-3">
 
   <label>Fecha de Cierre</label>
   <input type="date" onchange="fchcie(this);" class="form-control " id="fcierreproceso_contrato" name="fcierreproceso_contrato" value="<?php echo $contrato['fcierreproceso_contrato']?>" >
@@ -128,66 +128,6 @@ $froms = new Formularios();
 
 <br>
 
-<?php
-
-if ($contrato['estado_contrato'] > 2) {
-
-?>
-  <div class="row">
-
-    <div class="col-md-2">
-
-      <label>No. de Contrato<span style="color:red">*</span></label>
-      <input readonly type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato" maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
-
-    </div>
-
-
-    <div class="col-md-2">
-
-      <label>Valor del Contrato<span style="color:red">*</span></label>
-      <input type="text" class="form-control requerido" id="valor_contrato" name="valor_contrato" onkeypress="return no_numeros(event)" value="<?php echo $contrato['valor_contrato']; ?>">
-
-    </div>
-
-    <div class="col-md-2">
-
-      <label>Fecha de Inicio<span style="color:red">*</span></label>
-      <input type="date" class="form-control requerido" id="fechainicio_contrato" name="fechainicio_contrato" value="<?php echo $contrato['fechainicio_contrato']; ?>">
-
-    </div>
-
-
-    <div class="col-md-2">
-
-      <label>Fecha Final<span style="color:red">*</span></label>
-      <input type="date" class="form-control requerido" id="fechafinal_contrato" name="fechafinal_contrato" value="<?php echo $contrato['fechafinal_contrato']; ?>">
-
-    </div>
-
-    <div class="col-md-4">
-
-      <label>Contratista<span style="color:red">*</span></label>
-        <?php
-          echo $froms->Lista_Desplegable(
-            $contratistas_select,
-            'nombre_contratista',
-            'id_contratista',
-            'contratista_contrato',
-            $contrato['contratista_contrato'],
-            '',
-            ''
-          );
-      ?>
-
-    </div>
-
-  </div>
-<?php
-
-}
-
-?>
 
 <br>
 <div class="row">
@@ -203,10 +143,10 @@ if ($contrato['estado_contrato'] > 2) {
   <div class="col-md-4"></div>
   <div class="col-md-2">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button onclick="cargar_contratos();" class="btn btn-danger">Cancelar</button>
+    <button onclick="cargar_procesos();" class="btn btn-danger">Cancelar</button>
   </div>
   <div class="col-md-2">
-    <button onclick="editar_info_contrato(); return false;" class="btn btn-success">Guardar</button>
+    <button onclick="editar_info_proceso_encargado(); return false;" class="btn btn-success">Guardar</button>
   </div>
   <div class="col-md-4"></div>
 </div>

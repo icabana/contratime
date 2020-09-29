@@ -21,6 +21,10 @@ $froms = new Formularios();
   </div>
 
   
+  
+  <?php
+    if($contrato['modalidad_contrato'] == ""){
+  ?>
   <div class="col-md-4">
     <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
 
@@ -38,6 +42,20 @@ $froms = new Formularios();
 
     ?>
   </div>
+  <?php
+    }else{
+      ?>
+
+<div class="col-md-4">
+    <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
+
+        <input type="hidden" id="modalidad_contrato" name="modalidad_contrato" value="<?php echo $contrato['modalidad_contrato']; ?>">
+        <input readonly type="text" class="form-control" id="modalidad" name="modalidad" value="<?php echo $contrato['nombre_modalidad']; ?>">
+    </div>
+  <?php
+    }
+  ?>
+
 
 
   <div class="col-md-4">
@@ -119,7 +137,7 @@ if ($contrato['estado_contrato'] > 2) {
     <div class="col-md-2">
 
       <label>No. de Contrato<span style="color:red">*</span></label>
-      <input type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato"  maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
+      <input readonly type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato"  maxlength="25" value="<?php echo $contrato['numero_contrato']; ?>">
 
     </div>
 

@@ -64,15 +64,17 @@ function cargar_reporte_contratos(moda){
 }
 
 
-function cargar_vista_reporte_contratos(moda){
+function cargar_vista_reporte_contratos(){
 
-    var modalidad = $(moda).val();
-    
+    var modalidad_reporte = $("#modalidad_reporte").val();
+    var tipocontrato = $("#tipocontrato_reporte").val();
+    var estado = $("#estado_reporte").val();
+
     ejecutarAccion(
         'contratos', 
         'Contratos', 
         'index_reporte_vista', 
-        'modalidad='+modalidad,
+        'modalidad='+modalidad_reporte+'&tipocontrato='+tipocontrato+'&estado='+estado,
         '$("#div_tabla_contratos_reportes").html(data);'
     );    
         

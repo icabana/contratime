@@ -95,7 +95,7 @@
               <button onclick="cargar_encargados();" class="btn btn-danger">Cancelar</button>
             </div>     
             <div class="col-md-3">
-              <button onclick="editar_info_encargado(); return false;" class="btn btn-success">Guardar</button>
+              <button onclick="editar_info_actor_encargado(); return false;" class="btn btn-success">Guardar</button>
             </div>     
           </div>     
         </div>     

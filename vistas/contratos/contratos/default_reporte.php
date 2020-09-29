@@ -12,7 +12,7 @@ $froms = new Formularios();
     $( document ).ready(function() {
       $('#modalidad_reporte').prepend("<option value='0' selected >Todos</option>");
       $('#tipocontrato_reporte').prepend("<option value='0' selected >Todos</option>");
-      $('#estado_busqueda').prepend("<option value='0' selected >Todos</option>");
+      $('#estado_reporte').prepend("<option value='0' selected >Todos</option>");
     });
 
 </script>
@@ -39,8 +39,8 @@ $froms = new Formularios();
             
             </div>
             <div class="col-md-1">
-            <button onclick="generar_pdf_contratos(); return false;" type="button" title="Descargar PDF" class="btn-lg btn-danger btn-sm"><i class="fas fa-file-pdf"></i></button>
-              <button onclick="generar_excel_contratos(); return false;" type="button" title="Descargar EXCEL" class="btn-lg btn-success btn-sm"><i class="fas fa-file-excel"></i></button>
+            <button onclick="generar_reporte_pdf_contratos(); return false;" type="button" title="Descargar PDF" class="btn-lg btn-danger btn-sm"><i class="fas fa-file-pdf"></i></button>
+              <button onclick="generar_reporte_excel_contratos(); return false;" type="button" title="Descargar EXCEL" class="btn-lg btn-success btn-sm"><i class="fas fa-file-excel"></i></button>
             </div>
 
 
@@ -66,7 +66,7 @@ $froms = new Formularios();
                 'modalidad_reporte',
                 '',
                 '',
-                'cargar_vista_reporte_contratos(this);'
+                'cargar_vista_reporte_contratos();'
               );
 
               ?>
@@ -84,7 +84,7 @@ $froms = new Formularios();
                 'tipocontrato_reporte',
                 '',
                 '',
-                'cargar_vista_reporte_contratos(this);'
+                'cargar_vista_reporte_contratos();'
               );
 
               ?>
@@ -97,13 +97,13 @@ $froms = new Formularios();
               <?php
 
               echo $froms->Lista_Desplegable(
-                $tiposcontrato,
-                'nombre_tipocontrato',
-                'id_tipocontrato',
-                'tipocontrato_reporte',
+                $estados,
+                'nombre_estado',
+                'id_estado',
+                'estado_reporte',
                 '',
                 '',
-                'cargar_vista_reporte_contratos(this);'
+                'cargar_vista_reporte_contratos();'
               );
 
               ?>

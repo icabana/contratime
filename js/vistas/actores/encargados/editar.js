@@ -1,4 +1,4 @@
-function editar_info_encargado() {
+function editar_info_actor_encargado() {
 
   if(!validar_requeridos()){
       return 0;

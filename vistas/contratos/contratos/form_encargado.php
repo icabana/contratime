@@ -85,7 +85,7 @@ $froms = new Formularios();
        
 <div class="col-md-3">
 
-  <label>Fecha de Invitaci&oacute;n a la Convocatoria<span style="color:red">*</span></label>
+  <label>Fecha de Invitaci&oacute;n a la Convocatoria</label>
   <input type="date" class="form-control " id="favisoproceso_contrato" name="favisoproceso_contrato"
   value="<?php echo $contrato['favisoproceso_contrato']?>">
 
@@ -94,7 +94,7 @@ $froms = new Formularios();
 
 <div class="col-md-3">
 
-  <label>Fecha de Evaluaci&oacute;n<span style="color:red">*</span></label><br>
+  <label>Fecha de Evaluaci&oacute;n</label><br>
    <b>Desde:</b> <input size="20" type="date" class="form-control " id="fevaluacionproceso_contrato" name="fevaluacionproceso_contrato"   value="<?php echo $contrato['fevaluacionproceso_contrato']?>">
    <b>Hasta:</b> <input size="20" type="date" class="form-control " id="fevaluacionproceso2_contrato" name="fevaluacionproceso2_contrato"  value="<?php echo $contrato['fevaluacionproceso2_contrato']?>">
 
@@ -105,7 +105,7 @@ $froms = new Formularios();
 
  <div class="col-md-3">
 
-  <label>Fecha de Adjudicaci&oacute;n<span style="color:red">*</span></label>
+  <label>Fecha de Adjudicaci&oacute;n</label>
   <input type="date" class="form-control " id="fadjudicacionproceso_contrato" name="fadjudicacionproceso_contrato" value="<?php echo $contrato['fadjudicacionproceso_contrato']?>">
 
 </div>
@@ -113,7 +113,7 @@ $froms = new Formularios();
 
 <div class="col-md-3">
 
-  <label>Fecha de Cierre<span style="color:red">*</span></label>
+  <label>Fecha de Cierre</label>
   <input type="date" class="form-control " id="fcierreproceso_contrato" name="fcierreproceso_contrato" value="<?php echo $contrato['fcierreproceso_contrato']?>" >
 
 </div>
@@ -136,7 +136,7 @@ if ($contrato['estado_contrato'] > 2) {
     <div class="col-md-2">
 
       <label>No. de Contrato<span style="color:red">*</span></label>
-      <input type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato"  maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
+      <input readonly type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato"  maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
 
     </div>
 

@@ -501,14 +501,6 @@
           </a>
         </li>
 
-        <li class="nav-item">
-          <a href="#" onclick="busqueda_avanzada_financiera();" class="nav-link">
-            <i class="fas fa-search nav-icon"></i>
-            <p>Busqueda Avanzada</p>
-          </a>
-        </li>
-
-
   
 
       </ul>

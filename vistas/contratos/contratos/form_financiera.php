@@ -3,13 +3,15 @@ $froms = new Formularios();
 ?>
 
 
-
+<?php
+    if($contrato['conpro'] != ""){
+  ?>
   <div class="row">
 
     <div class="col-md-2">
 
       <label>No. de Proceso<span style="color:red">*</span></label>
-      <input type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato"  maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
+      <input readonly type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato"  maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
 
     </div>
 
@@ -20,23 +22,42 @@ $froms = new Formularios();
       <input type="text" class="form-control requerido" id="valproceso_contrato" name="valproceso_contrato" onkeypress="return no_numeros(event)" value="<?php echo $contrato['valproceso_contrato']; ?>">
 
     </div>
-    <div class="col-md-44">
-                  <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
+  
+    <?php
+    if($contrato['modalidad_contrato'] == ""){
+  ?>
+  <div class="col-md-4">
+    <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
 
-                  <?php
+    <?php
 
-                  echo $froms->Lista_Desplegable(
-                    $modalidades,
-                    'nombre_modalidad',
-                    'id_modalidad',
-                    'modalidad_contrato',
-                    $contrato['modalidad_contrato'],
-                    '',
-                    ''
-                  );
+    echo $froms->Lista_Desplegable(
+      $modalidades,
+      'nombre_modalidad',
+      'id_modalidad',
+      'modalidad_contrato',
+      $contrato['modalidad_contrato'],
+      '',
+      ''
+    );
 
-                  ?>
-                </div>
+    ?>
+  </div>
+  </div>
+  <?php
+    }else{
+      ?>
+
+<div class="col-md-4">
+    <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
+
+        <input type="hidden" id="modalidad_contrato" name="modalidad_contrato" value="<?php echo $contrato['modalidad_contrato']; ?>">
+        <input readonly type="text" class="form-control" id="modalidad" name="modalidad" value="<?php echo $contrato['nombre_modalidad']; ?>">
+    </div>
+  <?php
+    }
+  ?>
+
 
 
                 <div class="col-md-4">
@@ -59,6 +80,74 @@ $froms = new Formularios();
 
   </div>
 
+
+  <?php
+    }else{
+  ?>
+<div class="row">
+<?php
+    if($contrato['modalidad_contrato'] == ""){
+  ?>
+
+
+  <div class="col-md-6">
+    <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
+
+    <?php
+
+    echo $froms->Lista_Desplegable(
+      $modalidades,
+      'nombre_modalidad',
+      'id_modalidad',
+      'modalidad_contrato',
+      $contrato['modalidad_contrato'],
+      '',
+      ''
+    );
+
+    ?>
+  </div>
+  <?php
+    }else{
+      ?>
+
+<div class="col-md-6">
+    <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
+
+        <input type="hidden" id="modalidad_contrato" name="modalidad_contrato" value="<?php echo $contrato['modalidad_contrato']; ?>">
+        <input readonly type="text" class="form-control" id="modalidad" name="modalidad" value="<?php echo $contrato['nombre_modalidad']; ?>">
+    </div>
+  <?php
+    }
+  ?>
+
+
+
+                <div class="col-md-6">
+                  <label>Tipo de Contrataci&oacute;n <span style="color:red">*</span></label>
+
+                  <?php
+                  echo $froms->Lista_Desplegable(
+                    $tiposcontrato,
+                    'nombre_tipocontrato',
+                    'id_tipocontrato',
+                    'tipo_contrato',
+                    $contrato['tipo_contrato'],
+                    '',
+                    ''
+                  );
+                  ?>
+                </div>
+
+                </div>
+<?php
+    }
+  ?>
+
+
+<?php
+    if($contrato['conpro'] != ""){
+  ?>
   <br>
   
           <div class="row">
@@ -102,7 +191,9 @@ $froms = new Formularios();
 
           </div>
 
-  
+          <?php
+   }
+  ?>
 
               
               <br>
@@ -117,9 +208,9 @@ if($contrato['estado_contrato'] > 2){
     <div class="col-md-2">
 
         <label>No. de Contrato<span style="color:red">*</span></label>
-        <input type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato"   
+        <input readonly type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato"   
         maxlength="25"
-        value="<?php echo $contrato['numproceso_contrato']; ?>">
+        value="<?php echo $contrato['numero_contrato']; ?>">
 
     </div>
 

@@ -320,15 +320,15 @@ class ContratosModel extends ModelBase {
         
         $where = "";
 
-        if($modalidad_contrato != ""){
+        if($modalidad_contrato != "0" && $modalidad_contrato != ""){
             $where .= " and modalidad_contrato = ".$modalidad_contrato;
         }
         
-        if($tipo_contrato != ""){
+        if($tipo_contrato != "0" && $modalidad_contrato != ""){
             $where .= " and tipo_contrato = ".$tipo_contrato;
         }
         
-        if($estado_contrato != ""){
+        if($estado_contrato != "0" && $modalidad_contrato != ""){
             $where .= " and estado_contrato = ".$estado_contrato;
         }
 

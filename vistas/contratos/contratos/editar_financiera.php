@@ -54,6 +54,22 @@ $froms = new Formularios();
               </a>
             </li>         
 
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_7_ajustes" data-toggle="tab">
+                Ajustes 
+              </a>
+            </li>
+         
+            <li class="nav-item">
+              <a class="nav-link" href="#tab_8_prorrogas" data-toggle="tab">
+                Prorrogas
+              </a>
+            </li>
+         
+
+
+
             <li class="nav-item">
               <a class="nav-link" href="#tab_3_trazabilidad" data-toggle="tab">
                 Ver Trazabilidad
@@ -115,6 +131,25 @@ $froms = new Formularios();
               ?>
 
             </div>
+
+                 
+            <div style="padding: 20px; " class="tab-pane" id="tab_7_ajustes">
+
+              <?php
+              include("vistas/contratos/ajustes/lista_ajustes.php");
+              ?>
+
+            </div>
+              
+            <div style="padding: 20px" class="tab-pane" id="tab_8_prorrogas">
+
+              <?php
+              include("vistas/contratos/prorrogas/lista_prorrogas.php");
+              ?>
+
+            </div>
+
+
 
 
             <div style="padding: 20px;" class="tab-pane" id="tab_3_trazabilidad">

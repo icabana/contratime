@@ -8,7 +8,7 @@ $froms = new Formularios();
   <div class="col-md-2">
 
     <label>No. de Proceso<span style="color:red">*</span></label>
-    <input readonly type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" maxlength="25" value="<?php echo $numero_proceso; ?>">
+    <input readonly readonly type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" maxlength="25" value="<?php echo $numero_proceso; ?>">
 
   </div>
 
