@@ -28,7 +28,6 @@ class SupervisoresModel extends ModelBase {
                 supervisores.departamento_supervisor,
                 supervisores.municipio_supervisor,
 
-                supervisores.fechanacimiento_supervisor,
 
                 supervisores.genero_supervisor,
                 supervisores.estadocivil_supervisor,
@@ -98,7 +97,6 @@ class SupervisoresModel extends ModelBase {
                 supervisores.departamento_supervisor,
                 supervisores.municipio_supervisor,
                 
-                supervisores.fechanacimiento_supervisor,
 
                 supervisores.genero_supervisor,
                 supervisores.estadocivil_supervisor,
@@ -166,7 +164,6 @@ class SupervisoresModel extends ModelBase {
                 supervisores.departamento_supervisor,
                 supervisores.municipio_supervisor,
                 
-                supervisores.fechanacimiento_supervisor,
 
                 supervisores.genero_supervisor,
                 supervisores.estadocivil_supervisor,
@@ -234,7 +231,6 @@ class SupervisoresModel extends ModelBase {
         supervisores.departamento_supervisor,
         supervisores.municipio_supervisor,
         
-        supervisores.fechanacimiento_supervisor,
 
         supervisores.genero_supervisor,
         supervisores.estadocivil_supervisor,
@@ -296,7 +292,6 @@ class SupervisoresModel extends ModelBase {
         $departamento_supervisor,
         $municipio_supervisor,
 
-        $fechanacimiento_supervisor,
 
         $genero_supervisor,
         $estadocivil_supervisor,
@@ -325,7 +320,6 @@ class SupervisoresModel extends ModelBase {
             departamento_supervisor,
             municipio_supervisor,
 
-            fechanacimiento_supervisor,
 
             genero_supervisor,
             estadocivil_supervisor,
@@ -352,7 +346,6 @@ class SupervisoresModel extends ModelBase {
             '". $departamento_supervisor."', 
             '". $municipio_supervisor."', 
 
-            '". $fechanacimiento_supervisor."',
 
             '". $genero_supervisor."',
             '". $estadocivil_supervisor."',
@@ -390,7 +383,6 @@ class SupervisoresModel extends ModelBase {
         $departamento_supervisor,
         $municipio_supervisor,
 
-        $fechanacimiento_supervisor,
         
         $genero_supervisor,
         $estadocivil_supervisor,
@@ -422,7 +414,6 @@ class SupervisoresModel extends ModelBase {
         departamento_supervisor = '".$departamento_supervisor."', 
         municipio_supervisor = '".$municipio_supervisor."', 
 
-        fechanacimiento_supervisor = '".$fechanacimiento_supervisor."', 
 
         genero_supervisor = '".$genero_supervisor."', 
         estadocivil_supervisor = '".$estadocivil_supervisor."', 

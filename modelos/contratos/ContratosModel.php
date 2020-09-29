@@ -1777,6 +1777,47 @@ class ContratosModel extends ModelBase {
     }
 
 
+    
+    function editarInfoProceso(
+        $id_contrato, 
+        $numproceso_contrato,
+        $valproceso_contrato,
+        $favisoproceso_contrato,
+        $fevaluacionproceso_contrato,
+        $fevaluacionproceso2_contrato,
+        $fadjudicacionproceso_contrato,
+        $fcierreproceso_contrato,
+        $modalidad_contrato,
+        $tipo_contrato,
+        $objeto_contrato,
+        $conpro
+    ) {
+
+
+$query = "  UPDATE contratos 
+
+        SET numproceso_contrato = '". $numproceso_contrato ."',
+            valproceso_contrato = '". $valproceso_contrato ."',
+            favisoproceso_contrato = '". $favisoproceso_contrato ."',
+            fevaluacionproceso_contrato = '". $fevaluacionproceso_contrato ."',
+            fevaluacionproceso2_contrato = '". $fevaluacionproceso2_contrato ."',
+            fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
+            fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
+            modalidad_contrato = '". $modalidad_contrato ."',
+            tipo_contrato = '". $tipo_contrato ."',
+            objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+
+            conpro = '". $conpro ."'
+
+        WHERE id_contrato = '" . $id_contrato . "'";
+
+
+return $this->modificarRegistros($query);
+
+}
+
+
+
     function editarProceso(
                     $id_contrato, 
                     $numproceso_contrato,

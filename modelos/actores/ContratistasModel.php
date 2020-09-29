@@ -28,7 +28,6 @@ class ContratistasModel extends ModelBase {
                 contratistas.departamento_contratista,
                 contratistas.municipio_contratista,
 
-                contratistas.fechanacimiento_contratista,
 
                 contratistas.genero_contratista,
                 contratistas.estadocivil_contratista,
@@ -98,7 +97,6 @@ class ContratistasModel extends ModelBase {
                 contratistas.departamento_contratista,
                 contratistas.municipio_contratista,
                 
-                contratistas.fechanacimiento_contratista,
 
                 contratistas.genero_contratista,
                 contratistas.estadocivil_contratista,
@@ -166,7 +164,6 @@ class ContratistasModel extends ModelBase {
      contratistas.departamento_contratista,
      contratistas.municipio_contratista,
      
-     contratistas.fechanacimiento_contratista,
 
      contratistas.genero_contratista,
      contratistas.estadocivil_contratista,
@@ -234,7 +231,6 @@ class ContratistasModel extends ModelBase {
         contratistas.departamento_contratista,
         contratistas.municipio_contratista,
         
-        contratistas.fechanacimiento_contratista,
 
         contratistas.genero_contratista,
         contratistas.estadocivil_contratista,
@@ -296,7 +292,6 @@ class ContratistasModel extends ModelBase {
         $departamento_contratista,
         $municipio_contratista,
 
-        $fechanacimiento_contratista,
 
         $genero_contratista,
         $estadocivil_contratista,
@@ -325,7 +320,6 @@ class ContratistasModel extends ModelBase {
             departamento_contratista,
             municipio_contratista,
 
-            fechanacimiento_contratista,
 
             genero_contratista,
             estadocivil_contratista,
@@ -352,7 +346,6 @@ class ContratistasModel extends ModelBase {
             '". $departamento_contratista."', 
             '". $municipio_contratista."', 
 
-            '". $fechanacimiento_contratista."',
 
             '". $genero_contratista."',
             '". $estadocivil_contratista."',
@@ -390,7 +383,6 @@ class ContratistasModel extends ModelBase {
         $departamento_contratista,
         $municipio_contratista,
 
-        $fechanacimiento_contratista,
         
         $genero_contratista,
         $estadocivil_contratista,
@@ -422,7 +414,6 @@ class ContratistasModel extends ModelBase {
         departamento_contratista = '".$departamento_contratista."', 
         municipio_contratista = '".$municipio_contratista."', 
 
-        fechanacimiento_contratista = '".$fechanacimiento_contratista."', 
 
         genero_contratista = '".$genero_contratista."', 
         estadocivil_contratista = '".$estadocivil_contratista."', 

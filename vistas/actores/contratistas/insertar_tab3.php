@@ -144,17 +144,6 @@
       ?>
     </div>
     
-    <div class="col-md-4">
-
-      <label>Fecha de Nacimiento</label>
-
-      <input 
-        type="date" 
-        class="form-control" 
-        id="fechanacimiento_contratista" 
-        name="fechanacimiento_contratista" />
-
-    </div>
-
+  
 
 </div>

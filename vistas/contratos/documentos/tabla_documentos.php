@@ -122,7 +122,7 @@ $tabla_documentos = "
 
                       <div class="mailbox-attachment-info">    
                             <span class="mailbox-attachment-size">
-                            <i class="fa fa-paperclip"></i> '.substr($documento["nombre_documento"],0,40).'                             
+                            <i class="fa fa-paperclip"></i> '.utf8_encode(substr($documento["nombre_documento"],0,40)).'                             
                             </span>
                       </div>
 

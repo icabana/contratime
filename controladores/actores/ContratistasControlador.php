@@ -131,7 +131,6 @@ class ContratistasControlador extends ControllerBase {
             $_POST["pais_contratista"],
             $_POST["departamento_contratista"],
             $_POST["municipio_contratista"], 
-            $_POST["fechanacimiento_contratista"],
 
             $_POST["genero_contratista"],
             $_POST["estadocivil_contratista"],
@@ -176,7 +175,6 @@ class ContratistasControlador extends ControllerBase {
             $_POST["departamento_contratista"],
             $_POST["municipio_contratista"], 
 
-            $_POST["fechanacimiento_contratista"],
 
             $_POST["genero_contratista"],
             $_POST["estadocivil_contratista"],

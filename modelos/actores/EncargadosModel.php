@@ -28,7 +28,6 @@ class EncargadosModel extends ModelBase {
                 encargados.departamento_encargado,
                 encargados.municipio_encargado,
 
-                encargados.fechanacimiento_encargado,
 
                 encargados.genero_encargado,
                 encargados.estadocivil_encargado,
@@ -100,7 +99,6 @@ class EncargadosModel extends ModelBase {
                 encargados.departamento_encargado,
                 encargados.municipio_encargado,
                 
-                encargados.fechanacimiento_encargado,
 
                 encargados.genero_encargado,
                 encargados.estadocivil_encargado,
@@ -168,7 +166,6 @@ class EncargadosModel extends ModelBase {
                 encargados.departamento_encargado,
                 encargados.municipio_encargado,
                 
-                encargados.fechanacimiento_encargado,
 
                 encargados.genero_encargado,
                 encargados.estadocivil_encargado,
@@ -236,7 +233,6 @@ class EncargadosModel extends ModelBase {
         encargados.departamento_encargado,
         encargados.municipio_encargado,
         
-        encargados.fechanacimiento_encargado,
 
         encargados.genero_encargado,
         encargados.estadocivil_encargado,
@@ -298,7 +294,6 @@ class EncargadosModel extends ModelBase {
         $departamento_encargado,
         $municipio_encargado,
 
-        $fechanacimiento_encargado,
 
         $genero_encargado,
         $estadocivil_encargado,
@@ -327,7 +322,6 @@ class EncargadosModel extends ModelBase {
             departamento_encargado,
             municipio_encargado,
 
-            fechanacimiento_encargado,
 
             genero_encargado,
             estadocivil_encargado,
@@ -353,8 +347,6 @@ class EncargadosModel extends ModelBase {
             '". $pais_encargado."', 
             '". $departamento_encargado."', 
             '". $municipio_encargado."', 
-
-            '". $fechanacimiento_encargado."',
 
             '". $genero_encargado."',
             '". $estadocivil_encargado."',
@@ -392,7 +384,6 @@ class EncargadosModel extends ModelBase {
         $departamento_encargado,
         $municipio_encargado,
 
-        $fechanacimiento_encargado,
         
         $genero_encargado,
         $estadocivil_encargado,
@@ -424,7 +415,6 @@ class EncargadosModel extends ModelBase {
         departamento_encargado = '".$departamento_encargado."', 
         municipio_encargado = '".$municipio_encargado."', 
 
-        fechanacimiento_encargado = '".$fechanacimiento_encargado."', 
 
         genero_encargado = '".$genero_encargado."', 
         estadocivil_encargado = '".$estadocivil_encargado."', 

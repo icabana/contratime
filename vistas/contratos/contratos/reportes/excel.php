@@ -51,13 +51,13 @@
              ->setCellValue('C'.$columna, $contrato['valproceso_contrato'])      
              ->setCellValue('D'.$columna, $contrato['numero_contrato'])      
              ->setCellValue('E'.$columna, $contrato['valor_contrato'])      
-             ->setCellValue('F'.$columna, $contrato['nombre_modalidad'])
-             ->setCellValue('G'.$columna, $contrato['nombre_tipocontrato'])
-             ->setCellValue('H'.$columna, $contrato['nombres_contratista']." ".$contrato['apellidos_contratista'])
+             ->setCellValue('F'.$columna, utf8_encode($contrato['nombre_modalidad']))
+             ->setCellValue('G'.$columna, utf8_encode($contrato['nombre_tipocontrato']))
+             ->setCellValue('H'.$columna, utf8_encode($contrato['nombres_contratista']." ".$contrato['apellidos_contratista']))
              ->setCellValue('I'.$columna, $contrato['valor_contrato'])
              ->setCellValue('J'.$columna, $contrato['fechainicio_contrato'])
              ->setCellValue('K'.$columna, $contrato['fechafinal_contrato'])
-             ->setCellValue('L'.$columna, $contrato['objeto_contrato'])
+             ->setCellValue('L'.$columna, utf8_encode($contrato['objeto_contrato']))
              ->setCellValue('M'.$columna, $contrato['nombreestado_contrato']);
 
         $columna ++;

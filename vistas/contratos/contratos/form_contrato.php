@@ -24,7 +24,7 @@ $froms = new Formularios();
   <div class="col-md-4">
     <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
 
-    <input type="text" readonly class="form-control requerido" id="modalidad_contrato" name="modalidad_contrato" value="<?php echo $contrato['nombre_modalidad']; ?>">
+    <input type="text" readonly class="form-control requerido" id="modalidad_contrato" name="modalidad_contrato" value="<?php echo utf8_encode($contrato['nombre_modalidad']); ?>">
 
    
   </div>

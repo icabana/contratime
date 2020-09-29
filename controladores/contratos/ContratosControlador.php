@@ -1346,7 +1346,7 @@ class ContratosControlador extends ControllerBase {
             
         }
             
-        $resp = $ContratosModel->editar(
+        $resp = $ContratosModel->editarInfoProceso(
             $_POST["id_contrato"], 
             $numero_proceso,
             $_POST["valproceso_contrato"],
@@ -1356,14 +1356,8 @@ class ContratosControlador extends ControllerBase {
             $_POST["fadjudicacionproceso_contrato"],
             $_POST["fcierreproceso_contrato"],
             $_POST["modalidad_contrato"],
-            $_POST["contratista_contrato"],
             $_POST["tipo_contrato"],
             $_POST["objeto_contrato"],
-
-            $_POST["numero_contrato"],
-            $_POST["valor_contrato"],
-            $_POST["fechainicio_contrato"],
-            $_POST["fechafinal_contrato"],
             $conpro
 
         );        

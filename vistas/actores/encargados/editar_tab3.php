@@ -144,19 +144,7 @@
       ?>
     </div>
     
-    <div class="col-md-4">
-
-      <label>Fecha de Nacimiento</label>
-
-      <input 
-        type="date" 
-        class="form-control" 
-        id="fechanacimiento_encargado" 
-        name="fechanacimiento_encargado" 
-        value="<?php echo $datos['fechanacimiento_encargado']; ?>">
-
-    </div>
-
+ 
     
 </div>
 
