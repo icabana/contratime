@@ -21,7 +21,14 @@
                 <th style='background-color:lavender; width:11%'>Estado</th>                           
                 <th style='background-color:lavender; width:8%'>Acciones</th>                           
                 <th style='background-color:lavender; width:4%'>Adjuntar</th>  
+                <?php
+                 if($_SESSION['rol'] == 1){
+                ?>
                 <th  style='background-color:lavender; width:2%'></th>
+                <?php
+                 }
+                ?>
+                
                 <th  style='background-color:lavender; width:2%'></th>
               </tr>
             </thead>
@@ -228,9 +235,11 @@
             
                       echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_proceso(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
                       class='fas fa-edit'></i></a></td>";                                 
-
+                   
+                      if($_SESSION['rol'] == 1){                   
                       echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' onclick='eliminar_proceso_editar(" . $contrato['id_contrato'] . ");' title='Eliminar Contrato'><i 
                                     class='fas fa-trash'></i></a></td>";
+                      }
 
                   ?>
 

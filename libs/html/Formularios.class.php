@@ -18,9 +18,9 @@ class Formularios{
             $id_lista, $option, 
             $onclick, $onchange, 
             $estilo, $multiple,$textoDefecto
-            );    
-	}
-        
+        );    
+
+	}        
 	
 	public function Lista_Chequeo_Multiple_Derecha($idOpciones, $nombreLista, $textoOpciones = array(), $valorOpciones = array(), $valorSeleccionados = array(), 
       $onclick = '', $onchange = '', $estilo = ''){

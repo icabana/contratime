@@ -142,7 +142,7 @@
         <a  href="javascript:location.reload()" class="nav-link">Inicio</a>
       </li>
       <?php
-        if($_SESSION['rol'] == 1){
+        if($_SESSION['rol'] == 1 || $_SESSION['rol'] == 10){
       ?>
        <li class="nav-item d-none d-sm-inline-block">
         <a href="#" onclick="nuevo_proceso(); return false;" class="nav-link"><b>Nuevo Proceso</b></a>
@@ -233,7 +233,7 @@
 
   // MENU DEL ROL ADMINISTRADOR
 
-    if($_SESSION['rol'] == 1){
+    if($_SESSION['rol'] == 1 || $_SESSION['rol'] == 10){
 ?>
         
 
@@ -670,7 +670,7 @@
       <div class="container-fluid">
           <?php
         
-            if($_SESSION['rol'] == 1){      
+            if($_SESSION['rol'] == 1 || $_SESSION['rol'] == 10){      
               require_once("plantillas/basica/html/tmpl/dashboard.php");
             }
             if($_SESSION['rol'] == 2){      

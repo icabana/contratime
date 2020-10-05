@@ -13,8 +13,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.favisoproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
@@ -23,6 +25,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -117,8 +120,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.favisoproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
@@ -127,6 +132,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -221,8 +227,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.favisoproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
@@ -231,6 +239,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -340,8 +349,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.favisoproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
@@ -350,6 +361,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -446,8 +458,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
@@ -455,6 +469,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
 
 
@@ -547,8 +562,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
@@ -556,6 +573,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -654,8 +672,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
@@ -663,6 +683,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -762,8 +783,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
@@ -771,6 +794,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -869,8 +893,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
@@ -878,6 +904,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -975,8 +1002,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
@@ -984,6 +1013,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -1082,8 +1112,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
@@ -1091,6 +1123,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -1204,8 +1237,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.favisoproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
@@ -1214,6 +1249,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.agncon,
                     contratos.concon,
@@ -1313,8 +1349,10 @@ class ContratosModel extends ModelBase {
                         contratos.valor_contrato,
                         contratos.valproceso_contrato,
                         contratos.contratista_contrato,
+                        contratos.fecha_contrato,
                         contratos.fechainicio_contrato,
                         contratos.fechafinal_contrato,
+                        contratos.fechaliquidacion_contrato,
                         contratos.favisoproceso_contrato,
                         contratos.fevaluacionproceso_contrato,
                         contratos.fevaluacionproceso2_contrato,
@@ -1323,6 +1361,7 @@ class ContratosModel extends ModelBase {
                         contratos.numero_contrato,
                         contratos.numproceso_contrato,
                         contratos.objeto_contrato,
+                        contratos.estado2_contrato,
                         contratos.estado_contrato,
                         contratos.agncon,
                         contratos.concon,
@@ -1439,8 +1478,10 @@ class ContratosModel extends ModelBase {
                     contratos.valor_contrato,
                     contratos.valproceso_contrato,
                     contratos.contratista_contrato,
+                    contratos.fecha_contrato,
                     contratos.fechainicio_contrato,
                     contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
                     contratos.favisoproceso_contrato,
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
@@ -1449,6 +1490,7 @@ class ContratosModel extends ModelBase {
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
+                    contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.plan_contrato,
 
@@ -1541,8 +1583,10 @@ class ContratosModel extends ModelBase {
         contratos.valor_contrato,
         contratos.valproceso_contrato,
         contratos.contratista_contrato,
+        contratos.fecha_contrato,
         contratos.fechainicio_contrato,
         contratos.fechafinal_contrato,
+        contratos.fechaliquidacion_contrato,
         contratos.favisoproceso_contrato,
         contratos.fevaluacionproceso_contrato,
         contratos.fevaluacionproceso2_contrato,
@@ -1551,6 +1595,7 @@ class ContratosModel extends ModelBase {
         contratos.numero_contrato,
         contratos.numproceso_contrato,
         contratos.objeto_contrato,
+        contratos.estado2_contrato,
         contratos.estado_contrato,
         contratos.agncon,
         contratos.concon,
@@ -1641,6 +1686,7 @@ class ContratosModel extends ModelBase {
         $tipo_contrato,
         $fechainicio_contrato,
         $fechafinal_contrato,
+        $fechaliquidacion_contrato,
         $contratista_contrato,
         $objeto_contrato,
         $concon
@@ -1655,6 +1701,7 @@ class ContratosModel extends ModelBase {
                         tipo_contrato,
                         fechainicio_contrato,
                         fechafinal_contrato,
+                        fechaliquidacion_contrato,
                         contratista_contrato,
                         objeto_contrato,
                         estado_contrato,
@@ -1668,6 +1715,7 @@ class ContratosModel extends ModelBase {
                         '".$tipo_contrato."',
                         '".$fechainicio_contrato."',
                         '".$fechafinal_contrato."',
+                        '".$fechaliquidacion_contrato."',
                         '".$contratista_contrato."',
                         '".utf8_decode($objeto_contrato)."',
                         '3',
@@ -1717,11 +1765,14 @@ class ContratosModel extends ModelBase {
                     $contratista_contrato,
                     $tipo_contrato,
                     $objeto_contrato,
+                    $estado2_contrato,
 
                     $numero_contrato,
                     $valor_contrato,
+                    $fecha_contrato,
                     $fechainicio_contrato,
                     $fechafinal_contrato,
+                    $fechaliquidacion_contrato,
                     $conpro
                 ) {
 
@@ -1738,12 +1789,15 @@ class ContratosModel extends ModelBase {
                         fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
                         modalidad_contrato = '". $modalidad_contrato ."',
                         tipo_contrato = '". $tipo_contrato ."',
-                        objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+                        objeto_contrato = '". utf8_decode($objeto_contrato) ."',                        
+                        estado2_contrato, = '". $estado2_contrato ."',
 
                         numero_contrato = '". $numero_contrato ."',
                         valor_contrato = '". $valor_contrato ."',
+                        fecha_contrato = '". $fecha_contrato ."',
                         fechainicio_contrato = '". $fechainicio_contrato ."',
                         fechafinal_contrato = '". $fechafinal_contrato ."',
+                        fechaliquidacion_contrato = '". $fechaliquidacion_contrato ."',
                         conpro = '". $conpro ."'
 
                     WHERE id_contrato = '" . $id_contrato . "'";
@@ -1761,11 +1815,14 @@ class ContratosModel extends ModelBase {
                     contratista_contrato = '". $contratista_contrato ."',
                     tipo_contrato = '". $tipo_contrato ."',
                     objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+                    estado2_contrato = '". $estado2_contrato ."',
 
                     numero_contrato = '". $numero_contrato ."',
                     valor_contrato = '". $valor_contrato ."',
+                    fecha_contrato = '". $fecha_contrato ."',
                     fechainicio_contrato = '". $fechainicio_contrato ."',
                     fechafinal_contrato = '". $fechafinal_contrato ."',
+                    fechaliquidacion_contrato = '". $fechaliquidacion_contrato ."',
                     conpro = '". $conpro ."'
 
                 WHERE id_contrato = '" . $id_contrato . "'";
@@ -1790,6 +1847,7 @@ class ContratosModel extends ModelBase {
         $modalidad_contrato,
         $tipo_contrato,
         $objeto_contrato,
+        $estado2_contrato,
         $conpro
     ) {
 
@@ -1806,6 +1864,7 @@ $query = "  UPDATE contratos
             modalidad_contrato = '". $modalidad_contrato ."',
             tipo_contrato = '". $tipo_contrato ."',
             objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+            estado2_contrato = '". $estado2_contrato ."',
 
             conpro = '". $conpro ."'
 
@@ -1831,11 +1890,14 @@ return $this->modificarRegistros($query);
                     $contratista_contrato,
                     $tipo_contrato,
                     $objeto_contrato,
+                    $estado2_contrato,
 
                     $numero_contrato,
                     $valor_contrato,
+                    $fecha_contrato,
                     $fechainicio_contrato,
-                    $fechafinal_contrato
+                    $fechafinal_contrato,
+                    $fechaliquidacion_contrato
                 ) {
 
                 if($contratista_contrato == ''){
@@ -1852,11 +1914,14 @@ return $this->modificarRegistros($query);
                         modalidad_contrato = '". $modalidad_contrato ."',
                         tipo_contrato = '". $tipo_contrato ."',
                         objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+                        estado2_contrato = '". $estado2_contrato ."',
 
                         numero_contrato = '". $numero_contrato ."',
                         valor_contrato = '". $valor_contrato ."',
+                        fecha_contrato = '". $fecha_contrato ."',
                         fechainicio_contrato = '". $fechainicio_contrato ."',
-                        fechafinal_contrato = '". $fechafinal_contrato ."'
+                        fechafinal_contrato = '". $fechafinal_contrato ."',
+                        fechaliquidacion_contrato = '". $fechaliquidacion_contrato ."'
 
                     WHERE id_contrato = '" . $id_contrato . "'";
             }else{
@@ -1873,11 +1938,14 @@ return $this->modificarRegistros($query);
                     contratista_contrato = '". $contratista_contrato ."',
                     tipo_contrato = '". $tipo_contrato ."',
                     objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+                    estado2_contrato = '". $estado2_contrato ."',
 
                     numero_contrato = '". $numero_contrato ."',
                     valor_contrato = '". $valor_contrato ."',
+                    fecha_contrato = '". $fecha_contrato ."',
                     fechainicio_contrato = '". $fechainicio_contrato ."',
-                    fechafinal_contrato = '". $fechafinal_contrato ."'
+                    fechafinal_contrato = '". $fechafinal_contrato ."',
+                    fechaliquidacion_contrato = '". $fechaliquidacion_contrato ."'
 
                 WHERE id_contrato = '" . $id_contrato . "'";
             }
@@ -1893,11 +1961,14 @@ return $this->modificarRegistros($query);
         $contratista_contrato,
         $tipo_contrato,
         $objeto_contrato,
+        $estado2_contrato,
 
         $numero_contrato,
         $valor_contrato,
+        $fecha_contrato,
         $fechainicio_contrato,
-        $fechafinal_contrato
+        $fechafinal_contrato,
+        $fechaliquidacion_contrato
     ) {
 
     if($contratista_contrato == ''){
@@ -1906,11 +1977,14 @@ return $this->modificarRegistros($query);
 
                     SET tipo_contrato = '". $tipo_contrato ."',
                         objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+                        estado2_contrato = '".$estado2_contrato."',
 
                         numero_contrato = '". $numero_contrato ."',
                         valor_contrato = '". $valor_contrato ."',
+                        fecha_contrato = '". $fecha_contrato ."',
                         fechainicio_contrato = '". $fechainicio_contrato ."',
-                        fechafinal_contrato = '". $fechafinal_contrato ."'
+                        fechafinal_contrato = '". $fechafinal_contrato ."',
+                        fechaliquidacion_contrato = '". $fechaliquidacion_contrato ."'
 
                     WHERE id_contrato = '" . $id_contrato . "'";
             }else{
@@ -1919,11 +1993,14 @@ return $this->modificarRegistros($query);
                 SET contratista_contrato = '". $contratista_contrato ."',
                     tipo_contrato = '". $tipo_contrato ."',
                     objeto_contrato = '". utf8_decode($objeto_contrato) ."',
+                    estado2_contrato = '".$estado2_contrato."',
 
                     numero_contrato = '". $numero_contrato ."',
                     valor_contrato = '". $valor_contrato ."',
+                    fecha_contrato = '". $fecha_contrato ."',
                     fechainicio_contrato = '". $fechainicio_contrato ."',
-                    fechafinal_contrato = '". $fechafinal_contrato ."'
+                    fechafinal_contrato = '". $fechafinal_contrato ."',
+                    fechaliquidacion_contrato = '". $fechaliquidacion_contrato ."'
 
                 WHERE id_contrato = '" . $id_contrato . "'";
             }
@@ -2016,14 +2093,16 @@ return $this->modificarRegistros($query);
         
     }
     
-    function celebrar($id_contrato, $numero, $fechainicio, $fechafinal, $valor, $concon) {
+    function celebrar($id_contrato, $numero, $fecha, $fechainicio, $fechafinal, $fechaliquidacion_contrato, $valor, $concon) {
         
         $query = "  UPDATE contratos 
 
                     SET estado_contrato = '3', 
                         numero_contrato = '".$numero."',
+                        fecha_contrato = '".$fecha."',
                         fechainicio_contrato = '".$fechainicio."',
                         fechafinal_contrato = '".$fechafinal."',
+                        fechaliquidacion_contrato = '".$fechaliquidacion_contrato."',
                         valor_contrato = '".$valor."',
                         concon = '".$concon."'
 

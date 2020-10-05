@@ -25,7 +25,7 @@
     ?>
 
 <?php
-  if($_SESSION['rol'] == 1){
+  if($_SESSION['rol'] == 1 || $_SESSION['rol'] == 10){
 ?>
 
   <div class="row">

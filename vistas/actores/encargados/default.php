@@ -42,7 +42,13 @@
                             <th style='background-color:lavender'>Correo</th>
                             <th style='background-color:lavender'>Celular</th>
                             <th style='background-color:lavender; width:15px'></th>
+                            <?php
+                            if($_SESSION['rol'] == 1){
+                            ?>
                             <th style='background-color:lavender; width:15px'></th>
+                            <?php
+                            }
+                            ?>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,8 +72,10 @@
                         echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_encargado(" . $encargado['id_encargado'] . ");'><i 
                                 class='fas fa-edit'></i></a></td>";
 
+                        if($_SESSION['rol'] == 1){
                         echo "<td><a class='btn btn-sm btn-danger' style='padding:5px 11px 5px 11px' href='#' onclick='eliminar_encargado(" . $encargado['id_encargado'] . ");'><i 
                                 class='fas fa-trash'></i></a></td>";
+                        }
 
                         echo "</tr>";
                     }

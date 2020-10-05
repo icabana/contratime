@@ -21,6 +21,15 @@
         
         <div class="col-md-12">
 
+          <label>Fecha del Contrato: <span style="color:red">*</span></label>
+          <input type="date" class="form-control requerido_celebrar" id="fecha_contra" name="fecha_contra" >
+
+        </div>
+
+        <br>
+        
+        <div class="col-md-12">
+
           <label>Fecha de Inicio: <span style="color:red">*</span></label>
           <input type="date" class="form-control requerido_celebrar" id="fechainicio_contra" name="fechainicio_contra" >
 
