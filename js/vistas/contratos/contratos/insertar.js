@@ -102,8 +102,12 @@ function insertar_proceso2(data) {
 }
 
 
-function fchinv_insertar(fchevl1) {
 
+
+//////////////////////// VALIDACION DE LAS FECHAS DEL PROCESO
+
+function fchinv_insertar(fchevl1) {
+/*
   var fevaluacionproceso_contrato = $("#fevaluacionproceso_contrato").val();
 
   var f = new Date();
@@ -113,11 +117,11 @@ function fchinv_insertar(fchevl1) {
     mensaje_alertas("error", "Esta Fecha debe ser menor a la Fecha Inicial de Evaluación", "center");
     $(fchevl1).val(fecha_inicial);
   }
-
+*/
 }
 
 function fchevl1_insertar(fchevl1) {
-
+/*
   var fevaluacionproceso2_contrato = $("#fevaluacionproceso2_contrato").val();
 
   if(fevaluacionproceso2_contrato < $(fchevl1).val() && fevaluacionproceso2_contrato != ""){
@@ -132,12 +136,12 @@ function fchevl1_insertar(fchevl1) {
     mensaje_alertas("error", "Esta Fecha debe ser mayor a la Fecha de Invitación a la Convocatoria", "center");
     $(fchevl1).val($("#favisoproceso_contrato").val());
   }
-
+*/
 }
 
 
 function fchevl2_insertar(fchevl2) {
-
+/*
   var fadjudicacionproceso_contrato = $("#fadjudicacionproceso_contrato").val();
 
   if(fadjudicacionproceso_contrato < $(fchevl2).val() && fadjudicacionproceso_contrato != ""){
@@ -151,13 +155,13 @@ function fchevl2_insertar(fchevl2) {
     mensaje_alertas("error", "Esta Fecha debe ser mayor a la Fecha Inicial de Evaluación", "center");
     $(fchevl2).val($("#fevaluacionproceso_contrato").val());
   }
-
+*/
 }
 
 
 
 function fchcie_insertar(fchcie) {
-  
+  /*
   var fevaluacionproceso2_contrato = $("#fevaluacionproceso2_contrato").val();
 
   if(fevaluacionproceso2_contrato > $(fchcie).val() && fevaluacionproceso2_contrato != ""){
@@ -172,18 +176,18 @@ function fchcie_insertar(fchcie) {
     mensaje_alertas("error", "Esta Fecha debe ser menor a la Fecha de Adjudicación", "center");
     $(fchcie).val($("#fadjudicacionproceso_contrato").val());
   }
-
+*/
 }
 
 function fchadj_insertar(fchadj) {
-  
+  /*
   var fcierreproceso_contrato = $("#fcierreproceso_contrato").val();
 
   if(fcierreproceso_contrato > $(fchadj).val() && fadjudicacionproceso_contrato != ""){
     mensaje_alertas("error", "Esta Fecha debe ser mayor a la Fecha de Cierre", "center");
     $(fchcie).val($("#fadjudicacionproceso_contrato").val());
   }
-
+*/
 }
 
 

@@ -1733,3 +1733,9 @@ SQL .............>  (2020-10-05 20:26:35) (Usuario: 1083459981) INSERT INTO cont
                         '2020-10-05 20:26:35',
                         '1'
                     );
+
+SQL .............>  (2020-10-05 20:32:58) (Usuario: 1083459981) UPDATE contratos SET estado_contrato = '6' WHERE id_contrato = '52'
+
+SQL .............>  (2020-10-05 20:33:04) (Usuario: 1083459981) UPDATE contratos SET estado_contrato = '6' WHERE id_contrato = '50'
+
+SQL .............>  (2020-10-05 20:34:40) (Usuario: 1083459981) UPDATE contratos SET estado_contrato = '6' WHERE id_contrato = '51'
