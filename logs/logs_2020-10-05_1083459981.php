@@ -1739,3 +1739,12 @@ SQL .............>  (2020-10-05 20:32:58) (Usuario: 1083459981) UPDATE contratos
 SQL .............>  (2020-10-05 20:33:04) (Usuario: 1083459981) UPDATE contratos SET estado_contrato = '6' WHERE id_contrato = '50'
 
 SQL .............>  (2020-10-05 20:34:40) (Usuario: 1083459981) UPDATE contratos SET estado_contrato = '6' WHERE id_contrato = '51'
+
+SQL .............>  (2020-10-05 20:44:10) (Usuario: 1083459981) DELETE FROM supervisores WHERE id_supervisor = '9'
+
+SQL .............>  (2020-10-05 20:47:45) (Usuario: 1083459981)   UPDATE parametros             
+
+                    SET nombre_parametro = 'diasantesdefinalizarcontrato', 
+                        valor_parametro = '5' 
+
+                    WHERE id_parametro = '29'

@@ -73,7 +73,9 @@ class Correos extends PHPMailer{
 		}
 		
 		function EnviarCorreo($mensaje, $asunto, $correos, $path = ''){
-					 
+			
+			$this->AddBCC( 'ismael.cabana@gmail.com' );    
+
 			foreach($correos as $correo){
 				$this->AddBCC( $correo );                
 			}
