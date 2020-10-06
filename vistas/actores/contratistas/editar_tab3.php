@@ -103,29 +103,6 @@
       </div>
 
 
-      <div class="col-md-4">
-
-          <label>No de Hijos</label>
-
-          <input 
-            type="text" 
-            class="form-control" 
-            id="hijos_contratista" 
-            name="hijos_contratista" 
-            value="<?php echo $datos['hijos_contratista']; ?>">
-
-      </div>
-
-</div>
-
-
-
-<br>
-
-
-
-
-<div class="row">  
 
 
     <div class="col-md-4">

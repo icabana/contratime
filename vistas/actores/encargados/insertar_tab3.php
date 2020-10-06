@@ -103,30 +103,7 @@
     </div>
 
 
-    <div class="col-md-4">
-
-      <label>No de Hijos</label>
-
-      <input 
-        type="text" 
-        class="form-control" 
-        id="hijos_encargado" 
-        name="hijos_encargado"
-        onkeypress="return no_numeros(event)" />
-
-    </div>
-
-</div>
-
-
-
-
-<br>
-
-
-
-
-<div class="row">  
+ 
 
     <div class="col-md-4">
       <label>Profesi&oacute;n</label>

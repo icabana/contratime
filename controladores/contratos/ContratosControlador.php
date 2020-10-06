@@ -526,6 +526,10 @@ class ContratosControlador extends ControllerBase {
         $Tiposcontrato = new TiposcontratoModel();
         $tiposcontrato = $Tiposcontrato->getTodos();
 
+        $this->model->cargar("Estados2Model.php", "maestras");
+        $Estados2Model = new Estados2Model();
+        $estados2 = $Estados2Model->getTodos();     
+
         include 'vistas/contratos/contratos/insertar.php';
         
     }  
@@ -544,6 +548,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
+        
+        $this->model->cargar("Estados2Model.php", "maestras");
+        $Estados2Model = new Estados2Model();
+        $estados2 = $Estados2Model->getTodos();     
 
         include 'vistas/contratos/contratos/insertar_contrato.php';
         
@@ -1632,7 +1640,7 @@ class ContratosControlador extends ControllerBase {
             $_POST["fecha_contra"],
             $_POST["fechainicio_contra"],
             $_POST["fechafinal_contra"],
-            $_POST["fechaliquidacion_contrato"],
+            $_POST["fechaliquidacion_contra"],
             $_POST["valor_contra"],
             $concon
         );
@@ -1747,7 +1755,7 @@ class ContratosControlador extends ControllerBase {
         $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
         $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-        echo $correo->EnviarCorreo($mensaje, "Envío de Copia de Contrato", array($datos_contrato['correo_contratista']), $ruta_archivo);
+        echo $correo->EnviarCorreo($mensaje, "Envio de Copia de Contrato", array($datos_contrato['correo_contratista']), $ruta_archivo);
 
         //GUARDAR TRAZABILIDAD        
         require_once("controladores/contratos/TrazabilidadControlador.php");

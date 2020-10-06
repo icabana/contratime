@@ -96,13 +96,19 @@ $froms = new Formularios();
 
 <div class="col-md-3">
 
-  <label>Fecha de Evaluaci&oacute;n<span style="color:red">*</span></label><br>
-   <b>Desde:</b> <input size="20" type="date" class="form-control requerido" id="fevaluacionproceso_contrato" name="fevaluacionproceso_contrato"   value="<?php echo $contrato['fevaluacionproceso_contrato']?>">
-   <b>Hasta:</b> <input size="20" type="date" class="form-control requerido" id="fevaluacionproceso2_contrato" name="fevaluacionproceso2_contrato"  value="<?php echo $contrato['fevaluacionproceso2_contrato']?>">
+  <label>Fecha Cierre de la Convocatoria<span style="color:red">*</span></label>
+  <input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato" value="<?php echo $contrato['fcierreproceso_contrato']?>" >
 
 </div>
 
 
+<div class="col-md-3">
+
+  <label>Fechas de Evaluaci&oacute;n<span style="color:red">*</span></label><br>
+   <b>Desde:</b> <input size="20" type="date" class="form-control requerido" id="fevaluacionproceso_contrato" name="fevaluacionproceso_contrato"   value="<?php echo $contrato['fevaluacionproceso_contrato']?>">
+   <b>Hasta:</b> <input size="20" type="date" class="form-control requerido" id="fevaluacionproceso2_contrato" name="fevaluacionproceso2_contrato"  value="<?php echo $contrato['fevaluacionproceso2_contrato']?>">
+
+</div>
 
 
  <div class="col-md-3">
@@ -112,13 +118,6 @@ $froms = new Formularios();
 
 </div>
 
-
-<div class="col-md-3">
-
-  <label>Fecha de Cierre<span style="color:red">*</span></label>
-  <input type="date" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato" value="<?php echo $contrato['fcierreproceso_contrato']?>" >
-
-</div>
 
 
 </div>

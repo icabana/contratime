@@ -7,21 +7,20 @@ class Correos extends PHPMailer{
 		//Para Usar Gmail se debe activar la siguiente opción
 		//https://myaccount.google.com/lesssecureapps
 
-		$params = Parametros::singleton();
+			$params = Parametros::singleton();
 			
-			/*LOGNTIME 
 			$this->IsSMTP();
-			$this->Host = 'mail.logintime.co';
-			$this->FromName = "Logintime";
-			$this->AltBody = "Enfocados en la Calidad";
-			$this->Port="587";
-			$this->SMTPAuth = true;
-			$this->Username = "contacto@logintime.co";
+			$this->SMTPSecure = 'tls';
+			$this->Host = 'smtp.gmail.com';
+			$this->SMTPAuth= true;
+			$this->Port = 587;                 
+			$this->From = "ismael.cabana@gmail.com";
+			$this->FromName = utf8_decode("ESSMAR E.S.P.");
+			$this->Username = "ismael.cabana@gmail.com";
 			$this->Password = "L0g1nT1m301012020*";
-			$this->From = "contacto@logintime.co";
-			*/	
+			$this->AltBody = "Enfocados en la Calidad";
 
-			/* LEGALTEAM */
+			/* LEGALTEAM 
 			$this->IsSMTP();
 
 			$this->Host = 'mail.legalteamcolombia.co';
@@ -35,7 +34,8 @@ class Correos extends PHPMailer{
 			$this->Password = "Ismael777880428";
 			
 			$this->From = "contacto@logintime.co";
-					
+			*/
+
 		}
 	
 		function agregarDestinos($str){			

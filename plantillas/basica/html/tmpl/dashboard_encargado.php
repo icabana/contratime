@@ -78,7 +78,68 @@
 <div class="row">
 
     
+<div class="col-md-6">
+              <!-- PRODUCT LIST -->
+              <div class="card">
+                    <div class="card-header">
+                      <h4 class="card-title"><center><b>Procesos Próximos a Cerrar</b></center></h4>
+                    </div>
 
+                    <div class="card-body p-0">
+                      <ul class="products-list product-list-in-card pl-2 pr-2">
+
+                      <?php 
+                      if(count($procesos_x_finalizar) > 0){
+                    ?>
+
+                      <?php
+                        foreach($procesos_x_finalizar as $contrato){
+                      ?>
+
+                      <li style="padding-left: 15px;" class="item">
+                        
+                        <a href="javascript:void(0)" class="product-title">
+                        <?php echo "<center>Proceso No.: ". $contrato['numproceso_contrato']."</center>"; ?>
+                        <?php echo "<center>Valor del Proceso: $". number_format($contrato['valproceso_contrato'], 0, ',', '.')."</center><br>"; ?>
+                        </a>
+                        
+                        <span class="product-description">
+                         <?php echo "<b>Fecha de invitación:</b> ". $contrato['favisoproceso_contrato']; ?>
+                         <?php echo "<br><b>Fecha de Evaluación:</b>"; ?>
+                         <?php echo "<br><center><b>Desde: </b>".$contrato['fevaluacionproceso_contrato']."</center>"; ?>
+                         <?php echo "<center><b>Hasta: </b>".$contrato['fevaluacionproceso2_contrato']."</center>"; ?>
+                         </span>
+                         <span class="product-description">
+                         <?php echo "<b>Fecha Adjudicación: </b>".$contrato['fadjudicacionproceso_contrato']."" ?>
+                         </span>
+                         <span class="product-description">
+                         <?php echo "<span style='color:red'><b>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']."</span><br>"; ?>
+                         </span>
+                         <br>
+                         
+                        <?php
+                        }
+
+                        }else{
+                      ?>
+                          <li style="padding-left: 15px;" class="item">
+                        
+                         No hay registros para mostrar
+                          
+                      </li>
+                      <?php
+                        }                      
+                      ?>
+
+                    
+                      </ul>
+                    </div>
+
+                   
+                    </div>
+                   
+                  </div>
+           
             
 <div class="col-md-6">
               <!-- PRODUCT LIST -->
@@ -149,68 +210,7 @@
 
 
             
-      <div class="col-md-6">
-              <!-- PRODUCT LIST -->
-              <div class="card">
-                    <div class="card-header">
-                      <h4 class="card-title"><center><b>Procesos Próximos a Cerrar</b></center></h4>
-                    </div>
-
-                    <div class="card-body p-0">
-                      <ul class="products-list product-list-in-card pl-2 pr-2">
-
-                      <?php 
-                      if(count($procesos_x_finalizar) > 0){
-                    ?>
-
-                      <?php
-                        foreach($procesos_x_finalizar as $contrato){
-                      ?>
-
-                      <li style="padding-left: 15px;" class="item">
-                        
-                        <a href="javascript:void(0)" class="product-title">
-                        <?php echo "<center>Proceso No.: ". $contrato['numproceso_contrato']."</center>"; ?>
-                        <?php echo "<center>Valor del Proceso: $". number_format($contrato['valproceso_contrato'], 0, ',', '.')."</center><br>"; ?>
-                        </a>
-                        
-                        <span class="product-description">
-                         <?php echo "<b>Fecha de invitación:</b> ". $contrato['favisoproceso_contrato']; ?>
-                         <?php echo "<br><b>Fecha de Evaluación:</b>"; ?>
-                         <?php echo "<br><center><b>Desde: </b>".$contrato['fevaluacionproceso_contrato']."</center>"; ?>
-                         <?php echo "<center><b>Hasta: </b>".$contrato['fevaluacionproceso2_contrato']."</center>"; ?>
-                         </span>
-                         <span class="product-description">
-                         <?php echo "<b>Fecha Adjudicación: </b>".$contrato['fadjudicacionproceso_contrato']."" ?>
-                         </span>
-                         <span class="product-description">
-                         <?php echo "<span style='color:red'><b>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']."</span><br>"; ?>
-                         </span>
-                         <br>
-                         
-                        <?php
-                        }
-
-                        }else{
-                      ?>
-                          <li style="padding-left: 15px;" class="item">
-                        
-                         No hay registros para mostrar
-                          
-                      </li>
-                      <?php
-                        }                      
-                      ?>
-
-                    
-                      </ul>
-                    </div>
-
-                   
-                    </div>
-                   
-                  </div>
-           
+      
 
 
 

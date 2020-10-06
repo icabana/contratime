@@ -199,16 +199,29 @@ function editar_proceso_encargado2(data) {
 }
 
 
-function fchinv(fchevl1) {
+//////////////////////// VALIDACION DE LAS FECHAS DEL PROCESO
 
-  var fevaluacionproceso_contrato = $("#fevaluacionproceso_contrato").val();
+function fchinv(fchinv) {
+
+  var fcierreproceso_contrato = $("#fcierreproceso_contrato").val();
 
   var f = new Date();
   var fecha_inicial = f.getFullYear() + "-" + (f.getMonth() +1) + "/" + f.getDate();
 
-  if(fevaluacionproceso_contrato < $(fchevl1).val() && fevaluacionproceso_contrato != ""){
+  if(fevaluacionproceso_contrato < $(fchinv).val() && fevaluacionproceso_contrato != ""){
     mensaje_alertas("error", "Esta Fecha debe ser menor a la Fecha Inicial de Evaluación", "center");
-    $(fchevl1).val(fecha_inicial);
+    $(fchinv).val(fecha_inicial);
+  }
+
+}
+
+function fchcie_editar(fchcie) {
+  
+  var fevaluacionproceso_contrato = $("#fevaluacionproceso_contrato").val();
+
+  if(fevaluacionproceso_contrato > $(fchevl2).val() && fevaluacionproceso_contrato != ""){
+    mensaje_alertas("error", "Esta Fecha debe ser mayor a la Fecha Inicial de Evaluación", "center");
+    $(fchevl2).val($("#fevaluacionproceso_contrato").val());
   }
 
 }
@@ -252,31 +265,12 @@ function fchevl2(fchevl2) {
 }
 
 
-function fchcie_insertar(fchcie) {
-
-  var fadjudicacionproceso_contrato = $("#fadjudicacionproceso_contrato").val();
-
-  if(fadjudicacionproceso_contrato < $(fchcie).val() && fadjudicacionproceso_contrato != ""){
-    mensaje_alertas("error", "Esta Fecha debe ser menor a la Fecha de Adjudicación", "center");
-    $(fchcie).val($("#fadjudicacionproceso_contrato").val());
-  }
-
-  
-  var fevaluacionproceso2_contrato = $("#fevaluacionproceso2_contrato").val();
-
-  if(fevaluacionproceso2_contrato > $(fchcie).val() && fevaluacionproceso2_contrato != ""){
-    mensaje_alertas("error", "Esta Fecha debe ser mayor a la Fecha Final de Evaluación", "center");
-    $(fchcie).val($("#fevaluacionproceso2_contrato").val());
-  }
-
-}
-
-function fchadj_insertar(fchadj) {
+function fchadj_editar(fchadj) {
   
   var fcierreproceso_contrato = $("#fcierreproceso_contrato").val();
 
   if(fcierreproceso_contrato > $(fchadj).val() && fadjudicacionproceso_contrato != ""){
-    mensaje_alertas("error", "Esta Fecha debe ser menor a la Fecha de Adjudicación", "center");
+    mensaje_alertas("error", "Esta Fecha debe ser mayor a la Fecha de Cierre", "center");
     $(fchcie).val($("#fadjudicacionproceso_contrato").val());
   }
 

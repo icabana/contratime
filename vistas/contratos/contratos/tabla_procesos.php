@@ -130,8 +130,10 @@
                             echo "<b><center>".$contrato['nombreestado_contrato']."</center></b>";
                            echo '</td>';
 
-                            echo '<td  class="mailbox-subject">';                        
-                            echo '<center><button onclick="sel_adjudicar_contrato(' . $id_contrato . ');"  title="Adjudicar Contrato" data-toggle="modal" data-target="#modal_adjudicar" type="button" class="btn btn-success btn-xs ">¿Adjudicar?</button></center>';
+                            echo '<td  class="mailbox-subject">';           
+                            if($contrato['numproceso_contrato'] != "" ){             
+                              echo '<center><button onclick="sel_adjudicar_contrato(' . $id_contrato . ');"  title="Adjudicar Contrato" data-toggle="modal" data-target="#modal_adjudicar" type="button" class="btn btn-success btn-xs ">¿Adjudicar?</button></center>';
+                            }
                             echo '<br><center><button onclick="descartar_contrato(' . $id_contrato . ');"  title="Descartar Contrato" type="button" class="btn btn-danger  btn-xs">¿Descartar?</button></center>';
                             echo '</td>';
 

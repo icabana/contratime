@@ -5,7 +5,7 @@ $froms = new Formularios();
 
 <div class="row">
 
-  <div class="col-md-2">
+  <div class="col-md-3">
 
     <label>No. de Contrato<span style="color:red">*</span></label>
     <input readonly type="text" readonly class="form-control requerido" id="numero_contrato" name="numero_contrato" maxlength="25" value="<?php echo $contrato['numero_contrato']; ?>">
@@ -13,7 +13,7 @@ $froms = new Formularios();
   </div>
 
 
-  <div class="col-md-2">
+  <div class="col-md-3">
 
     <label>Valor del Contrato<span style="color:red">*</span></label>
     <input type="text" class="form-control requerido" id="valor_contrato" name="valor_contrato" onkeypress="return no_numeros(event)" value="<?php echo $contrato['valor_contrato']; ?>">
