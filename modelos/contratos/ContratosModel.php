@@ -90,7 +90,8 @@ class ContratosModel extends ModelBase {
                     FROM contratos 
                             left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipocontrato
                             left join modalidades ON contratos.modalidad_contrato = modalidades.id_modalidad
-                            left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista  left join tipospersona on contratistas.tipo_contratista = tipospersona.id_tipopersona
+                            left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista 
+                            left join tipospersona on contratistas.tipo_contratista = tipospersona.id_tipopersona
                             left join tiposdocumento on contratistas.tipodocumento_contratista = tiposdocumento.id_tipodocumento
                             left join paises on contratistas.pais_contratista = paises.id_pais       
                             left join departamentos on contratistas.departamento_contratista = departamentos.id_departamento

@@ -8,7 +8,7 @@ $froms = new Formularios();
   <div class="col-md-3">
 
     <label>No. de Contrato<span style="color:red">*</span></label>
-    <input readonly type="text" readonly class="form-control requerido" id="numero_contrato" name="numero_contrato" maxlength="25" value="<?php echo $contrato['numero_contrato']; ?>">
+    <input type="text" readonly class="form-control requerido" id="numero_contrato" name="numero_contrato" maxlength="25" value="<?php echo $contrato['numero_contrato']; ?>">
 
   </div>
 
@@ -50,13 +50,23 @@ $froms = new Formularios();
 
 <div class="row">
     
-  <div class="col-md-6">
-    <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
+    <div class="col-md-6">
+        <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
 
-    <input type="text" readonly class="form-control requerido" id="modalidad_contrato" name="modalidad_contrato" value="<?php echo utf8_encode($contrato['nombre_modalidad']); ?>">
+        <?php
 
-   
-  </div>
+        echo $froms->Lista_Desplegable(
+            $modalidades,
+            'nombre_modalidad',
+            'id_modalidad',
+            'modalidad_contrato',
+            '1',
+            '',
+            'mostrar_fechas_procesos()'
+        );
+
+        ?>
+      </div>
 
 
   <div class="col-md-6">
@@ -138,7 +148,7 @@ $froms = new Formularios();
 
   <div class="col-md-12">
     <label>Objeto del Contrato<span style="color:red">*</span></label>
-    <textarea class="form-control requerido" rows="2" id="objeto_contrato" name="objeto_contrato"><?php echo $contrato['objeto_contrato']; ?></textarea>
+    <textarea class="form-control requerido" rows="2" id="objeto_contrato" name="objeto_contrato"><?php echo utf8_encode($contrato['objeto_contrato']); ?></textarea>
   </div>
 
 </div>

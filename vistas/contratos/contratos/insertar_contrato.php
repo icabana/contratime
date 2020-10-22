@@ -20,8 +20,7 @@ $froms = new Formularios();
             <div class="col-md-3">
 
               <label>No. de Contrato<span style="color:red">*</span></label>
-              <input readonly type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato"
-                    value="<?php echo date('Y')." - ?"; ?>">
+              <input type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato">
 
             </div>
 

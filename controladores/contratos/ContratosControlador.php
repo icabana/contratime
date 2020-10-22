@@ -72,7 +72,7 @@ class ContratosControlador extends ControllerBase {
         $Tiposcontrato = new TiposcontratoModel();
         $tiposcontrato = $Tiposcontrato->getTodos();
         
-        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $this->model->cargar("EstadosContratosModel.php", "maestras");
         $EstadosContratosModel = new EstadosContratosModel();
         $estados = $EstadosContratosModel->getTodos();
 
@@ -409,7 +409,7 @@ class ContratosControlador extends ControllerBase {
         $Tiposcontrato = new TiposcontratoModel();
         $tiposcontrato = $Tiposcontrato->getTodos();
         
-        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $this->model->cargar("EstadosContratosModel.php", "maestras");
         $EstadosContratosModel = new EstadosContratosModel();
         $estados = $EstadosContratosModel->getTodos();
         
@@ -428,7 +428,7 @@ class ContratosControlador extends ControllerBase {
         $Tiposcontrato = new TiposcontratoModel();
         $tiposcontrato = $Tiposcontrato->getTodos();
         
-        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $this->model->cargar("EstadosContratosModel.php", "maestras");
         $EstadosContratosModel = new EstadosContratosModel();
         $estados = $EstadosContratosModel->getTodos();
 
@@ -1275,10 +1275,10 @@ class ContratosControlador extends ControllerBase {
             $concon = $concon+1;
         }
 
-        $numero = $agncon." - ".$concon;
+        //$numero = $agncon." - ".$concon;
 
         $resp = $ContratosModel->insertarContratoDirecto(
-            $numero,
+            $_POST["numero_contrato"],
             $_POST["valor_contrato"],
             $_POST["modalidad_contrato"],
             $_POST["tipo_contrato"],
@@ -1330,14 +1330,14 @@ class ContratosControlador extends ControllerBase {
         }else{
             
             $conpro = $contrato['conpro'];
-            $numero_proceso = $contrato['numproceso_contrato'];
+            $numero_proceso = $_POST['numproceso_contrato'];
             
         }
 
 
         $resp = $ContratosModel->editar(
             $_POST["id_contrato"], 
-            $numero_proceso,
+            $_POST['numproceso_contrato'],
             $_POST["valproceso_contrato"],
             $_POST["favisoproceso_contrato"],
             $_POST["fevaluacionproceso_contrato"],
@@ -1404,13 +1404,13 @@ class ContratosControlador extends ControllerBase {
         }else{            
             
             $conpro = $contrato['conpro'];
-            $numero_proceso = $contrato['numproceso_contrato'];
+            $numero_proceso = $_POST['numproceso_contrato'];
             
         }
             
         $resp = $ContratosModel->editarInfoProceso(
             $_POST["id_contrato"], 
-            $numero_proceso,
+            $_POST['numproceso_contrato'],
             $_POST["valproceso_contrato"],
             $_POST["favisoproceso_contrato"],
             $_POST["fevaluacionproceso_contrato"],

@@ -8,7 +8,7 @@ $froms = new Formularios();
   <div class="col-md-2">
 
     <label>No. de Proceso<span style="color:red">*</span></label>
-    <input readonly readonly type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" maxlength="25" value="<?php echo $numero_proceso; ?>">
+    <input type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" maxlength="25" value="<?php echo $numero_proceso; ?>">
 
   </div>
 
@@ -134,7 +134,7 @@ $froms = new Formularios();
 
   <div class="col-md-12">
     <label>Objeto del Contrato<span style="color:red">*</span></label>
-    <textarea class="form-control requerido" rows="2" id="objeto_contrato" name="objeto_contrato"><?php echo $contrato['objeto_contrato']; ?></textarea>
+    <textarea class="form-control requerido" rows="2" id="objeto_contrato" name="objeto_contrato"><?php echo utf8_encode($contrato['objeto_contrato']); ?></textarea>
   </div>
 
 </div>

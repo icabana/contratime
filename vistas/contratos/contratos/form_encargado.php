@@ -8,7 +8,7 @@ $froms = new Formularios();
   <div class="col-md-3">
 
     <label>No. de Proceso<span style="color:red">*</span></label>
-    <input readonly type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
+    <input type="text" class="form-control requerido" id="numproceso_contrato" name="numproceso_contrato" maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
 
   </div>
 
@@ -51,9 +51,6 @@ $froms = new Formularios();
 <div class="row">
   
  
-  <?php
-    if($contrato['modalidad_contrato'] == ""){
-  ?>
   <div class="col-md-6">
     <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
 
@@ -71,22 +68,7 @@ $froms = new Formularios();
 
     ?>
   </div>
-  <?php
-    }else{
-      ?>
-
-<div class="col-md-6">
-    <label>Modalidad de Contrataci&oacute;n<span style="color:red">*</span></label>
-
-        <input type="hidden" id="modalidad_contrato" name="modalidad_contrato" value="<?php echo $contrato['modalidad_contrato']; ?>">
-        <input readonly type="text" class="form-control" id="modalidad" name="modalidad" value="<?php echo $contrato['nombre_modalidad']; ?>">
-    </div>
-  <?php
-    }
-  ?>
-
-
-
+ 
   <div class="col-md-6">
     <label>Tipo de Contrataci&oacute;n <span style="color:red">*</span></label>
 
@@ -245,7 +227,7 @@ if ($contrato['estado_contrato'] > 2) {
 
   <div class="col-md-12">
     <label>Objeto del Contrato<span style="color:red">*</span></label>
-    <textarea class="form-control requerido" rows="2" id="objeto_contrato" name="objeto_contrato"><?php echo $contrato['objeto_contrato']; ?></textarea>
+    <textarea class="form-control requerido" rows="2" id="objeto_contrato" name="objeto_contrato"><?php echo utf8_encode($contrato['objeto_contrato']); ?></textarea>
   </div>
 
 </div>
