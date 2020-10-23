@@ -55,7 +55,7 @@ $froms = new Formularios();
                 <div class="form-group">
                   <label>Nombre del Parametro</label>
                   
-                  <input type="text" class="form-control" id="nombre_parametro" name="nombre_parametro" 
+                  <input type="text" readonly class="form-control" id="nombre_parametro" name="nombre_parametro" 
                         value="<?php echo utf8_encode($datos['nombre_parametro']); ?>">
 
                 </div>

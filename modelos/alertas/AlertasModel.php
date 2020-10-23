@@ -26,6 +26,7 @@ class AlertasModel extends ModelBase {
                 contratos.fevaluacionproceso2_contrato,
                 contratos.fadjudicacionproceso_contrato,
                 contratos.fcierreproceso_contrato,
+                contratos.hcierreproceso_contrato,
                 contratos.numero_contrato,
                 contratos.numproceso_contrato,
                 contratos.objeto_contrato,
@@ -135,6 +136,7 @@ class AlertasModel extends ModelBase {
                 contratos.fevaluacionproceso2_contrato,
                 contratos.fadjudicacionproceso_contrato,
                 contratos.fcierreproceso_contrato,
+                contratos.hcierreproceso_contrato,
                 contratos.numero_contrato,
                 contratos.numproceso_contrato,
                 contratos.objeto_contrato,
@@ -248,6 +250,7 @@ class AlertasModel extends ModelBase {
                 contratos.fevaluacionproceso2_contrato,
                 contratos.fadjudicacionproceso_contrato,
                 contratos.fcierreproceso_contrato,
+                contratos.hcierreproceso_contrato,
                 contratos.numero_contrato,
                 contratos.numproceso_contrato,
                 contratos.objeto_contrato,
@@ -359,6 +362,7 @@ class AlertasModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -438,6 +442,7 @@ class AlertasModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -522,6 +527,7 @@ class AlertasModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -607,6 +613,7 @@ class AlertasModel extends ModelBase {
         contratos.fevaluacionproceso2_contrato,
         contratos.fadjudicacionproceso_contrato,
         contratos.fcierreproceso_contrato,
+        contratos.hcierreproceso_contrato,
         contratos.numero_contrato,
         contratos.numproceso_contrato,
         contratos.objeto_contrato,
@@ -684,8 +691,8 @@ class AlertasModel extends ModelBase {
 
                     WHERE DATEDIFF(contratos.fevaluacionproceso2_contrato, '".$fecha_actual."') < ".$dias." and 
                             contratos.fevaluacionproceso2_contrato >= '".$fecha_actual."' and 
-                            contratos.estado_contrato != '6' and 
-                            contratos.estado_contrato != '5'";
+                            (contratos.estado_contrato = '1' or 
+                            contratos.estado_contrato = '2')";
         
         $consulta = $this->consulta($query);
         return $consulta;       
@@ -702,6 +709,10 @@ class AlertasModel extends ModelBase {
         $dias = $params->valor("diasantesdecerrarproceso");
 
         $fecha_actual = date("Y-m-d");
+        $hora_actual = date("H:i");
+        $hora = strtotime('-5 hour', strtotime($hora_actual));
+        $hora_actual = date("H:i:s", $hora);
+
 
         $query = "SELECT 
 
@@ -718,6 +729,7 @@ class AlertasModel extends ModelBase {
         contratos.fevaluacionproceso2_contrato,
         contratos.fadjudicacionproceso_contrato,
         contratos.fcierreproceso_contrato,
+        contratos.hcierreproceso_contrato,
         contratos.numero_contrato,
         contratos.numproceso_contrato,
         contratos.objeto_contrato,
@@ -795,8 +807,9 @@ class AlertasModel extends ModelBase {
 
                     WHERE DATEDIFF(contratos.fcierreproceso_contrato, '".$fecha_actual."') < ".$dias." and 
                             contratos.fcierreproceso_contrato >= '".$fecha_actual."' and 
-                            contratos.estado_contrato != '6' and 
-                            contratos.estado_contrato != '5'";
+                            contratos.hcierreproceso_contrato >= '".$hora_actual."' and
+                            (contratos.estado_contrato = '1' or 
+                            contratos.estado_contrato = '2')";
         
         $consulta = $this->consulta($query);
         return $consulta;       

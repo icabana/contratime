@@ -22,6 +22,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -31,7 +32,6 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
-
 
                     contratistas.id_contratista, 
 
@@ -130,6 +130,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -237,6 +238,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -359,6 +361,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -467,6 +470,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -571,6 +575,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -681,6 +686,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -792,6 +798,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -902,6 +909,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -1011,6 +1019,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -1121,6 +1130,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -1247,6 +1257,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
                     contratos.objeto_contrato,
@@ -1344,101 +1355,102 @@ class ContratosModel extends ModelBase {
 
         $query = "SELECT 
 
-                        contratos.id_contrato, 
-                        contratos.tipo_contrato,
-                        contratos.modalidad_contrato,
-                        contratos.valor_contrato,
-                        contratos.valproceso_contrato,
-                        contratos.contratista_contrato,
-                        contratos.fecha_contrato,
-                        contratos.fechainicio_contrato,
-                        contratos.fechafinal_contrato,
-                        contratos.fechaliquidacion_contrato,
-                        contratos.favisoproceso_contrato,
-                        contratos.fevaluacionproceso_contrato,
-                        contratos.fevaluacionproceso2_contrato,
-                        contratos.fcierreproceso_contrato,
-                        contratos.fadjudicacionproceso_contrato,
-                        contratos.numero_contrato,
-                        contratos.numproceso_contrato,
-                        contratos.objeto_contrato,
-                        contratos.estado2_contrato,
-                        contratos.estado_contrato,
-                        contratos.agncon,
-                        contratos.concon,
-                        contratos.conpro,
-                        contratos.plan_contrato,
+                    contratos.id_contrato, 
+                    contratos.tipo_contrato,
+                    contratos.modalidad_contrato,
+                    contratos.valor_contrato,
+                    contratos.valproceso_contrato,
+                    contratos.contratista_contrato,
+                    contratos.fecha_contrato,
+                    contratos.fechainicio_contrato,
+                    contratos.fechafinal_contrato,
+                    contratos.fechaliquidacion_contrato,
+                    contratos.favisoproceso_contrato,
+                    contratos.fevaluacionproceso_contrato,
+                    contratos.fevaluacionproceso2_contrato,
+                    contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
+                    contratos.fadjudicacionproceso_contrato,
+                    contratos.numero_contrato,
+                    contratos.numproceso_contrato,
+                    contratos.objeto_contrato,
+                    contratos.estado2_contrato,
+                    contratos.estado_contrato,
+                    contratos.agncon,
+                    contratos.concon,
+                    contratos.conpro,
+                    contratos.plan_contrato,
 
 
-                        contratistas.id_contratista, 
+                    contratistas.id_contratista, 
 
-                        contratistas.tipo_contratista,
-                        contratistas.tipodocumento_contratista,
-                        contratistas.documento_contratista,
-                        contratistas.nombres_contratista,
-                        contratistas.apellidos_contratista,
+                    contratistas.tipo_contratista,
+                    contratistas.tipodocumento_contratista,
+                    contratistas.documento_contratista,
+                    contratistas.nombres_contratista,
+                    contratistas.apellidos_contratista,
 
-                        contratistas.dirresidencia_contratista,
-                        contratistas.dircorrespondencia_contratista,
-                        contratistas.telefono_contratista,
-                        contratistas.celular_contratista,
-                        contratistas.correo_contratista,
-                        contratistas.paginaweb_contratista,
+                    contratistas.dirresidencia_contratista,
+                    contratistas.dircorrespondencia_contratista,
+                    contratistas.telefono_contratista,
+                    contratistas.celular_contratista,
+                    contratistas.correo_contratista,
+                    contratistas.paginaweb_contratista,
 
-                        contratistas.pais_contratista,
-                        contratistas.departamento_contratista,
-                        contratistas.municipio_contratista,
+                    contratistas.pais_contratista,
+                    contratistas.departamento_contratista,
+                    contratistas.municipio_contratista,
 
-                        contratistas.fechanacimiento_contratista,
+                    contratistas.fechanacimiento_contratista,
 
-                        contratistas.genero_contratista,
-                        contratistas.estadocivil_contratista,
-                        contratistas.hijos_contratista,
+                    contratistas.genero_contratista,
+                    contratistas.estadocivil_contratista,
+                    contratistas.hijos_contratista,
 
-                        contratistas.profesion_contratista,
+                    contratistas.profesion_contratista,
 
-                        tiposdocumento.codigo_tipodocumento,
-                        tiposdocumento.nombre_tipodocumento,
+                    tiposdocumento.codigo_tipodocumento,
+                    tiposdocumento.nombre_tipodocumento,
 
-                        paises.codigo3_pais,
-                        paises.nombre_pais,
-                        departamentos.nombre_departamento,
-                        municipios.nombre_municipio,
+                    paises.codigo3_pais,
+                    paises.nombre_pais,
+                    departamentos.nombre_departamento,
+                    municipios.nombre_municipio,
 
-                        generos.nombre_genero,
+                    generos.nombre_genero,
 
-                        estadoscivil.nombre_estadocivil,
+                    estadoscivil.nombre_estadocivil,
 
-                        profesiones.nombre_profesion,
+                    profesiones.nombre_profesion,
 
-                        tipospersona.nombre_tipopersona,
+                    tipospersona.nombre_tipopersona,
 
-                        estados.nombre_estado,
+                    estados.nombre_estado,
 
-                        modalidades.id_modalidad, 
-                        modalidades.nombre_modalidad,
+                    modalidades.id_modalidad, 
+                    modalidades.nombre_modalidad,
 
-                        tiposcontrato.id_tipocontrato, 
-                        tiposcontrato.nombre_tipocontrato,
+                    tiposcontrato.id_tipocontrato, 
+                    tiposcontrato.nombre_tipocontrato,
 
-                        estadoscontrato.id_estado, 
-                        estadoscontrato.nombre_estado,
+                    estadoscontrato.id_estado, 
+                    estadoscontrato.nombre_estado,
 
-                        (select sum(contratos_pagos.valor_pago) from contratos_pagos where contrato_pago = contratos.id_contrato) as saldo
-                
-                        FROM contratos 
-                                left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipocontrato
-                                left join modalidades ON contratos.modalidad_contrato = modalidades.id_modalidad
-                                left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista  left join tipospersona on contratistas.tipo_contratista = tipospersona.id_tipopersona
-                                left join tiposdocumento on contratistas.tipodocumento_contratista = tiposdocumento.id_tipodocumento
-                                left join paises on contratistas.pais_contratista = paises.id_pais       
-                                left join departamentos on contratistas.departamento_contratista = departamentos.id_departamento
-                                left join municipios on contratistas.municipio_contratista = municipios.id_municipio
-                                left join generos on contratistas.genero_contratista = generos.id_genero
-                                left join estadoscivil on contratistas.estadocivil_contratista = estadoscivil.id_estadocivil
-                                left join profesiones on contratistas.profesion_contratista = profesiones.id_profesion
-                                left join estados on contratistas.estado_contratista = estados.id_estado
-                                left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
+                    (select sum(contratos_pagos.valor_pago) from contratos_pagos where contrato_pago = contratos.id_contrato) as saldo
+            
+                    FROM contratos 
+                            left join tiposcontrato ON contratos.tipo_contrato = tiposcontrato.id_tipocontrato
+                            left join modalidades ON contratos.modalidad_contrato = modalidades.id_modalidad
+                            left join contratistas ON contratos.contratista_contrato = contratistas.id_contratista  left join tipospersona on contratistas.tipo_contratista = tipospersona.id_tipopersona
+                            left join tiposdocumento on contratistas.tipodocumento_contratista = tiposdocumento.id_tipodocumento
+                            left join paises on contratistas.pais_contratista = paises.id_pais       
+                            left join departamentos on contratistas.departamento_contratista = departamentos.id_departamento
+                            left join municipios on contratistas.municipio_contratista = municipios.id_municipio
+                            left join generos on contratistas.genero_contratista = generos.id_genero
+                            left join estadoscivil on contratistas.estadocivil_contratista = estadoscivil.id_estadocivil
+                            left join profesiones on contratistas.profesion_contratista = profesiones.id_profesion
+                            left join estados on contratistas.estado_contratista = estados.id_estado
+                            left join estadoscontrato ON contratos.estado_contrato = estadoscontrato.id_estado
 
                         WHERE contratos.fechafinal_contrato < '".$fecha_actual."' and 
                         
@@ -1487,6 +1499,7 @@ class ContratosModel extends ModelBase {
                     contratos.fevaluacionproceso_contrato,
                     contratos.fevaluacionproceso2_contrato,
                     contratos.fcierreproceso_contrato,
+                    contratos.hcierreproceso_contrato,
                     contratos.fadjudicacionproceso_contrato,
                     contratos.numero_contrato,
                     contratos.numproceso_contrato,
@@ -1592,6 +1605,7 @@ class ContratosModel extends ModelBase {
         contratos.fevaluacionproceso_contrato,
         contratos.fevaluacionproceso2_contrato,
         contratos.fcierreproceso_contrato,
+        contratos.hcierreproceso_contrato,
         contratos.fadjudicacionproceso_contrato,
         contratos.numero_contrato,
         contratos.numproceso_contrato,
@@ -1762,6 +1776,7 @@ class ContratosModel extends ModelBase {
                     $fevaluacionproceso2_contrato,
                     $fadjudicacionproceso_contrato,
                     $fcierreproceso_contrato,
+                    $hcierreproceso_contrato,
                     $modalidad_contrato,
                     $contratista_contrato,
                     $tipo_contrato,
@@ -1788,6 +1803,7 @@ class ContratosModel extends ModelBase {
                         fevaluacionproceso2_contrato = '". $fevaluacionproceso2_contrato ."',
                         fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
                         fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
+                        hcierreproceso_contrato = '". $hcierreproceso_contrato ."',
                         modalidad_contrato = '". $modalidad_contrato ."',
                         tipo_contrato = '". $tipo_contrato ."',
                         objeto_contrato = '". utf8_decode($objeto_contrato) ."',                        
@@ -1812,6 +1828,7 @@ class ContratosModel extends ModelBase {
                     fevaluacionproceso2_contrato = '". $fevaluacionproceso2_contrato ."',
                     fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
                     fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
+                    hcierreproceso_contrato = '". $hcierreproceso_contrato ."',
                     modalidad_contrato = '". $modalidad_contrato ."',
                     contratista_contrato = '". $contratista_contrato ."',
                     tipo_contrato = '". $tipo_contrato ."',
@@ -1845,6 +1862,7 @@ class ContratosModel extends ModelBase {
         $fevaluacionproceso2_contrato,
         $fadjudicacionproceso_contrato,
         $fcierreproceso_contrato,
+        $hcierreproceso_contrato,
         $modalidad_contrato,
         $tipo_contrato,
         $objeto_contrato,
@@ -1862,6 +1880,7 @@ $query = "  UPDATE contratos
             fevaluacionproceso2_contrato = '". $fevaluacionproceso2_contrato ."',
             fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
             fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
+            hcierreproceso_contrato = '". $hcierreproceso_contrato ."',
             modalidad_contrato = '". $modalidad_contrato ."',
             tipo_contrato = '". $tipo_contrato ."',
             objeto_contrato = '". utf8_decode($objeto_contrato) ."',
@@ -1887,6 +1906,7 @@ return $this->modificarRegistros($query);
                     $fevaluacionproceso2_contrato,
                     $fadjudicacionproceso_contrato,
                     $fcierreproceso_contrato,
+                    $hcierreproceso_contrato,
                     $modalidad_contrato,
                     $contratista_contrato,
                     $tipo_contrato,
@@ -1912,6 +1932,7 @@ return $this->modificarRegistros($query);
                         fevaluacionproceso2_contrato = '". $fevaluacionproceso2_contrato ."',
                         fadjudicacionproceso_contrato = '". $fadjudicacionproceso_contrato ."',
                         fcierreproceso_contrato = '". $fcierreproceso_contrato ."',
+                        hcierreproceso_contrato = '". $hcierreproceso_contrato ."',
                         modalidad_contrato = '". $modalidad_contrato ."',
                         tipo_contrato = '". $tipo_contrato ."',
                         objeto_contrato = '". utf8_decode($objeto_contrato) ."',

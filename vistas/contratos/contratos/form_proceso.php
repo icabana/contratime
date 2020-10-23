@@ -111,6 +111,7 @@ $froms = new Formularios();
 
   <label>Fecha Cierre de la Convocatoria <span style="color:red">*</span></label>
   <input type="date" onchange="fchcie(this);" class="form-control requerido" id="fcierreproceso_contrato" name="fcierreproceso_contrato" value="<?php echo $contrato['fcierreproceso_contrato']?>" >
+  <input type="time" class="form-control " id="hcierreproceso_contrato" name="hcierreproceso_contrato" value="<?php echo $contrato['hcierreproceso_contrato']?>" >
 
 </div>
 

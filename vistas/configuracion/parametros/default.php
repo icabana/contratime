@@ -53,13 +53,6 @@
                         <div class="col-md-10">
                             <h4 style="color:grey">GESTIONAR PARAMETROS</h4>
                         </div>
-                        <div class="col-md-2">
-
-                            <button onclick="nuevo_parametro(); return false;" class="btn btn-success btn-sm">
-                                Nuevo Parametro
-                            </button>
-
-                        </div>
                     </div>
                 </div>
 

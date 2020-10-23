@@ -305,6 +305,9 @@
                         
                         <span class="product-description">
                          <?php echo "<b>Fecha de invitación:</b> ". $contrato['favisoproceso_contrato']; ?>
+                         
+                         <?php echo "<span style='color:red'><br><b>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']." - ".$contrato['hcierreproceso_contrato']."</span>"; ?>
+                         
                          <?php echo "<br><b>Fecha de Evaluación:</b>"; ?>
                          <?php echo "<br><center><b>Desde: </b>".$contrato['fevaluacionproceso_contrato']."</center>"; ?>
                          <?php echo "<center><b>Hasta: </b>".$contrato['fevaluacionproceso2_contrato']."</center>"; ?>
@@ -312,12 +315,10 @@
                          <span class="product-description">
                          <?php echo "<b>Fecha Adjudicación: </b>".$contrato['fadjudicacionproceso_contrato']."" ?>
                          </span>
-                         <span class="product-description">
-                         <?php echo "<span style='color:red'><b>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']."</span><br>"; ?>
-                         </span>
+                      
                          <br>
                           <button onclick="enviar_correo_procesos_x_cerrar(<?php echo $contrato['id_contrato']; ?>); return false;" class="btn btn-success btn-sm">
-                            Enviar Correo
+                            Enviar Correo<?php echo date("H:i"); ?>
                           </button>
                           <button data-toggle="modal" data-target="#modal_vista_previa_procesoxcerrar" class="btn btn-primary btn-sm">
                             Ver Vista Previa
@@ -374,6 +375,9 @@
                         
                         <span class="product-description">
                          <?php echo "<b>Fecha de invitación:</b> ". $contrato['favisoproceso_contrato']; ?>
+                         
+                         <?php echo "<b><br>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']; ?>
+                         
                          <?php echo "<br><b>Fecha de Evaluación:</b>"; ?>
                          <?php echo "<br><center><b>Desde: </b>".$contrato['fevaluacionproceso_contrato']."</center>"; ?>
                          <?php echo "<span style='color:red'><center><b>Hasta: </b>".$contrato['fevaluacionproceso2_contrato']."</center></span>"; ?>
@@ -381,9 +385,7 @@
                          <span class="product-description">
                          <?php echo "<b>Fecha Adjudicación: ".$contrato['fadjudicacionproceso_contrato']."</b>"; ?>
                          </span>
-                         <span class="product-description">
-                         <?php echo "<b>Fecha de Cierre: </b> ".$contrato['fcierreproceso_contrato']."<br>"; ?>
-                         </span>
+                      
                          <br>
                           <button onclick="enviar_correo_procesos_x_finalizar(<?php echo $contrato['id_contrato']; ?>); return false;" class="btn btn-success btn-sm">
                             Enviar Correo
