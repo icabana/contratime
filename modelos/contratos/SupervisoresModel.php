@@ -48,7 +48,6 @@ class SupervisoresContratosModel extends ModelBase {
     
                     supervisores.genero_supervisor,
                     supervisores.estadocivil_supervisor,
-                    supervisores.hijos_supervisor,
     
                     supervisores.profesion_supervisor,
 
@@ -110,7 +109,6 @@ class SupervisoresContratosModel extends ModelBase {
 
                     supervisores.genero_supervisor,
                     supervisores.estadocivil_supervisor,
-                    supervisores.hijos_supervisor,
 
                     supervisores.profesion_supervisor,
 
@@ -210,7 +208,6 @@ class SupervisoresContratosModel extends ModelBase {
 
                     supervisores.genero_supervisor,
                     supervisores.estadocivil_supervisor,
-                    supervisores.hijos_supervisor,
 
                     supervisores.profesion_supervisor
                 

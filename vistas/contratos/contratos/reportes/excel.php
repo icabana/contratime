@@ -53,7 +53,7 @@
              ->setCellValue('E'.$columna, $contrato['valor_contrato'])      
              ->setCellValue('F'.$columna, utf8_encode($contrato['nombre_modalidad']))
              ->setCellValue('G'.$columna, utf8_encode($contrato['nombre_tipocontrato']))
-             ->setCellValue('H'.$columna, utf8_encode($contrato['nombres_contratista']." ".$contrato['apellidos_contratista']))
+             ->setCellValue('H'.$columna, utf8_encode($contrato['nombre_contratista']))
              ->setCellValue('I'.$columna, $contrato['valor_contrato'])
              ->setCellValue('J'.$columna, $contrato['fechainicio_contrato'])
              ->setCellValue('K'.$columna, $contrato['fechafinal_contrato'])

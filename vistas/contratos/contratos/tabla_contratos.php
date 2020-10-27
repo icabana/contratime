@@ -83,7 +83,7 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo utf8_encode($contrato['nombres_contratista'] ." ".$contrato['apellidos_contratista']).
+                    <?php echo utf8_encode($contrato['nombre_contratista']).
                       " <img title='" . $contrato['nombre_pais'] . "' src='imagenes/banderas/" .
                       $contrato['codigo3_pais'] . ".png'>"; ?>
 

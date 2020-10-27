@@ -38,8 +38,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -56,7 +55,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -147,8 +145,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -165,7 +162,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -255,8 +251,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -273,7 +268,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -378,8 +372,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -396,7 +389,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -483,8 +475,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -501,7 +492,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -592,8 +582,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -610,7 +599,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -703,8 +691,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -721,7 +708,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -815,8 +801,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -833,7 +818,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -926,8 +910,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -944,7 +927,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -1036,8 +1018,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -1054,7 +1035,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -1147,8 +1127,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -1165,7 +1144,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -1274,8 +1252,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -1292,7 +1269,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -1387,8 +1363,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -1405,7 +1380,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
 
@@ -1514,8 +1488,7 @@ class ContratosModel extends ModelBase {
                     contratistas.tipo_contratista,
                     contratistas.tipodocumento_contratista,
                     contratistas.documento_contratista,
-                    contratistas.nombres_contratista,
-                    contratistas.apellidos_contratista,
+                    contratistas.nombre_contratista,
 
                     contratistas.dirresidencia_contratista,
                     contratistas.dircorrespondencia_contratista,
@@ -1532,7 +1505,6 @@ class ContratosModel extends ModelBase {
 
                     contratistas.genero_contratista,
                     contratistas.estadocivil_contratista,
-                    contratistas.hijos_contratista,
 
                     contratistas.profesion_contratista,
             
@@ -1623,8 +1595,7 @@ class ContratosModel extends ModelBase {
         contratistas.tipo_contratista,
         contratistas.tipodocumento_contratista,
         contratistas.documento_contratista,
-        contratistas.nombres_contratista,
-        contratistas.apellidos_contratista,
+        contratistas.nombre_contratista,
 
         contratistas.dirresidencia_contratista,
         contratistas.dircorrespondencia_contratista,
@@ -1641,7 +1612,6 @@ class ContratosModel extends ModelBase {
 
         contratistas.genero_contratista,
         contratistas.estadocivil_contratista,
-        contratistas.hijos_contratista,
 
         contratistas.profesion_contratista,
 

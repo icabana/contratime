@@ -55,7 +55,7 @@
                 $contrato['numero_contrato'],
                 "$".number_format($contrato['valor_contrato'],2,',','.'),
                 utf8_decode($contrato['nombre_modalidad']),
-                utf8_decode($contrato['nombres_contratista']." ".$contrato['apellidos_contratista']),
+                utf8_decode($contrato['nombre_contratista']),
                 $contrato['fechainicio_contrato'],
                 $contrato['fechafinal_contrato'],
                 $contrato['nombreestado_contrato']

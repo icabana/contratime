@@ -41,7 +41,7 @@
 
       <div class="col-md-6">
 
-          <label>Documento<span style="color:red">*</span></label>
+          <label>N&uacute;mero de Documento<span style="color:red">*</span></label>
 
           <input 
             type="text" 
@@ -68,44 +68,19 @@
 
       <div class="col-md-6">
 
-        <label>Nombres<span style="color:red">*</span></label>
+        <label>Nombre del Contratista<span style="color:red">*</span></label>
 
         <input 
           type="text" 
           class="form-control requerido" 
-          id="nombres_contratista" 
-          name="nombres_contratista" 
-          value="<?php echo utf8_encode($datos['nombres_contratista']); ?>">
+          id="nombre_contratista" 
+          name="nombre_contratista" 
+          value="<?php echo utf8_encode($datos['nombre_contratista']); ?>">
 
       </div>
 
-
-      <div class="col-md-6">
-
-        <label>Apellidos<span style="color:red">*</span></label>
-
-        <input 
-          type="text" 
-          class="form-control requerido" 
-          id="apellidos_contratista" 
-          name="apellidos_contratista" 
-          value="<?php echo utf8_encode($datos['apellidos_contratista']); ?>">
-
-      </div>
-
-
-</div>
-
-
-
-
-
-<br>
-
-
-<div class="row">
-    
-    <div class="col-md-6">
+      
+    <div class="col-md-4">
       
         <label>Correo el&eacute;ctronico<span style="color:red">*</span></label>
         
@@ -118,7 +93,7 @@
           
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-2">
 
       <label>Celular<span style="color:red">*</span></label>
 

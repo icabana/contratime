@@ -141,12 +141,14 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a  href="javascript:location.reload()" class="nav-link">Inicio</a>
       </li>
+     
       <?php
-        if($_SESSION['rol'] == 1 || $_SESSION['rol'] == 10){
+        if($_SESSION['rol'] == 1 || $_SESSION['rol'] == 10 || $_SESSION['rol'] == 4){
       ?>
        <li class="nav-item d-none d-sm-inline-block">
         <a href="#" onclick="nuevo_proceso(); return false;" class="nav-link"><b>Nuevo Proceso</b></a>
       </li>
+     
        <li class="nav-item d-none d-sm-inline-block">
         <a href="#" onclick="nuevo_contrato_directo(); return false;" class="nav-link"><b>Nuevo Contrato</b></a>
       </li>

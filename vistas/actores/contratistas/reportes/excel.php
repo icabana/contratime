@@ -67,8 +67,7 @@
              ->setCellValue('N'.$columna, $contratista['fechanacimiento_contratista'])
              ->setCellValue('O'.$columna, $contratista['nombre_estadocivil'])
              ->setCellValue('P'.$columna, $contratista['nombre_genero'])
-             ->setCellValue('Q'.$columna, $contratista['hijos_contratista'])
-             ->setCellValue('R'.$columna, $contratista['nombre_profesion']);
+             ->setCellValue('Q'.$columna, $contratista['nombre_profesion']);
 
         $columna ++;
         $cont ++;

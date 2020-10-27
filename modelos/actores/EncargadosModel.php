@@ -31,7 +31,6 @@ class EncargadosModel extends ModelBase {
 
                 encargados.genero_encargado,
                 encargados.estadocivil_encargado,
-                encargados.hijos_encargado,
 
                 encargados.profesion_encargado,
             
@@ -102,8 +101,6 @@ class EncargadosModel extends ModelBase {
 
                 encargados.genero_encargado,
                 encargados.estadocivil_encargado,
-                encargados.hijos_encargado,
-
                 encargados.profesion_encargado,
             
                 tiposdocumento.codigo_tipodocumento,
@@ -169,7 +166,6 @@ class EncargadosModel extends ModelBase {
 
                 encargados.genero_encargado,
                 encargados.estadocivil_encargado,
-                encargados.hijos_encargado,
 
                 encargados.profesion_encargado,
             
@@ -236,7 +232,6 @@ class EncargadosModel extends ModelBase {
 
         encargados.genero_encargado,
         encargados.estadocivil_encargado,
-        encargados.hijos_encargado,
 
         encargados.profesion_encargado,
     
@@ -297,7 +292,6 @@ class EncargadosModel extends ModelBase {
 
         $genero_encargado,
         $estadocivil_encargado,
-        $hijos_encargado,        
 
         $profesion_encargado
     ) {
@@ -325,7 +319,6 @@ class EncargadosModel extends ModelBase {
 
             genero_encargado,
             estadocivil_encargado,
-            hijos_encargado,
 
             profesion_encargado
         )
@@ -350,7 +343,6 @@ class EncargadosModel extends ModelBase {
 
             '". $genero_encargado."',
             '". $estadocivil_encargado."',
-            '". $hijos_encargado."',
 
             '". $profesion_encargado."'
 
@@ -387,7 +379,6 @@ class EncargadosModel extends ModelBase {
         
         $genero_encargado,
         $estadocivil_encargado,
-        $hijos_encargado,
 
         $profesion_encargado
 
@@ -418,7 +409,6 @@ class EncargadosModel extends ModelBase {
 
         genero_encargado = '".$genero_encargado."', 
         estadocivil_encargado = '".$estadocivil_encargado."', 
-        hijos_encargado = '".$hijos_encargado."', 
         
         profesion_encargado = '".$profesion_encargado."'
 

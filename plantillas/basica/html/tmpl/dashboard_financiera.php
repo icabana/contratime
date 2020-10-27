@@ -63,7 +63,7 @@
                             <a href="javascript:void(0)" class="product-title">
                             <?php echo "<center>Contrato No.". $contrato['numero_contrato']."</center>"; ?>
                             <?php echo "<br><center>NOMBRE DEL CONTRATISTA</center>"; ?>
-                            <?php echo "<center>".strtoupper($contrato['nombres_contratista']." ".$contrato['apellidos_contratista'])."</center><br>"; ?>
+                            <?php echo "<center>".strtoupper($contrato['nombre_contratista'])."</center><br>"; ?>
                            
                               <?php
                                 if($contrato['numero'] > 5){
@@ -142,7 +142,7 @@
                         <a href="javascript:void(0)" class="product-title">
                         <?php echo "<center>Contrato No.: ". $contrato['numero_contrato']."</center>"; ?>
                         <?php echo "<br><center>NOMBRE DEL CONTRATISTA</center>"; ?>
-                        <?php echo "<center>".strtoupper($contrato['nombres_contratista']." ".$contrato['apellidos_contratista'])."</center><br>"; ?>
+                        <?php echo "<center>".strtoupper($contrato['nombre_contratista'])."</center><br>"; ?>
                        
                           <?php
                             if($contrato['numero'] > 5){

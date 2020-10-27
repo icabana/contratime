@@ -118,8 +118,7 @@ class ContratistasControlador extends ControllerBase {
             $_POST["tipo_contratista"],
             $_POST["tipodocumento_contratista"], 
             $_POST["documento_contratista"], 
-            $_POST["nombres_contratista"], 
-            $_POST["apellidos_contratista"], 
+            $_POST["nombre_contratista"], 
 
             $_POST["dirresidencia_contratista"], 
             $_POST["dircorrespondencia_contratista"],
@@ -134,7 +133,6 @@ class ContratistasControlador extends ControllerBase {
 
             $_POST["genero_contratista"],
             $_POST["estadocivil_contratista"],
-            $_POST["hijos_contratista"],
 
             $_POST["profesion_contratista"]
 
@@ -161,8 +159,7 @@ class ContratistasControlador extends ControllerBase {
             $_POST["tipo_contratista"],
             $_POST["tipodocumento_contratista"], 
             $_POST["documento_contratista"], 
-            $_POST["nombres_contratista"], 
-            $_POST["apellidos_contratista"], 
+            $_POST["nombre_contratista"],  
 
             $_POST["dirresidencia_contratista"], 
             $_POST["dircorrespondencia_contratista"],
@@ -178,7 +175,6 @@ class ContratistasControlador extends ControllerBase {
 
             $_POST["genero_contratista"],
             $_POST["estadocivil_contratista"],
-            $_POST["hijos_contratista"],
 
             $_POST["profesion_contratista"]
         );     

@@ -130,7 +130,6 @@ class SupervisoresControlador extends ControllerBase {
 
             $_POST["genero_supervisor"],
             $_POST["estadocivil_supervisor"],
-            $_POST["hijos_supervisor"],
 
             $_POST["profesion_supervisor"]
 
@@ -174,7 +173,6 @@ class SupervisoresControlador extends ControllerBase {
 
             $_POST["genero_supervisor"],
             $_POST["estadocivil_supervisor"],
-            $_POST["hijos_supervisor"],
 
             $_POST["profesion_supervisor"]
         );     

@@ -48,7 +48,6 @@ class EncargadosContratosModel extends ModelBase {
     
                     encargados.genero_encargado,
                     encargados.estadocivil_encargado,
-                    encargados.hijos_encargado,
     
                     encargados.profesion_encargado,
 
@@ -110,7 +109,6 @@ class EncargadosContratosModel extends ModelBase {
 
                     encargados.genero_encargado,
                     encargados.estadocivil_encargado,
-                    encargados.hijos_encargado,
 
                     encargados.profesion_encargado,
 
@@ -210,8 +208,6 @@ class EncargadosContratosModel extends ModelBase {
 
                     encargados.genero_encargado,
                     encargados.estadocivil_encargado,
-                    encargados.hijos_encargado,
-
                     encargados.profesion_encargado
                 
                     from contratos_encargados 

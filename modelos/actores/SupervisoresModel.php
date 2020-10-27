@@ -31,7 +31,6 @@ class SupervisoresModel extends ModelBase {
 
                 supervisores.genero_supervisor,
                 supervisores.estadocivil_supervisor,
-                supervisores.hijos_supervisor,
 
                 supervisores.profesion_supervisor,
             
@@ -100,7 +99,6 @@ class SupervisoresModel extends ModelBase {
 
                 supervisores.genero_supervisor,
                 supervisores.estadocivil_supervisor,
-                supervisores.hijos_supervisor,
 
                 supervisores.profesion_supervisor,
             
@@ -167,8 +165,6 @@ class SupervisoresModel extends ModelBase {
 
                 supervisores.genero_supervisor,
                 supervisores.estadocivil_supervisor,
-                supervisores.hijos_supervisor,
-
                 supervisores.profesion_supervisor,
             
                 tiposdocumento.codigo_tipodocumento,
@@ -234,7 +230,6 @@ class SupervisoresModel extends ModelBase {
 
         supervisores.genero_supervisor,
         supervisores.estadocivil_supervisor,
-        supervisores.hijos_supervisor,
 
         supervisores.profesion_supervisor,
     
@@ -295,7 +290,6 @@ class SupervisoresModel extends ModelBase {
 
         $genero_supervisor,
         $estadocivil_supervisor,
-        $hijos_supervisor,        
 
         $profesion_supervisor
     ) {
@@ -323,8 +317,6 @@ class SupervisoresModel extends ModelBase {
 
             genero_supervisor,
             estadocivil_supervisor,
-            hijos_supervisor,
-
             profesion_supervisor
         )
 
@@ -349,7 +341,6 @@ class SupervisoresModel extends ModelBase {
 
             '". $genero_supervisor."',
             '". $estadocivil_supervisor."',
-            '". $hijos_supervisor."',
 
             '". $profesion_supervisor."'
 
@@ -386,7 +377,6 @@ class SupervisoresModel extends ModelBase {
         
         $genero_supervisor,
         $estadocivil_supervisor,
-        $hijos_supervisor,
 
         $profesion_supervisor
 
@@ -417,8 +407,6 @@ class SupervisoresModel extends ModelBase {
 
         genero_supervisor = '".$genero_supervisor."', 
         estadocivil_supervisor = '".$estadocivil_supervisor."', 
-        hijos_supervisor = '".$hijos_supervisor."', 
-        
         profesion_supervisor = '".$profesion_supervisor."'
 
         WHERE id_supervisor = '" . $id_supervisor . "'";

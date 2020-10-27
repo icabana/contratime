@@ -12,10 +12,7 @@ class ContratistasModel extends ModelBase {
                 contratistas.tipo_contratista,
                 contratistas.tipodocumento_contratista,
                 contratistas.documento_contratista,
-                contratistas.nombres_contratista,
-                contratistas.apellidos_contratista,
-
-                concat( contratistas.nombres_contratista,' ',contratistas.apellidos_contratista) as nombre_contratista,
+                contratistas.nombre_contratista,
 
                 contratistas.dirresidencia_contratista,
                 contratistas.dircorrespondencia_contratista,
@@ -31,7 +28,6 @@ class ContratistasModel extends ModelBase {
 
                 contratistas.genero_contratista,
                 contratistas.estadocivil_contratista,
-                contratistas.hijos_contratista,
 
                 contratistas.profesion_contratista,
             
@@ -81,10 +77,7 @@ class ContratistasModel extends ModelBase {
                 contratistas.tipo_contratista,
                 contratistas.tipodocumento_contratista,
                 contratistas.documento_contratista,
-                contratistas.nombres_contratista,
-                contratistas.apellidos_contratista,
-
-                concat( contratistas.nombres_contratista,' ',contratistas.apellidos_contratista) as nombre_contratista,
+                contratistas.nombre_contratista,
 
                 contratistas.dirresidencia_contratista,
                 contratistas.dircorrespondencia_contratista,
@@ -100,7 +93,6 @@ class ContratistasModel extends ModelBase {
 
                 contratistas.genero_contratista,
                 contratistas.estadocivil_contratista,
-                contratistas.hijos_contratista,
 
                 contratistas.profesion_contratista,
             
@@ -148,10 +140,7 @@ class ContratistasModel extends ModelBase {
      contratistas.tipo_contratista,
      contratistas.tipodocumento_contratista,
      contratistas.documento_contratista,
-     contratistas.nombres_contratista,
-     contratistas.apellidos_contratista,
-
-     concat( contratistas.nombres_contratista,' ',contratistas.apellidos_contratista) as nombre_contratista,
+     contratistas.nombre_contratista,
 
      contratistas.dirresidencia_contratista,
      contratistas.dircorrespondencia_contratista,
@@ -167,7 +156,6 @@ class ContratistasModel extends ModelBase {
 
      contratistas.genero_contratista,
      contratistas.estadocivil_contratista,
-     contratistas.hijos_contratista,
 
      contratistas.profesion_contratista,
  
@@ -215,10 +203,7 @@ class ContratistasModel extends ModelBase {
         contratistas.tipo_contratista,
         contratistas.tipodocumento_contratista,
         contratistas.documento_contratista,
-        contratistas.nombres_contratista,
-        contratistas.apellidos_contratista,
-
-        concat( contratistas.nombres_contratista,' ',contratistas.apellidos_contratista) as nombre_contratista,
+        contratistas.nombre_contratista,
 
         contratistas.dirresidencia_contratista,
         contratistas.dircorrespondencia_contratista,
@@ -234,7 +219,6 @@ class ContratistasModel extends ModelBase {
 
         contratistas.genero_contratista,
         contratistas.estadocivil_contratista,
-        contratistas.hijos_contratista,
 
         contratistas.profesion_contratista,
     
@@ -278,8 +262,7 @@ class ContratistasModel extends ModelBase {
         $tipo_contratista,    
         $tipodocumento_contratista,
         $documento_contratista,
-        $nombres_contratista,
-        $apellidos_contratista,
+        $nombre_contratista,
 
         $dirresidencia_contratista,
         $dircorrespondencia_contratista,
@@ -294,8 +277,7 @@ class ContratistasModel extends ModelBase {
 
 
         $genero_contratista,
-        $estadocivil_contratista,
-        $hijos_contratista,        
+        $estadocivil_contratista,  
 
         $profesion_contratista
     ) {
@@ -306,8 +288,7 @@ class ContratistasModel extends ModelBase {
             tipo_contratista,
             tipodocumento_contratista,
             documento_contratista,
-            nombres_contratista,
-            apellidos_contratista,
+            nombre_contratista,
 
             dirresidencia_contratista,
             dircorrespondencia_contratista,                            
@@ -323,7 +304,6 @@ class ContratistasModel extends ModelBase {
 
             genero_contratista,
             estadocivil_contratista,
-            hijos_contratista,
 
             profesion_contratista
         )
@@ -332,8 +312,7 @@ class ContratistasModel extends ModelBase {
             '". $tipo_contratista."',
             '". $tipodocumento_contratista."', 
             '". $documento_contratista."',
-            '". strtoupper(utf8_decode($nombres_contratista))."', 
-            '". strtoupper(utf8_decode($apellidos_contratista))."', 
+            '". strtoupper(utf8_decode($nombre_contratista))."', 
 
             '". utf8_decode($dirresidencia_contratista)."', 
             '". utf8_decode($dircorrespondencia_contratista)."', 
@@ -349,7 +328,6 @@ class ContratistasModel extends ModelBase {
 
             '". $genero_contratista."',
             '". $estadocivil_contratista."',
-            '". $hijos_contratista."',
 
             '". $profesion_contratista."'
 
@@ -369,8 +347,7 @@ class ContratistasModel extends ModelBase {
         $tipo_contratista,    
         $tipodocumento_contratista,
         $documento_contratista,
-        $nombres_contratista,
-        $apellidos_contratista,
+        $nombre_contratista,
 
         $dirresidencia_contratista,
         $dircorrespondencia_contratista,
@@ -386,7 +363,6 @@ class ContratistasModel extends ModelBase {
         
         $genero_contratista,
         $estadocivil_contratista,
-        $hijos_contratista,
 
         $profesion_contratista
 
@@ -400,8 +376,7 @@ class ContratistasModel extends ModelBase {
         tipo_contratista = '".$tipo_contratista."',
         tipodocumento_contratista = '".$tipodocumento_contratista."', 
         documento_contratista = '".$documento_contratista."', 
-        nombres_contratista = '".strtoupper(utf8_decode($nombres_contratista))."',
-        apellidos_contratista = '".strtoupper(utf8_decode($apellidos_contratista))."', 
+        nombre_contratista = '".strtoupper(utf8_decode($nombre_contratista))."',
 
         dirresidencia_contratista = '".utf8_decode($dirresidencia_contratista)."', 
         dircorrespondencia_contratista = '".utf8_decode($dircorrespondencia_contratista)."', 
@@ -417,7 +392,6 @@ class ContratistasModel extends ModelBase {
 
         genero_contratista = '".$genero_contratista."', 
         estadocivil_contratista = '".$estadocivil_contratista."', 
-        hijos_contratista = '".$hijos_contratista."', 
         
         profesion_contratista = '".$profesion_contratista."'
 

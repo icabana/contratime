@@ -43,7 +43,7 @@
 
                   <td class="mailbox-name">
 
-                    <?php echo $contrato['nombres_contratista'] .' '.$contrato['apellidos_contratista'].
+                    <?php echo $contrato['nombre_contratista'] .
                       " <img title='" . $contrato['nombre_pais'] . "' src='imagenes/banderas/" .
                       $contrato['codigo3_pais'] . ".png'>"; ?>
 

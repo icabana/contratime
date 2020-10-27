@@ -40,9 +40,8 @@
         ->setCellValue('M1', 'Ciudad')                    
         ->setCellValue('N1', 'Fecha de Nacimiento')                    
         ->setCellValue('O1', 'Estado Civil')                    
-        ->setCellValue('P1', 'Genero')                    
-        ->setCellValue('Q1', 'No de Hijos')                    
-        ->setCellValue('R1', 'Profesión');    
+        ->setCellValue('P1', 'Genero')                         
+        ->setCellValue('Q1', 'Profesión');    
 
     $columna =2;    
     $cont = 1;
@@ -67,8 +66,7 @@
              ->setCellValue('N'.$columna, $encargado['fechanacimiento_encargado'])
              ->setCellValue('O'.$columna, $encargado['nombre_estadocivil'])
              ->setCellValue('P'.$columna, $encargado['nombre_genero'])
-             ->setCellValue('Q'.$columna, $encargado['hijos_encargado'])
-             ->setCellValue('R'.$columna, $encargado['nombre_profesion']);
+             ->setCellValue('Q'.$columna, $encargado['nombre_profesion']);
 
         $columna ++;
         $cont ++;

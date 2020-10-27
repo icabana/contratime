@@ -49,7 +49,7 @@
                       </td>
                      
                       <td class="mailbox-star">
-                       <?php  echo utf8_encode($contrato['nombres_contratista']." ".$contrato['apellidos_contratista']); ?>
+                       <?php  echo utf8_encode($contrato['nombre_contratista']); ?>
                       </td>
                      
                       <td class="mailbox-star">

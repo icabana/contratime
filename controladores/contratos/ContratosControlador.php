@@ -1237,6 +1237,9 @@ class ContratosControlador extends ControllerBase {
         require_once("controladores/contratos/TrazabilidadControlador.php");
         $TrazabilidadControlador = new TrazabilidadControlador();     
 
+        $this->model->cargar("EncargadosModel.php", "contratos");
+        $EncargadosModel = new EncargadosContratosModel();  
+
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel(); 
         
@@ -1245,6 +1248,11 @@ class ContratosControlador extends ControllerBase {
         );        
         
         if( $resp != 0 ){
+
+            $EncargadosModel->insertar(
+                $_SESSION['documento_usuario'],
+                $resp
+            ); 
 
             $TrazabilidadControlador->insertarExterno($resp, "Se Registró el Proceso por primera vez, con estado Convocado");
 
@@ -1604,8 +1612,7 @@ class ContratosControlador extends ControllerBase {
             $_POST["contratista_adjudicar"]
         );
 
-        $accion = "Se ha realizado la Adjudicación de este contrato al Contratista: ".$contratista["nombres_contratista"]." 
-         ".$contratista["apellidos_contratista"].".";
+        $accion = "Se ha realizado la Adjudicación de este contrato al Contratista: ".$contratista["nombre_contratista"];
 
         $TrazabilidadControlador->insertarExterno($_POST['id_contrato'], $accion);  
         
@@ -1741,7 +1748,7 @@ class ContratosControlador extends ControllerBase {
 
         $mensaje = file_get_contents("plantillas/correos/plantilla_contratos/index.html");
         
-        $mensaje = str_replace("#nombre#", $datos_contrato['nombres_contratista']." ".$datos_contrato['apellidos_contratista'], $mensaje);
+        $mensaje = str_replace("#nombre#", $datos_contrato['nombre_contratista'], $mensaje);
         $mensaje = str_replace("#numcontrato#", $datos_contrato['numero_contrato'], $mensaje);
         $mensaje = str_replace("#modalidad#", $datos_contrato['nombre_modalidad'], $mensaje);
         $mensaje = str_replace("#tipocontrato#", $datos_contrato['nombre_tipocontrato'], $mensaje);

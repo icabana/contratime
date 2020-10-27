@@ -40,9 +40,8 @@
         ->setCellValue('M1', 'Ciudad')                    
         ->setCellValue('N1', 'Fecha de Nacimiento')                    
         ->setCellValue('O1', 'Estado Civil')                    
-        ->setCellValue('P1', 'Genero')                    
-        ->setCellValue('Q1', 'No de Hijos')                    
-        ->setCellValue('R1', 'Profesión');    
+        ->setCellValue('P1', 'Genero')                      
+        ->setCellValue('Q1', 'Profesión');    
 
     $columna =2;    
     $cont = 1;
@@ -67,8 +66,7 @@
              ->setCellValue('N'.$columna, $supervisor['fechanacimiento_supervisor'])
              ->setCellValue('O'.$columna, $supervisor['nombre_estadocivil'])
              ->setCellValue('P'.$columna, $supervisor['nombre_genero'])
-             ->setCellValue('Q'.$columna, $supervisor['hijos_supervisor'])
-             ->setCellValue('R'.$columna, $supervisor['nombre_profesion']);
+             ->setCellValue('Q'.$columna, $supervisor['nombre_profesion']);
 
         $columna ++;
         $cont ++;
@@ -100,7 +98,7 @@
         ),
     );
 
-    $this->excel->getActiveSheet()->getStyle('A1:R1')->applyFromArray($styleArray_color);
+    $this->excel->getActiveSheet()->getStyle('A1:Q1')->applyFromArray($styleArray_color);
 
     $this->excel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
     $this->excel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
@@ -119,7 +117,6 @@
     $this->excel->getActiveSheet()->getColumnDimension('O')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('P')->setWidth(30);
     $this->excel->getActiveSheet()->getColumnDimension('Q')->setWidth(30);
-    $this->excel->getActiveSheet()->getColumnDimension('R')->setWidth(30);
 
 
     /////// ALMACENAR EL DOCUMENTO

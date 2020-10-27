@@ -130,7 +130,6 @@ class EncargadosControlador extends ControllerBase {
 
             $_POST["genero_encargado"],
             $_POST["estadocivil_encargado"],
-            $_POST["hijos_encargado"],
 
             $_POST["profesion_encargado"]
 
@@ -174,7 +173,6 @@ class EncargadosControlador extends ControllerBase {
 
             $_POST["genero_encargado"],
             $_POST["estadocivil_encargado"],
-            $_POST["hijos_encargado"],
 
             $_POST["profesion_encargado"]
         );     
