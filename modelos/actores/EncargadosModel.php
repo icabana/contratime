@@ -204,6 +204,72 @@ class EncargadosModel extends ModelBase {
     }   
 
     
+    function getDatosxDocumento($documento_encargado) {       
+
+        $query = "
+                   select 	
+                   encargados.id_encargado, 
+   
+                   encargados.tipo_encargado,
+                   encargados.tipodocumento_encargado,
+                   encargados.documento_encargado,
+                   encargados.nombres_encargado,
+                   encargados.apellidos_encargado,
+   
+                   concat( encargados.nombres_encargado,' ',encargados.apellidos_encargado) as nombre_encargado,
+   
+                   encargados.dirresidencia_encargado,
+                   encargados.dircorrespondencia_encargado,
+                   encargados.telefono_encargado,
+                   encargados.celular_encargado,
+                   encargados.correo_encargado,
+                   encargados.paginaweb_encargado,
+   
+                   encargados.pais_encargado,
+                   encargados.departamento_encargado,
+                   encargados.municipio_encargado,
+                   
+   
+                   encargados.genero_encargado,
+                   encargados.estadocivil_encargado,
+   
+                   encargados.profesion_encargado,
+               
+                   tiposdocumento.codigo_tipodocumento,
+                   tiposdocumento.nombre_tipodocumento,
+   
+                   paises.nombre_pais,
+   
+                   generos.nombre_genero,
+   
+                   estadoscivil.nombre_estadocivil,
+   
+                   profesiones.nombre_profesion,
+   
+                   tipospersona.nombre_tipopersona,
+   
+                   estados.nombre_estado
+   
+               from encargados
+                       
+                   left join tipospersona on encargados.tipo_encargado = tipospersona.id_tipopersona
+                   left join tiposdocumento on encargados.tipodocumento_encargado = tiposdocumento.id_tipodocumento
+                   left join paises on encargados.pais_encargado = paises.id_pais       
+                   left join departamentos on encargados.departamento_encargado = departamentos.id_departamento
+                   left join municipios on encargados.municipio_encargado = municipios.id_municipio
+                   left join generos on encargados.genero_encargado = generos.id_genero
+                   left join estadoscivil on encargados.estadocivil_encargado = estadoscivil.id_estadocivil
+                   left join profesiones on encargados.profesion_encargado = profesiones.id_profesion
+                   left join estados on encargados.estado_encargado = estados.id_estado
+   
+               where encargados.documento_encargado='".$documento_encargado."'";        
+   
+           $consulta = $this->consulta($query);
+           return $consulta[0];            
+   
+       }   
+
+    
     function getDatosPorCampo($campo, $valor) {       
 
         $query = "

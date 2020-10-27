@@ -34,9 +34,15 @@ class ContratosControlador extends ControllerBase {
 
     public function indexProcesos() {
         
-        $this->model->cargar("ContratosModel.php", "contratos");
-        $ContratosModel = new ContratosModel();
-        $contratos = $ContratosModel->getTodosProcesos();        
+       
+            $this->model->cargar("ContratosModel.php", "contratos");
+            $ContratosModel = new ContratosModel();
+
+        if($_SESSION['rol'] == 4){
+            $contratos = $ContratosModel->getTodosxEncargado();
+        }else{
+            $contratos = $ContratosModel->getTodosProcesos();
+        }
         
         $this->model->cargar("SupervisoresModel.php", "actores");
         $SupervisoresModel = new SupervisoresModel();
@@ -1238,10 +1244,18 @@ class ContratosControlador extends ControllerBase {
         $TrazabilidadControlador = new TrazabilidadControlador();     
 
         $this->model->cargar("EncargadosModel.php", "contratos");
-        $EncargadosModel = new EncargadosContratosModel();  
+        $EncargadosContratosModel = new EncargadosContratosModel();  
+
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel = new EncargadosModel();  
 
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel(); 
+
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel(); 
+
+        
         
         $resp = $ContratosModel->insertarProceso(          
             $_POST["objeto_contrato"]
@@ -1249,10 +1263,16 @@ class ContratosControlador extends ControllerBase {
         
         if( $resp != 0 ){
 
-            $EncargadosModel->insertar(
-                $_SESSION['documento_usuario'],
-                $resp
-            ); 
+            if($_SESSION['rol'] == 4){
+
+                $datos_encargado = $EncargadosModel->getDatosxDocumento($_SESSION['documento_usuario']);
+
+                $EncargadosContratosModel->insertar(
+                    $datos_encargado['id_encargado'],
+                    $resp
+                ); 
+
+            }
 
             $TrazabilidadControlador->insertarExterno($resp, "Se Registró el Proceso por primera vez, con estado Convocado");
 
