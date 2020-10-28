@@ -32,6 +32,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
                     contratistas.id_contratista, 
 
@@ -138,6 +139,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -244,6 +246,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -365,6 +368,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -468,6 +472,7 @@ class ContratosModel extends ModelBase {
                     contratos.objeto_contrato,
                     contratos.estado2_contrato,
                     contratos.estado_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -575,6 +580,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -684,6 +690,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -794,6 +801,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -903,6 +911,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -1011,6 +1020,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -1120,6 +1130,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -1245,6 +1256,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -1356,6 +1368,7 @@ class ContratosModel extends ModelBase {
                     contratos.concon,
                     contratos.conpro,
                     contratos.plan_contrato,
+                    contratos.obsdel,
 
 
                     contratistas.id_contratista, 
@@ -1481,7 +1494,7 @@ class ContratosModel extends ModelBase {
                     contratos.estado2_contrato,
                     contratos.estado_contrato,
                     contratos.plan_contrato,
-
+                    contratos.obsdel,
 
                     contratistas.id_contratista, 
 
@@ -1588,6 +1601,7 @@ class ContratosModel extends ModelBase {
         contratos.concon,
         contratos.conpro,
         contratos.plan_contrato,
+        contratos.obsdel,
 
 
         contratistas.id_contratista, 
@@ -2051,10 +2065,10 @@ return $this->modificarRegistros($query);
     }
 
     
-    function descartar($id_contrato) {
+    function descartar($id_contrato, $obsdel) {
         
         $query = "  UPDATE contratos 
-                    SET estado_contrato = '5'
+                    SET estado_contrato = '5', obsdel = '".utf8_decode($obsdel)."'
                     WHERE id_contrato = '". $id_contrato ."'";    
      
 

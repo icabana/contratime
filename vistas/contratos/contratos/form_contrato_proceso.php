@@ -152,7 +152,7 @@ if ($contrato['estado_contrato'] > 2) {
     <div class="col-md-3">
 
       <label>No. de Contrato<span style="color:red">*</span></label>
-      <input readonly type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato" maxlength="25" value="<?php echo $contrato['numproceso_contrato']; ?>">
+      <input type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato" maxlength="25" value="<?php echo $contrato['numero_contrato']; ?>">
 
     </div>
 

@@ -352,6 +352,38 @@ class ContratosControlador extends ControllerBase {
                         
     }    
 
+    
+    public function index_descartados() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosxEstado($_POST['estado']);        
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel->getTodos();
+        
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel = new EncargadosModel();
+        $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();     
+        
+          
+        include 'vistas/contratos/contratos/default_descartados.php';
+                        
+    }    
+
     public function index_proceso_x_estado() {
         
         $this->model->cargar("ContratosModel.php", "contratos");
@@ -1602,7 +1634,7 @@ class ContratosControlador extends ControllerBase {
         $TrazabilidadControlador = new TrazabilidadControlador();           
         
         
-        $ContratosModel->descartar($_POST["id_contrato"]);
+        $ContratosModel->descartar($_POST["id_contrato"], $_POST["obsdel"]);
 
         $accion = "Se ha descartado este contrato";
 
@@ -1660,12 +1692,10 @@ class ContratosControlador extends ControllerBase {
         }else{
             $concon = $concon+1;
         }
-
-        $numero = $agncon." - ".$concon;       
         
         $ContratosModel->celebrar(
             $_POST["id_contrato"], 
-            $numero,
+            $_POST["numero_contra"], 
             $_POST["fecha_contra"],
             $_POST["fechainicio_contra"],
             $_POST["fechafinal_contra"],

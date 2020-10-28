@@ -8,7 +8,7 @@ $froms = new Formularios();
   <div class="col-md-3">
 
     <label>No. de Contrato<span style="color:red">*</span></label>
-    <input type="text" readonly class="form-control requerido" id="numero_contrato" name="numero_contrato" maxlength="25" value="<?php echo $contrato['numero_contrato']; ?>">
+    <input type="text" class="form-control requerido" id="numero_contrato" name="numero_contrato" maxlength="25" value="<?php echo $contrato['numero_contrato']; ?>">
 
   </div>
 

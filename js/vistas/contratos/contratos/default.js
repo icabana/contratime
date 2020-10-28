@@ -194,17 +194,27 @@ function eliminar_proceso_editar2(id_contrato) {
 
 function descartar_contrato(id_contrato) {
 
-    mensaje_confirmar("¿Está seguro de Descartar el Contrato?", "descartar_contrato2(" + id_contrato + "); ");
+    var obsdel = prompt("¿Seguro desea eliminar el registro seleccionado?... Agregar Observación: ");
+
+    if (obsdel != null && obsdel != "") {
+        descartar_contrato2(id_contrato, obsdel);
+    } else {
+        if (obsdel == "") {
+            alert('Debe Digitar una Observación para continuar...');
+        }
+    }
+
+    //mensaje_confirmar("¿Está seguro de Descartar el Contrato?", "descartar_contrato2(" + id_contrato + "); ");
 
 }
 
-function descartar_contrato2(id_contrato) {
+function descartar_contrato2(id_contrato, obsdel) {
 
     ejecutarAccion(
         'contratos',
         'Contratos',
         'descartar',
-        "id_contrato=" + id_contrato,
+        "id_contrato=" + id_contrato+"&obsdel=" + obsdel,
         ' mensaje_alertas("success", "Contrato Descartado con Éxito", "center"); cargar_contratos();'
     );
 
@@ -248,40 +258,28 @@ function sel_celebrar_contrato(id_contrato) {
 function celebrar_contrato() {
 
     var id_contrato = $("#id_contrato_sel").val();
+    var numero_contra = $("#numero_contra").val();
     var fecha_contra = $("#fecha_contra").val();
     var fechainicio_contra = $("#fechainicio_contra").val();
     var fechaliquidacion_contra = $("#fechaliquidacion_contra").val();
     var fechafinal_contra = $("#fechafinal_contra").val();
     var valor_contra = $("#valor_contra").val();
 
-    if(fechainicio_contra == "" || fechafinal_contra == "" || fechaliquidacion_contra == "" || valor_contra == ""){
-        mensaje_alertas("error", "Todos los campos son obligatorios", "center");
-        return false;
-    }
-    
-    if(fechainicio_contra > fechafinal_contra){
-        mensaje_alertas("error", "La Fecha de terminación del Contrato debe ser Mayor a la Fecha de Inicio", "center");
-        return false;
-    }
-    
-    if(fechafinal_contra > fechaliquidacion_contra){
-        mensaje_alertas("error", "La Fecha de Liquidación del Contrato debe ser Mayor a la Fecha de Terminación", "center");
-        return false;
-    }
-
+   
     mensaje_confirmar(
         "¿Está seguro de Celebrar el Contrato? No podrá regresar al estado actual: Adjudicado", 
-        "celebrar_contrato2(" + id_contrato + ", '"+fecha_contra+"', '"+fechainicio_contra+"', '"+fechafinal_contra+"', '"+fechaliquidacion_contra+"', '"+valor_contra+"'); ");
+        "celebrar_contrato2(" + id_contrato + ", '"+numero_contra+"', '"+fecha_contra+"', '"+fechainicio_contra+"', '"+fechafinal_contra+"', '"+fechaliquidacion_contra+"', '"+valor_contra+"'); ");
 
 }
 
-function celebrar_contrato2(id_contrato, fecha_contra, fechainicio_contra, fechafinal_contra, fechaliquidacion_contra, valor_contra ) {
+function celebrar_contrato2(id_contrato, numero_contra, fecha_contra, fechainicio_contra, fechafinal_contra, fechaliquidacion_contra, valor_contra ) {
 
     ejecutarAccionSinAlert(
         'contratos',
         'Contratos',
         'celebrar',
         "id_contrato=" + id_contrato+
+        "&numero_contra=" + numero_contra+
         "&fecha_contra=" + fecha_contra+
         "&fechainicio_contra=" + fechainicio_contra+
         "&fechafinal_contra=" + fechafinal_contra+

@@ -12,16 +12,16 @@
         <div class="row">
           <div class="col-md-6">
 
-            <label>N&uacute;mero de Contrato: <span style="color:red">*</span></label>
-            <input readonly type="text" class="form-control requerido_celebrar" id="numero_contra" name="numero_contra" 
-            maxlength="20" value="<?php echo date("Y").' - ?' ?>">
+            <label>N&uacute;mero de Contrato: </label>
+            <input type="text" class="form-control " id="numero_contra" name="numero_contra" 
+            maxlength="20">
 
           </div>
       
           <div class="col-md-6">
 
             <label>Fecha del Contrato: <span style="color:red">*</span></label>
-            <input readonly type="date" class="form-control requerido_celebrar" value="<?php echo date('Y-m-d'); ?>" id="fecha_contra" name="fecha_contra" >
+            <input readonly type="date" class="form-control " value="<?php echo date('Y-m-d'); ?>" id="fecha_contra" name="fecha_contra" >
 
           </div>
         </div>
@@ -30,16 +30,16 @@
         <div class="row">
           <div class="col-md-6">
 
-            <label>Fecha de Inicio: <span style="color:red">*</span></label>
-            <input type="date" class="form-control requerido_celebrar" id="fechainicio_contra" name="fechainicio_contra" >
+            <label>Fecha de Inicio: </label>
+            <input type="date" class="form-control" id="fechainicio_contra" name="fechainicio_contra" >
 
           </div>
         
           
           <div class="col-md-6">
 
-            <label>Fecha Final: <span style="color:red">*</span></label>
-            <input type="date" class="form-control requerido_celebrar" id="fechafinal_contra" name="fechafinal_contra" >
+            <label>Fecha Final:</label>
+            <input type="date" class="form-control " id="fechafinal_contra" name="fechafinal_contra" >
 
           </div>
         </div>
@@ -47,14 +47,14 @@
         <div class="row">
           <div class="col-md-6">
 
-            <label>Fecha Liquidación: <span style="color:red">*</span></label>
-            <input type="date" class="form-control requerido_celebrar" id="fechaliquidacion_contra" name="fechaliquidacion_contra" >
+            <label>Fecha Liquidación: </label>
+            <input type="date" class="form-control" id="fechaliquidacion_contra" name="fechaliquidacion_contra" >
 
           </div>
       
           <div class="col-md-6">
 
-            <label>Valor del Contrato: <span style="color:red">*</span></label>
+            <label>Valor del Contrato: </label>
             <input type="text" class="form-control requerido_celebrar" id="valor_contra" name="valor_contra" 
             maxlength="20" onkeypress="return no_numeros(event)">
 

@@ -92,7 +92,7 @@
 
 
           <div class=" col-md-4">
-            <a href="#" onclick="cargar_contratos_x_estado(5);">
+            <a href="#" onclick="cargar_contratos_descartados(5);">
               <div class="info-box mb-3">
                 <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-list-alt"></i></span>
 
