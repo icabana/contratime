@@ -26,33 +26,12 @@
           </div>
         </div>
 
-        <br>
-        <div class="row">
-          <div class="col-md-6">
-
-            <label>Fecha de Inicio: </label>
-            <input type="date" class="form-control" id="fechainicio_contra" name="fechainicio_contra" >
-
-          </div>
-        
-          
-          <div class="col-md-6">
-
-            <label>Fecha Final:</label>
-            <input type="date" class="form-control " id="fechafinal_contra" name="fechafinal_contra" >
-
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-md-6">
-
-            <label>Fecha Liquidación: </label>
-            <input type="date" class="form-control" id="fechaliquidacion_contra" name="fechaliquidacion_contra" >
-
-          </div>
       
-          <div class="col-md-6">
+        <br>
+        <div class="row">
+         
+      
+          <div class="col-md-12">
 
             <label>Valor del Contrato: </label>
             <input type="text" class="form-control requerido_celebrar" id="valor_contra" name="valor_contra" 

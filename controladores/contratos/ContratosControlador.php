@@ -1697,9 +1697,6 @@ class ContratosControlador extends ControllerBase {
             $_POST["id_contrato"], 
             $_POST["numero_contra"], 
             $_POST["fecha_contra"],
-            $_POST["fechainicio_contra"],
-            $_POST["fechafinal_contra"],
-            $_POST["fechaliquidacion_contra"],
             $_POST["valor_contra"],
             $concon
         );

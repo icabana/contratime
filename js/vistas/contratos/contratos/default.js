@@ -260,19 +260,15 @@ function celebrar_contrato() {
     var id_contrato = $("#id_contrato_sel").val();
     var numero_contra = $("#numero_contra").val();
     var fecha_contra = $("#fecha_contra").val();
-    var fechainicio_contra = $("#fechainicio_contra").val();
-    var fechaliquidacion_contra = $("#fechaliquidacion_contra").val();
-    var fechafinal_contra = $("#fechafinal_contra").val();
     var valor_contra = $("#valor_contra").val();
 
-   
     mensaje_confirmar(
         "¿Está seguro de Celebrar el Contrato? No podrá regresar al estado actual: Adjudicado", 
-        "celebrar_contrato2(" + id_contrato + ", '"+numero_contra+"', '"+fecha_contra+"', '"+fechainicio_contra+"', '"+fechafinal_contra+"', '"+fechaliquidacion_contra+"', '"+valor_contra+"'); ");
+        "celebrar_contrato2(" + id_contrato + ", '"+numero_contra+"', '"+fecha_contra+"', '"+valor_contra+"'); ");
 
 }
 
-function celebrar_contrato2(id_contrato, numero_contra, fecha_contra, fechainicio_contra, fechafinal_contra, fechaliquidacion_contra, valor_contra ) {
+function celebrar_contrato2(id_contrato, numero_contra, fecha_contra, valor_contra ) {
 
     ejecutarAccionSinAlert(
         'contratos',
@@ -281,9 +277,6 @@ function celebrar_contrato2(id_contrato, numero_contra, fecha_contra, fechainici
         "id_contrato=" + id_contrato+
         "&numero_contra=" + numero_contra+
         "&fecha_contra=" + fecha_contra+
-        "&fechainicio_contra=" + fechainicio_contra+
-        "&fechafinal_contra=" + fechafinal_contra+
-        "&fechaliquidacion_contra=" + fechaliquidacion_contra+
         "&valor_contra=" + valor_contra,
         '$("#modal_celebrar").modal("hide"); $(".modal-backdrop").hide(); mensaje_alertas("success", "Contrato Celebrado con Éxito", "center");  cargar_fila_contratos('+id_contrato+');'
     );

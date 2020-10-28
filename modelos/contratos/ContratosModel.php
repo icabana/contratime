@@ -2099,16 +2099,13 @@ return $this->modificarRegistros($query);
         
     }
     
-    function celebrar($id_contrato, $numero, $fecha, $fechainicio, $fechafinal, $fechaliquidacion_contrato, $valor, $concon) {
+    function celebrar($id_contrato, $numero, $fecha, $valor, $concon) {
         
         $query = "  UPDATE contratos 
 
                     SET estado_contrato = '3', 
                         numero_contrato = '".$numero."',
                         fecha_contrato = '".$fecha."',
-                        fechainicio_contrato = '".$fechainicio."',
-                        fechafinal_contrato = '".$fechafinal."',
-                        fechaliquidacion_contrato = '".$fechaliquidacion_contrato."',
                         valor_contrato = '".$valor."',
                         concon = '".$concon."'
 
