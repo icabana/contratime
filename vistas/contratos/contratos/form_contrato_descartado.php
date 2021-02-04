@@ -119,7 +119,7 @@ $froms = new Formularios();
     <div class="col-md-2">
 
       <label>Fecha de Liquidaci&oacute;n<span style="color:red">*</span></label>
-      <input type="date" class="form-control requerido" id="fechaliquidacion_contrato" name="fechaliquidacion_contrato" value="<?php echo $contrato['fechaliquidacion_contrato']; ?>">
+      <input type="date" class="form-control" readonly id="fechaliquidacion_contrato" name="fechaliquidacion_contrato" value="<?php echo $contrato['fechaliquidacion_contrato']; ?>">
 
     </div>
 
@@ -148,10 +148,22 @@ $froms = new Formularios();
 
   <div class="col-md-12">
     <label>Objeto del Contrato<span style="color:red">*</span></label>
-    <textarea class="form-control requerido" rows="2" id="objeto_contrato" name="objeto_contrato"><?php echo utf8_encode($contrato['objeto_contrato']); ?></textarea>
+    <textarea disabled class="form-control" rows="2" id="objeto_contrato" name="objeto_contrato"><?php echo utf8_encode($contrato['objeto_contrato']); ?></textarea>
   </div>
 
 </div>
+
+
+<br>
+<div class="row">
+
+  <div class="col-md-12">
+    <label>Observaci&oacute;n<span style="color:red">*</span></label>
+    <textarea class="form-control requerido" rows="2" id="obsdel" name="obsdel"><?php echo utf8_encode($contrato['obsdel']); ?></textarea>
+  </div>
+
+</div>
+
 <br><br>
 <div class="row">
   <div class="col-md-4"></div>
@@ -160,7 +172,7 @@ $froms = new Formularios();
     <button onclick="cargar_contratos();" class="btn btn-danger">Cancelar</button>
   </div>
   <div class="col-md-2">
-    <button onclick="editar_info_contrato_directo(); return false;" class="btn btn-success">Guardar</button>
+    <button onclick="editar_info_contrato_descartado(); return false;" class="btn btn-success">Guardar Observaci&oacute;n</button>
   </div>
   <div class="col-md-4"></div>
 </div>

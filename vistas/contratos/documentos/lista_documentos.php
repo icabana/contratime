@@ -21,7 +21,7 @@
         
         <?php
                  
-            if($_SESSION['rol'] == "1"){ 
+            if($_SESSION['rol'] == "1" || $_SESSION['rol'] == "4" || $_SESSION['rol'] == "10"){ 
                 
                 require_once 'tabla_documentos.php';
                 echo $tabla_documentos;

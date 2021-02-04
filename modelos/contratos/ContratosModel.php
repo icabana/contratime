@@ -1836,6 +1836,37 @@ class ContratosModel extends ModelBase {
     }
 
 
+    function editarDescartado(
+        $id_contrato, 
+        $obsdel
+    ) {
+
+    if($contratista_contrato == ''){
+
+$query = "  UPDATE contratos 
+
+        SET 
+            
+            obsdel = '". $obsdel ."'
+
+        WHERE id_contrato = '" . $id_contrato . "'";
+}else{
+    $query = "  UPDATE contratos 
+
+    SET 
+        
+        obsdel = '". $obsdel ."'
+
+    WHERE id_contrato = '" . $id_contrato . "'";
+}
+
+
+return $this->modificarRegistros($query);
+
+}
+
+
+
     
     function editarInfoProceso(
         $id_contrato, 

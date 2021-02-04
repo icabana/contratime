@@ -46,6 +46,20 @@ function editar_contrato(id_contrato) {
 
 }
 
+
+function editar_contrato_descartado(id_contrato) {
+
+    abrirVentanaContenedor(
+        'contratos',
+        'Contratos',
+        'editarDescartado',
+        'id_contrato=' + id_contrato,
+        ''
+    );
+
+}
+
+
 function editar_proceso(id_contrato) {
 
     abrirVentanaContenedor(

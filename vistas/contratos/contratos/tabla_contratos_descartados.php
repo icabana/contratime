@@ -125,7 +125,7 @@
                         echo '</td>';
                                      
             
-                      echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
+                      echo "<td><a class='btn btn-sm btn-success' style='padding:5px 11px 5px 11px' href='#' onclick='editar_contrato_descartado(" . $contrato['id_contrato'] . ");' title='Editar Contrato'><i 
                       class='fas fa-edit'></i></a></td>";   
 
                   ?>

@@ -27,6 +27,35 @@ function editar_contrato2(data) {
 
 }
 
+function editar_info_contrato_descartado() {
+
+  if(!validar_requeridos()){
+      return 0;
+  }
+  
+  var datos = $('#formContratos').serialize();
+alert(datos);
+  ejecutarAccion(
+    'contratos',
+    'Contratos',
+    'guardarDescartado',
+    datos,
+    'editar_contrato_descartado2(data)'
+  );
+
+}
+
+function editar_contrato_descartado2(data) {
+
+  if (data == 1) {
+    mensaje_alertas("success", "Contrato Editado Exitosamente", "center");
+    cargar_contratos();
+  } else {
+    mensaje_alertas("danger", "No realizó ningún cambio en el Formulario", "center");
+  }
+
+}
+
 function seleccionar_plan(id_detalle) {
   
   var datos = $('#formContratos').serialize();

@@ -7,34 +7,22 @@ class Correos extends PHPMailer{
 		//Para Usar Gmail se debe activar la siguiente opción
 		//https://myaccount.google.com/lesssecureapps
 
-			$params = Parametros::singleton();
-			
-			$this->IsSMTP();
-			$this->SMTPSecure = 'tls';
-			$this->Host = 'smtp.gmail.com';
-			$this->SMTPAuth= true;
-			$this->Port = 587;                 
-			$this->From = "ismael.cabana@gmail.com";
-			$this->FromName = utf8_decode("ESSMAR E.S.P.");
-			$this->Username = "ismael.cabana@gmail.com";
-			$this->Password = "L0g1nT1m301012020*";
-			$this->AltBody = "Enfocados en la Calidad";
-
-			/* LEGALTEAM 
+		$params = Parametros::singleton();
+		
+		
+		/* LEGALTEAM */
 			$this->IsSMTP();
 
-			$this->Host = 'mail.legalteamcolombia.co';
-			$this->Port="587";
-			$this->SMTPAuth = true;
+			$this->Host = 'relay-hosting.secureserver.net';
 			
-			$this->FromName = "ESSMAR E.S.P.";
-			$this->AltBody = "Enfocados en la Calidad";
 			
-			$this->Username = "contacto@legalteamcolombia.co";
-			$this->Password = "Ismael777880428";
+			$this->FromName = "ESSMAR";
+			$this->AltBody = "Empresa de Servicios Públicos del Distrito de Santa Marta.";
 			
-			$this->From = "contacto@logintime.co";
-			*/
+			
+			$this->From = "contacto@essmarcontratos.co";
+	   
+		
 
 		}
 	
