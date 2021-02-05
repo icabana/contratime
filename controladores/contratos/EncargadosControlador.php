@@ -114,6 +114,12 @@ class EncargadosControlador extends ControllerBase {
 
         $datos_encargado = $EncargadosModel2->getDatos($_POST["encargado_encargado"]);
 
+        $array_correos = array();
+        
+        $array_correos[] = $param->valor('correoalertas1');
+        $array_correos[] = $param->valor('correoalertas2');
+        $array_correos[] = $datos_encargado['correo_encargado'];
+
         $nombre_encargado = $datos_encargado['nombres_encargado']." ".$datos_encargado['apellidos_encargado'];
 
         $array_contratos = explode(",", $_POST['contratos']);
@@ -154,7 +160,7 @@ class EncargadosControlador extends ControllerBase {
                 $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
                 $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
         
-                echo $correo->EnviarCorreo($mensaje, "Usted ha sido asignado como Encargado", array($datos_encargado['correo_encargado']));
+                echo $correo->EnviarCorreo($mensaje, "Usted ha sido asignado como Encargado", $array_correos);
 
                 $accion = "Se Asoció a ".$nombre_encargado." cómo Encargado de éste Proceso y 
                 se le envio un correo de Notificación";
@@ -194,6 +200,12 @@ class EncargadosControlador extends ControllerBase {
 
             $datos_encargado = $EncargadosModel2->getDatos($_POST["encargado_encargado"]);
         
+            $array_correos = array();
+            
+            $array_correos[] = $param->valor('correoalertas1');
+            $array_correos[] = $param->valor('correoalertas2');
+            $array_correos[] = $datos_encargado['correo_encargado'];
+
             $nombre_encargado = $datos_encargado['nombres_encargado']." ".$datos_encargado['apellidos_encargado'];
 
             $contrato = $ContratosModel->getDatos($_POST['id_contrato']);
@@ -230,7 +242,7 @@ class EncargadosControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
             
-            $correo->EnviarCorreo($mensaje, "asunto", array($datos_encargado['correo_encargado']));
+            $correo->EnviarCorreo($mensaje, "Usted ha sido asignado como Encargado", $array_correos);
                 
             $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
 

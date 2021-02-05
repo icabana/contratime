@@ -120,6 +120,12 @@ class PagosControlador extends ControllerBase {
                 
                 $correo = new Correos();
                 $param = new Parametros();
+
+                $array_correos = array();
+        
+                $array_correos[] = $param->valor('correoalertas1');
+                $array_correos[] = $param->valor('correoalertas2');
+                $array_correos[] = $datos_contrato['correo_contratista'];
         
                 $mensaje = file_get_contents("plantillas/correos/plantilla_pagos/index.html");
         
@@ -143,8 +149,7 @@ class PagosControlador extends ControllerBase {
                 $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
                 $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
                 
-                $correo->EnviarCorreo($mensaje, "asunto", array($datos_contrato['correo_contratista']));
-
+                echo $correo->EnviarCorreo($mensaje, "Pago Realizado y Registrado", $array_correos);
 
                 $accion = "Se ha regitrado un pago a este contrato: Tipo de pago: ".$tipopago["nombre_tipopago"].", Valor: $".number_format($_POST["valor_pago"], 0, ',', '.');
 
@@ -194,6 +199,12 @@ class PagosControlador extends ControllerBase {
         $correo = new Correos();
         $param = new Parametros();
 
+        $array_correos = array();
+        
+        $array_correos[] = $param->valor('correoalertas1');
+        $array_correos[] = $param->valor('correoalertas2');
+        $array_correos[] = $datos_contrato['correo_contratista'];
+
         $mensaje = file_get_contents("plantillas/correos/plantilla_pagos/index.html");
 
         $mensaje = str_replace("#nombre#", $datos_contrato['nombres_contrato']." ".$datos_contrato['apellidos_contrato'], $mensaje);
@@ -216,7 +227,7 @@ class PagosControlador extends ControllerBase {
         $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
         $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
         
-        $correo->EnviarCorreo($mensaje, "asunto", array($datos_contrato['correo_contratista']));
+        $correo->EnviarCorreo($mensaje, "Pago Realizado y Registrado", $array_correos);
 
 
 

@@ -130,7 +130,7 @@ function asociar_encargado_editar2_correo(data) {
     
     if(data != "error"){
         $("#tab_77_encargados").html(data);  
-        mensaje_alertas("success", "Encargado Asociado Correctamente", "center");   
+        mensaje_alertas("success", "Encargado Asociado Correctamente y Notificación Enviada", "center");   
     }else{
         mensaje_alertas("error", "Este encargado ya fue asociado a este proceso", "center");   
     } 

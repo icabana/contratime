@@ -143,7 +143,7 @@ function asociar_supervisor_editar2_correo(data) {
     }else{
 
         $("#tab_2_supervisores").html(data);  
-        mensaje_alertas("success", "Supervisor Agregado Correctamente", "center"); 
+        mensaje_alertas("success", "Supervisor Agregado Correctamente y Notificación Enviada ", "center"); 
     }
     
 

@@ -22,6 +22,8 @@ class AlertasControlador extends ControllerBase {
         $numero_contrato = "";   
         $mensaje = "";
 
+        $correos_supervisores = array();
+
         foreach($contratos as $contrato){
 
             $mensaje = file_get_contents("plantillas/correos/plantilla_contratos_x_finalizar/index.html");
@@ -30,7 +32,11 @@ class AlertasControlador extends ControllerBase {
 
             $asunto = "Contrato No. ".$numero_contrato." esta por finalizar";
 
-            //$correos_supervisores = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
+            $correos = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
+
+            foreach($correos as $correo){
+                $correos_supervisores[] = $correo['correo_supervisor'];
+            }
 
             $correos_supervisores[] = $param->valor('correoalertas1');
             $correos_supervisores[] = $param->valor('correoalertas2');
@@ -83,7 +89,13 @@ class AlertasControlador extends ControllerBase {
 
         $asunto = "Contrato No. ".$numero_contrato." esta por finalizar";
 
-        $correos_supervisores = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
+        $correos_supervisores = array();
+
+        $correos = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
+
+        foreach($correos as $correo){
+            $correos_supervisores[] = $correo['correo_supervisor'];
+        }
 
         $correos_supervisores[] = $param->valor('correoalertas1');
         $correos_supervisores[] = $param->valor('correoalertas2');
@@ -130,6 +142,8 @@ class AlertasControlador extends ControllerBase {
         $numero_contrato = "";   
         $mensaje = "";
 
+        $correos_supervisores = array();
+
         foreach($contratos as $contrato){
 
             $mensaje = file_get_contents("plantillas/correos/plantilla3/index.html");
@@ -138,7 +152,11 @@ class AlertasControlador extends ControllerBase {
 
             $asunto = "Contrato No. ".$numero_contrato." esta por finalizar";
 
-            //$correos_supervisores = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
+            $correos = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
+
+            foreach($correos as $correo){
+                $correos_supervisores[] = $correo['correo_supervisor'];
+            }
 
             $correos_supervisores[] = $param->valor('correoalertas1');
             $correos_supervisores[] = $param->valor('correoalertas2');
@@ -185,6 +203,7 @@ class AlertasControlador extends ControllerBase {
         $numero_contrato = "";   
         $mensaje = "";
 
+        $correos_supervisores = array();
 
         $mensaje = file_get_contents("plantillas/correos/plantilla_contratos_sin_pagar/index.html");
 
@@ -192,7 +211,11 @@ class AlertasControlador extends ControllerBase {
 
         $asunto = "Contrato No. ".$numero_contrato." - Finalizado Sin Pagar";
 
-        //$correos_supervisores = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
+        $correos = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
+
+        foreach($correos as $correo){
+            $correos_supervisores[] = $correo['correo_supervisor'];
+        }
 
         $correos_supervisores[] = $param->valor('correoalertas1');
         $correos_supervisores[] = $param->valor('correoalertas2');
@@ -239,6 +262,8 @@ class AlertasControlador extends ControllerBase {
         $numero_contrato = "";   
         $mensaje = "";
 
+        $correos_encargados = array();
+
         foreach($contratos as $contrato){
 
             $dias = $fechas->diasEntreFechas($contrato['fevaluacionproceso_contrato'], date("Y-m-d"));
@@ -249,7 +274,11 @@ class AlertasControlador extends ControllerBase {
 
             $asunto = "Procesos Proximos a Finalizar su Fase de Evaluacion";
 
-            //$correos_encargados = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
+            $correos = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
+
+            foreach($correos as $correo){
+                $correos_encargados[] = $correo['correo_encargado'];
+            }
 
             $correos_encargados[] = $param->valor('correoalertas1');
             $correos_encargados[] = $param->valor('correoalertas2');
@@ -299,6 +328,7 @@ class AlertasControlador extends ControllerBase {
         $numero_contrato = "";   
         $mensaje = "";
 
+        $correos_encargados = array();
 
         $dias = $fechas->diasEntreFechas($contrato['fevaluacionproceso_contrato'], date("Y-m-d"));
 
@@ -308,7 +338,11 @@ class AlertasControlador extends ControllerBase {
 
         $asunto = "Proceso Proximo a Finalizar su Fase de Evaluacion";
 
-        //$correos_encargados = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
+        $correos = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
+
+        foreach($correos as $correo){
+            $correos_encargados[] = $correo['correo_encargado'];
+        }
 
         $correos_encargados[] = $param->valor('correoalertas1');
         $correos_encargados[] = $param->valor('correoalertas2');
@@ -358,6 +392,8 @@ class AlertasControlador extends ControllerBase {
         $asunto = "";   
         $mensaje = "";
 
+        $correos_encargados = array();
+
         foreach($contratos as $contrato){
 
             $dias = $fechas->diasEntreFechas($contrato['fcierreproceso_contrato'], date("Y-m-d"));
@@ -368,7 +404,11 @@ class AlertasControlador extends ControllerBase {
 
             $asunto = "La Fecha de Cierre del Proceso es en ".$dias." dias";
 
-            //$correos_encargados = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
+            $correos = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
+
+            foreach($correos as $correo){
+                $correos_encargados[] = $correo['correo_encargado'];
+            }
 
             $correos_encargados[] = $param->valor('correoalertas1');
             $correos_encargados[] = $param->valor('correoalertas2');
@@ -418,6 +458,7 @@ class AlertasControlador extends ControllerBase {
         $asunto = "";   
         $mensaje = "";
 
+        $correos_encargados = array();
 
         $dias = $fechas->diasEntreFechas($contrato['fcierreproceso_contrato'], date("Y-m-d"));
 
@@ -427,7 +468,11 @@ class AlertasControlador extends ControllerBase {
 
         $asunto = "La Fecha de Cierre del Proceso es en ".$dias." dias";
 
-        //$correos_encargados = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
+        $correos = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
+
+        foreach($correos as $correo){
+            $correos_encargados[] = $correo['correo_encargado'];
+        }
 
         $correos_encargados[] = $param->valor('correoalertas1');
         $correos_encargados[] = $param->valor('correoalertas2');

@@ -122,6 +122,12 @@ class SupervisoresControlador extends ControllerBase {
 
         $datos_supervisor = $SupervisoresModel2->getDatos($_POST["supervisor_supervisor"]);
 
+        $array_correos = array();
+        
+        $array_correos[] = $param->valor('correoalertas1');
+        $array_correos[] = $param->valor('correoalertas2');
+        $array_correos[] = $datos_supervisor['correo_supervisor'];
+
         $nombre_supervisor = $datos_supervisor['nombres_supervisor']." ".$datos_supervisor['apellidos_supervisor'];
 
         $array_contratos = explode(",", $_POST['contratos']);
@@ -158,7 +164,7 @@ class SupervisoresControlador extends ControllerBase {
                 $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
                 $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
         
-                echo $correo->EnviarCorreo($mensaje, "Usted ha sido asignado como Supervisor", array($datos_supervisor['correo_supervisor']));
+                echo $correo->EnviarCorreo($mensaje, "Usted ha sido asignado como Supervisor", $array_correos);
 
                 
                 $accion = "Se Asoció a ".$nombre_supervisor." cómo Supervisor de éste Contrato y 
@@ -208,8 +214,13 @@ class SupervisoresControlador extends ControllerBase {
                 $_POST['id_contrato']
             );                    
            
+            $array_correos = array();
+        
+            $array_correos[] = $param->valor('correoalertas1');
+            $array_correos[] = $param->valor('correoalertas2');
+            $array_correos[] = $datos_supervisor['correo_supervisor'];
 
-            $mensaje = file_get_contents("plantillas/correos/plantilla2/index.html");
+            $mensaje = file_get_contents("plantillas/correos/plantilla_supervisores/index.html");
 
             $mensaje = str_replace("#nombre#", $datos_supervisor['nombre_supervisor'], $mensaje);
             $mensaje = str_replace("#numproceso#", $datos_contrato['numproceso_contrato'], $mensaje);
@@ -227,7 +238,7 @@ class SupervisoresControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
             
-            $correo->EnviarCorreo($mensaje, "asunto", array($datos_supervisor['correo_supervisor']));
+            echo $correo->EnviarCorreo($mensaje, "Usted ha sido asignado como Supervisor", $array_correos);
                 
             $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
                  

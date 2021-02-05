@@ -149,7 +149,7 @@ class SistemaControlador extends ControllerBase {
         $enviado = $mails->Send();         
             
         if($enviado){
-            return   "EL MENSAJE FUE ENVIADO ".$mails->ErrorInfo;                     
+            return   "";                     
         }else{
             return "NO FUE POSIBLE ENVIAR EL MENSAJE ".$mails->ErrorInfo;             
         }  
