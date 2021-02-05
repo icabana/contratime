@@ -1,6 +1,6 @@
 <?php
 
-class EstadosContratosModel extends ModelBase {
+class EstadoscontratosModel extends ModelBase {
 
     function getTodos(){
         

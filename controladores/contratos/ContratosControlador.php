@@ -78,9 +78,9 @@ class ContratosControlador extends ControllerBase {
         $Tiposcontrato = new TiposcontratoModel();
         $tiposcontrato = $Tiposcontrato->getTodos();
         
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();
 
         $this->model->cargar("ContratosModel.php", "contratos");
         $ContratosModel = new ContratosModel();
@@ -446,9 +446,9 @@ class ContratosControlador extends ControllerBase {
         $Tiposcontrato = new TiposcontratoModel();
         $tiposcontrato = $Tiposcontrato->getTodos();
         
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();
         
         include 'vistas/contratos/contratos/busqueda_avanzada.php';
         
@@ -465,9 +465,9 @@ class ContratosControlador extends ControllerBase {
         $Tiposcontrato = new TiposcontratoModel();
         $tiposcontrato = $Tiposcontrato->getTodos();
         
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();
 
         include 'vistas/contratos/contratos/busqueda_avanzada_financiera.php';
         
@@ -666,9 +666,9 @@ class ContratosControlador extends ControllerBase {
         $TiposajustesModel = new TiposajustescontratoModel();
         $tiposajustes_select = $TiposajustesModel->getTodos();            
         
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();                 
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();                 
         
         $this->model->cargar("Estados2Model.php", "maestras");
         $Estados2Model = new Estados2Model();
@@ -753,9 +753,9 @@ class ContratosControlador extends ControllerBase {
         $TiposajustesModel = new TiposajustescontratoModel();
         $tiposajustes_select = $TiposajustesModel->getTodos();            
         
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();                 
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();                 
         
         $this->model->cargar("Estados2Model.php", "maestras");
         $Estados2Model = new Estados2Model();
@@ -843,9 +843,9 @@ class ContratosControlador extends ControllerBase {
         $ContratosModel = new ContratosModel();
         $contrato = $ContratosModel->getDatos($_POST['id_contrato']);        
         
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();              
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();              
         
         $this->model->cargar("Estados2Model.php", "maestras");
         $Estados2Model = new Estados2Model();
@@ -915,9 +915,9 @@ class ContratosControlador extends ControllerBase {
         $PagosModel = new pagosContratosModel();
         $pagos = $PagosModel->getTodosxContrato($_POST['id_contrato']);
         
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();         
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();         
         
         $this->model->cargar("Estados2Model.php", "maestras");
         $Estados2Model = new Estados2Model();
@@ -1006,9 +1006,9 @@ class ContratosControlador extends ControllerBase {
         $CdpsModel = new CdpsContratosModel();
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
         
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();                  
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();                  
         
         $this->model->cargar("Estados2Model.php", "maestras");
         $Estados2Model = new Estados2Model();
@@ -1085,9 +1085,9 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosContratosModel();
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
         
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();              
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();              
         
         $this->model->cargar("Estados2Model.php", "maestras");
         $Estados2Model = new Estados2Model();
@@ -1166,9 +1166,9 @@ class ContratosControlador extends ControllerBase {
         $SupervisoresModel = new SupervisoresContratosModel();
         $supervisores = $SupervisoresModel->getTodosxContrato($_POST['id_contrato']);
 
-        $this->model->cargar("EstadosContratosModel.php", "maestras");
-        $EstadosContratosModel = new EstadosContratosModel();
-        $estados = $EstadosContratosModel->getTodos();            
+        $this->model->cargar("EstadoscontratosModel.php", "maestras");
+        $EstadoscontratosModel = new EstadoscontratosModel();
+        $estados = $EstadoscontratosModel->getTodos();            
         
         $this->model->cargar("Estados2Model.php", "maestras");
         $Estados2Model = new Estados2Model();
