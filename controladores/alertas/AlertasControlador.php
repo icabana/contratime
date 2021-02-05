@@ -34,8 +34,8 @@ class AlertasControlador extends ControllerBase {
 
             $correos = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
 
-            foreach($correos as $correo){
-                $correos_supervisores[] = $correo['correo_supervisor'];
+            foreach($correos as $corre){
+                $correos_supervisores[] = $corre['correo_supervisor'];
             }
 
             $correos_supervisores[] = $param->valor('correoalertas1');
@@ -58,7 +58,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
+            echo $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
         }
                         
     }    
@@ -93,8 +93,8 @@ class AlertasControlador extends ControllerBase {
 
         $correos = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
 
-        foreach($correos as $correo){
-            $correos_supervisores[] = $correo['correo_supervisor'];
+        foreach($correos as $corre){
+            $correos_supervisores[] = $corre['correo_supervisor'];
         }
 
         $correos_supervisores[] = $param->valor('correoalertas1');
@@ -154,8 +154,8 @@ class AlertasControlador extends ControllerBase {
 
             $correos = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
 
-            foreach($correos as $correo){
-                $correos_supervisores[] = $correo['correo_supervisor'];
+            foreach($correos as $corre){
+                $correos_supervisores[] = $corre['correo_supervisor'];
             }
 
             $correos_supervisores[] = $param->valor('correoalertas1');
@@ -178,7 +178,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
+            echo $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
         }
                         
     }    
@@ -213,8 +213,8 @@ class AlertasControlador extends ControllerBase {
 
         $correos = $SupervisoresModel->getTodosCorreosxContrato($contrato['id_contrato']);
 
-        foreach($correos as $correo){
-            $correos_supervisores[] = $correo['correo_supervisor'];
+        foreach($correos as $corre){
+            $correos_supervisores[] = $corre['correo_supervisor'];
         }
 
         $correos_supervisores[] = $param->valor('correoalertas1');
@@ -237,7 +237,7 @@ class AlertasControlador extends ControllerBase {
         $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
         $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-        $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
+        echo $correo->EnviarCorreo($mensaje, $asunto, $correos_supervisores);
         
                         
     }    
@@ -276,8 +276,8 @@ class AlertasControlador extends ControllerBase {
 
             $correos = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
 
-            foreach($correos as $correo){
-                $correos_encargados[] = $correo['correo_encargado'];
+            foreach($correos as $corre){
+                $correos_encargados[] = $corre['correo_encargado'];
             }
 
             $correos_encargados[] = $param->valor('correoalertas1');
@@ -303,7 +303,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
+            echo $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
         }
                         
     }    
@@ -340,8 +340,8 @@ class AlertasControlador extends ControllerBase {
 
         $correos = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
 
-        foreach($correos as $correo){
-            $correos_encargados[] = $correo['correo_encargado'];
+        foreach($correos as $corre){
+            $correos_encargados[] = $corre['correo_encargado'];
         }
 
         $correos_encargados[] = $param->valor('correoalertas1');
@@ -367,7 +367,7 @@ class AlertasControlador extends ControllerBase {
         $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
         $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-        $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
+        echo $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
         
                         
     }    
@@ -406,8 +406,8 @@ class AlertasControlador extends ControllerBase {
 
             $correos = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
 
-            foreach($correos as $correo){
-                $correos_encargados[] = $correo['correo_encargado'];
+            foreach($correos as $corre){
+                $correos_encargados[] = $corre['correo_encargado'];
             }
 
             $correos_encargados[] = $param->valor('correoalertas1');
@@ -433,7 +433,7 @@ class AlertasControlador extends ControllerBase {
             $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
             $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-            $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
+            echo $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
         }
                         
     }    
@@ -470,8 +470,8 @@ class AlertasControlador extends ControllerBase {
 
         $correos = $EncargadosModel->getTodosCorreosxContrato($contrato['id_contrato']);
 
-        foreach($correos as $correo){
-            $correos_encargados[] = $correo['correo_encargado'];
+        foreach($correos as $corre){
+            $correos_encargados[] = $corre['correo_encargado'];
         }
 
         $correos_encargados[] = $param->valor('correoalertas1');
@@ -497,7 +497,7 @@ class AlertasControlador extends ControllerBase {
         $mensaje = str_replace("#facebook#", $param->valor('facebook'), $mensaje);
         $mensaje = str_replace("#twitter#", $param->valor('twitter'), $mensaje);
 
-        $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
+        echo $correo->EnviarCorreo($mensaje, $asunto, $correos_encargados);
         
                         
     }    

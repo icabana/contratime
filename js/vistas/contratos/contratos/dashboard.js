@@ -18,7 +18,7 @@ function enviar_correo_contratosxfinalizar2(id_contrato) {
 
 function enviar_correo_contratosxfinalizar3(data) {
 
-    mensaje_alertas("error", data, "center");    
+    mensaje_alertas("success", data, "center");    
 
 }
 
@@ -35,8 +35,15 @@ function enviar_correo_contratos_sin_pagar2(id_contrato) {
         'Alertas',
         'contratoFinalizadosSinPagar',
         "id_contrato=" + id_contrato,
-        ''
+        'enviar_correo_contratos_sin_pagar3(data);'
     );
+
+}
+
+
+function enviar_correo_contratos_sin_pagar3(data) {
+
+    mensaje_alertas("success", data, "center");    
 
 }
 
@@ -53,11 +60,16 @@ function enviar_correo_procesos_x_finalizar2(id_contrato) {
         'Alertas',
         'procesoxEvaluar',
         "id_contrato=" + id_contrato,
-        ''
+        'enviar_correo_procesos_x_finalizar3(data);'
     );
 
 }
 
+function enviar_correo_procesos_x_finalizar3(data) {
+
+    mensaje_alertas("success", data, "center");    
+
+}
 
 function enviar_correo_procesos_x_cerrar(id_contrato) {
  
@@ -72,7 +84,14 @@ function enviar_correo_procesos_x_cerrar2(id_contrato) {
         'Alertas',
         'procesoxCerrar',
         "id_contrato=" + id_contrato,
-        ''
+        'enviar_correo_procesos_x_cerrar3(data);'
     );
+
+}
+
+
+function enviar_correo_procesos_x_cerrar3(data) {
+
+    mensaje_alertas("success", data, "center");    
 
 }
