@@ -15,6 +15,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("EncargadosModel.php", "actores");
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
         
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
@@ -52,6 +56,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
         
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
@@ -118,6 +126,9 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
 
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
        
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
@@ -150,6 +161,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
 
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
@@ -181,6 +196,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
 
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
@@ -194,6 +213,40 @@ class ContratosControlador extends ControllerBase {
         $tiposajustes_select = $TiposajustesModel->getTodos();     
           
         include 'vistas/contratos/contratos/default_encargado.php';
+                        
+    }    
+
+    public function indexEvaluador() {
+        
+        $this->model->cargar("ContratosModel.php", "contratos");
+        $ContratosModel = new ContratosModel();
+        $contratos = $ContratosModel->getTodosxEncargado();        
+        
+        $this->model->cargar("SupervisoresModel.php", "actores");
+        $SupervisoresModel = new SupervisoresModel();
+        $supervisores_select = $SupervisoresModel->getTodos();
+        
+        $this->model->cargar("EncargadosModel.php", "actores");
+        $EncargadosModel = new EncargadosModel();
+        $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+        
+        $this->model->cargar("ContratistasModel.php", "actores");
+        $ContratistasModel = new ContratistasModel();
+        $contratistas_select = $ContratistasModel->getTodos();
+        
+        $this->model->cargar("TipospagoModel.php", "administracion");
+        $TipospagoModel = new TipospagoModel();
+        $tipospago_select = $TipospagoModel->getTodos();      
+        
+        $this->model->cargar("TiposajustesModel.php", "administracion");
+        $TiposajustesModel = new TiposajustescontratoModel();
+        $tiposajustes_select = $TiposajustesModel->getTodos();     
+          
+        include 'vistas/contratos/contratos/default_evaluador.php';
                         
     }    
 
@@ -243,6 +296,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
 
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
@@ -273,6 +330,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
 
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
@@ -302,6 +363,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("EncargadosModel.php", "actores");
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
 
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
@@ -335,6 +400,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
 
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
@@ -367,6 +436,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
 
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
@@ -396,6 +469,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("EncargadosModel.php", "actores");
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
 
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
@@ -497,6 +574,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
 
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
         $contratistas_select = $ContratistasModel->getTodos();
@@ -536,6 +617,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("EncargadosModel.php", "actores");
         $EncargadosModel = new EncargadosModel();
         $encargados_select = $EncargadosModel->getTodos();
+
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
 
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();
@@ -618,6 +703,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosContratosModel();
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
 
+        $this->model->cargar("EvaluadoresModel.php", "contratos");
+        $EvaluadoresModel = new EvaluadoresContratosModel();
+        $evaluadores = $EvaluadoresModel->getTodosxContrato($_POST['id_contrato']);
+
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
@@ -658,6 +747,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel2 = new EncargadosModel();
         $encargados_select = $EncargadosModel2->getTodos();
         
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("TipospagoModel.php", "administracion");
         $TipospagoModel = new TipospagoModel();
         $tipospago_select = $TipospagoModel->getTodos();      
@@ -705,6 +798,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosContratosModel();
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
 
+        $this->model->cargar("EvaluadoresModel.php", "contratos");
+        $EvaluadoresModel = new EvaluadoresContratosModel();
+        $evaluadores = $EvaluadoresModel->getTodosxContrato($_POST['id_contrato']);
+
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
@@ -744,6 +841,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("EncargadosModel.php", "actores");
         $EncargadosModel2 = new EncargadosModel();
         $encargados_select = $EncargadosModel2->getTodos();
+        
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
         
         $this->model->cargar("TipospagoModel.php", "administracion");
         $TipospagoModel = new TipospagoModel();
@@ -791,6 +892,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosContratosModel();
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
 
+        $this->model->cargar("EvaluadoresModel.php", "contratos");
+        $EvaluadoresModel = new EvaluadoresContratosModel();
+        $evaluadores = $EvaluadoresModel->getTodosxContrato($_POST['id_contrato']);
+
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
@@ -831,6 +936,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel2 = new EncargadosModel();
         $encargados_select = $EncargadosModel2->getTodos();
         
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("TipospagoModel.php", "administracion");
         $TipospagoModel = new TipospagoModel();
         $tipospago_select = $TipospagoModel->getTodos();      
@@ -899,6 +1008,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosContratosModel();
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
 
+        $this->model->cargar("EvaluadoresModel.php", "contratos");
+        $EvaluadoresModel = new EvaluadoresContratosModel();
+        $evaluadores = $EvaluadoresModel->getTodosxContrato($_POST['id_contrato']);
+
         $this->model->cargar("CdpsModel.php", "contratos");
         $CdpsModel = new CdpsContratosModel();
         $cdps = $CdpsModel->getTodosxContrato($_POST['id_contrato']);
@@ -948,6 +1061,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel2 = new EncargadosModel();
         $encargados_select = $EncargadosModel2->getTodos();
         
+        $this->model->cargar("EvaluadoresModel.php", "actores");
+        $EvaluadoresModel = new EvaluadoresModel();
+        $evaluadores_select = $EvaluadoresModel->getTodos();
+
         $this->model->cargar("TipospagoModel.php", "administracion");
         $TipospagoModel = new TipospagoModel();
         $tipospago_select = $TipospagoModel->getTodos();      
@@ -1085,6 +1202,10 @@ class ContratosControlador extends ControllerBase {
         $EncargadosModel = new EncargadosContratosModel();
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
         
+        $this->model->cargar("EvaluadoresModel.php", "contratos");
+        $EvaluadoresModel = new EvaluadoresContratosModel();
+        $evaluadores = $EvaluadoresModel->getTodosxContrato($_POST['id_contrato']);
+
         $this->model->cargar("EstadoscontratosModel.php", "maestras");
         $EstadoscontratosModel = new EstadoscontratosModel();
         $estados = $EstadoscontratosModel->getTodos();              
@@ -1177,6 +1298,10 @@ class ContratosControlador extends ControllerBase {
         $this->model->cargar("EncargadosModel.php", "contratos");
         $EncargadosModel = new EncargadosContratosModel();
         $encargados = $EncargadosModel->getTodosxContrato($_POST['id_contrato']);
+        
+        $this->model->cargar("EvaluadoresModel.php", "contratos");
+        $EvaluadoresModel = new EvaluadoresContratosModel();
+        $evaluadores = $EvaluadoresModel->getTodosxContrato($_POST['id_contrato']);
         
         $this->model->cargar("ContratistasModel.php", "actores");
         $ContratistasModel = new ContratistasModel();

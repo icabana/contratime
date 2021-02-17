@@ -49,6 +49,7 @@
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/soportes.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/supervisores.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/modulos/actores/encargados.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/modulos/actores/evaluadores.js'></script> 
   
   <!-- ARCHIVOS DE LAS VISTAS -->  
   <script language="JavaScript" type='text/javascript' src='js/vistas/configuracion/usuarios/default.js'></script> 
@@ -94,6 +95,10 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/encargados/default.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/encargados/insertar.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/actores/encargados/editar.js'></script> 
+
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/evaluadores/default.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/evaluadores/insertar.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/actores/evaluadores/editar.js'></script> 
   
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/dashboard.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/default.js'></script> 
@@ -104,6 +109,7 @@
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/contratos/editar_convocado.js'></script> 
 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/encargados/encargados.js'></script> 
+  <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/evaluadores/evaluadores.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/supervisores/supervisores.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/trazabilidad/trazabilidad.js'></script> 
   <script language="JavaScript" type='text/javascript' src='js/vistas/contratos/cdps/cdps.js'></script> 
@@ -162,11 +168,9 @@
         <a href="#" onclick="cargar_encargados(); return false;" class="nav-link"><b>Encargados</b></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" onclick="cargar_planes(); return false;" class="nav-link"><b>Planes de Adquisici&oacute;n</b></a>
+        <a href="#" onclick="cargar_evaluadores(); return false;" class="nav-link"><b>Evaluadores</b></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" onclick="cargar_modalidades(); return false;" class="nav-link"><b>Modalidades</b></a>
-      </li>
+     
       <?php
         }
       ?>
@@ -333,6 +337,13 @@
           <a href="#" onclick="cargar_encargados();" class="nav-link">
             <i class="nav-icon fas fa-user-secret"></i>
             <p>Encargados</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" onclick="cargar_evaluadores();" class="nav-link">
+            <i class="nav-icon fas fa-user-secret"></i>
+            <p>Evaluadores</p>
           </a>
         </li>
 

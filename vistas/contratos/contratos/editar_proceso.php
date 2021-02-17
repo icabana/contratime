@@ -51,6 +51,12 @@ $froms = new Formularios();
                   Encargados
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#tab_77_evaluadores" data-toggle="tab">
+                  Evaluadores
+                </a>
+              </li>
             
         
 
@@ -149,6 +155,12 @@ $froms = new Formularios();
               ?>
             </div>
           
+            <div style="padding: 20px" class="tab-pane" id="tab_77_evaluadores">
+
+              <?php
+              include("vistas/contratos/evaluadores/lista_evaluadores.php");
+              ?>
+            </div>
           
             <div style="padding: 20px; " class="tab-pane" id="tab_4_cdps">
 
@@ -248,6 +260,11 @@ $froms = new Formularios();
 <!-- Modal Encargados-->
 <?php
   include("vistas/contratos/encargados/modal_encargados_editar.php");
+?>
+
+<!-- Modal Evaluadores-->
+<?php
+  include("vistas/contratos/evaluadores/modal_evaluadores_editar.php");
 ?>
 
 <!-- Modal Trazabilidad-->
